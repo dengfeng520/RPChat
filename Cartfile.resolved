@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "5.2.1"
+github "CoderMJLee/MJRefresh" "3.4.3"
+github "ReactiveX/RxSwift" "5.1.1"
+github "SwiftyJSON/SwiftyJSON" "5.0.0"
+github "onevcat/Kingfisher" "5.14.0"
+github "robbiehanson/CocoaAsyncSocket" "7.6.4"

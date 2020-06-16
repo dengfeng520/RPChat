@@ -1,0 +1,19 @@
+//
+//  RPChatDataKit.h
+//  RPChatDataKit
+//
+//  Created by rp.wang on 2020/6/15.
+//  Copyright © 2020 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+//! Project version number for RPChatDataKit.
+FOUNDATION_EXPORT double RPChatDataKitVersionNumber;
+
+//! Project version string for RPChatDataKit.
+FOUNDATION_EXPORT const unsigned char RPChatDataKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <RPChatDataKit/PublicHeader.h>
+
+
