@@ -35,7 +35,6 @@
 		1D22090924986141002D25A2 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D22090B24986141002D25A2 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F824986120002D25A2 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D220943249870AA002D25A2 /* NiblessViewController.swift */; };
-		1D220947249870EC002D25A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D220946249870EC002D25A2 /* SignInViewController.swift */; };
 		1D2209482498710F002D25A2 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
 		1D2209492498710F002D25A2 /* RPChatUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208C524977DFF002D25A2 /* RPChatUIKit.framework */; };
 		1D22094A24987126002D25A2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
@@ -44,7 +43,14 @@
 		1D2209512498715D002D25A2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F824986120002D25A2 /* SwiftyJSON.framework */; };
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
-		1D22096924987394002D25A2 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096824987394002D25A2 /* SignInRootView.swift */; };
+		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
+		1DB9399E249B737100F07DC6 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9399C249B737100F07DC6 /* SignInViewController.xib */; };
+		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
+		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
+		1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A4249B753C00F07DC6 /* APIConfig.swift */; };
+		1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A7249B75D500F07DC6 /* AccountData.swift */; };
+		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
+		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,10 +125,22 @@
 		1D2208F924986120002D25A2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1D2208FB24986120002D25A2 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		1D220943249870AA002D25A2 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
-		1D220946249870EC002D25A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
-		1D22096824987394002D25A2 /* SignInRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRootView.swift; sourceTree = "<group>"; };
+		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1DB9399C249B737100F07DC6 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
+		1DB939A4249B753C00F07DC6 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		1DB939A7249B75D500F07DC6 /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
+		1DEECAC4249B4CED0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1DEECACA249B4DCB0078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DEECACC249B4DCD0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1DEECAD0249B52020078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1DEECAD1249B56AB0078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1DEECAD4249B57000078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +223,8 @@
 				1D2208A324977C14002D25A2 /* Assets.xcassets */,
 				1D2208A524977C14002D25A2 /* LaunchScreen.storyboard */,
 				1D2208A824977C14002D25A2 /* Info.plist */,
+				1DEECAC5249B4CED0078B54F /* Localizable.strings */,
+				1DEECACB249B4DCB0078B54F /* InfoPlist.strings */,
 			);
 			path = RPChat;
 			sourceTree = "<group>";
@@ -232,6 +252,8 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1DB939A6249B75C700F07DC6 /* AccountData */,
+				1DB9399F249B748D00F07DC6 /* HTTPRequest */,
 				1D22095224987260002D25A2 /* SignIn */,
 				1D2208D824977E1B002D25A2 /* RPChatDataKit.h */,
 				1D2208D924977E1B002D25A2 /* Info.plist */,
@@ -265,8 +287,8 @@
 		1D220945249870D2002D25A2 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				1D220946249870EC002D25A2 /* SignInViewController.swift */,
-				1D22096824987394002D25A2 /* SignInRootView.swift */,
+				1DB9399B249B737100F07DC6 /* SignInViewController.swift */,
+				1DB9399C249B737100F07DC6 /* SignInViewController.xib */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -277,6 +299,24 @@
 				1D22095324987272002D25A2 /* SignInViewModel.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1DB939A0249B749500F07DC6 /* HTTPRequest.swift */,
+				1DB939A2249B752400F07DC6 /* SigninRequest.swift */,
+				1DB939A4249B753C00F07DC6 /* APIConfig.swift */,
+			);
+			path = HTTPRequest;
+			sourceTree = "<group>";
+		};
+		1DB939A6249B75C700F07DC6 /* AccountData */ = {
+			isa = PBXGroup;
+			children = (
+				1DB939A7249B75D500F07DC6 /* AccountData.swift */,
+			);
+			path = AccountData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 1D22088E24977C12002D25A2;
 			productRefGroup = 1D22089824977C12002D25A2 /* Products */;
@@ -439,8 +480,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D2208A724977C14002D25A2 /* LaunchScreen.storyboard in Resources */,
+				1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */,
 				1D2208A424977C14002D25A2 /* Assets.xcassets in Resources */,
 				1D2208A224977C12002D25A2 /* Main.storyboard in Resources */,
+				1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB9399E249B737100F07DC6 /* SignInViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,8 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D22096924987394002D25A2 /* SignInRootView.swift in Sources */,
-				1D220947249870EC002D25A2 /* SignInViewController.swift in Sources */,
+				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +570,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */,
+				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
+				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
+				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +603,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				1D2208A124977C12002D25A2 /* Base */,
+				1DEECABF249B4C4F0078B54F /* zh-Hant */,
+				1DEECAD0249B52020078B54F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -564,8 +613,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				1D2208A624977C14002D25A2 /* Base */,
+				1DEECAC0249B4C4F0078B54F /* zh-Hant */,
+				1DEECAD4249B57000078B54F /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1DEECAC5249B4CED0078B54F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DEECAC4249B4CED0078B54F /* zh-Hant */,
+				1DEECAD1249B56AB0078B54F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1DEECACB249B4DCB0078B54F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DEECACA249B4DCB0078B54F /* en */,
+				1DEECACC249B4DCD0078B54F /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -575,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -621,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -635,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -675,7 +746,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
