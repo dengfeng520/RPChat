@@ -89,14 +89,8 @@ class SignInViewController: UIViewController {
       signinBtn.rx.tap.bind(to: viewModel.signInButtonTapped).disposed(by: disposeBag)
       
       viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
-         guard let `self` = self else { return }
-//         RPBannerView.show(with: .warningMode, body: "登录失败", isView: self.view)
-//         let tabBarVC = TSNTabBarViewController.init()
-//         tabBarVC.modalPresentationStyle = .custom
-//         self.navigationController?.present(tabBarVC, animated: false, completion: {
-//            
-//         })
-         
+//         guard let `self` = self else { return }
+         print("登录失败============")
       }).disposed(by: disposeBag)
     
       viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
