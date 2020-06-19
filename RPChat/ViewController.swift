@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        testLab.text = NSLocalizedString("测试", comment: "")
+        testLab.text = NSLocalizedString("test", comment: "")
     }
-
-
-    
 }
 

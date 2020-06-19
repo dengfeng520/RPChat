@@ -49,6 +49,10 @@
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
 		1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A4249B753C00F07DC6 /* APIConfig.swift */; };
 		1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A7249B75D500F07DC6 /* AccountData.swift */; };
+		1DB93A12249C819600F07DC6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A11249C819600F07DC6 /* RxCocoa.framework */; };
+		1DB93A13249C81A000F07DC6 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A11249C819600F07DC6 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; };
+		1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -84,6 +88,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */,
+				1DB93A13249C81A000F07DC6 /* RxCocoa.framework in Embed Frameworks */,
 				1D22090424986141002D25A2 /* Alamofire.framework in Embed Frameworks */,
 				1D22090524986141002D25A2 /* CocoaAsyncSocket.framework in Embed Frameworks */,
 				1D22090624986141002D25A2 /* Kingfisher.framework in Embed Frameworks */,
@@ -118,7 +124,6 @@
 		1D2208D824977E1B002D25A2 /* RPChatDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPChatDataKit.h; sourceTree = "<group>"; };
 		1D2208D924977E1B002D25A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2208F42498611F002D25A2 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		1D2208F524986120002D25A2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1D2208F624986120002D25A2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1D2208F724986120002D25A2 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = "<group>"; };
 		1D2208F824986120002D25A2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -133,6 +138,12 @@
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
 		1DB939A4249B753C00F07DC6 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		1DB939A7249B75D500F07DC6 /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		1DB93A11249C819600F07DC6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1DB93A14249C81C300F07DC6 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		1DB93A1B249C93D900F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1DB93A1C249C93D900F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1DB93A1D249C940B00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1DB93A1E249C940F00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
 		1DEECAC4249B4CED0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -148,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */,
+				1DB93A12249C819600F07DC6 /* RxCocoa.framework in Frameworks */,
 				1D2208FC24986120002D25A2 /* CocoaAsyncSocket.framework in Frameworks */,
 				1D2208FE24986120002D25A2 /* RxSwift.framework in Frameworks */,
 				1D2208FF24986120002D25A2 /* MJRefresh.framework in Frameworks */,
@@ -264,11 +277,12 @@
 		1D2208F32498611F002D25A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DB93A14249C81C300F07DC6 /* RxRelay.framework */,
+				1DB93A11249C819600F07DC6 /* RxCocoa.framework */,
 				1D2208F924986120002D25A2 /* Alamofire.framework */,
 				1D2208F42498611F002D25A2 /* CocoaAsyncSocket.framework */,
 				1D2208FB24986120002D25A2 /* Kingfisher.framework */,
 				1D2208F724986120002D25A2 /* MJRefresh.framework */,
-				1D2208F524986120002D25A2 /* RxCocoa.framework */,
 				1D2208F624986120002D25A2 /* RxSwift.framework */,
 				1D2208F824986120002D25A2 /* SwiftyJSON.framework */,
 			);
@@ -460,6 +474,7 @@
 				en,
 				Base,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 1D22088E24977C12002D25A2;
 			productRefGroup = 1D22089824977C12002D25A2 /* Products */;
@@ -605,6 +620,7 @@
 				1D2208A124977C12002D25A2 /* Base */,
 				1DEECABF249B4C4F0078B54F /* zh-Hant */,
 				1DEECAD0249B52020078B54F /* en */,
+				1DB93A1B249C93D900F07DC6 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -615,6 +631,7 @@
 				1D2208A624977C14002D25A2 /* Base */,
 				1DEECAC0249B4C4F0078B54F /* zh-Hant */,
 				1DEECAD4249B57000078B54F /* en */,
+				1DB93A1C249C93D900F07DC6 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -624,6 +641,7 @@
 			children = (
 				1DEECAC4249B4CED0078B54F /* zh-Hant */,
 				1DEECAD1249B56AB0078B54F /* en */,
+				1DB93A1E249C940F00F07DC6 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -633,6 +651,7 @@
 			children = (
 				1DEECACA249B4DCB0078B54F /* en */,
 				1DEECACC249B4DCD0078B54F /* zh-Hant */,
+				1DB93A1D249C940B00F07DC6 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
