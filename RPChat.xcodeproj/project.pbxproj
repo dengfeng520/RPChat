@@ -50,6 +50,7 @@
 		1D5C600524AC85E900211398 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; };
 		1D5C600624AC85F700211398 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600724AC86F400211398 /* RequestEnum.swift */; };
+		1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -210,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */,
 				1D2209502498715D002D25A2 /* RxSwift.framework in Frameworks */,
 				1D2209512498715D002D25A2 /* SwiftyJSON.framework in Frameworks */,
 			);

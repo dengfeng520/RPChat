@@ -10,13 +10,13 @@ import Foundation
 import Alamofire
 
 /// 登录
-struct signinRequest: Request {
+struct SigninRequest: Request {
     var parameter: [String : AnyObject]?
     var path: String? {
         return __apiFetchSignIn
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return ""
+        return __serverTestURL
     }
 }

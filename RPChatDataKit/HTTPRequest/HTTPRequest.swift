@@ -64,8 +64,6 @@ struct HTTPRequest: RequestSender {
             return
         }
         
-        print("header============\(headers!)")
-        
         AF.request(path, method: r.method, parameters: body, headers: headers).response { response in
             if let error = response.error {
                 print(error)
