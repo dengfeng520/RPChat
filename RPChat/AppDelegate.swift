@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import RPChat_iOS
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if #available(iOS 13, *) {
+            
+        } else {
+             window = UIWindow.init()
+             window?.frame = UIScreen.main.bounds
+             window?.makeKeyAndVisible()
+             let signInVC = SignInViewController()
+             window?.rootViewController = signInVC
+        }
         return true
     }
 }

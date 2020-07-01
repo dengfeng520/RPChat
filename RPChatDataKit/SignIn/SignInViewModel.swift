@@ -59,7 +59,7 @@ public class SignInViewModel: NSObject {
         
         private func clickSignIn() {
             //(stuNum, password)
-    //        let data = fetchStuNumAndPassword()
+    //  let data = fetchStuNumAndPassword()
             
     HTTPRequest().requestWithMap(signinRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }

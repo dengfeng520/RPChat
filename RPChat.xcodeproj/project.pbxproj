@@ -43,8 +43,8 @@
 		1D2209512498715D002D25A2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F824986120002D25A2 /* SwiftyJSON.framework */; };
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
+		1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
-		1DB9399E249B737100F07DC6 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9399C249B737100F07DC6 /* SignInViewController.xib */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
 		1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A4249B753C00F07DC6 /* APIConfig.swift */; };
@@ -55,6 +55,7 @@
 		1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
+		1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,8 +133,8 @@
 		1D220943249870AA002D25A2 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		1DB9399C249B737100F07DC6 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
 		1DB939A4249B753C00F07DC6 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		1DEECAD0249B52020078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1DEECAD1249B56AB0078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1DEECAD4249B57000078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D5C5FF924AC65A300211398 /* UIColorExtension */,
 				1D22094224987084002D25A2 /* Reusable */,
 				1D2208C724977DFF002D25A2 /* RPChatUIKit.h */,
 				1D2208C824977DFF002D25A2 /* Info.plist */,
@@ -302,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB9399B249B737100F07DC6 /* SignInViewController.swift */,
-				1DB9399C249B737100F07DC6 /* SignInViewController.xib */,
+				1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -313,6 +316,14 @@
 				1D22095324987272002D25A2 /* SignInViewModel.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		1D5C5FF924AC65A300211398 /* UIColorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */,
+			);
+			path = UIColorExtension;
 			sourceTree = "<group>";
 		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
@@ -506,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DB9399E249B737100F07DC6 /* SignInViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +589,7 @@
 			files = (
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
+				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
