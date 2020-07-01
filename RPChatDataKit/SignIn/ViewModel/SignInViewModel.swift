@@ -57,10 +57,9 @@ public class SignInViewModel: NSObject {
         }
     }
         
-        private func clickSignIn() {
-            //(stuNum, password)
-    //  let data = fetchStuNumAndPassword()
-    HTTPRequest().requestWithMap(signinRequest(parameter: [:])) { [weak self] (result) in
+    private func clickSignIn() {
+       //  let data = fetchStuNumAndPassword()
+        HTTPRequest().requestWithMap(SigninRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case .success(let returnJson) :
@@ -73,7 +72,7 @@ public class SignInViewModel: NSObject {
             case .failure(let failure) :
                 switch failure {
                 case .connectionError:
-                    self.error.onNext("请求服务器错误")
+                    self.error.onNext("连接服务器错误请重试")
                     break
                 case .authorizationError(let errorJson):
                     self.error.onNext(errorJson["returnMsg"].stringValue)
@@ -104,14 +103,4 @@ public class SignInViewModel: NSObject {
         inputStuNumEnabled.onNext(true)
         inputPassWordEnabled.onNext(true)
     }
-        
-//    open class func configKeyBoard() {
-//        let manager = IQKeyboardManager.shared
-//        manager.enable = true
-//        manager.shouldResignOnTouchOutside = true
-//        manager.shouldToolbarUsesTextFieldTintColor = true
-//        manager.enableAutoToolbar = false
-//        manager.shouldShowToolbarPlaceholder = false
-//        manager.toolbarManageBehaviour = .byTag
-//    }
 }

@@ -51,6 +51,7 @@
 		1D5C600624AC85F700211398 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600724AC86F400211398 /* RequestEnum.swift */; };
 		1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; };
+		1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600C24AC8C6700211398 /* SignInModel.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -147,6 +148,7 @@
 		1D5C600224AC852F00211398 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1D5C600424AC85E900211398 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		1D5C600724AC86F400211398 /* RequestEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEnum.swift; sourceTree = "<group>"; };
+		1D5C600C24AC8C6700211398 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -331,7 +333,8 @@
 		1D22095224987260002D25A2 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				1D22095324987272002D25A2 /* SignInViewModel.swift */,
+				1D5C600B24AC8C5C00211398 /* Model */,
+				1D5C600A24AC8C5100211398 /* ViewModel */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -358,6 +361,22 @@
 				1D5C600224AC852F00211398 /* StringExtension.swift */,
 			);
 			path = StringExtension;
+			sourceTree = "<group>";
+		};
+		1D5C600A24AC8C5100211398 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D22095324987272002D25A2 /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D5C600B24AC8C5C00211398 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C600C24AC8C6700211398 /* SignInModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
@@ -643,6 +662,7 @@
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
 				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
+				1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

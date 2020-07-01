@@ -8,6 +8,40 @@
 
 import UIKit
 
-class AppCache: NSObject {
+public class AppCache: NSObject {
+    
+    var appCache = NSCache<AnyObject, AnyObject>()
+    private static var _appCache: AppCache?
 
+    // 单例
+    public static func sharedInstance() -> AppCache {
+        guard let instance = _appCache else {
+            _appCache = AppCache()
+            return _appCache!
+        }
+        return instance
+    }
+    
+    public override init() {
+        super.init()
+        appCache.delegate = self
+        appCache.name = "RPChatCache"
+    }
+    
+    // save cache
+    public func saveLoginCacheWith(_ model: SignInModel) {
+        
+    }
+    // remove cache
+    public func removeSignInCache() {
+        appCache.removeAllObjects()
+    }
+    
+}
+
+
+extension AppCache: NSCacheDelegate {
+    public func cache(_ cache: NSCache<AnyObject, AnyObject>, willEvictObject obj: Any) {
+        
+    }
 }
