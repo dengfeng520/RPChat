@@ -44,6 +44,12 @@
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
 		1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */; };
+		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
+		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
+		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
+		1D5C600524AC85E900211398 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; };
+		1D5C600624AC85F700211398 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600724AC86F400211398 /* RequestEnum.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -89,6 +95,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1D5C600624AC85F700211398 /* CryptoSwift.framework in Embed Frameworks */,
 				1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */,
 				1DB93A13249C81A000F07DC6 /* RxCocoa.framework in Embed Frameworks */,
 				1D22090424986141002D25A2 /* Alamofire.framework in Embed Frameworks */,
@@ -134,6 +141,11 @@
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
+		1D5C5FFF24AC834B00211398 /* ConfigAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAES.swift; sourceTree = "<group>"; };
+		1D5C600224AC852F00211398 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		1D5C600424AC85E900211398 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		1D5C600724AC86F400211398 /* RequestEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEnum.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5C600524AC85E900211398 /* CryptoSwift.framework in Frameworks */,
 				1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */,
 				1DB93A12249C819600F07DC6 /* RxCocoa.framework in Frameworks */,
 				1D2208FC24986120002D25A2 /* CocoaAsyncSocket.framework in Frameworks */,
@@ -268,6 +281,8 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D5C600124AC851B00211398 /* StringExtension */,
+				1D5C5FFE24AC82D000211398 /* ConfigAES */,
 				1DB939A6249B75C700F07DC6 /* AccountData */,
 				1DB9399F249B748D00F07DC6 /* HTTPRequest */,
 				1D22095224987260002D25A2 /* SignIn */,
@@ -280,6 +295,7 @@
 		1D2208F32498611F002D25A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D5C600424AC85E900211398 /* CryptoSwift.framework */,
 				1DB93A14249C81C300F07DC6 /* RxRelay.framework */,
 				1DB93A11249C819600F07DC6 /* RxCocoa.framework */,
 				1D2208F924986120002D25A2 /* Alamofire.framework */,
@@ -326,12 +342,29 @@
 			path = UIColorExtension;
 			sourceTree = "<group>";
 		};
+		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C5FFF24AC834B00211398 /* ConfigAES.swift */,
+			);
+			path = ConfigAES;
+			sourceTree = "<group>";
+		};
+		1D5C600124AC851B00211398 /* StringExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C600224AC852F00211398 /* StringExtension.swift */,
+			);
+			path = StringExtension;
+			sourceTree = "<group>";
+		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
 				1DB939A0249B749500F07DC6 /* HTTPRequest.swift */,
 				1DB939A2249B752400F07DC6 /* SigninRequest.swift */,
 				1DB939A4249B753C00F07DC6 /* APIConfig.swift */,
+				1D5C600724AC86F400211398 /* RequestEnum.swift */,
 			);
 			path = HTTPRequest;
 			sourceTree = "<group>";
@@ -340,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB939A7249B75D500F07DC6 /* AccountData.swift */,
+				1D5C5FFC24AC823000211398 /* AppCache.swift */,
 			);
 			path = AccountData;
 			sourceTree = "<group>";
@@ -552,6 +586,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -599,8 +634,12 @@
 			files = (
 				1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
+				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
+				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
+				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
+				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,5 +8,9 @@
 
 import Foundation
 
+/// 测试服务器
+public let __serverTestURL = "http://a.sxstczx.com/"
+
+
 ///1 登录
-let __apiFetchSignIn = ""
+public let __apiFetchSignIn = "auth/oauth/token"

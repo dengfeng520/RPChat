@@ -8,16 +8,12 @@
 
 import Foundation
 
-class AccountData {
+public class AccountData {
     public static func fetchUserId() -> String? {
         return ""
     }
-    
-    public static func fetchOpenId() -> String? {
-        return ""
-    }
-    
-    public static func fetchUserToken() -> String? {
-        return "''"
+
+    public static func fetchToken() -> String? {
+        return nil
     }
 }
