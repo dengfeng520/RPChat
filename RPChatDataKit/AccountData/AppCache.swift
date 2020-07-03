@@ -30,6 +30,7 @@ public class AppCache: NSObject {
     
     // save cache
     public func saveLoginCacheWith(_ model: SignInModel) {
+        appCache.setValue(model.access_token, forKey: "token")
         
     }
     // remove cache
@@ -37,8 +38,10 @@ public class AppCache: NSObject {
         appCache.removeAllObjects()
     }
     
+    public func fetchCacheToken() {
+        appCache.object(forKey: "token" as AnyObject)
+    }
 }
-
 
 extension AppCache: NSCacheDelegate {
     public func cache(_ cache: NSCache<AnyObject, AnyObject>, willEvictObject obj: Any) {

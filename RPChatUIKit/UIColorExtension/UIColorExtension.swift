@@ -76,9 +76,9 @@ extension UIColor {
         if #available(iOS 13.0, *) {
             retColor = UIColor { (collection) -> UIColor in
                 if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.black
+                    return UIColor.systemBackground
                 }
-                return UIColor.white
+                return UIColor.systemBackground
             }
         } else {
             return UIColor.white

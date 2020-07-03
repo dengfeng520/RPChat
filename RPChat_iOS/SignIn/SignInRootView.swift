@@ -10,15 +10,21 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RPChatUIKit
+import RPChatDataKit
+import MBProgressHUD
 
 class SignInRootView: UIView {
     
     let disposeBag: DisposeBag = DisposeBag()
+    let viewModel: SignInViewModel
     
-    override init(frame: CGRect) {
+    public init(frame: CGRect = .zero, viewModel: SignInViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         
         configUI()
+        
+        bindData()
     }
     
     required init?(coder: NSCoder) {
@@ -26,13 +32,31 @@ class SignInRootView: UIView {
     }
     
     private func configUI() {
+        if #available(iOS 13.0, *) {
+            self.backgroundColor = .systemBackground
+        } else {
+            // Fallback on earlier versions
+            self.backgroundColor = UIColor.configDarkModeRootViewColor()
+        }
+        
         logoImg.image = UIImage(named: "logo_icon")
         
         accountNumberLab.placeholder = NSLocalizedString("please input username", comment: "")
         inputPasswordTxt.placeholder = NSLocalizedString("please input password", comment: "")
-        
+    }
+    
+    func bindData() {
         signInBtn.rx.tap.subscribe(onNext: {
             
+        }).disposed(by: disposeBag)
+        
+        viewModel.loading.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (isShow) in
+            guard let `self` = self else { return }
+            if isShow == true {
+                MBProgressHUD.showLoading(self)
+            } else {
+                MBProgressHUD.dissmissLoading(self)
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -60,7 +84,7 @@ class SignInRootView: UIView {
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())
- 
+    
     
     lazy var accountNumberLab: UITextField = {
         accountNumberView.addSubview($0)
@@ -75,29 +99,29 @@ class SignInRootView: UIView {
     
     
     lazy var inputPasswordView: UIView = {
-           self.addSubview($0)
-           $0.translatesAutoresizingMaskIntoConstraints = false
-           let top = $0.topAnchor.constraint(equalTo: accountNumberView.bottomAnchor, constant: 20)
-           let left = $0.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40)
-           let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
-           let height = $0.heightAnchor.constraint(equalToConstant: 50)
-           NSLayoutConstraint.activate([top, left, right, height])
-           $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(dfaultColor: UIColor.groupTableViewBackground)
-           $0.layer.cornerRadius = 25
-           return $0
-       }(UIView())
+        self.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        let top = $0.topAnchor.constraint(equalTo: accountNumberView.bottomAnchor, constant: 20)
+        let left = $0.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40)
+        let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
+        let height = $0.heightAnchor.constraint(equalToConstant: 50)
+        NSLayoutConstraint.activate([top, left, right, height])
+        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(dfaultColor: UIColor.groupTableViewBackground)
+        $0.layer.cornerRadius = 25
+        return $0
+    }(UIView())
     
-       
+    
     lazy var inputPasswordTxt: UITextField = {
-           inputPasswordView.addSubview($0)
-           $0.translatesAutoresizingMaskIntoConstraints = false
-           $0.topAnchor.constraint(equalTo: inputPasswordView.topAnchor, constant: 0).isActive = true
-           $0.leftAnchor.constraint(equalTo: inputPasswordView.leftAnchor, constant: 16).isActive = true
-           $0.rightAnchor.constraint(equalTo: inputPasswordView.rightAnchor, constant: -16).isActive = true
-           $0.bottomAnchor.constraint(equalTo: inputPasswordView.bottomAnchor, constant: 0).isActive = true
-           $0.font = UIFont.init(name: "PingFangTC-Semibold", size: 19)
-           return $0
-       }(UITextField())
+        inputPasswordView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: inputPasswordView.topAnchor, constant: 0).isActive = true
+        $0.leftAnchor.constraint(equalTo: inputPasswordView.leftAnchor, constant: 16).isActive = true
+        $0.rightAnchor.constraint(equalTo: inputPasswordView.rightAnchor, constant: -16).isActive = true
+        $0.bottomAnchor.constraint(equalTo: inputPasswordView.bottomAnchor, constant: 0).isActive = true
+        $0.font = UIFont.init(name: "PingFangTC-Semibold", size: 19)
+        return $0
+    }(UITextField())
     
     
     lazy var signInBtn: UIButton = {

@@ -26,13 +26,11 @@ open class SignInViewController: UIViewController {
     }
 
     private func configUI() {
-        rootView.backgroundColor = UIColor.configDarkModeRootViewColor()
+        
     }
     
-    lazy var rootView: SignInRootView = {
-        let rootView = SignInRootView.init(frame: view.bounds)
-        view.addSubview(rootView)
-        return rootView
-    }()
+    public override func loadView() {
+      self.view = SignInRootView.init(viewModel: viewModel)
+    }
     
 }

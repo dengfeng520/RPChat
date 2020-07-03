@@ -23,6 +23,7 @@ public class SignInViewModel: NSObject {
         
     public let error : PublishSubject<String> = PublishSubject()
     public let signInSuccess: PublishSubject<String> = PublishSubject()
+    public let loading : PublishSubject<Bool> = PublishSubject()
     
     //
     public lazy var signInButtonEnabled =
@@ -59,8 +60,10 @@ public class SignInViewModel: NSObject {
         
     private func clickSignIn() {
        //  let data = fetchStuNumAndPassword()
+        loading.onNext(true)
         HTTPRequest().requestWithMap(SigninRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
+            self.loading.onNext(false)
             switch result {
             case .success(let returnJson) :
             if returnJson["returnCode"].intValue == 601 || returnJson["returnCode"].intValue == 201 {
