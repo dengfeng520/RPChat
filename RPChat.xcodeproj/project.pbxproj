@@ -65,6 +65,9 @@
 		1DB93A13249C81A000F07DC6 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A11249C819600F07DC6 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; };
 		1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DD5F1CD24B6BF5900E762B7 /* RPBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1CC24B6BF5900E762B7 /* RPBannerView.swift */; };
+		1DD5F1CF24B6BF7E00E762B7 /* RPBannerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1CE24B6BF7E00E762B7 /* RPBannerViewProtocol.swift */; };
+		1DD5F1D124B6C3D000E762B7 /* RPSubBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1D024B6C3D000E762B7 /* RPSubBannerView.swift */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 		1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */; };
@@ -167,6 +170,9 @@
 		1DB93A1C249C93D900F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1DB93A1D249C940B00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1DB93A1E249C940F00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1DD5F1CC24B6BF5900E762B7 /* RPBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBannerView.swift; sourceTree = "<group>"; };
+		1DD5F1CE24B6BF7E00E762B7 /* RPBannerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBannerViewProtocol.swift; sourceTree = "<group>"; };
+		1DD5F1D024B6C3D000E762B7 /* RPSubBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSubBannerView.swift; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
 		1DEECAC4249B4CED0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1DD5F1CB24B6BF3A00E762B7 /* RPBannerView */,
 				1D5C601924AF10D400211398 /* LoadingView */,
 				1D5C5FF924AC65A300211398 /* UIColorExtension */,
 				1D22094224987084002D25A2 /* Reusable */,
@@ -416,6 +423,16 @@
 				1D5C5FFC24AC823000211398 /* AppCache.swift */,
 			);
 			path = AccountData;
+			sourceTree = "<group>";
+		};
+		1DD5F1CB24B6BF3A00E762B7 /* RPBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				1DD5F1CE24B6BF7E00E762B7 /* RPBannerViewProtocol.swift */,
+				1DD5F1CC24B6BF5900E762B7 /* RPBannerView.swift */,
+				1DD5F1D024B6C3D000E762B7 /* RPSubBannerView.swift */,
+			);
+			path = RPBannerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,8 +680,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD5F1CF24B6BF7E00E762B7 /* RPBannerViewProtocol.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
+				1DD5F1CD24B6BF5900E762B7 /* RPBannerView.swift in Sources */,
+				1DD5F1D124B6C3D000E762B7 /* RPSubBannerView.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
 				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
 			);
