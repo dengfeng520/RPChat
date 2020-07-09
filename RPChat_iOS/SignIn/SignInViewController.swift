@@ -13,24 +13,32 @@ import RPChatDataKit
 import RPChatUIKit
 
 open class SignInViewController: UIViewController {
- 
+    
     let viewModel: SignInViewModel = SignInViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         title = "登录"
-        configUI()
+        bindViewModel()
     }
-
-    private func configUI() {
+    
+    private func bindViewModel() {
+        viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
+            guard let `self` = self else { return }
+            
+        }).disposed(by: disposeBag)
         
+        viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
+           guard let `self` = self else { return }
+           
+        }).disposed(by: disposeBag)
     }
     
     public override func loadView() {
-      self.view = SignInRootView.init(viewModel: viewModel)
+        self.view = SignInRootView.init(viewModel: viewModel)
     }
     
 }

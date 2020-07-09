@@ -46,10 +46,8 @@ class SignInRootView: UIView {
     }
     
     func bindData() {
-        signInBtn.rx.tap.subscribe(onNext: {
-            
-        }).disposed(by: disposeBag)
-        
+        signInBtn.rx.tap.bind(to: viewModel.signInButtonTapped).disposed(by: disposeBag)
+
         viewModel.loading.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (isShow) in
             guard let `self` = self else { return }
             if isShow == true {
