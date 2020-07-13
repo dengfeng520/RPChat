@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-   open class func hexadecimalColor(hexadecimal: String, alpha: CGFloat) -> UIColor {
+   open class func hexadecimalColor(_ hexadecimal: String, alpha: CGFloat) -> UIColor {
         var cstr = hexadecimal.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
         if(cstr.length < 6){
             return UIColor.clear;
@@ -40,7 +40,7 @@ extension UIColor {
         return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
     }
     
-    open class func hexStringToColor(hexadecimal: String) -> UIColor {
+    open class func hexStringToColor(_ hexadecimal: String) -> UIColor {
         var cstr = hexadecimal.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
         if(cstr.length < 6){
             return UIColor.clear;
@@ -101,7 +101,7 @@ extension UIColor {
         return retColor
     }
   
-    open class func configDarkModeViewColorWithdDfaultColor(dfaultColor: UIColor) -> UIColor {
+    open class func configDarkModeViewColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
         let retColor: UIColor!
         if #available(iOS 13.0, *) {
             retColor = UIColor { (collection) -> UIColor in
@@ -131,12 +131,12 @@ extension UIColor {
         return retColor
     }
     
-   open class func configDarkModeTxtColorWithdDfaultColor(dfaultColor: UIColor) -> UIColor {
+   open class func configDarkModeTxtColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
         let retColor: UIColor!
         if #available(iOS 13.0, *) {
             retColor = UIColor { (collection) -> UIColor in
                 if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.black
+                    return UIColor.systemBackground
                 } else {
                     return dfaultColor
                 }
