@@ -8,10 +8,15 @@
 
 import UIKit
 
-public let __screenWidth = UIScreen.main.bounds.size.width
-public let __screenHeight = UIScreen.main.bounds.size.height
-
 extension UIViewController {
+    /// 屏幕宽
+    public var __screenWidth: CGFloat {
+        return UIScreen.main.bounds.size.width
+    }
+    /// 屏幕高
+     public var __screenHeight: CGFloat {
+        return UIScreen.main.bounds.size.height
+    }
     /// 当前设备是否是iPhone X之后的机型
     public var isiPhoneX: Bool {
         if #available(iOS 11.0, *) {

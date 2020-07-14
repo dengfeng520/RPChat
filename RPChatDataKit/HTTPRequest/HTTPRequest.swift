@@ -54,7 +54,7 @@ struct HTTPRequest: RequestSender {
                        "Cookie" : "host=a",
                        "Authorization" : "Bearer \(token)"]
         } else {
-            let authorization = "Basic " + "app:app".base64Encoded()!
+            let authorization = "Basic " + "app:app".base64Encoded!
             headers = ["Content-Type" : "application/x-www-form-urlencoded; application/json; charset=utf-8;",
                        "Cookie" : "host=a",
                        "Authorization" : "\(authorization)"]

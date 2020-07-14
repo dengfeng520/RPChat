@@ -19,7 +19,7 @@ public class ConfigAES: NSObject {
         let data = strToEncode.data(using: String.Encoding.utf8)
         // byte 数组
         var encrypted: [UInt8] = []
-        let (key, iv) = fetchAESKeyAndIv(publicKey.base64Encoded()!)
+        let (key, iv) = fetchAESKeyAndIv(publicKey.base64Encoded!)
         do {
             encrypted = try AES(key: key, blockMode: CBC(iv: iv), padding: .zeroPadding).encrypt(data!.bytes)
         } catch {
