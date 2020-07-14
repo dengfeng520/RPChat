@@ -32,12 +32,7 @@ class SignInRootView: UIView {
     }
     
     private func configUI() {
-        if #available(iOS 13.0, *) {
-            self.backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            self.backgroundColor = UIColor.configDarkModeRootViewColor()
-        }
+        self.backgroundColor = UIColor.configDarkModeRootViewColor()
         
         logoImg.image = UIImage(named: "logo_icon")
         
@@ -78,7 +73,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(dfaultColor: UIColor.groupTableViewBackground)
+        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(UIColor.groupTableViewBackground)
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())
@@ -104,7 +99,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(dfaultColor: UIColor.groupTableViewBackground)
+        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(UIColor.groupTableViewBackground)
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())
@@ -133,7 +128,7 @@ class SignInRootView: UIView {
         $0.layer.cornerRadius = 25
         $0.titleLabel?.font = UIFont.init(name: "PingFangTC-Semibold", size: 20)
         $0.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
-        $0.backgroundColor = UIColor.hexStringToColor(hexadecimal: "0xF5BE62")
+        $0.backgroundColor = UIColor.hexStringToColor("0xF5BE62")
         return $0
     }(UIButton())
 }

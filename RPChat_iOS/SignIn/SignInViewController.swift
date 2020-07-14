@@ -26,11 +26,12 @@ open class SignInViewController: UIViewController {
     }
     
     private func bindViewModel() {
+        // 成功
         viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             
         }).disposed(by: disposeBag)
-        
+        // 失败
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
            guard let `self` = self else { return }
            

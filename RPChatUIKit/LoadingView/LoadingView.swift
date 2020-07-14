@@ -10,7 +10,8 @@ import UIKit
 import MBProgressHUD
 
 extension MBProgressHUD {
-    public class func showLoading(_ withView: UIView) {
+    public class func showLoading(_ withView: UIView?) {
+        guard let withView = withView else { return }
         DispatchQueue.main.async {
             let loading = MBProgressHUD.showAdded(to: withView, animated: true)
             loading.mode = .indeterminate
@@ -19,7 +20,19 @@ extension MBProgressHUD {
         }
     }
     
-    public class func dissmissLoading(_ withView: UIView) {
+    public class func showToast(_ withView: UIView?, _ labelTxt: String?) {
+        guard let withView = withView else { return }
+        guard let labelTxt = labelTxt else { return }
+        DispatchQueue.main.async {
+            let loading = MBProgressHUD.showAdded(to: withView, animated: true)
+            loading.mode = .text
+            loading.removeFromSuperViewOnHide = true
+            loading.label.text = labelTxt
+        }
+    }
+    
+    public class func dissmissLoading(_ withView: UIView?) {
+        guard let withView = withView else { return }
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: withView, animated: true)
         }
