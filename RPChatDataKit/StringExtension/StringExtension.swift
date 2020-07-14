@@ -9,13 +9,33 @@
 import UIKit
 
 extension String {
-   public func base64Encoded() -> String? {
-     return data(using: .utf8)?.base64EncodedString()
-   }
-  
-   public func base64Decoded() -> String? {
-     guard let data = Data(base64Encoded: self) else { return nil }
-     return String(data: data, encoding: .utf8)
-   }
+    public func base64Encoded() -> String? {
+        return data(using: .utf8)?.base64EncodedString()
+    }
+    public func base64Decoded() -> String? {
+        guard let data = Data(base64Encoded: self) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+    /// 是否包含字符串
+    public func containsWith(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    public func containsIgnoringCaseWith(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
+    /// 从任意位置开始截取到任意位置
+    public func subString(from: Int, to: Int) -> String {
+        let beginIndex = self.index(self.startIndex, offsetBy: from)
+        let endIndex = self.index(self.startIndex, offsetBy: to)
+        return String(self[beginIndex...endIndex])
+    }
+    /// 去掉字符串中所有的空格
+    public var removeAllSapce: String {
+        return self.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+    }
+    /// 去掉字符串中所有的换行
+    public var removeAllLineBreak: String {
+        return self.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
+    }
 }
 

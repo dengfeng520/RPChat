@@ -73,6 +73,7 @@
 		1DD5F26824BD5D6400E762B7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26624BD5D6400E762B7 /* RxTest.framework */; };
 		1DD5F26924BD5D6400E762B7 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */; };
 		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
+		1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 		1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */; };
@@ -191,6 +192,7 @@
 		1DD5F26624BD5D6400E762B7 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
+		1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
 		1DEECAC4249B4CED0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1DD5F26C24BD8C7000E762B7 /* ControllerExtension */,
 				1DD5F1CB24B6BF3A00E762B7 /* RPBannerView */,
 				1D5C601924AF10D400211398 /* LoadingView */,
 				1D5C5FF924AC65A300211398 /* UIColorExtension */,
@@ -475,6 +478,14 @@
 				1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */,
 			);
 			path = RPChatUnitTests;
+			sourceTree = "<group>";
+		};
+		1DD5F26C24BD8C7000E762B7 /* ControllerExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */,
+			);
+			path = ControllerExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -756,6 +767,7 @@
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
 				1DD5F1CD24B6BF5900E762B7 /* RPBannerView.swift in Sources */,
+				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,
 				1DD5F1D124B6C3D000E762B7 /* RPSubBannerView.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
 				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
