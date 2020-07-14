@@ -68,6 +68,11 @@
 		1DD5F1CD24B6BF5900E762B7 /* RPBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1CC24B6BF5900E762B7 /* RPBannerView.swift */; };
 		1DD5F1CF24B6BF7E00E762B7 /* RPBannerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1CE24B6BF7E00E762B7 /* RPBannerViewProtocol.swift */; };
 		1DD5F1D124B6C3D000E762B7 /* RPSubBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F1D024B6C3D000E762B7 /* RPSubBannerView.swift */; };
+		1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */; };
+		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
+		1DD5F26824BD5D6400E762B7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26624BD5D6400E762B7 /* RxTest.framework */; };
+		1DD5F26924BD5D6400E762B7 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */; };
+		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 		1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */; };
@@ -94,6 +99,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1D2208D524977E1B002D25A2;
 			remoteInfo = RPChatDataKit;
+		};
+		1DD5F26024BD5D1C00E762B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D22088F24977C12002D25A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D22089624977C12002D25A2;
+			remoteInfo = RPChat;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -173,6 +185,12 @@
 		1DD5F1CC24B6BF5900E762B7 /* RPBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBannerView.swift; sourceTree = "<group>"; };
 		1DD5F1CE24B6BF7E00E762B7 /* RPBannerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBannerViewProtocol.swift; sourceTree = "<group>"; };
 		1DD5F1D024B6C3D000E762B7 /* RPSubBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSubBannerView.swift; sourceTree = "<group>"; };
+		1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPChatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatUnitTests.swift; sourceTree = "<group>"; };
+		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DD5F26624BD5D6400E762B7 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
 		1DEECAC4249B4CED0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -234,6 +252,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DD5F25824BD5D1C00E762B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DD5F26824BD5D6400E762B7 /* RxTest.framework in Frameworks */,
+				1DD5F26924BD5D6400E762B7 /* RxBlocking.framework in Frameworks */,
+				1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -244,6 +272,7 @@
 				1D2208B424977DEB002D25A2 /* RPChat_iOS */,
 				1D2208C624977DFF002D25A2 /* RPChatUIKit */,
 				1D2208D724977E1B002D25A2 /* RPChatDataKit */,
+				1DD5F25C24BD5D1C00E762B7 /* RPChatUnitTests */,
 				1D22089824977C12002D25A2 /* Products */,
 				1D2208F32498611F002D25A2 /* Frameworks */,
 			);
@@ -256,6 +285,7 @@
 				1D2208B324977DEB002D25A2 /* RPChat_iOS.framework */,
 				1D2208C524977DFF002D25A2 /* RPChatUIKit.framework */,
 				1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */,
+				1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +346,8 @@
 		1D2208F32498611F002D25A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */,
+				1DD5F26624BD5D6400E762B7 /* RxTest.framework */,
 				1D5C601724AF10C800211398 /* MBProgressHUD.framework */,
 				1D5C600424AC85E900211398 /* CryptoSwift.framework */,
 				1DB93A14249C81C300F07DC6 /* RxRelay.framework */,
@@ -435,6 +467,16 @@
 			path = RPBannerView;
 			sourceTree = "<group>";
 		};
+		1DD5F25C24BD5D1C00E762B7 /* RPChatUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */,
+				1DD5F25F24BD5D1C00E762B7 /* Info.plist */,
+				1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */,
+			);
+			path = RPChatUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -541,6 +583,24 @@
 			productReference = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		1DD5F25A24BD5D1C00E762B7 /* RPChatUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DD5F26424BD5D1C00E762B7 /* Build configuration list for PBXNativeTarget "RPChatUnitTests" */;
+			buildPhases = (
+				1DD5F25724BD5D1C00E762B7 /* Sources */,
+				1DD5F25824BD5D1C00E762B7 /* Frameworks */,
+				1DD5F25924BD5D1C00E762B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DD5F26124BD5D1C00E762B7 /* PBXTargetDependency */,
+			);
+			name = RPChatUnitTests;
+			productName = RPChatUnitTests;
+			productReference = 1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -566,6 +626,10 @@
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
 					};
+					1DD5F25A24BD5D1C00E762B7 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1D22089624977C12002D25A2;
+					};
 				};
 			};
 			buildConfigurationList = 1D22089224977C12002D25A2 /* Build configuration list for PBXProject "RPChat" */;
@@ -587,6 +651,7 @@
 				1D2208B224977DEB002D25A2 /* RPChat_iOS */,
 				1D2208C424977DFF002D25A2 /* RPChatUIKit */,
 				1D2208D524977E1B002D25A2 /* RPChatDataKit */,
+				1DD5F25A24BD5D1C00E762B7 /* RPChatUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -619,6 +684,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1D2208D424977E1B002D25A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DD5F25924BD5D1C00E762B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -707,6 +779,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DD5F25724BD5D1C00E762B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */,
+				1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -724,6 +805,11 @@
 			isa = PBXTargetDependency;
 			target = 1D2208D524977E1B002D25A2 /* RPChatDataKit */;
 			targetProxy = 1D2208DB24977E1B002D25A2 /* PBXContainerItemProxy */;
+		};
+		1DD5F26124BD5D1C00E762B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D22089624977C12002D25A2 /* RPChat */;
+			targetProxy = 1DD5F26024BD5D1C00E762B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1130,6 +1216,56 @@
 			};
 			name = Release;
 		};
+		1DD5F26224BD5D1C00E762B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RPChatUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Beijing-Physical-Fitness-Sport-Science-and-Technology-Co.-Ltd..RPChatUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPChat.app/RPChat";
+			};
+			name = Debug;
+		};
+		1DD5F26324BD5D1C00E762B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RPChatUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Beijing-Physical-Fitness-Sport-Science-and-Technology-Co.-Ltd..RPChatUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPChat.app/RPChat";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1174,6 +1310,15 @@
 			buildConfigurations = (
 				1D2208E024977E1B002D25A2 /* Debug */,
 				1D2208E124977E1B002D25A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DD5F26424BD5D1C00E762B7 /* Build configuration list for PBXNativeTarget "RPChatUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DD5F26224BD5D1C00E762B7 /* Debug */,
+				1DD5F26324BD5D1C00E762B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
