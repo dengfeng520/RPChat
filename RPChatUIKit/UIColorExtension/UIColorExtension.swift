@@ -9,7 +9,101 @@
 import UIKit
 
 extension UIColor {
-   open class func hexadecimalColor(_ hexadecimal: String, alpha: CGFloat) -> UIColor {
+    /// view背景颜色
+    public class var darkModeViewColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .white
+        }
+    }
+    /// 文字颜色
+    public class var darkModeTextColor: UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return .white
+            } else {
+                return .black
+            }
+        } else {
+            return .black
+        }
+    }
+    public class func configDarkModeRootViewColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return .systemBackground
+            } else {
+                return .white
+            }
+        } else {
+            return .white
+        }
+    }
+    
+    public class func configDarkModeViewColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return UIColor.init(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            } else {
+                return UIColor.white
+            }
+        } else {
+            return UIColor.white
+        }
+    }
+    
+    public class func configDarkModeViewColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            } else {
+                return dfaultColor
+            }
+        } else {
+            return dfaultColor
+        }
+    }
+    
+    public class func configDarkModeTxtColor () -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return .white
+            } else {
+                return .black
+            }
+        } else {
+            return .black
+        }
+    }
+    
+    public class func configDarkModeTxtColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return UIColor.systemBackground
+            } else {
+                return dfaultColor
+            }
+        } else {
+            return dfaultColor
+        }
+    }
+    
+    public class func configPlaceholderTxtColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            if isDrakMode == true {
+                return UIColor.init(red: 255, green: 255, blue: 255, alpha: 0.25)
+            } else {
+                return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
+            }
+        } else {
+            return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
+        }
+    }
+}
+
+extension UIColor {
+    public class func hexadecimalColor(_ hexadecimal: String, _ alpha: CGFloat) -> UIColor {
         var cstr = hexadecimal.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
         if(cstr.length < 6){
             return UIColor.clear;
@@ -40,7 +134,7 @@ extension UIColor {
         return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
     }
     
-    open class func hexStringToColor(_ hexadecimal: String) -> UIColor {
+    public class func hexStringToColor(_ hexadecimal: String) -> UIColor {
         var cstr = hexadecimal.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
         if(cstr.length < 6){
             return UIColor.clear;
@@ -70,95 +164,31 @@ extension UIColor {
         Scanner.init(string: bStr).scanHexInt32(&b);
         return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1)
     }
-    
-    open class func configDarkModeRootViewColor() -> UIColor {
-        let retColor: UIColor!
+}
+
+
+extension UIColor {
+    /// 当前是否是暗模式
+    public class var isDrakMode: Bool {
         if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.systemBackground
-                }
-                return UIColor.systemBackground
+            let currentMode = UITraitCollection.current.userInterfaceStyle
+            if currentMode == .dark {
+                return true
             }
-        } else {
-            return UIColor.white
         }
-        return retColor
+        return false
     }
-    
-   open class func configDarkModeViewColor() -> UIColor {
-        let retColor: UIColor!
-        if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.init(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-                }
-                return UIColor.white
-            }
-        } else {
-            return UIColor.white
-        }
-        return retColor
-    }
-  
-    open class func configDarkModeViewColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
-        let retColor: UIColor!
-        if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.init(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-                }
-                return dfaultColor
-            }
-        } else {
-            return dfaultColor
-        }
-        return retColor
-    }
-    
-    open class func configDarkModeTxtColor () -> UIColor {
-        let retColor: UIColor!
-        if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.white
-                }
-                return UIColor.black
-            }
-        } else {
-            return UIColor.black
-        }
-        return retColor
-    }
-    
-   open class func configDarkModeTxtColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
-        let retColor: UIColor!
-        if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.systemBackground
+    /// 适配 动态颜色
+    class func darkModeColor(dark: UIColor, light: UIColor) -> UIColor {
+        if #available(iOS 13.0, *){
+            return UIColor { (trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return dark
                 } else {
-                    return dfaultColor
+                    return light
                 }
             }
-        } else {
-            return dfaultColor
         }
-        return retColor
-    }
-    
-   open class func configPlaceholderTxtColor() -> UIColor {
-        let retColor: UIColor!
-        if #available(iOS 13.0, *) {
-            retColor = UIColor { (collection) -> UIColor in
-                if (collection.userInterfaceStyle == .dark) {
-                    return UIColor.init(red: 255, green: 255, blue: 255, alpha: 0.25)
-                }
-                return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
-            }
-        } else {
-            return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
-        }
-        return retColor
+        return light
     }
 }
