@@ -32,7 +32,7 @@ class SignInRootView: UIView {
     }
     
     private func configUI() {
-        self.backgroundColor = UIColor.configDarkModeRootViewColor()
+        self.backgroundColor = UIColor.darkModeViewColor
         
         logoImg.image = UIImage(named: "logo_icon")
         
@@ -73,7 +73,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(UIColor.groupTableViewBackground)
+        $0.backgroundColor = .subDarkModeViewColor
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())
@@ -99,7 +99,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = UIColor.configDarkModeViewColorWithdDfaultColor(UIColor.groupTableViewBackground)
+        $0.backgroundColor = .subDarkModeViewColor
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())

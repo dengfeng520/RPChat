@@ -9,8 +9,15 @@
 import UIKit
 
 extension UIColor {
-    /// view背景颜色
+    /// UIView背景颜色
     public class var darkModeViewColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .white
+        }
+    }
+    public class func configDarkModeViewColor() -> UIColor {
         if #available(iOS 13.0, *) {
             return .systemBackground
         } else {
@@ -20,7 +27,7 @@ extension UIColor {
     /// 文字颜色
     public class var darkModeTextColor: UIColor {
         if #available(iOS 13.0, *) {
-            if isDrakMode == true {
+            if drakMode == true {
                 return .white
             } else {
                 return .black
@@ -29,33 +36,44 @@ extension UIColor {
             return .black
         }
     }
-    public class func configDarkModeRootViewColor() -> UIColor {
+    public class func configDarkModeTxtColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            if isDrakMode == true {
-                return .systemBackground
-            } else {
+            if drakMode == true {
                 return .white
-            }
-        } else {
-            return .white
-        }
-    }
-    
-    public class func configDarkModeViewColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            if isDrakMode == true {
-                return UIColor.init(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
             } else {
-                return UIColor.white
+                return .black
             }
         } else {
-            return UIColor.white
+            return .black
         }
     }
-    
-    public class func configDarkModeViewColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
+    /// 子UIView背景颜色
+    public class var subDarkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {
-            if isDrakMode == true {
+            if drakMode == true {
+                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            } else {
+                return .groupTableViewBackground
+            }
+        } else {
+            return .groupTableViewBackground
+        }
+    }
+    public class func configSubDarkModeViewColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            if drakMode == true {
+                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            } else {
+                return .groupTableViewBackground
+            }
+        } else {
+            return .groupTableViewBackground
+        }
+    }
+    /// 设置默认带颜色的view背景
+    public class func configDarkModeViewWith(_ dfaultColor: UIColor) -> UIColor {
+        if #available(iOS 13.0, *) {
+            if drakMode == true {
                 return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
             } else {
                 return dfaultColor
@@ -64,23 +82,11 @@ extension UIColor {
             return dfaultColor
         }
     }
-    
-    public class func configDarkModeTxtColor () -> UIColor {
+    /// 设置带默认颜色的文字颜色
+    public class func configDarkModeTxtColorWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
-            if isDrakMode == true {
-                return .white
-            } else {
-                return .black
-            }
-        } else {
-            return .black
-        }
-    }
-    
-    public class func configDarkModeTxtColorWithdDfaultColor(_ dfaultColor: UIColor) -> UIColor {
-        if #available(iOS 13.0, *) {
-            if isDrakMode == true {
-                return UIColor.systemBackground
+            if drakMode == true {
+                return .systemBackground
             } else {
                 return dfaultColor
             }
@@ -88,16 +94,27 @@ extension UIColor {
             return dfaultColor
         }
     }
-    
-    public class func configPlaceholderTxtColor() -> UIColor {
+    /// 设置Placeholder文字颜色
+    public class var placeholderColor: UIColor {
         if #available(iOS 13.0, *) {
-            if isDrakMode == true {
-                return UIColor.init(red: 255, green: 255, blue: 255, alpha: 0.25)
+            if drakMode == true {
+                return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
             } else {
-                return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
+                return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
             }
         } else {
-            return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.25)
+            return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        }
+    }
+    public class func configPlaceholderColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            if drakMode == true {
+                return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
+            } else {
+                return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            }
+        } else {
+            return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
         }
     }
 }
@@ -169,7 +186,7 @@ extension UIColor {
 
 extension UIColor {
     /// 当前是否是暗模式
-    public class var isDrakMode: Bool {
+    public class var drakMode: Bool {
         if #available(iOS 13.0, *) {
             let currentMode = UITraitCollection.current.userInterfaceStyle
             if currentMode == .dark {
@@ -178,17 +195,13 @@ extension UIColor {
         }
         return false
     }
-    /// 适配 动态颜色
-    class func darkModeColor(dark: UIColor, light: UIColor) -> UIColor {
-        if #available(iOS 13.0, *){
-            return UIColor { (trainCollection) -> UIColor in
-                if trainCollection.userInterfaceStyle == .dark {
-                    return dark
-                } else {
-                    return light
-                }
+    public class func isDrakMode() -> Bool {
+        if #available(iOS 13.0, *) {
+            let currentMode = UITraitCollection.current.userInterfaceStyle
+            if currentMode == .dark {
+                return true
             }
         }
-        return light
+        return false
     }
 }
