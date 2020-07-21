@@ -41,6 +41,21 @@ class SignInRootView: UIView {
     }
     
     func bindData() {
+        accountNumberLab.rx.text.asDriver().map { $0 ?? "" }.drive(viewModel.inputStuNum).disposed(by: disposeBag)
+
+        inputPasswordTxt.rx.text.asDriver().map { $0 ?? "" }.drive(viewModel.inputPassWord).disposed(by: disposeBag)
+        
+        viewModel.signInButtonEnabled.subscribe {
+            guard let status = $0.element else { return }
+            if !status {
+                self.signInBtn.alpha = 0.6
+                self.signInBtn.isEnabled = false
+            } else {
+                self.signInBtn.alpha = 1.0
+                self.signInBtn.isEnabled = true
+            }
+        }.disposed(by: disposeBag)
+        
         signInBtn.rx.tap.bind(to: viewModel.signInButtonTapped).disposed(by: disposeBag)
 
         viewModel.loading.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (isShow) in

@@ -71,7 +71,6 @@ struct HTTPRequest: RequestSender {
             } else if let data = response.data ,let responseCode = response.response {
                 do {
                     let responseJson = try JSON(data: data)
-                    print("responseJSON================== : \(responseJson)")
                     switch responseCode.statusCode {
                     case 200:
                         completion(ApiResult.success(responseJson))

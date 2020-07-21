@@ -25,7 +25,6 @@ public class SignInViewModel: NSObject {
     public let signInSuccess: PublishSubject<String> = PublishSubject()
     public let loading : PublishSubject<Bool> = PublishSubject()
     
-    //
     public lazy var signInButtonEnabled =
     Observable.combineLatest(
         inputStuNum.asObservable(),
@@ -59,18 +58,18 @@ public class SignInViewModel: NSObject {
     }
         
     private func clickSignIn() {
-       //  let data = fetchStuNumAndPassword()
+        let data = fetchStuNumAndPassword()
         loading.onNext(true)
         HTTPRequest().requestWithMap(SigninRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
             self.loading.onNext(false)
             switch result {
             case .success(let returnJson) :
-            if returnJson["returnCode"].intValue == 601 || returnJson["returnCode"].intValue == 201 {
-                self.error.onNext(returnJson["returnMsg"].stringValue)
-            } else {
-                self.signInSuccess.onNext(returnJson["returnMsg"].stringValue)
-            }
+                if returnJson["returnCode"].intValue == 601 || returnJson["returnCode"].intValue == 201 {
+                    self.error.onNext(returnJson["returnMsg"].stringValue)
+                } else {
+                    self.signInSuccess.onNext(returnJson["returnMsg"].stringValue)
+                }
                 break
             case .failure(let failure) :
                 switch failure {
@@ -90,8 +89,8 @@ public class SignInViewModel: NSObject {
                     self.error.onNext(errorJson["returnMsg"].stringValue)
                     break
                 default :
-                self.error.onNext("连接服务器错误请重试")
-                break
+                    self.error.onNext("连接服务器错误请重试")
+                    break
                 }
             }
         }

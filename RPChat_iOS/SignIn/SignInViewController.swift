@@ -39,7 +39,7 @@ open class SignInViewController: UIViewController {
     }
     
     public override func loadView() {
-        self.view = SignInRootView.init(viewModel: viewModel)
+        self.view = SignInRootView(viewModel: viewModel)
     }
     
 }

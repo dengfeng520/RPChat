@@ -30,6 +30,7 @@ public class AppCache: NSObject {
     
     // save cache
     public func saveLoginCacheWith(_ model: SignInModel) {
+        appCache.setValue(model.user_id, forKey: "user_id")
         appCache.setValue(model.access_token, forKey: "token")
         
     }
@@ -39,6 +40,7 @@ public class AppCache: NSObject {
     }
     
     public func fetchCacheToken() {
+        appCache.object(forKey: "user_id" as AnyObject)
         appCache.object(forKey: "token" as AnyObject)
     }
 }
