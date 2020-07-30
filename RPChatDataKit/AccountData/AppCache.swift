@@ -32,8 +32,8 @@ public class AppCache: NSObject {
     public func saveLoginCacheWith(_ model: SignInModel) {
         appCache.setValue(model.user_id, forKey: "user_id")
         appCache.setValue(model.access_token, forKey: "token")
-        
     }
+    
     // remove cache
     public func removeSignInCache() {
         appCache.removeAllObjects()

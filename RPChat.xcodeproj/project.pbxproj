@@ -56,6 +56,7 @@
 		1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C601A24AF10EB00211398 /* LoadingView.swift */; };
 		1D5C601C24AF161000211398 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C601724AF10C800211398 /* MBProgressHUD.framework */; };
 		1D5C601D24AF161800211398 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C601724AF10C800211398 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -172,6 +173,7 @@
 		1D5C600C24AC8C6700211398 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		1D5C601724AF10C800211398 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		1D5C601A24AF10EB00211398 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
 				1D5C600124AC851B00211398 /* StringExtension */,
 				1D5C5FFE24AC82D000211398 /* ConfigAES */,
 				1DB939A6249B75C700F07DC6 /* AccountData */,
@@ -438,6 +441,14 @@
 				1D5C601A24AF10EB00211398 /* LoadingView.swift */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		1D78E5D924D2A86E00270F95 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */,
+			);
+			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
@@ -782,6 +793,7 @@
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
+				1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */,
 				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
 				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,

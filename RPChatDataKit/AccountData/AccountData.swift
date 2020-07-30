@@ -14,6 +14,13 @@ public class AccountData {
     }
 
     public static func fetchToken() -> String? {
+//        var userName = AppCache.sharedInstance.fetchCacheUserName()
+//        if userName == "" {
+//            guard let model: SignInModel = DBHelper.sharedInstance()?.loadSiginData() else { return nil }
+//            userName = model.username
+//            AppCache.sharedInstance.converCacheInfoWith(model)
+//        }
+//        return userName
         return nil
     }
 }

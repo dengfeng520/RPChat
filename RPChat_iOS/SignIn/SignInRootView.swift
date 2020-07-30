@@ -101,7 +101,7 @@ class SignInRootView: UIView {
         $0.leftAnchor.constraint(equalTo: accountNumberView.leftAnchor, constant: 16).isActive = true
         $0.rightAnchor.constraint(equalTo: accountNumberView.rightAnchor, constant: -16).isActive = true
         $0.bottomAnchor.constraint(equalTo: accountNumberView.bottomAnchor, constant: 0).isActive = true
-        $0.font = UIFont.init(name: "PingFangTC-Semibold", size: 19)
+        $0.font = UIFont(name: "PingFangTC-Semibold", size: 19)
         return $0
     }(UITextField())
     
@@ -127,7 +127,7 @@ class SignInRootView: UIView {
         $0.leftAnchor.constraint(equalTo: inputPasswordView.leftAnchor, constant: 16).isActive = true
         $0.rightAnchor.constraint(equalTo: inputPasswordView.rightAnchor, constant: -16).isActive = true
         $0.bottomAnchor.constraint(equalTo: inputPasswordView.bottomAnchor, constant: 0).isActive = true
-        $0.font = UIFont.init(name: "PingFangTC-Semibold", size: 19)
+        $0.font = UIFont(name: "PingFangTC-Semibold", size: 19)
         return $0
     }(UITextField())
     
