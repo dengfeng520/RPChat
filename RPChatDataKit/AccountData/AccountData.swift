@@ -23,4 +23,7 @@ public class AccountData {
 //        return userName
         return nil
     }
+    public static func fetchOpenId() -> String? {
+        return nil
+    }
 }

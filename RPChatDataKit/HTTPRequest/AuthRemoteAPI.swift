@@ -1,45 +1,16 @@
 //
-//  HTTPRequest.swift
+//  AuthRemoteAPI.swift
 //  RPChatDataKit
 //
-//  Created by rp.wang on 2020/6/18.
+//  Created by rp.wang on 2020/7/30.
 //  Copyright © 2020 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol Request {
-    var path: String? {get}
-    var method: HTTPMethod {get}
-    var parameter: [String: AnyObject]? {get}
-    var host: String? {get}
-}
-
-extension Request {
-    var parameter: [String: AnyObject] {
-        return [:]
-    }
-}
-
-protocol RequestSender {
-    func requestWithMap<T: Request>(_ r: T, completion: @escaping (ApiResult) -> Void)
-}
-
-extension RequestSender {
-    // 可选方法
-    func requestWithMap<T: Request>(_ r: T, completion: @escaping (ApiResult) -> Void) {
-        
-    }
+struct AuthRemoteAPI: RequestSender {
     func authRemoteAPIWith<T: Request>(_ r: T, completion: @escaping (ApiResult) -> Void) {
-        
-    }
-}
-
-struct HTTPRequest: RequestSender {
-    // MARK: - POST
-    func requestWithMap<T: Request>(_ r: T, completion: @escaping (ApiResult) -> Void) {
         guard r.path != nil else {
             completion(ApiResult.failure(.serverError))
             return
@@ -54,21 +25,25 @@ struct HTTPRequest: RequestSender {
         }
         let path = URL(string: r.host!.appending(r.path!))!
         var headers: HTTPHeaders!
-        // 缓存token
-        if let token = AccountData.fetchToken() {
-            headers = ["Content-Type" : "application/x-www-form-urlencoded; application/json; charset=utf-8;",
-                       "Cookie" : "host=a",
-                       "Authorization" : "Bearer \(token)"]
-        } else {
-            let authorization = "Basic " + "app:app".base64Encoded!
-            headers = ["Content-Type" : "application/x-www-form-urlencoded; application/json; charset=utf-8;",
-                       "Cookie" : "host=a",
-                       "Authorization" : "\(authorization)"]
-        }
+        headers = ["Content-Type" : "application/x-www-form-urlencoded",
+        "token" : "",
+        "version" : "\(DeviceInfo.versionNum)",
+        "appId":  "",
+        "type" : "1",
+        "channel" : "iOS"]
         // body
-        guard let body = r.parameter else {
+        guard var body = r.parameter else {
             return
         }
+        if r.host!.contains("m.boxkj") || r.host!.contains("/move/") {
+            body.updateValue("move" as AnyObject, forKey: "appId")
+        } else {
+            if let appidStr = AccountData.fetchOpenId() {
+                body.updateValue(appidStr as AnyObject, forKey: "appId")
+            }
+        }
+        body.removeValue(forKey: "appSecret")
+        body.removeValue(forKey: "appId")
         
         AF.request(path, method: r.method, parameters: body, headers: headers).response { response in
             if let error = response.error {
@@ -104,5 +79,16 @@ struct HTTPRequest: RequestSender {
     }
 }
 
-
-
+extension AuthRemoteAPI {
+    func dictWithToParamertersWith(_ parameter: [String : String]) -> [String : String] {
+        var maps = [String : String]()
+        let date = Date(timeIntervalSinceNow: 0)
+        let time = date.timeIntervalSince1970 * 1000
+        
+        maps.updateValue("\(time)", forKey: "timestamp")
+        // appkey
+        maps.updateValue(appkey, forKey: "appSecret")
+        
+        return maps
+    }
+}
