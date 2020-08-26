@@ -38,6 +38,18 @@ class SignInRootView: UIView {
         
         accountNumberLab.placeholder = NSLocalizedString("please input username", comment: "")
         inputPasswordTxt.placeholder = NSLocalizedString("please input password", comment: "")
+        
+        switchPawBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            self.switchPawBtn.isSelected = !self.switchPawBtn.isSelected
+            if self.switchPawBtn.isSelected == true {
+                self.inputPasswordTxt.isSecureTextEntry = false
+                self.switchPawBtn.setImage(UIImage(named: "clear_text_password"), for: .normal)
+            } else {
+                self.inputPasswordTxt.isSecureTextEntry = true
+                self.switchPawBtn.setImage(UIImage(named: "ciphertext_password"), for: .normal)
+            }
+        }).disposed(by: disposeBag)
     }
     
     func bindData() {
@@ -128,6 +140,7 @@ class SignInRootView: UIView {
         $0.rightAnchor.constraint(equalTo: inputPasswordView.rightAnchor, constant: -16).isActive = true
         $0.bottomAnchor.constraint(equalTo: inputPasswordView.bottomAnchor, constant: 0).isActive = true
         $0.font = UIFont(name: "PingFangTC-Semibold", size: 19)
+        $0.isSecureTextEntry = true
         return $0
     }(UITextField())
     
@@ -143,7 +156,19 @@ class SignInRootView: UIView {
         $0.layer.cornerRadius = 25
         $0.titleLabel?.font = UIFont.init(name: "PingFangTC-Semibold", size: 20)
         $0.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
-        $0.backgroundColor = UIColor.hexStringToColor("0xF5BE62")
+        $0.backgroundColor = .hexStringToColor("0xF5BE62")
+        return $0
+    }(UIButton())
+    
+    lazy var switchPawBtn: UIButton = {
+        inputPasswordView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        let centerY = $0.centerYAnchor.constraint(equalTo: inputPasswordView.centerYAnchor, constant: 0)
+        let right = $0.rightAnchor.constraint(equalTo: inputPasswordView.rightAnchor, constant: -15)
+        let width = $0.widthAnchor.constraint(equalToConstant: 30)
+        let height = $0.heightAnchor.constraint(equalToConstant: 30)
+        NSLayoutConstraint.activate([centerY, right, width, height])
+        $0.setImage(UIImage(named: "ciphertext_password"), for: .normal)
         return $0
     }(UIButton())
 }

@@ -1,7 +1,7 @@
 //
 //  ConfigAES.swift
 //  RPChatDataKit
-//
+//  AES加密相关
 //  Created by rp.wang on 2020/7/1.
 //  Copyright © 2020 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
@@ -12,7 +12,6 @@ import CryptoSwift
 public class ConfigAES: NSObject {
     /// 密钥
     let publicKey = "thanks,pig4cloud"
-    
     
     public func encryptStringWith(strToEncode: String) -> String {
         
