@@ -27,10 +27,12 @@ extension UIColor {
     /// 文字颜色
     public class var darkModeTextColor: UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return .white
-            } else {
-                return .black
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return .white
+                } else {
+                    return .black
+                }
             }
         } else {
             return .black
@@ -38,10 +40,12 @@ extension UIColor {
     }
     public class func configDarkModeTxtColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return .white
-            } else {
-                return .black
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return .white
+                } else {
+                    return .black
+                }
             }
         } else {
             return .black
@@ -50,10 +54,12 @@ extension UIColor {
     /// 子UIView背景颜色
     public class var subDarkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            } else {
-                return .groupTableViewBackground
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return .groupTableViewBackground
+                }
             }
         } else {
             return .groupTableViewBackground
@@ -61,10 +67,12 @@ extension UIColor {
     }
     public class func configSubDarkModeViewColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            } else {
-                return .groupTableViewBackground
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return .groupTableViewBackground
+                }
             }
         } else {
             return .groupTableViewBackground
@@ -73,10 +81,12 @@ extension UIColor {
     /// 设置默认带颜色的view背景
     public class func configDarkModeViewWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            } else {
-                return dfaultColor
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return dfaultColor
+                }
             }
         } else {
             return dfaultColor
@@ -85,10 +95,12 @@ extension UIColor {
     /// 设置带默认颜色的文字颜色
     public class func configDarkModeTxtColorWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return .systemBackground
-            } else {
-                return dfaultColor
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return .systemBackground
+                } else {
+                    return dfaultColor
+                }
             }
         } else {
             return dfaultColor
@@ -97,10 +109,12 @@ extension UIColor {
     /// 设置Placeholder文字颜色
     public class var placeholderColor: UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
-            } else {
-                return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
+                } else {
+                    return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+                }
             }
         } else {
             return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
@@ -108,10 +122,12 @@ extension UIColor {
     }
     public class func configPlaceholderColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            if drakMode == true {
-                return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
-            } else {
-                return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 255, green: 255, blue: 255, alpha: 0.25)
+                } else {
+                    return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+                }
             }
         } else {
             return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)

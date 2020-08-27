@@ -11,13 +11,14 @@ import RxSwift
 import RxCocoa
 import RPChatDataKit
 import RPChatUIKit
+import MBProgressHUD
 
 open class SignInViewController: UIViewController {
     
     let viewModel: SignInViewModel = SignInViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
-    open override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -29,17 +30,26 @@ open class SignInViewController: UIViewController {
         // 成功
         viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
-            
+            MBProgressHUD.showToast(self.view, NSLocalizedString("Sign In Successful", comment: ""))
+            DispatchQueue.main.async {
+                let messageListVC = MessageListViewController()
+                let transtition = CATransition()
+                transtition.duration = 0.35
+                transtition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+                self.view.window?.layer.add(transtition, forKey: "animation")
+                messageListVC.modalPresentationStyle = .overFullScreen
+                self.view.window?.rootViewController = messageListVC
+                self.view.window?.makeKeyAndVisible()
+            }
         }).disposed(by: disposeBag)
         // 失败
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
-           guard let `self` = self else { return }
-           
+            guard let `self` = self else { return }
+            MBProgressHUD.showToast(self.view, NSLocalizedString("Sign In Failed", comment: ""))
         }).disposed(by: disposeBag)
     }
     
     public override func loadView() {
         self.view = SignInRootView(viewModel: viewModel)
     }
-    
 }

@@ -10,6 +10,7 @@ import UIKit
 import MBProgressHUD
 
 extension MBProgressHUD {
+    /// loading
     public class func showLoading(_ withView: UIView?) {
         guard let withView = withView else { return }
         DispatchQueue.main.async {
@@ -19,7 +20,7 @@ extension MBProgressHUD {
             loading.label.text = "loading..."
         }
     }
-    
+    /// toast
     public class func showToast(_ withView: UIView?, _ labelTxt: String?) {
         guard let withView = withView else { return }
         guard let labelTxt = labelTxt else { return }
@@ -28,9 +29,10 @@ extension MBProgressHUD {
             loading.mode = .text
             loading.removeFromSuperViewOnHide = true
             loading.label.text = labelTxt
+            loading.hide(animated: true, afterDelay: 1.5)
         }
     }
-    
+    /// dissmiss
     public class func dissmissLoading(_ withView: UIView?) {
         guard let withView = withView else { return }
         DispatchQueue.main.async {

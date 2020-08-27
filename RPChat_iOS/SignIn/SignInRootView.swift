@@ -32,7 +32,7 @@ class SignInRootView: UIView {
     }
     
     private func configUI() {
-        self.backgroundColor = UIColor.darkModeViewColor
+        self.backgroundColor = .darkModeViewColor
         
         logoImg.image = UIImage(named: "logo_icon")
         
@@ -69,7 +69,7 @@ class SignInRootView: UIView {
         }.disposed(by: disposeBag)
         
         signInBtn.rx.tap.bind(to: viewModel.signInButtonTapped).disposed(by: disposeBag)
-
+        // loading
         viewModel.loading.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (isShow) in
             guard let `self` = self else { return }
             if isShow == true {
@@ -159,6 +159,7 @@ class SignInRootView: UIView {
         $0.backgroundColor = .hexStringToColor("0xF5BE62")
         return $0
     }(UIButton())
+    
     
     lazy var switchPawBtn: UIButton = {
         inputPasswordView.addSubview($0)

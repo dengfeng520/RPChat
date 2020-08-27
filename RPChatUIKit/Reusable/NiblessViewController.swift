@@ -23,4 +23,9 @@ open class NiblessViewController: UIViewController {
     public required init(coder aDecoder: NSCoder) {
       fatalError("Loading this view controller from a nib is unsupported")
     }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }

@@ -15,13 +15,10 @@ public class SignInViewModel: PublicViewModel {
         
     public let inputPassWord = BehaviorSubject<String>(value: "")
     public let inputPassWordEnabled = BehaviorSubject<Bool>(value: true)
-        
+            
     public let signInButtonTapped = PublishSubject<Void>()
             
-    
-    public lazy var signInButtonEnabled =
-    Observable.combineLatest(
-        inputStuNum.asObservable(),
+    public lazy var signInButtonEnabled = Observable.combineLatest( inputStuNum.asObservable(),
         inputStuNumEnabled.asObservable(),
         inputPassWord.asObservable(),
         inputPassWordEnabled.asObservable()) {

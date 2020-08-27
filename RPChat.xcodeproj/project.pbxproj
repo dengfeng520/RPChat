@@ -57,6 +57,9 @@
 		1D5C601C24AF161000211398 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C601724AF10C800211398 /* MBProgressHUD.framework */; };
 		1D5C601D24AF161800211398 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C601724AF10C800211398 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67962924F106C4006023C7 /* PublicViewModel.swift */; };
+		1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966224F656C0006023C7 /* SignedInResponder.swift */; };
+		1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966524F6588B006023C7 /* MessageListViewController.swift */; };
+		1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
@@ -176,6 +179,9 @@
 		1D5C601724AF10C800211398 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		1D5C601A24AF10EB00211398 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1D67962924F106C4006023C7 /* PublicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewModel.swift; sourceTree = "<group>"; };
+		1D67966224F656C0006023C7 /* SignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInResponder.swift; sourceTree = "<group>"; };
+		1D67966524F6588B006023C7 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessNavigationViewController.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 		1D2208B424977DEB002D25A2 /* RPChat_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D67966424F65822006023C7 /* MessageList */,
 				1D220945249870D2002D25A2 /* SignIn */,
 				1D2208B524977DEB002D25A2 /* RPChat_iOS.h */,
 				1D2208B624977DEB002D25A2 /* Info.plist */,
@@ -341,6 +348,7 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D67966124F6568B006023C7 /* SignedInResponder */,
 				1D67962824F106A5006023C7 /* PublicViewModel */,
 				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
 				1D5C600124AC851B00211398 /* StringExtension */,
@@ -378,6 +386,7 @@
 			children = (
 				1D220943249870AA002D25A2 /* NiblessViewController.swift */,
 				1D22096624987370002D25A2 /* NiblessView.swift */,
+				1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -454,6 +463,22 @@
 				1D67962924F106C4006023C7 /* PublicViewModel.swift */,
 			);
 			path = PublicViewModel;
+			sourceTree = "<group>";
+		};
+		1D67966124F6568B006023C7 /* SignedInResponder */ = {
+			isa = PBXGroup;
+			children = (
+				1D67966224F656C0006023C7 /* SignedInResponder.swift */,
+			);
+			path = SignedInResponder;
+			sourceTree = "<group>";
+		};
+		1D67966424F65822006023C7 /* MessageList */ = {
+			isa = PBXGroup;
+			children = (
+				1D67966524F6588B006023C7 /* MessageListViewController.swift */,
+			);
+			path = MessageList;
 			sourceTree = "<group>";
 		};
 		1D78E5D924D2A86E00270F95 /* DeviceInfo */ = {
@@ -780,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
+				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,6 +822,7 @@
 				1DD5F1D124B6C3D000E762B7 /* RPSubBannerView.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
 				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
+				1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +843,7 @@
 				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
 				1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */,
+				1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
