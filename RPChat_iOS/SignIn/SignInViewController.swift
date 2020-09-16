@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RPChatDataKit
 import RPChatUIKit
-import MBProgressHUD
+import RPBannerView
 
 open class SignInViewController: UIViewController {
     
@@ -30,7 +30,7 @@ open class SignInViewController: UIViewController {
         // 成功
         viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
-            MBProgressHUD.showToast(self.view, NSLocalizedString("Sign In Successful", comment: ""))
+            RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
             DispatchQueue.main.async {
                 let messageListVC = MessageListViewController()
                 let transtition = CATransition()
@@ -45,7 +45,7 @@ open class SignInViewController: UIViewController {
         // 失败
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
             guard let `self` = self else { return }
-            MBProgressHUD.showToast(self.view, NSLocalizedString("Sign In Failed", comment: ""))
+            RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
         }).disposed(by: disposeBag)
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
