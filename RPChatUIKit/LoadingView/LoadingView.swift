@@ -8,6 +8,9 @@
 
 import UIKit
 import MBProgressHUD
+import RxSwift
+import RxCocoa
+import RPToastView
 
 extension MBProgressHUD {
     /// loading
@@ -38,5 +41,21 @@ extension MBProgressHUD {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: withView, animated: true)
         }
+    }
+}
+
+extension Reactive where Base: UIViewController {
+    public var isAnimating: Binder<Bool> {
+        return Binder(self.base, binding: { (vc, active) in
+            if active == true {
+                DispatchQueue.main.async {
+                    RPToastView.loading(Display(mode: .loopAndTextMode, isView: vc.view, title: "Loading..."))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    RPToastView.hidden(animation: true)
+                }
+            }
+        })
     }
 }

@@ -47,6 +47,8 @@ open class SignInViewController: UIViewController {
             guard let `self` = self else { return }
             MBProgressHUD.showToast(self.view, NSLocalizedString("Sign In Failed", comment: ""))
         }).disposed(by: disposeBag)
+        // loading
+        viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
     }
     
     public override func loadView() {

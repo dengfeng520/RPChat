@@ -9,9 +9,14 @@
 import UIKit
 import RPChatDataKit
 import RPChatUIKit
+import RxSwift
+import RxCocoa
 
 class MessageListViewController: UIViewController {
 
+    let viewModel: MessageListViewModel = MessageListViewModel()
+    let disposeBag: DisposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -20,6 +25,12 @@ class MessageListViewController: UIViewController {
 
     private func configUI() {
         view.backgroundColor = .darkModeViewColor
+        
+        viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        viewModel.configBOOL()
     }
     
 }

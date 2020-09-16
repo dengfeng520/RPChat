@@ -69,15 +69,6 @@ class SignInRootView: UIView {
         }.disposed(by: disposeBag)
         
         signInBtn.rx.tap.bind(to: viewModel.signInButtonTapped).disposed(by: disposeBag)
-        // loading
-        viewModel.loading.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (isShow) in
-            guard let `self` = self else { return }
-            if isShow == true {
-                MBProgressHUD.showLoading(self)
-            } else {
-                MBProgressHUD.dissmissLoading(self)
-            }
-        }).disposed(by: disposeBag)
     }
     
     lazy var logoImg: UIImageView = {

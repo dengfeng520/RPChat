@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 extension UIViewController {
     /// 屏幕宽
     public var __screenWidth: CGFloat {
@@ -60,3 +61,5 @@ extension UIViewController {
         return baseVC
     }
 }
+
+
