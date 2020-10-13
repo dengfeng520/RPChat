@@ -48,13 +48,9 @@ extension Reactive where Base: UIViewController {
     public var isAnimating: Binder<Bool> {
         return Binder(self.base, binding: { (vc, active) in
             if active == true {
-                DispatchQueue.main.async {
-                    RPToastView.loading(Display(mode: .loopAndTextMode, isView: vc.view, title: "Loading..."))
-                }
+                RPToastView.loading(Display(mode: .loopAndTextMode, isView: vc.view, title: "Loading..."))
             } else {
-                DispatchQueue.main.async {
-                    RPToastView.hidden(animation: true)
-                }
+                RPToastView.hidden(animation: true)
             }
         })
     }
