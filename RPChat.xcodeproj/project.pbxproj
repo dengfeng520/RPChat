@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
 		1D22089B24977C12002D25A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089A24977C12002D25A2 /* AppDelegate.swift */; };
 		1D22089D24977C12002D25A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089C24977C12002D25A2 /* SceneDelegate.swift */; };
 		1D22089F24977C12002D25A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089E24977C12002D25A2 /* ViewController.swift */; };
@@ -256,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */,
 				1D422CC825086C7A00A8B949 /* RPToastView.framework in Frameworks */,
 				1D5C601824AF10C800211398 /* MBProgressHUD.framework in Frameworks */,
 				1D22094F24987147002D25A2 /* RxSwift.framework in Frameworks */,
