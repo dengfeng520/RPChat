@@ -85,6 +85,15 @@
 		1DDFCEEA25119D3F00D12B0F /* RPBannerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
+		1DF627992536D236004232F4 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627982536D236004232F4 /* SocketManager.swift */; };
+		1DF627AE2536D42F004232F4 /* SocketSigInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627AD2536D42F004232F4 /* SocketSigInModel.swift */; };
+		1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627B32536D589004232F4 /* SocketManagerPack.swift */; };
+		1DF627BA2536D5B0004232F4 /* SocketManagerSeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627B92536D5B0004232F4 /* SocketManagerSeal.swift */; };
+		1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627C02536D5E1004232F4 /* SocketProtocol.swift */; };
+		1DF627CB2536D648004232F4 /* MessageBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627CA2536D648004232F4 /* MessageBodyModel.swift */; };
+		1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627D02536D6D9004232F4 /* SocketManagerServer.swift */; };
+		1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627D62536D83C004232F4 /* ChatInfoModel.swift */; };
+		1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627DC2536D96D004232F4 /* SocketManagerDelegate.swift */; };
 		1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +226,15 @@
 		1DEECAD0249B52020078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1DEECAD1249B56AB0078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1DEECAD4249B57000078B54F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1DF627982536D236004232F4 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		1DF627AD2536D42F004232F4 /* SocketSigInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketSigInModel.swift; sourceTree = "<group>"; };
+		1DF627B32536D589004232F4 /* SocketManagerPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerPack.swift; sourceTree = "<group>"; };
+		1DF627B92536D5B0004232F4 /* SocketManagerSeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerSeal.swift; sourceTree = "<group>"; };
+		1DF627C02536D5E1004232F4 /* SocketProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocol.swift; sourceTree = "<group>"; };
+		1DF627CA2536D648004232F4 /* MessageBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBodyModel.swift; sourceTree = "<group>"; };
+		1DF627D02536D6D9004232F4 /* SocketManagerServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerServer.swift; sourceTree = "<group>"; };
+		1DF627D62536D83C004232F4 /* ChatInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfoModel.swift; sourceTree = "<group>"; };
+		1DF627DC2536D96D004232F4 /* SocketManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerDelegate.swift; sourceTree = "<group>"; };
 		1DFB147B24A0AF0F00D01BC3 /* SignInRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +373,7 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1DF627972536D1F9004232F4 /* SocketManager */,
 				1D67966124F6568B006023C7 /* SignedInResponder */,
 				1D67962824F106A5006023C7 /* PublicViewModel */,
 				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
@@ -536,6 +555,38 @@
 				1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */,
 			);
 			path = ControllerExtension;
+			sourceTree = "<group>";
+		};
+		1DF627972536D1F9004232F4 /* SocketManager */ = {
+			isa = PBXGroup;
+			children = (
+				1DF627BF2536D5D5004232F4 /* Protocol */,
+				1DF627A82536D40E004232F4 /* Model */,
+				1DF627982536D236004232F4 /* SocketManager.swift */,
+				1DF627B32536D589004232F4 /* SocketManagerPack.swift */,
+				1DF627B92536D5B0004232F4 /* SocketManagerSeal.swift */,
+				1DF627D02536D6D9004232F4 /* SocketManagerServer.swift */,
+				1DF627DC2536D96D004232F4 /* SocketManagerDelegate.swift */,
+			);
+			path = SocketManager;
+			sourceTree = "<group>";
+		};
+		1DF627A82536D40E004232F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DF627AD2536D42F004232F4 /* SocketSigInModel.swift */,
+				1DF627CA2536D648004232F4 /* MessageBodyModel.swift */,
+				1DF627D62536D83C004232F4 /* ChatInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DF627BF2536D5D5004232F4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1DF627C02536D5E1004232F4 /* SocketProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -829,20 +880,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF627AE2536D42F004232F4 /* SocketSigInModel.swift in Sources */,
 				1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */,
+				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
+				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
+				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,
+				1DF627992536D236004232F4 /* SocketManager.swift in Sources */,
 				1DDFCEE82510C83C00D12B0F /* MessageListViewModel.swift in Sources */,
+				1DF627BA2536D5B0004232F4 /* SocketManagerSeal.swift in Sources */,
 				1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
+				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
 				1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
 				1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */,
 				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
+				1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */,
 				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
 				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
 				1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */,
+				1DF627CB2536D648004232F4 /* MessageBodyModel.swift in Sources */,
 				1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,7 +25,7 @@ public class ConfigAES: NSObject {
             print(error)
         }
         let encoded = Data(encrypted)
-        //加密结果要用Base64转码
+        // 加密结果要用Base64转码
         return encoded.base64EncodedString()
     }
     

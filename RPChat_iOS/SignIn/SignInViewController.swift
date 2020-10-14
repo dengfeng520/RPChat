@@ -54,4 +54,8 @@ open class SignInViewController: UIViewController {
     public override func loadView() {
         self.view = SignInRootView(viewModel: viewModel)
     }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
