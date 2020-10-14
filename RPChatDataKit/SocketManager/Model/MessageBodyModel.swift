@@ -19,6 +19,11 @@ struct MessageBodyModel: Codable {
 }
 
 extension MessageBodyModel {
+    init?(data: Data) {
+        guard let model = try? JSONDecoder().decode(MessageBodyModel.self, from: data) else { return nil }
+        self = model
+    }
+    
     init?(json: JSON) {
         fromUserId = json["userId"].stringValue
         createTime = json["createTime"].stringValue

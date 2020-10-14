@@ -16,6 +16,11 @@ struct ChatInfoModel: Codable {
 }
 
 extension ChatInfoModel {
+    init?(data: Data) {
+        guard let model = try? JSONDecoder().decode(ChatInfoModel.self, from: data) else { return nil }
+        self = model
+    }
+    
     init(json: JSON) {
         port = json["port"].intValue
         serverIp = json["serverIp"].stringValue

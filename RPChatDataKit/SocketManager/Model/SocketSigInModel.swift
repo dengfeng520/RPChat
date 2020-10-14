@@ -12,14 +12,33 @@ import SwiftyJSON
 struct SocketSigInModel: Codable {
     var cmdCode: UInt16 = 0
     var msg: String = String()
+    
+    enum CodingKeys: String, CodingKey {
+        case cmdCode
+        case msg
+    }
+}
+extension SocketSigInModel {
+    init?(data: Data) {
+        guard let model = try? JSONDecoder().decode(SocketSigInModel.self, from: data) else { return nil }
+        self = model
+    }
 }
 
 
 struct MessageIdModel: Codable {
     let messageId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case messageId
+    }
 }
-
 extension MessageIdModel {
+    init?(data: Data) {
+        guard let model = try? JSONDecoder().decode(MessageIdModel.self, from: data) else { return nil }
+        self = model
+    }
+    
     init?(json: JSON) {
         messageId = json["messageId"].stringValue
     }
