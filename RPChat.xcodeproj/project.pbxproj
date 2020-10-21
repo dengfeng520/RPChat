@@ -66,6 +66,9 @@
 		1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */; };
+		1D7B5AC7254031BC00054894 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B5AC6254031BC00054894 /* UIView+Extension.swift */; };
+		1D7B5ACD254031FD00054894 /* RPLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B5ACC254031FD00054894 /* RPLayout.swift */; };
+		1D7B5AD32540322500054894 /* RPLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B5AD22540322500054894 /* RPLayout+Extension.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -198,6 +201,11 @@
 		1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessNavigationViewController.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
+		1D7B5AC6254031BC00054894 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1D7B5ACC254031FD00054894 /* RPLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLayout.swift; sourceTree = "<group>"; };
+		1D7B5AD22540322500054894 /* RPLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RPLayout+Extension.swift"; sourceTree = "<group>"; };
+		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D7B5AE2254032F000054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -360,6 +368,7 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D7B5AC52540318F00054894 /* RPAutoLayout */,
 				1DD5F26C24BD8C7000E762B7 /* ControllerExtension */,
 				1D5C601924AF10D400211398 /* LoadingView */,
 				1D5C5FF924AC65A300211398 /* UIColorExtension */,
@@ -391,6 +400,8 @@
 		1D2208F32498611F002D25A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D7B5ADC254032E300054894 /* CoreGraphics.framework */,
+				1D7B5AE2254032F000054894 /* CoreGraphics.framework */,
 				1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */,
 				1D422CC525086BD300A8B949 /* RPToastView.framework */,
 				1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */,
@@ -516,6 +527,16 @@
 				1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */,
 			);
 			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		1D7B5AC52540318F00054894 /* RPAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B5AC6254031BC00054894 /* UIView+Extension.swift */,
+				1D7B5ACC254031FD00054894 /* RPLayout.swift */,
+				1D7B5AD22540322500054894 /* RPLayout+Extension.swift */,
+			);
+			path = RPAutoLayout;
 			sourceTree = "<group>";
 		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
@@ -868,11 +889,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
+				1D7B5ACD254031FD00054894 /* RPLayout.swift in Sources */,
+				1D7B5AC7254031BC00054894 /* UIView+Extension.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
 				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
 				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
 				1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */,
+				1D7B5AD32540322500054894 /* RPLayout+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
