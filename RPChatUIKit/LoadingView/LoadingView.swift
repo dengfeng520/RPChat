@@ -7,38 +7,37 @@
 //
 
 import UIKit
-import MBProgressHUD
 import RxSwift
 import RxCocoa
 import RPToastView
 
-extension MBProgressHUD {
+extension RPToastView {
     /// loading
     public class func showLoading(_ withView: UIView?) {
         guard let withView = withView else { return }
         DispatchQueue.main.async {
-            let loading = MBProgressHUD.showAdded(to: withView, animated: true)
-            loading.mode = .indeterminate
-            loading.removeFromSuperViewOnHide = true
-            loading.label.text = "loading..."
+            var display = Display()
+            display.isView = withView
+            display.mode = .indeterminateMode
+            display.title = "Loading..."
+            RPToastView.loading(display)
         }
     }
     /// toast
     public class func showToast(_ withView: UIView?, _ labelTxt: String?) {
         guard let withView = withView, let labelTxt = labelTxt else { return }
         DispatchQueue.main.async {
-            let loading = MBProgressHUD.showAdded(to: withView, animated: true)
-            loading.mode = .text
-            loading.removeFromSuperViewOnHide = true
-            loading.label.text = labelTxt
-            loading.hide(animated: true, afterDelay: 1.5)
+            var display = Display()
+            display.isView = withView
+            display.mode = .onlyTextMode
+            display.title = labelTxt
+            RPToastView.loading(display)
         }
     }
     /// dissmiss
-    public class func dissmissLoading(_ withView: UIView?) {
-        guard let withView = withView else { return }
+    public class func dissmissLoading() {
         DispatchQueue.main.async {
-            MBProgressHUD.hide(for: withView, animated: true)
+            RPToastView.hidden(animation: true)
         }
     }
 }
