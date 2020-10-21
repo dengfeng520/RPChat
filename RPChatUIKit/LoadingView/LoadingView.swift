@@ -25,8 +25,7 @@ extension MBProgressHUD {
     }
     /// toast
     public class func showToast(_ withView: UIView?, _ labelTxt: String?) {
-        guard let withView = withView else { return }
-        guard let labelTxt = labelTxt else { return }
+        guard let withView = withView, let labelTxt = labelTxt else { return }
         DispatchQueue.main.async {
             let loading = MBProgressHUD.showAdded(to: withView, animated: true)
             loading.mode = .text
