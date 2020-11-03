@@ -10,9 +10,13 @@ import Foundation
 
 public let appkey = "e8167ef026cbc5e456ab837d9d6d9254"
 
+#if DEBUG
 /// 测试服务器
 public let __serverTestURL = "http://a.sxstczx.com/"
-
+#else
+/// release服务器
+public let __serverTestURL = "http://a.sxstczx.com/"
+#endif
 
 ///1 登录
 public let __apiFetchSignIn = "auth/oauth/token"

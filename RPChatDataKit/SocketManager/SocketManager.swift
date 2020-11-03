@@ -29,13 +29,13 @@ public class SocketManager: NSObject {
     @objc var isDesk = false
     // 聊天信息
     var infoModel: ChatInfoModel = ChatInfoModel(json: JSON([:]))
-    /// 发送消息成功回调
+    // 发送消息成功回调
     var sendMessageSucessClosures: ((_ messageId: MessageIdModel) -> Void)?
     let sendMessageSucessSubject : PublishSubject<MessageIdModel> = PublishSubject()
-    /// 服务器主动发消息闭包
+    // 服务器主动发消息闭包
     var receiveServrerMessageClosures: ((_ messageModel: MessageBodyModel) -> Void)?
     let receiveServrerMessageSubject : PublishSubject<MessageBodyModel> = PublishSubject()
-    /// 账号被踢
+    // 账号被踢
     var siginOutServerMessageClosures: (() -> Void)?
     // 是否已经连接Socket服务器
     var isConnect = false
