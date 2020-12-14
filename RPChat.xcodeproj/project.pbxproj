@@ -67,6 +67,14 @@
 		1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */; };
+		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
+		1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */; };
+		1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4A125836A5F000D1115 /* MineViewController.swift */; };
+		1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */; };
+		1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A50525870F3D000D1115 /* ConfigRSA.swift */; };
+		1D98A511258710FD000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A510258710FD000D1115 /* RPKeychain.swift */; };
+		1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
+		1D98A51C2587453F000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -202,6 +210,13 @@
 		1D78E5DC24D2BCF300270F95 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D7B5AE2254032F000054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
+		1D98A4A125836A5F000D1115 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		1D98A50525870F3D000D1115 /* ConfigRSA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRSA.swift; sourceTree = "<group>"; };
+		1D98A510258710FD000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
+		1D98A51A25874521000D1115 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -247,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D98A51C2587453F000D1115 /* SwiftyRSA.framework in Frameworks */,
 				1D484AD425510B0E00E88CDC /* RPAutoLayout.framework in Frameworks */,
 				1DDFCEEA25119D3F00D12B0F /* RPBannerView.framework in Frameworks */,
 				1D422CC625086BD300A8B949 /* RPToastView.framework in Frameworks */,
@@ -291,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */,
 				1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */,
 				1D2209502498715D002D25A2 /* RxSwift.framework in Frameworks */,
 				1D2209512498715D002D25A2 /* SwiftyJSON.framework in Frameworks */,
@@ -355,7 +372,10 @@
 			isa = PBXGroup;
 			children = (
 				1D67966424F65822006023C7 /* MessageList */,
+				1D98A4AB25836BA2000D1115 /* AddressBook */,
+				1D98A4A025836A26000D1115 /* Mine */,
 				1D220945249870D2002D25A2 /* SignIn */,
+				1D98A49925835EA0000D1115 /* TabBar */,
 				1D2208B524977DEB002D25A2 /* RPChat_iOS.h */,
 				1D2208B624977DEB002D25A2 /* Info.plist */,
 			);
@@ -378,6 +398,8 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D98A50F258710DB000D1115 /* ConfigKeychain */,
+				1D98A50425870F1D000D1115 /* ConfigRSA */,
 				1DF627972536D1F9004232F4 /* SocketManager */,
 				1D67966124F6568B006023C7 /* SignedInResponder */,
 				1D67962824F106A5006023C7 /* PublicViewModel */,
@@ -396,6 +418,7 @@
 		1D2208F32498611F002D25A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D98A51A25874521000D1115 /* SwiftyRSA.framework */,
 				1D484AD325510B0E00E88CDC /* RPAutoLayout.framework */,
 				1D7B5ADC254032E300054894 /* CoreGraphics.framework */,
 				1D7B5AE2254032F000054894 /* CoreGraphics.framework */,
@@ -526,6 +549,46 @@
 			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
+		1D98A49925835EA0000D1115 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1D98A4A025836A26000D1115 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A4A125836A5F000D1115 /* MineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		1D98A4AB25836BA2000D1115 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		1D98A50425870F1D000D1115 /* ConfigRSA */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A50525870F3D000D1115 /* ConfigRSA.swift */,
+			);
+			path = ConfigRSA;
+			sourceTree = "<group>";
+		};
+		1D98A50F258710DB000D1115 /* ConfigKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A510258710FD000D1115 /* RPKeychain.swift */,
+			);
+			path = ConfigKeychain;
+			sourceTree = "<group>";
+		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +624,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */,
+				1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */,
 			);
 			path = ControllerExtension;
 			sourceTree = "<group>";
@@ -840,6 +904,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RPToastView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RPBannerView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RPAutoLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyRSA.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -866,9 +931,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
+				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
+				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +944,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
 				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,
@@ -898,6 +967,7 @@
 				1DF627992536D236004232F4 /* SocketManager.swift in Sources */,
 				1DDFCEE82510C83C00D12B0F /* MessageListViewModel.swift in Sources */,
 				1DF627BA2536D5B0004232F4 /* SocketManagerSeal.swift in Sources */,
+				1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */,
 				1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
 				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
@@ -907,6 +977,7 @@
 				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
 				1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */,
 				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
+				1D98A511258710FD000D1115 /* RPKeychain.swift in Sources */,
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
 				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,

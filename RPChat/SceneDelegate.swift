@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.backgroundColor = .white
+        window?.backgroundColor = .darkModeViewColor
         let tabBar = SignInViewController()
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()

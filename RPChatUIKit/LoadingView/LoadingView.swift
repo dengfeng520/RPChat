@@ -18,7 +18,7 @@ extension RPToastView {
         DispatchQueue.main.async {
             var display = Display()
             display.isView = withView
-            display.mode = .indeterminateMode
+            display.mode = .rotateAndTextMode
             display.title = "Loading..."
             RPToastView.loading(display)
         }
@@ -46,7 +46,7 @@ extension Reactive where Base: UIViewController {
     public var isAnimating: Binder<Bool> {
         return Binder(self.base, binding: { (vc, active) in
             if active == true {
-                RPToastView.loading(Display(mode: .loopAndTextMode, isView: vc.view, title: "Loading..."))
+                RPToastView.loading(Display(mode: .rotateAndTextMode, isView: vc.view, title: "Loading..."))
             } else {
                 RPToastView.hidden(animation: true)
             }

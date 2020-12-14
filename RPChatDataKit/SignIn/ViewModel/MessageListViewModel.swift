@@ -17,6 +17,7 @@ public class MessageListViewModel: PublicViewModel {
     }
     
     public func configBOOL() {
-        self.loading.onNext(true)
+//        self.loading.onNext(true)
+        
     }
 }

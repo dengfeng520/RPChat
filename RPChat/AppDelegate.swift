@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
             
         } else {
-             window = UIWindow.init()
+             window = UIWindow()
              window?.frame = UIScreen.main.bounds
              window?.makeKeyAndVisible()
              let signInVC = SignInViewController()

@@ -19,21 +19,21 @@ extension SocketManager {
 }
 
 extension SocketManager: SocketProtocol {
-    // 发送前转换
+    /// 发送前转换
     func beforeSendingDataConversion(sendingBody: [String : String]) -> Data {
         guard let data: Data = try? Data(JSONSerialization.data(withJSONObject: sendingBody,options: JSONSerialization.WritingOptions(rawValue: 1)))
             else { return Data() }
         return data
     }
     
-    // 发送登录包
+    /// 发送登录包
     func socketDidConnectCreatSigin() {
         let userId: String = String()
         let siginBody = ["schoolId":"\(infoModel.school!)","userId":userId]
         socketWriteDataToServer(heartbeatBody: siginBody)
     }
     
-    // 发送心跳包
+    /// 发送心跳包
     func socketDidConnectBeginSendBeat() {
         let userId: String = String()
         var heartbeatBody = [String : String]()
@@ -47,7 +47,7 @@ extension SocketManager: SocketProtocol {
         socketManager.write(bodyData, withTimeout: -1, tag: 0)
     }
     
-    // 发送消息
+    /// 发送消息
     func sendMessageWithPack(messageBody: [String : String]) -> Void {
         let body = beforeSendingDataConversion(sendingBody: messageBody)
         let bodyData = sendMessageWithCmd(cmd: cmdCodeMode.sendMessageMode.rawValue, bodyData: body)

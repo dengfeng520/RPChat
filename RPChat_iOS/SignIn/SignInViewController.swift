@@ -22,23 +22,34 @@ open class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        title = "登录"
+        title = NSLocalizedString("Sign In", comment: "")
         bindViewModel()
     }
     
     private func bindViewModel() {
+        // loading
+        viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // 成功
         viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
             DispatchQueue.main.async {
-                let messageListVC = MessageListViewController()
+//                let messageListVC = MessageListViewController()
+//                let transtition = CATransition()
+//                transtition.duration = 0.35
+//                transtition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+//                self.view.window?.layer.add(transtition, forKey: "animation")
+//                messageListVC.modalPresentationStyle = .overFullScreen
+//                self.view.window?.rootViewController = UINavigationController(rootViewController: messageListVC)
+//                self.view.window?.makeKeyAndVisible()
+                
+                let tabbarVC = UITabBarControllerExtension()
                 let transtition = CATransition()
                 transtition.duration = 0.35
                 transtition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
                 self.view.window?.layer.add(transtition, forKey: "animation")
-                messageListVC.modalPresentationStyle = .overFullScreen
-                self.view.window?.rootViewController = messageListVC
+                tabbarVC.modalPresentationStyle = .overFullScreen
+                self.view.window?.rootViewController = tabbarVC
                 self.view.window?.makeKeyAndVisible()
             }
         }).disposed(by: disposeBag)
@@ -47,8 +58,6 @@ open class SignInViewController: UIViewController {
             guard let `self` = self else { return }
             RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
         }).disposed(by: disposeBag)
-        // loading
-        viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
     }
     
     public override func loadView() {

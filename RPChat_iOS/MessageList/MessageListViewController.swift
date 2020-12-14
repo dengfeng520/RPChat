@@ -21,6 +21,7 @@ class MessageListViewController: UIViewController {
         super.viewDidLoad()
         configUI()
         // Do any additional setup after loading the view.
+        title = NSLocalizedString("Message List", comment: "")
     }
 
     private func configUI() {
@@ -30,7 +31,7 @@ class MessageListViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        viewModel.configBOOL()
+        viewModel.configBOOL()        
     }
     
 }

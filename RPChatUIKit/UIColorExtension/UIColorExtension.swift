@@ -106,6 +106,20 @@ extension UIColor {
             return dfaultColor
         }
     }
+    /// 设置默认带颜色的子view背景
+    public class func configDarkModeSubViewColorWith(_ dfaultColor: UIColor) -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return dfaultColor
+                }
+            }
+        } else {
+            return dfaultColor
+        }
+    }
     /// 设置Placeholder文字颜色
     public class var placeholderColor: UIColor {
         if #available(iOS 13.0, *) {
