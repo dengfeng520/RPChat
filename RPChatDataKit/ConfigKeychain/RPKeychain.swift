@@ -30,5 +30,4 @@ public class RPKeychain: NSObject {
     public class func save(_ service: String, _ data: AnyObject) {
         
     }
-    
 }

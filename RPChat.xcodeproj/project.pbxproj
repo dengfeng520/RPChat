@@ -75,6 +75,9 @@
 		1D98A511258710FD000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A510258710FD000D1115 /* RPKeychain.swift */; };
 		1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
 		1D98A51C2587453F000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
+		1D98A52325874908000D1115 /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A52225874908000D1115 /* ChatMessageViewController.swift */; };
+		1D98A52C25874982000D1115 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A52B25874982000D1115 /* ChatViewModel.swift */; };
+		1D98A53625874CAE000D1115 /* ChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A53525874CAE000D1115 /* ChatRequest.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -217,6 +220,9 @@
 		1D98A50525870F3D000D1115 /* ConfigRSA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRSA.swift; sourceTree = "<group>"; };
 		1D98A510258710FD000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
 		1D98A51A25874521000D1115 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
+		1D98A52225874908000D1115 /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
+		1D98A52B25874982000D1115 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		1D98A53525874CAE000D1115 /* ChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequest.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 		1D2208B424977DEB002D25A2 /* RPChat_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D98A52125874881000D1115 /* Chat */,
 				1D67966424F65822006023C7 /* MessageList */,
 				1D98A4AB25836BA2000D1115 /* AddressBook */,
 				1D98A4A025836A26000D1115 /* Mine */,
@@ -398,6 +405,7 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D98A52825874956000D1115 /* Chat */,
 				1D98A50F258710DB000D1115 /* ConfigKeychain */,
 				1D98A50425870F1D000D1115 /* ConfigRSA */,
 				1DF627972536D1F9004232F4 /* SocketManager */,
@@ -589,6 +597,38 @@
 			path = ConfigKeychain;
 			sourceTree = "<group>";
 		};
+		1D98A52125874881000D1115 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A52225874908000D1115 /* ChatMessageViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1D98A52825874956000D1115 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A52A25874968000D1115 /* ViewModel */,
+				1D98A52925874962000D1115 /* Model */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1D98A52925874962000D1115 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D98A52A25874968000D1115 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A52B25874982000D1115 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +637,7 @@
 				1DB939A2249B752400F07DC6 /* SigninRequest.swift */,
 				1DB939A4249B753C00F07DC6 /* APIConfig.swift */,
 				1D5C600724AC86F400211398 /* RequestEnum.swift */,
+				1D98A53525874CAE000D1115 /* ChatRequest.swift */,
 			);
 			path = HTTPRequest;
 			sourceTree = "<group>";
@@ -936,6 +977,7 @@
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
+				1D98A52325874908000D1115 /* ChatMessageViewController.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,12 +1001,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF627AE2536D42F004232F4 /* SocketSigInModel.swift in Sources */,
+				1D98A53625874CAE000D1115 /* ChatRequest.swift in Sources */,
 				1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */,
 				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
 				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,
 				1DF627992536D236004232F4 /* SocketManager.swift in Sources */,
+				1D98A52C25874982000D1115 /* ChatViewModel.swift in Sources */,
 				1DDFCEE82510C83C00D12B0F /* MessageListViewModel.swift in Sources */,
 				1DF627BA2536D5B0004232F4 /* SocketManagerSeal.swift in Sources */,
 				1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */,

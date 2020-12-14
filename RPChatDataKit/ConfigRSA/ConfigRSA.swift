@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyRSA
 
 public class ConfigRSA: NSObject {
 
