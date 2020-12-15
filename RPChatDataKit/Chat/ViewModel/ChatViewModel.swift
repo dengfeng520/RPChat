@@ -17,6 +17,7 @@ public class ChatViewModel: PublicViewModel {
         HTTPRequest().requestWithMap(ChatListWithRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
             self.loading.onNext(false)
+            
         }
     }
 }

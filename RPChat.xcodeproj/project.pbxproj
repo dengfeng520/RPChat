@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
+		1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */; };
+		1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */; };
+		1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFDC258862360016831C /* ChatCellProtocol.swift */; };
 		1D22089B24977C12002D25A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089A24977C12002D25A2 /* AppDelegate.swift */; };
 		1D22089D24977C12002D25A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089C24977C12002D25A2 /* SceneDelegate.swift */; };
 		1D22089F24977C12002D25A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089E24977C12002D25A2 /* ViewController.swift */; };
@@ -72,12 +75,18 @@
 		1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4A125836A5F000D1115 /* MineViewController.swift */; };
 		1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */; };
 		1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A50525870F3D000D1115 /* ConfigRSA.swift */; };
-		1D98A511258710FD000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A510258710FD000D1115 /* RPKeychain.swift */; };
 		1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
 		1D98A51C2587453F000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
 		1D98A52325874908000D1115 /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A52225874908000D1115 /* ChatMessageViewController.swift */; };
 		1D98A52C25874982000D1115 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A52B25874982000D1115 /* ChatViewModel.swift */; };
 		1D98A53625874CAE000D1115 /* ChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A53525874CAE000D1115 /* ChatRequest.swift */; };
+		1D98A6532587683C000D1115 /* RPKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D98A6432587683C000D1115 /* RPKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D98A6562587683D000D1115 /* RPKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A6412587683C000D1115 /* RPKeychain.framework */; };
+		1D98A6572587683D000D1115 /* RPKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A6412587683C000D1115 /* RPKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D98A66F25876872000D1115 /* KeychainItemAccesssibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A66E25876872000D1115 /* KeychainItemAccesssibility.swift */; };
+		1D98A67625876887000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67525876887000D1115 /* RPKeychain.swift */; };
+		1D98A67D258768AA000D1115 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67C258768AA000D1115 /* KeychainItem.swift */; };
+		1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A0249B749500F07DC6 /* HTTPRequest.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -87,12 +96,15 @@
 		1DB93A13249C81A000F07DC6 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A11249C819600F07DC6 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; };
 		1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBA5AB225877B7800BC4448 /* ChatViewController.swift */; };
 		1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */; };
 		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
 		1DD5F26824BD5D6400E762B7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26624BD5D6400E762B7 /* RxTest.framework */; };
 		1DD5F26924BD5D6400E762B7 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */; };
 		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
 		1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */; };
+		1DDFC83325876D21006C63D5 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFC83225876D21006C63D5 /* AddressBookViewModel.swift */; };
+		1DDFC83A25876D2D006C63D5 /* AddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFC83925876D2D006C63D5 /* AddressBookModel.swift */; };
 		1DDFCEE82510C83C00D12B0F /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFCEE72510C83C00D12B0F /* MessageListViewModel.swift */; };
 		1DDFCEEA25119D3F00D12B0F /* RPBannerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
@@ -131,6 +143,13 @@
 			remoteGlobalIDString = 1D2208D524977E1B002D25A2;
 			remoteInfo = RPChatDataKit;
 		};
+		1D98A6542587683C000D1115 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D22088F24977C12002D25A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D98A6402587683C000D1115;
+			remoteInfo = RPKeychain;
+		};
 		1DD5F26024BD5D1C00E762B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1D22088F24977C12002D25A2 /* Project object */;
@@ -158,6 +177,7 @@
 				1D22090724986141002D25A2 /* MJRefresh.framework in Embed Frameworks */,
 				1D22090924986141002D25A2 /* RxSwift.framework in Embed Frameworks */,
 				1D22090B24986141002D25A2 /* SwiftyJSON.framework in Embed Frameworks */,
+				1D98A6572587683D000D1115 /* RPKeychain.framework in Embed Frameworks */,
 				1D2208BB24977DEB002D25A2 /* RPChat_iOS.framework in Embed Frameworks */,
 				1D2208DE24977E1B002D25A2 /* RPChatDataKit.framework in Embed Frameworks */,
 				1D2208CD24977DFF002D25A2 /* RPChatUIKit.framework in Embed Frameworks */,
@@ -168,6 +188,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatListViewController.swift; sourceTree = "<group>"; };
+		1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		1D1DBFDC258862360016831C /* ChatCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellProtocol.swift; sourceTree = "<group>"; };
 		1D22089724977C12002D25A2 /* RPChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D22089A24977C12002D25A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D22089C24977C12002D25A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,11 +241,17 @@
 		1D98A4A125836A5F000D1115 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		1D98A50525870F3D000D1115 /* ConfigRSA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRSA.swift; sourceTree = "<group>"; };
-		1D98A510258710FD000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
 		1D98A51A25874521000D1115 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
 		1D98A52225874908000D1115 /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
 		1D98A52B25874982000D1115 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		1D98A53525874CAE000D1115 /* ChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequest.swift; sourceTree = "<group>"; };
+		1D98A6412587683C000D1115 /* RPKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RPKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D98A6432587683C000D1115 /* RPKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPKeychain.h; sourceTree = "<group>"; };
+		1D98A6442587683C000D1115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D98A66E25876872000D1115 /* KeychainItemAccesssibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccesssibility.swift; sourceTree = "<group>"; };
+		1D98A67525876887000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
+		1D98A67C258768AA000D1115 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
+		1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A0249B749500F07DC6 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
@@ -234,6 +263,7 @@
 		1DB93A1C249C93D900F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1DB93A1D249C940B00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1DB93A1E249C940F00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1DBA5AB225877B7800BC4448 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPChatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatUnitTests.swift; sourceTree = "<group>"; };
 		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,6 +271,8 @@
 		1DD5F26724BD5D6400E762B7 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		1DDFC83225876D21006C63D5 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
+		1DDFC83925876D2D006C63D5 /* AddressBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookModel.swift; sourceTree = "<group>"; };
 		1DDFCEE72510C83C00D12B0F /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
 		1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPBannerView.framework; path = Carthage/Build/iOS/RPBannerView.framework; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -269,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D98A51C2587453F000D1115 /* SwiftyRSA.framework in Frameworks */,
+				1D98A6562587683D000D1115 /* RPKeychain.framework in Frameworks */,
 				1D484AD425510B0E00E88CDC /* RPAutoLayout.framework in Frameworks */,
 				1DDFCEEA25119D3F00D12B0F /* RPBannerView.framework in Frameworks */,
 				1D422CC625086BD300A8B949 /* RPToastView.framework in Frameworks */,
@@ -320,6 +353,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D98A63E2587683C000D1115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DD5F25824BD5D1C00E762B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +373,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1DBFCD2588618E0016831C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A52225874908000D1115 /* ChatMessageViewController.swift */,
+				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
+				1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D1DBFCE258861950016831C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D1DBFDB258862130016831C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1D1DBFDC258862360016831C /* ChatCellProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		1D22088E24977C12002D25A2 = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +406,7 @@
 				1D2208B424977DEB002D25A2 /* RPChat_iOS */,
 				1D2208C624977DFF002D25A2 /* RPChatUIKit */,
 				1D2208D724977E1B002D25A2 /* RPChatDataKit */,
+				1D98A6422587683C000D1115 /* RPKeychain */,
 				1DD5F25C24BD5D1C00E762B7 /* RPChatUnitTests */,
 				1D22089824977C12002D25A2 /* Products */,
 				1D2208F32498611F002D25A2 /* Frameworks */,
@@ -354,6 +421,7 @@
 				1D2208C524977DFF002D25A2 /* RPChatUIKit.framework */,
 				1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */,
 				1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */,
+				1D98A6412587683C000D1115 /* RPKeychain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -405,8 +473,8 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1DDFC82F25876CE5006C63D5 /* AddressBook */,
 				1D98A52825874956000D1115 /* Chat */,
-				1D98A50F258710DB000D1115 /* ConfigKeychain */,
 				1D98A50425870F1D000D1115 /* ConfigRSA */,
 				1DF627972536D1F9004232F4 /* SocketManager */,
 				1D67966124F6568B006023C7 /* SignedInResponder */,
@@ -504,7 +572,6 @@
 			isa = PBXGroup;
 			children = (
 				1D22095324987272002D25A2 /* SignInViewModel.swift */,
-				1DDFCEE72510C83C00D12B0F /* MessageListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -576,7 +643,8 @@
 		1D98A4AB25836BA2000D1115 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */,
+				1D98A68925876B61000D1115 /* Controller */,
+				1D98A68825876B5B000D1115 /* View */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -589,18 +657,12 @@
 			path = ConfigRSA;
 			sourceTree = "<group>";
 		};
-		1D98A50F258710DB000D1115 /* ConfigKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				1D98A510258710FD000D1115 /* RPKeychain.swift */,
-			);
-			path = ConfigKeychain;
-			sourceTree = "<group>";
-		};
 		1D98A52125874881000D1115 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				1D98A52225874908000D1115 /* ChatMessageViewController.swift */,
+				1D1DBFDB258862130016831C /* Protocol */,
+				1D1DBFCE258861950016831C /* View */,
+				1D1DBFCD2588618E0016831C /* Controller */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -624,9 +686,38 @@
 		1D98A52A25874968000D1115 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1DDFCEE72510C83C00D12B0F /* MessageListViewModel.swift */,
 				1D98A52B25874982000D1115 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D98A6422587683C000D1115 /* RPKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A6432587683C000D1115 /* RPKeychain.h */,
+				1D98A6442587683C000D1115 /* Info.plist */,
+				1D98A67525876887000D1115 /* RPKeychain.swift */,
+				1D98A66E25876872000D1115 /* KeychainItemAccesssibility.swift */,
+				1D98A67C258768AA000D1115 /* KeychainItem.swift */,
+			);
+			path = RPKeychain;
+			sourceTree = "<group>";
+		};
+		1D98A68825876B5B000D1115 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D98A68925876B61000D1115 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1DB9399F249B748D00F07DC6 /* HTTPRequest */ = {
@@ -668,6 +759,31 @@
 				1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */,
 			);
 			path = ControllerExtension;
+			sourceTree = "<group>";
+		};
+		1DDFC82F25876CE5006C63D5 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				1DDFC83025876CEE006C63D5 /* ViewModel */,
+				1DDFC83125876CF4006C63D5 /* Model */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		1DDFC83025876CEE006C63D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DDFC83225876D21006C63D5 /* AddressBookViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DDFC83125876CF4006C63D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DDFC83925876D2D006C63D5 /* AddressBookModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1DF627972536D1F9004232F4 /* SocketManager */ = {
@@ -729,6 +845,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D98A63C2587683C000D1115 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D98A6532587683C000D1115 /* RPKeychain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -748,6 +872,7 @@
 				1D2208B924977DEB002D25A2 /* PBXTargetDependency */,
 				1D2208CB24977DFF002D25A2 /* PBXTargetDependency */,
 				1D2208DC24977E1B002D25A2 /* PBXTargetDependency */,
+				1D98A6552587683C000D1115 /* PBXTargetDependency */,
 			);
 			name = RPChat;
 			productName = RPChat;
@@ -808,6 +933,24 @@
 			productReference = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		1D98A6402587683C000D1115 /* RPKeychain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D98A6582587683D000D1115 /* Build configuration list for PBXNativeTarget "RPKeychain" */;
+			buildPhases = (
+				1D98A63C2587683C000D1115 /* Headers */,
+				1D98A63D2587683C000D1115 /* Sources */,
+				1D98A63E2587683C000D1115 /* Frameworks */,
+				1D98A63F2587683C000D1115 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RPKeychain;
+			productName = RPKeychain;
+			productReference = 1D98A6412587683C000D1115 /* RPKeychain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		1DD5F25A24BD5D1C00E762B7 /* RPChatUnitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DD5F26424BD5D1C00E762B7 /* Build configuration list for PBXNativeTarget "RPChatUnitTests" */;
@@ -832,7 +975,7 @@
 		1D22088F24977C12002D25A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Beijing Physical Fitness Sport Science and Technology Co.,Ltd.";
 				TargetAttributes = {
@@ -850,6 +993,10 @@
 					1D2208D524977E1B002D25A2 = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1160;
+					};
+					1D98A6402587683C000D1115 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					1DD5F25A24BD5D1C00E762B7 = {
 						CreatedOnToolsVersion = 11.5;
@@ -876,6 +1023,7 @@
 				1D2208B224977DEB002D25A2 /* RPChat_iOS */,
 				1D2208C424977DFF002D25A2 /* RPChatUIKit */,
 				1D2208D524977E1B002D25A2 /* RPChatDataKit */,
+				1D98A6402587683C000D1115 /* RPKeychain */,
 				1DD5F25A24BD5D1C00E762B7 /* RPChatUnitTests */,
 			);
 		};
@@ -909,6 +1057,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1D2208D424977E1B002D25A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D98A63F2587683C000D1115 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -974,10 +1129,15 @@
 			files = (
 				1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
+				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
+				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
+				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
+				1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */,
 				1D98A52325874908000D1115 /* ChatMessageViewController.swift in Sources */,
+				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1006,6 +1166,7 @@
 				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
+				1DDFC83325876D21006C63D5 /* AddressBookViewModel.swift in Sources */,
 				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,
 				1DF627992536D236004232F4 /* SocketManager.swift in Sources */,
 				1D98A52C25874982000D1115 /* ChatViewModel.swift in Sources */,
@@ -1014,6 +1175,7 @@
 				1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */,
 				1D78E5DD24D2BCF300270F95 /* AuthRemoteAPI.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
+				1DDFC83A25876D2D006C63D5 /* AddressBookModel.swift in Sources */,
 				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
 				1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
@@ -1021,13 +1183,22 @@
 				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
 				1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */,
 				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
-				1D98A511258710FD000D1115 /* RPKeychain.swift in Sources */,
 				1DB939A5249B753C00F07DC6 /* APIConfig.swift in Sources */,
 				1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */,
 				1DB939A1249B749500F07DC6 /* HTTPRequest.swift in Sources */,
 				1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */,
 				1DF627CB2536D648004232F4 /* MessageBodyModel.swift in Sources */,
 				1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D98A63D2587683C000D1115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D98A66F25876872000D1115 /* KeychainItemAccesssibility.swift in Sources */,
+				1D98A67625876887000D1115 /* RPKeychain.swift in Sources */,
+				1D98A67D258768AA000D1115 /* KeychainItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1228,11 @@
 			isa = PBXTargetDependency;
 			target = 1D2208D524977E1B002D25A2 /* RPChatDataKit */;
 			targetProxy = 1D2208DB24977E1B002D25A2 /* PBXContainerItemProxy */;
+		};
+		1D98A6552587683C000D1115 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D98A6402587683C000D1115 /* RPKeychain */;
+			targetProxy = 1D98A6542587683C000D1115 /* PBXContainerItemProxy */;
 		};
 		1DD5F26124BD5D1C00E762B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1470,6 +1646,65 @@
 			};
 			name = Release;
 		};
+		1D98A6592587683D000D1115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RPKeychain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boxkj.RPKeychain.RPKeychain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1D98A65A2587683D000D1115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RPKeychain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boxkj.RPKeychain.RPKeychain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1DD5F26224BD5D1C00E762B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1564,6 +1799,15 @@
 			buildConfigurations = (
 				1D2208E024977E1B002D25A2 /* Debug */,
 				1D2208E124977E1B002D25A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D98A6582587683D000D1115 /* Build configuration list for PBXNativeTarget "RPKeychain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D98A6592587683D000D1115 /* Debug */,
+				1D98A65A2587683D000D1115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

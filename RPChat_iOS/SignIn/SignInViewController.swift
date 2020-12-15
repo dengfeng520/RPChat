@@ -32,7 +32,7 @@ open class SignInViewController: UIViewController {
         // 成功
         viewModel.signInSuccess.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
-            RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
+            RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
             DispatchQueue.main.async {
 //                let messageListVC = MessageListViewController()
 //                let transtition = CATransition()
@@ -56,7 +56,7 @@ open class SignInViewController: UIViewController {
         // 失败
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
             guard let `self` = self else { return }
-            RPBanner.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
+            RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
         }).disposed(by: disposeBag)
     }
     
