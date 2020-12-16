@@ -44,7 +44,6 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         nickeNameLab.translatesAutoresizingMaskIntoConstraints = false
         nickeNameLab.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
         nickeNameLab.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
     }
     
     private func configReceivedUI() {
@@ -52,6 +51,10 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         
         nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
         nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
+    }
+    
+    private func configSendUI() {
+        headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
         
         
     }

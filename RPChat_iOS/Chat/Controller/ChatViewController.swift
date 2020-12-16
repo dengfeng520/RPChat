@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import RPCharDataKit
 
 class ChatViewController: UIViewController {
 
+    let viewModel: ChatViewModel = ChatViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    lazy var tableView: UITableView = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
+        let left = $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
+        let width = $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
+        let bottom = $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        NSLayoutConstraint.activate([top, left, width, bottom])
+        $0.separatorStyle = .none
+        $0.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatTableViewCellId")
+        return $0
+    }(UITableView())
 }

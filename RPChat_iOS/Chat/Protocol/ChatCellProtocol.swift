@@ -13,4 +13,10 @@ protocol ChatCellProtocol {
     var headerImg: UIImageView { get }
     var messageRootView: UIView { get }
     var messageLab: UILabel { get }
+    var arrowView: UIView { get }
+}
+
+extension ChatCellProtocol {
+    func configReceivedUI() { }
+    func configSendUI() { }
 }

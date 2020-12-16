@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 public class ChatViewModel: PublicViewModel {
-    
+        
     func fetchChatList() {
         self.loading.onNext(true)
         HTTPRequest().requestWithMap(ChatListWithRequest(parameter: [:])) { [weak self] (result) in

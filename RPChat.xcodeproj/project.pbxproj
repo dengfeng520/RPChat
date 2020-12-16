@@ -97,6 +97,7 @@
 		1DB93A15249C81C300F07DC6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; };
 		1DB93A16249C81CE00F07DC6 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93A14249C81C300F07DC6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBA5AB225877B7800BC4448 /* ChatViewController.swift */; };
+		1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */; };
 		1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */; };
 		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
 		1DD5F26824BD5D6400E762B7 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5F26624BD5D6400E762B7 /* RxTest.framework */; };
@@ -264,6 +265,7 @@
 		1DB93A1D249C940B00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1DB93A1E249C940F00F07DC6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1DBA5AB225877B7800BC4448 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerConfigUI.swift; sourceTree = "<group>"; };
 		1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPChatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatUnitTests.swift; sourceTree = "<group>"; };
 		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -377,8 +379,9 @@
 			isa = PBXGroup;
 			children = (
 				1D98A52225874908000D1115 /* ChatMessageViewController.swift */,
-				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
 				1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */,
+				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
+				1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1135,6 +1138,7 @@
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
+				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
 				1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */,
 				1D98A52325874908000D1115 /* ChatMessageViewController.swift in Sources */,
 				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
