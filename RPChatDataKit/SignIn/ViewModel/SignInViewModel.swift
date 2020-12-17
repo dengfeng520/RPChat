@@ -63,7 +63,7 @@ public class SignInViewModel: PublicViewModel {
                 if returnJson["returnCode"].intValue == 601 || returnJson["returnCode"].intValue == 201 {
                     self.error.onNext(returnJson["returnMsg"].stringValue)
                 } else {
-                    self.signInSuccess.onNext(returnJson["returnMsg"].stringValue)
+                    self.successSubject.onNext(returnJson["returnMsg"].stringValue)
                 }
                 break
             case .failure(let failure) :

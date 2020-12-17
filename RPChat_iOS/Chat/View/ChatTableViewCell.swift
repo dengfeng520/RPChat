@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import RPChatUIKit
+import RPChatDataKit
 
 class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
-    var nickeNameLab: UILabel = UILabel()
-    var headerImg: UIImageView = UIImageView()
-    var messageRootView: UIView = UIView()
-    var messageLab: UILabel = UILabel()
-
+    var stype: mineOrOtherMode?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,31 +31,57 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    /// 头像
+    lazy var headerImg: UIImageView = {
+        contentView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return $0
+    }(UIImageView())
+    /// 昵称
+    lazy var nickeNameLab: UILabel = {
+        contentView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        return $0
+    }(UILabel())
     
-    private func configUI() {
-        contentView.addSubview(headerImg)
-        headerImg.translatesAutoresizingMaskIntoConstraints = false
-        headerImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
-        headerImg.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        headerImg.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        contentView.addSubview(nickeNameLab)
-        nickeNameLab.translatesAutoresizingMaskIntoConstraints = false
-        nickeNameLab.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
-        nickeNameLab.heightAnchor.constraint(equalToConstant: 20).isActive = true
-    }
-    
+    lazy var messageRootView: UIView = {
+        contentView.addSubview($0)
+        return $0
+    }(UIView())
+    /// 显示消息内容
+    lazy var messageLab: UILabel = {
+        messageRootView.addSubview($0)
+        return $0
+    }(UILabel())
+    /// 左气泡
+    lazy var leftTriangleView: ChatLeftTriangleView = {
+        messageRootView.addSubview($0)
+        return $0
+    }(ChatLeftTriangleView())
+    /// 右气泡
+    lazy var rightTriangleView: ChatLeftTriangleView = {
+        messageRootView.addSubview($0)
+        return $0
+    }(ChatLeftTriangleView())
+
     private func configReceivedUI() {
         headerImg.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
-        
         nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
         nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
     }
     
     private func configSendUI() {
         headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-        
+    }
+}
+
+extension ChatTableViewCell {
+    func cofigChatMessage(_ withModel: ChatMessageModel) {
         
     }
-    
 }

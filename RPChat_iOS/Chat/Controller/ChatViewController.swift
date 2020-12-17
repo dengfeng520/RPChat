@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import RPCharDataKit
+import RPChatDataKit
+import RxSwift
 
 class ChatViewController: UIViewController {
 
     let viewModel: ChatViewModel = ChatViewModel()
+    let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

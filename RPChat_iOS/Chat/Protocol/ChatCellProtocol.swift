@@ -8,12 +8,17 @@
 
 import UIKit
 
+enum mineOrOtherMode {
+    case mineMode
+    case othersMode
+}
+
 protocol ChatCellProtocol {
     var nickeNameLab: UILabel { get }
     var headerImg: UIImageView { get }
     var messageRootView: UIView { get }
     var messageLab: UILabel { get }
-    var arrowView: UIView { get }
+    var stype: mineOrOtherMode? { get }
 }
 
 extension ChatCellProtocol {

@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import RxSwift
+import RPBannerView
 
 extension ChatViewController: UITableViewDelegate {
     func bindViewModel() {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // subject
-        viewModel.addressBookSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: AddressBookTableViewCell.self)) { (row, model, cell) in
-            cell.configAddressBookData(model)
+        viewModel.chatListSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: ChatTableViewCell.self)) { (row, model, cell) in
+            cell.cofigChatMessage(model)
         }.disposed(by: disposeBag)
         // error
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in

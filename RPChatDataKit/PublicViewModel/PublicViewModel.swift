@@ -13,6 +13,6 @@ public class PublicViewModel: NSObject {
     public let bag = DisposeBag()
         
     public let error : PublishSubject<String> = PublishSubject()
-    public let signInSuccess: PublishSubject<String> = PublishSubject()
+    public let successSubject: PublishSubject<String> = PublishSubject()
     public let loading : PublishSubject<Bool> = PublishSubject()
 }

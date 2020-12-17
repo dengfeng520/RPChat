@@ -7,17 +7,18 @@
 //
 
 import UIKit
-import RxCocoa
 import RxSwift
 
 public class ChatViewModel: PublicViewModel {
         
+    public let chatListArray: [ChatMessageModel] = [ChatMessageModel]()
+    public let chatListSubject : PublishSubject<[ChatMessageModel]> = PublishSubject()
+    
     func fetchChatList() {
         self.loading.onNext(true)
         HTTPRequest().requestWithMap(ChatListWithRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
             self.loading.onNext(false)
-            
         }
     }
 }
