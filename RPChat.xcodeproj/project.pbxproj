@@ -90,9 +90,6 @@
 		1DBBBD6F258B397100AABC4F /* ChatRightTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD6E258B397100AABC4F /* ChatRightTriangleView.swift */; };
 		1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD7A258B398D00AABC4F /* ChatLeftTriangleView.swift */; };
 		1DBBBD87258B416700AABC4F /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD86258B416700AABC4F /* ChatMessageModel.swift */; };
-		1DBBBD8E258B44C300AABC4F /* ChatTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD8D258B44C300AABC4F /* ChatTableViewCellFactory.swift */; };
-		1DBBBD95258B454100AABC4F /* ChatLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD94258B454100AABC4F /* ChatLeftTableViewCell.swift */; };
-		1DBBBD9C258B455E00AABC4F /* ChatRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD9B258B455E00AABC4F /* ChatRightTableViewCell.swift */; };
 		1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */; };
 		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
 		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
@@ -250,9 +247,6 @@
 		1DBBBD6E258B397100AABC4F /* ChatRightTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRightTriangleView.swift; sourceTree = "<group>"; };
 		1DBBBD7A258B398D00AABC4F /* ChatLeftTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLeftTriangleView.swift; sourceTree = "<group>"; };
 		1DBBBD86258B416700AABC4F /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
-		1DBBBD8D258B44C300AABC4F /* ChatTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCellFactory.swift; sourceTree = "<group>"; };
-		1DBBBD94258B454100AABC4F /* ChatLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLeftTableViewCell.swift; sourceTree = "<group>"; };
-		1DBBBD9B258B455E00AABC4F /* ChatRightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRightTableViewCell.swift; sourceTree = "<group>"; };
 		1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPChatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatUnitTests.swift; sourceTree = "<group>"; };
 		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -372,8 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */,
-				1DBBBD94258B454100AABC4F /* ChatLeftTableViewCell.swift */,
-				1DBBBD9B258B455E00AABC4F /* ChatRightTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,7 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				1D1DBFDC258862360016831C /* ChatCellProtocol.swift */,
-				1DBBBD8D258B44C300AABC4F /* ChatTableViewCellFactory.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1125,15 +1116,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DBBBD8E258B44C300AABC4F /* ChatTableViewCellFactory.swift in Sources */,
 				1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
-				1DBBBD95258B454100AABC4F /* ChatLeftTableViewCell.swift in Sources */,
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
-				1DBBBD9C258B455E00AABC4F /* ChatRightTableViewCell.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,

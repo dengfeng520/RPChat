@@ -48,40 +48,73 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return $0
     }(UILabel())
-    
-    lazy var messageRootView: UIView = {
-        contentView.addSubview($0)
-        return $0
-    }(UIView())
-    /// 显示消息内容
-    lazy var messageLab: UILabel = {
-        messageRootView.addSubview($0)
-        return $0
-    }(UILabel())
     /// 左气泡
     lazy var leftTriangleView: ChatLeftTriangleView = {
         messageRootView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: nickeNameLab.bottomAnchor, constant: 25).isActive = true
+        $0.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 12).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 13).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return $0
     }(ChatLeftTriangleView())
     /// 右气泡
     lazy var rightTriangleView: ChatLeftTriangleView = {
         messageRootView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: nickeNameLab.bottomAnchor, constant: 25).isActive = true
+        $0.rightAnchor.constraint(equalTo: headerImg.leftAnchor, constant: -12).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 13).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return $0
     }(ChatLeftTriangleView())
-
-    private func configReceivedUI() {
-        headerImg.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
-        nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
-        nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-    }
-    
-    private func configSendUI() {
-        headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-    }
+    /// root view
+    lazy var messageRootView: UIView = {
+        contentView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: nickeNameLab.bottomAnchor, constant: 8).isActive = true
+        $0.heightAnchor.constraint(greaterThanOrEqualToConstant: 55).isActive = true
+        $0.layer.cornerRadius = 4
+        return $0
+    }(UIView())
+    /// 显示消息内容
+    lazy var messageLab: UILabel = {
+        messageRootView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: messageRootView.topAnchor, constant: 10).isActive = true
+        $0.leftAnchor.constraint(equalTo: messageRootView.leftAnchor, constant: 12).isActive = true
+        $0.rightAnchor.constraint(equalTo: messageRootView.rightAnchor, constant: -12).isActive = true
+        $0.bottomAnchor.constraint(equalTo: messageRootView.bottomAnchor, constant: -10).isActive = true
+        $0.heightAnchor.constraint(greaterThanOrEqualToConstant: 35).isActive = true
+        $0.numberOfLines = 0
+        return $0
+    }(UILabel())
 }
 
 extension ChatTableViewCell {
     func cofigChatMessage(_ withModel: ChatMessageModel) {
         
+    }
+}
+
+extension ChatTableViewCell {
+    private func configReceivedUI() {
+        headerImg.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
+        
+        nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
+        nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
+        
+        messageRootView.leftAnchor.constraint(equalTo: leftTriangleView.rightAnchor, constant: 0).isActive = true
+        messageRootView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -95).isActive = true
+    }
+    
+    private func configSendUI() {
+        headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
+        
+        nickeNameLab.rightAnchor.constraint(equalTo: headerImg.leftAnchor, constant: -8).isActive = true
+        nickeNameLab.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
+        
+        messageRootView.rightAnchor.constraint(equalTo: leftTriangleView.leftAnchor, constant: 0).isActive = true
+        messageRootView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 95).isActive = true
     }
 }
