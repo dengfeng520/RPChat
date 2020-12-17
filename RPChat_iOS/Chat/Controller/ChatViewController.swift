@@ -17,7 +17,6 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +28,9 @@ class ChatViewController: UIViewController {
         let width = $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
         let bottom = $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         NSLayoutConstraint.activate([top, left, width, bottom])
+        $0.tableFooterView = UIView()
+        $0.rowHeight = UITableView.automaticDimension
+        $0.estimatedRowHeight = 60
         $0.separatorStyle = .none
         $0.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatTableViewCellId")
         return $0

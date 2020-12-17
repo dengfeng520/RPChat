@@ -8,6 +8,7 @@
 
 import UIKit
 import RPChat_iOS
+import RPKeychain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,9 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
              window = UIWindow()
              window?.frame = UIScreen.main.bounds
-             window?.makeKeyAndVisible()
-             let signInVC = SignInViewController()
-             window?.rootViewController = signInVC
+            if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
+                let signInVC = SignInViewController()
+                window?.rootViewController = signInVC
+            } else {
+                let tabbarVC = UITabBarControllerExtension()
+                window?.rootViewController = tabbarVC
+            }
+            window?.makeKeyAndVisible()
         }
         return true
     }

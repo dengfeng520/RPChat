@@ -8,13 +8,13 @@
 
 import UIKit
 
-class UITabBarControllerExtension: UITabBarController {
+open class UITabBarControllerExtension: UITabBarController {
     
     let messageListNav = UINavigationController(rootViewController: MessageListViewController())
     let addressBookNav = UINavigationController(rootViewController: AddressBookViewController())
     let mineNav = UINavigationController(rootViewController: MineViewController())
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
          
         let imageList: [String] = ["unselect_message_icon","unselect_address_book","unselect_mine_icon"]

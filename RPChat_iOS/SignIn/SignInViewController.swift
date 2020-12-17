@@ -12,6 +12,7 @@ import RxCocoa
 import RPChatDataKit
 import RPChatUIKit
 import RPBannerView
+import RPKeychain
 
 open class SignInViewController: UIViewController {
     
@@ -33,16 +34,8 @@ open class SignInViewController: UIViewController {
         viewModel.successSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
+            RPKeychain.default.set("\(self.viewModel.inputStuNum)", forKey: "key.siginInfo.value")
             DispatchQueue.main.async {
-//                let messageListVC = MessageListViewController()
-//                let transtition = CATransition()
-//                transtition.duration = 0.35
-//                transtition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-//                self.view.window?.layer.add(transtition, forKey: "animation")
-//                messageListVC.modalPresentationStyle = .overFullScreen
-//                self.view.window?.rootViewController = UINavigationController(rootViewController: messageListVC)
-//                self.view.window?.makeKeyAndVisible()
-                
                 let tabbarVC = UITabBarControllerExtension()
                 let transtition = CATransition()
                 transtition.duration = 0.35
