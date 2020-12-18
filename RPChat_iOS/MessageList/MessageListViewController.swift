@@ -14,7 +14,7 @@ import RPBannerView
 
 class MessageListViewController: BaseChatListViewController {
 
-    let viewModel: MessageListViewModel = MessageListViewModel()
+    let viewModel: ConversatListViewModel = ConversatListViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class MessageListViewController: BaseChatListViewController {
         configUI()
         // Do any additional setup after loading the view.
         title = NSLocalizedString("Message List", comment: "")
+        
     }
 
     private func configUI() {
@@ -36,8 +37,8 @@ extension MessageListViewController: UITableViewDelegate {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // subject
-        viewModel.messageListSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: AddressBookTableViewCell.self)) { (row, model, cell) in
-            cell.configAddressBookData(model)
+        viewModel.conversatListSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: AddressBookTableViewCell.self)) { (row, model, cell) in
+            
         }.disposed(by: disposeBag)
         // error
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in

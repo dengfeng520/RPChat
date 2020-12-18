@@ -11,8 +11,8 @@ import RxSwift
 
 public class ChatViewModel: PublicViewModel {
         
-    public let chatListArray: [ChatMessageModel] = [ChatMessageModel]()
-    public let chatListSubject : PublishSubject<[ChatMessageModel]> = PublishSubject()
+    public let chatListArray: [ConversatModel] = [ConversatModel]()
+    public let chatListSubject : PublishSubject<[ConversatModel]> = PublishSubject()
     
     func fetchChatList() {
         self.loading.onNext(true)

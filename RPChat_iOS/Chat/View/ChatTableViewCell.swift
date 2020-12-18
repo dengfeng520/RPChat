@@ -92,7 +92,7 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
 }
 
 extension ChatTableViewCell {
-    func cofigChatMessage(_ withModel: ChatMessageModel) {
+    func cofigChatMessage(_ withModel: ConversatModel) {
         
     }
 }

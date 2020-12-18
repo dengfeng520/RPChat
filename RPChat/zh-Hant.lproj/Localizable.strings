@@ -15,3 +15,5 @@
 "Message List" = "消息";
 "Mine" = "我的";
 "Address Book" = "通讯录";
+"Request Timed Out" = "请求超时";
+"Unknown Error" = "未知错误";

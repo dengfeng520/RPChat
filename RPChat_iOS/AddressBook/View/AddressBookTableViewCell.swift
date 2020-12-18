@@ -30,11 +30,6 @@ class AddressBookTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configAddressBookData(_ withModel: AddressBookModel) {
-        headerImg.image = UIImage(named: "logo_icon")
-        nickNameLab.text = "寒月公主"
-    }
 
     lazy var headerImg: UIImageView = {
         self.contentView.addSubview($0)
@@ -57,4 +52,18 @@ class AddressBookTableViewCell: UITableViewCell {
         $0.font = UIFont(name: "Helvetica-Bold", size: 20)
         return $0
     }(UILabel())
+}
+
+
+extension AddressBookTableViewCell {
+    /// AddressBook
+    func configAddressBookData(_ withModel: AddressBookModel) {
+        headerImg.image = UIImage(named: "logo_icon")
+        nickNameLab.text = "寒月公主"
+    }
+    /// Conversat list
+    func configConversatData(_ model: ConversatModel) {
+        headerImg.image = UIImage(named: "logo_icon")
+        nickNameLab.text = "半神之弓"
+    }
 }
