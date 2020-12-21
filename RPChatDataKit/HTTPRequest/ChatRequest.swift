@@ -17,7 +17,7 @@ struct ChatListWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 
@@ -29,7 +29,7 @@ struct FriendsListWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 
@@ -41,7 +41,7 @@ struct MessageListWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 
@@ -53,7 +53,7 @@ struct UpdateReadStatusListWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 
@@ -65,7 +65,7 @@ struct ChatInfoListWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 
@@ -77,7 +77,7 @@ struct ChatUpdateReadStatusWithRequest: Request {
     }
     var method: HTTPMethod = .post
     var host: String? {
-        return __serverTestURL
+        return __chatServerURL
     }
 }
 

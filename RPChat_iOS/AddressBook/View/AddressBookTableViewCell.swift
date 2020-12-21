@@ -61,9 +61,5 @@ extension AddressBookTableViewCell {
         headerImg.image = UIImage(named: "logo_icon")
         nickNameLab.text = "寒月公主"
     }
-    /// Conversat list
-    func configConversatData(_ model: ConversatModel) {
-        headerImg.image = UIImage(named: "logo_icon")
-        nickNameLab.text = "半神之弓"
-    }
+    
 }

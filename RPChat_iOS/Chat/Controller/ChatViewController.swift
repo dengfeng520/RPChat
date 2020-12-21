@@ -9,15 +9,18 @@
 import UIKit
 import RPChatDataKit
 import RxSwift
+import RPBannerView
 
 class ChatViewController: UIViewController {
 
+    var friendsModel: FriendsModel = FriendsModel()
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.backgroundColor = .darkModeViewColor
     }
     
     lazy var tableView: UITableView = {
@@ -36,3 +39,5 @@ class ChatViewController: UIViewController {
         return $0
     }(UITableView())
 }
+
+

@@ -15,14 +15,13 @@ extension ChatViewController: UITableViewDelegate {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // subject
-        viewModel.chatListSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: ChatTableViewCell.self)) { (row, model, cell) in
+        viewModel.chatListSubject.bind(to: tableView.rx.items(cellIdentifier: "ChatTableViewCellId", cellType: ChatTableViewCell.self)) { (row, model, cell) in
             cell.cofigChatMessage(model)
         }.disposed(by: disposeBag)
         // error
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
-            RPBannerView.showBanner(BannerDisplay(title: error ,backColor: .red, addView: self.view ,time: 0, mode: .mobileMode))
-
+            RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
         // selected
         tableView.rx.itemSelected.bind { [weak self] (indexPath) in
@@ -35,5 +34,28 @@ extension ChatViewController: UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+}
+
+
+extension ChatViewController {
+    func configChatDataWith() {
+        var parameter = [String : String]()
+        if friendsModel.type == "1" {
+            parameter = ["type":"\(friendsModel.type)",
+                "userId":"\(friendsModel.userId)",
+                "pageSize":"20",
+                "pageIndex":"\(1)"]
+        } else {
+            parameter = ["type":"\(friendsModel.type)",
+                "groupId":"\(friendsModel.userId)",
+                "pageSize":"20",
+                "pageIndex":"\(1)"]
+        }
+        viewModel.fetchChatList(parameter)
     }
 }

@@ -122,7 +122,7 @@ extension HTTPRequest {
         let path = URL(string: r.host!.appending(r.path!))!
         let headers: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded",
                                    "version" : "318",
-                                   "token" : "2a8d9c3f-c67a-4b89-aba0-f80014f5be12",
+                                   "token" : "9e678ee6-69de-47b1-a069-6ed343626f49",
                                    "appId" : "e2766ff90db544ab9b3c7eaa8b834120",
                                    "type" : "1",
                                    "channel" : "iOS"]
@@ -131,6 +131,7 @@ extension HTTPRequest {
         var parameters = dictWithParamerters(maps: body ?? [:])
         parameters.removeValue(forKey: "appSecret")
         parameters.removeValue(forKey: "appId")
+        print("parameters============\(parameters)")
         
         AF.request(path, method: r.method, parameters: parameters, headers: headers).response { response in
             if let error = response.error {
@@ -141,6 +142,7 @@ extension HTTPRequest {
                     let responseJson = try JSON(data: data)
                     switch responseCode.statusCode {
                     case 200:
+                        print("---------------\(responseJson)")
                         completion(ApiResult.success(responseJson))
                     case 201:
                         completion(ApiResult.failure(.isAlert(responseJson)))
@@ -205,7 +207,9 @@ extension HTTPRequest {
         var muMaps = maps
         muMaps.updateValue(timer as AnyObject, forKey: "timestamp")
         muMaps.updateValue(appkey as AnyObject, forKey: "appSecret")
-        let signValidate = charSortWithMaps(muMaps).md5
+        muMaps.updateValue("e2766ff90db544ab9b3c7eaa8b834120" as AnyObject, forKey: "appId")
+        let charStr = charSortWithMaps(muMaps)
+        let signValidate = charStr.md5
         muMaps.updateValue(signValidate as AnyObject, forKey: "sign")
         return muMaps
     }

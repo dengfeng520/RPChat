@@ -9,15 +9,23 @@
 import UIKit
 import RxSwift
 
-public class ConversatListViewModel: PublicViewModel {
-    public var conversatListArray: [ConversatModel] = [ConversatModel]()
-    public let conversatListSubject : PublishSubject<[ConversatModel]> = PublishSubject()
+public class MessageListViewModel: PublicViewModel {
+    public var messageListArray: [MessageModel] = [MessageModel]()
+    public let messageListSubject : PublishSubject<[MessageModel]> = PublishSubject()
     
+    public let messageListTapped = PublishSubject<IndexPath>()
+    
+
     public override init() {
         super.init()
+            
+        messageListTapped.asObservable().subscribe(onNext: { [weak self] (index) in
+            guard let `self` = self else { return }
+            
+        }).disposed(by: bag)
     }
 
-    public func fetchChatList() {
+    public func fetchMessageList() {
         self.loading.onNext(true)
         HTTPRequest().authRemoteAPIWith(ChatListWithRequest(parameter: [:])) { [weak self] (result) in
             guard let `self` = self else { return }
@@ -29,10 +37,14 @@ public class ConversatListViewModel: PublicViewModel {
                 } else if returnJson["returnCode"].intValue == 201 {
                     self.error.onNext(returnJson["returnMsg"].stringValue)
                 } else {
-                    self.conversatListArray = returnJson["data"].arrayValue.map({ (json) -> ConversatModel in
-                        return ConversatModel(json: json)
+                    self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
+                        return MessageModel(json: json)
                     })
-                    self.conversatListSubject.onNext(self.conversatListArray)
+                    if self.messageListArray.count != 0 {
+                        self.messageListSubject.onNext(self.messageListArray)
+                    } else {
+                        self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
+                    }
                 }
                 break
             case .failure(let failure) :
@@ -58,5 +70,19 @@ public class ConversatListViewModel: PublicViewModel {
                 }
             }
         }
+    }
+}
+
+extension MessageListViewModel {
+    public func converFriendsModel(_ model: MessageModel) -> FriendsModel {
+        var friendsModel: FriendsModel = FriendsModel()
+        friendsModel.type = model.type
+        friendsModel.userName = model.userName
+        if model.type == "2" {
+            friendsModel.userId = model.groupId
+        } else {
+            friendsModel.userId = model.userId
+        }
+        return friendsModel
     }
 }

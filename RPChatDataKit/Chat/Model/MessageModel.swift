@@ -9,12 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-public struct ConversatModel {
-    var status,userId,type,groupId,lastMsg,userName,createTime,photo: String
-    var isCache: Bool
+public struct MessageModel {
+    public var status,userId,type,groupId,lastMsg,userName,createTime,photo: String
+    public var isCache: Bool
 }
 
-extension ConversatModel {
+extension MessageModel {
     init(json: JSON) {
         status = json["status"].stringValue
         userId = json["userId"].stringValue

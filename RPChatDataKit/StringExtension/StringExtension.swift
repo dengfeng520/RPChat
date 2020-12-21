@@ -50,4 +50,11 @@ extension String {
         CC_MD5(utf8, CC_LONG(utf8!.count - 1), &digest)
         return digest.reduce("") { $0 + String(format:"%02x", $1) }
     }
+    /// 获取当前时间
+    public var fetchSystemCurrentTime: String {
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let time = dformatter.string(from: Date())
+        return "\(time)"
+    }
 }

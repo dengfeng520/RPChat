@@ -36,8 +36,7 @@ extension AddressBookViewController: UITableViewDelegate {
         // error
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
-            RPBannerView.showBanner(BannerDisplay(title: error ,backColor: .red, addView: self.view ,time: 0, mode: .mobileMode))
-
+            RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
         // selected
         tableView.rx.itemSelected.bind { [weak self] (indexPath) in
@@ -55,3 +54,4 @@ extension AddressBookViewController: UITableViewDelegate {
         return 60
     }
 }
+

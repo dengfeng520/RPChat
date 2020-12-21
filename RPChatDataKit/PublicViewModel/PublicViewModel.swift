@@ -15,4 +15,5 @@ public class PublicViewModel: NSObject {
     public let error : PublishSubject<String> = PublishSubject()
     public let successSubject: PublishSubject<String> = PublishSubject()
     public let loading : PublishSubject<Bool> = PublishSubject()
+    public let noMoreData : PublishSubject<String> = PublishSubject()
 }
