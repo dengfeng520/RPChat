@@ -90,7 +90,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = .subDarkModeViewColor
+        $0.backgroundColor = .subViewColor
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())
@@ -116,7 +116,7 @@ class SignInRootView: UIView {
         let right = $0.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         let height = $0.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([top, left, right, height])
-        $0.backgroundColor = .subDarkModeViewColor
+        $0.backgroundColor = .subViewColor
         $0.layer.cornerRadius = 25
         return $0
     }(UIView())

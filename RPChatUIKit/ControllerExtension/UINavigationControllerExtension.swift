@@ -17,7 +17,7 @@ extension UINavigationController {
     }
     
     func configUI() {
-        navigationBar.barTintColor = .configDarkModeSubViewColorWith(.hexStringToColor("0xF5BE62"))
+        navigationBar.barTintColor = .configSubViewColorWith(.hexStringToColor("0xF5BE62"))
         navigationBar.tintColor = .darkModeTextColor
         navigationBar.isTranslucent = false
         navigationBar.titleTextAttributes = [.font : UIFont(name: "PingFangSC-Semibold", size: 18)!]

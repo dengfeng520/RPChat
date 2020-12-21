@@ -31,6 +31,6 @@ open class UITabBarControllerExtension: UITabBarController {
         tabBar.tintColor = .white
         
         tabBar.isTranslucent = false
-        tabBar.barTintColor = .configDarkModeSubViewColorWith(.hexStringToColor("0xF5BE62"))
+        tabBar.barTintColor = .configSubViewColorWith(.hexStringToColor("0xF5BE62"))
     }
 }

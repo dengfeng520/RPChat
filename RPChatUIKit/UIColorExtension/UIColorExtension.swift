@@ -51,8 +51,35 @@ extension UIColor {
             return .black
         }
     }
+    /// 副标题
+    public class var subTextColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor.init(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
+                } else {
+                    return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+                }
+            }
+        } else {
+            return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+        }
+    }
+    public class func configSubTxtColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor.init(red: 142/255, green: 141/255, blue: 147/255, alpha: 1)
+                } else {
+                    return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+                }
+            }
+        } else {
+            return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+        }
+    }
     /// 子UIView背景颜色
-    public class var subDarkModeViewColor: UIColor {
+    public class var subViewColor: UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
@@ -65,7 +92,7 @@ extension UIColor {
             return .groupTableViewBackground
         }
     }
-    public class func configSubDarkModeViewColor() -> UIColor {
+    public class func configSubViewColor() -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
@@ -79,7 +106,7 @@ extension UIColor {
         }
     }
     /// 设置默认带颜色的view背景
-    public class func configDarkModeViewWith(_ dfaultColor: UIColor) -> UIColor {
+    public class func configColorViewWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
@@ -93,7 +120,7 @@ extension UIColor {
         }
     }
     /// 设置带默认颜色的文字颜色
-    public class func configDarkModeTxtColorWith(_ dfaultColor: UIColor) -> UIColor {
+    public class func configTxtColorWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
@@ -107,7 +134,7 @@ extension UIColor {
         }
     }
     /// 设置默认带颜色的子view背景
-    public class func configDarkModeSubViewColorWith(_ dfaultColor: UIColor) -> UIColor {
+    public class func configSubViewColorWith(_ dfaultColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {

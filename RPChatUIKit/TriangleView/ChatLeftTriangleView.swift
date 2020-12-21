@@ -13,7 +13,7 @@ public class ChatLeftTriangleView: UIView {
     public override func draw(_ rect: CGRect) {
         // Drawing code
         let context: CGContext = UIGraphicsGetCurrentContext()!
-        context.setFillColor(UIColor.subDarkModeViewColor.cgColor)
+        context.setFillColor(UIColor.subViewColor.cgColor)
         context.move(to: CGPoint(x: self.bounds.size.width, y: self.bounds.size.height / 2 - 5))
         context.addLine(to: CGPoint(x:0, y: self.bounds.size.height / 2))
         context.addLine(to: CGPoint(x: self.bounds.size.width, y: self.bounds.size.height / 2 + 5))
