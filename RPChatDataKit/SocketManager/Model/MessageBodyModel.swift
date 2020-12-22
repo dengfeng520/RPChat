@@ -9,13 +9,13 @@
 import Foundation
 import SwiftyJSON
 
-struct MessageBodyModel: Codable {
-    var createTime,messageId,msg,photo,schoolId,toUserId,toUserName,type,myUserId,groupId: String
-    var fromUserId,fromUserName: String
-    var isSendSuccess: Bool
-    var timeOut: Int
-    var isCache: Bool
-    var isUserTouch: Bool
+public struct MessageBodyModel: Codable {
+    public var createTime,messageId,msg,photo,schoolId,toUserId,toUserName,type,myUserId,groupId: String
+    public var fromUserId,fromUserName: String
+    public var isSendSuccess: Bool
+    public var timeOut: Int
+    public var isCache: Bool
+    public var isUserTouch: Bool
 }
 
 extension MessageBodyModel {

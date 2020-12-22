@@ -26,8 +26,8 @@ extension SocketSigInModel {
 }
 
 
-struct MessageIdModel: Codable {
-    let messageId: String
+public struct MessageIdModel: Codable {
+    public let messageId: String
     
     enum CodingKeys: String, CodingKey {
         case messageId

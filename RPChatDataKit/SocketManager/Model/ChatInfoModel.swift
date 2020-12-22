@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct ChatInfoModel: Codable {
+public struct ChatInfoModel: Codable {
     var school: String?
     let serverIp,collectPhoto: String
     let port: Int

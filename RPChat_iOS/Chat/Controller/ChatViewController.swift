@@ -38,6 +38,17 @@ class ChatViewController: UIViewController {
         $0.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatTableViewCellId")
         return $0
     }(UITableView())
+    
+    lazy var socket: SocketManager = {
+        return SocketManager.sharedInstance()
+    }()
+    
+    /// 构建Socket
+    private func configSocketManager() {
+        if socket.isSigin == true && socket.isConnect == true {
+            
+        }
+    }
 }
 
 

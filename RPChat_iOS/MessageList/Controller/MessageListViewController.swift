@@ -43,7 +43,10 @@ extension MessageListViewController: UITableViewDelegate {
     func bindViewModel() {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
+        // 获取会话列表
         viewModel.fetchMessageList()
+        // 连接Socket服务器
+        viewModel.fetchChatInformation()
         // subject
         viewModel.messageListSubject.bind(to: tableView.rx.items(cellIdentifier: "MessageListTableViewCellId", cellType: MessageListTableViewCell.self)) { (row, model, cell) in
             cell.configMessageListData(model)

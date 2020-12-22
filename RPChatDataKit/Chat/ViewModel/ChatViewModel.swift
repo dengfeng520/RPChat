@@ -14,6 +14,7 @@ public class ChatViewModel: PublicViewModel {
     public var chatListArray: [ChatBodyModel] = [ChatBodyModel]()
     public let chatListSubject : PublishSubject<[ChatBodyModel]> = PublishSubject()
     
+    /// 获取消息列表
     public func fetchChatList(_ parameter: [String : String]) {
         self.loading.onNext(true)
         HTTPRequest().authRemoteAPIWith(MessageListWithRequest(parameter: [:])) { [weak self] (result) in

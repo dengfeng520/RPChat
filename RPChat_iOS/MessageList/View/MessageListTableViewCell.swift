@@ -60,7 +60,7 @@ class MessageListTableViewCell: UITableViewCell {
         $0.bottomAnchor.constraint(equalTo: headerImg.bottomAnchor, constant: -3).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 17).isActive = true
         $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -95).isActive = true
-        $0.textColor = .subViewColor
+        $0.textColor = .subTextColor
         return $0
     }(UILabel())
     
@@ -71,7 +71,7 @@ class MessageListTableViewCell: UITableViewCell {
         $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         $0.widthAnchor.constraint(lessThanOrEqualToConstant: 50).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        $0.textColor = .subViewColor
+        $0.textColor = .subTextColor
         return $0
     }(UILabel())
     

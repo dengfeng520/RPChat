@@ -74,6 +74,44 @@ public class MessageListViewModel: PublicViewModel {
 }
 
 extension MessageListViewModel {
+    /// 获取用户信息 登录socket
+    public func fetchChatInformation() {
+        HTTPRequest().authRemoteAPIWith(ChatInfoListWithRequest(parameter: [:])) { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .success(let returnJson) :
+                print("================\(returnJson)")
+                // 连接Socket服务器
+                let socket = SocketManager.sharedInstance()
+                let infoModel = ChatInfoModel(json: returnJson["data"])
+                    socket.fetchSocketInfoWith(model: infoModel)
+                    socket.isDesk = true
+                    socket.connectSocket()
+                break
+            case .failure(let failure) :
+                switch failure {
+                case .connectionError:
+                    self.error.onNext("请求超时")
+                    break
+                case .authorizationError(let errorJson):
+                    self.error.onNext(errorJson["returnMsg"].stringValue)
+                    break
+                case .statusCodeError(let errorJson):
+                    self.error.onNext(errorJson["returnMsg"].stringValue)
+                    break
+                case .isAlert(let errorJson):
+                    self.error.onNext(errorJson["returnMsg"].stringValue)
+                    break
+                default :
+                    self.error.onNext("Unknown Error")
+                    break
+                }
+            }
+        }
+    }
+}
+
+extension MessageListViewModel {
     public func converFriendsModel(_ model: MessageModel) -> FriendsModel {
         var friendsModel: FriendsModel = FriendsModel()
         friendsModel.type = model.type

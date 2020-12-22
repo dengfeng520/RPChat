@@ -18,38 +18,39 @@ public class SocketManager: NSObject {
     // 服务器Port
     var serverPort = 6666
     // 心跳计时器
-    var heartbeatTimer: DispatchSourceTimer?
+    private var heartbeatTimer: DispatchSourceTimer?
+    var isHeartbeatTimeSuspend = false
     // 心跳超时计时器
     var timeOutTimer: DispatchSourceTimer?
+    var isTimeOutResume = false
     // 心跳超时计数
     var timeOutNum = 0
     // 最后一次收到服务器心跳回复时间戳
     var lastReadTime: String = String()
     // 前台 or 后台
-    @objc var isDesk = false
+    public var isDesk = false
     // 聊天信息
-    var infoModel: ChatInfoModel = ChatInfoModel(json: JSON([:]))
+    public var infoModel: ChatInfoModel = ChatInfoModel(json: JSON([:]))
     // 发送消息成功回调
-    var sendMessageSucessClosures: ((_ messageId: MessageIdModel) -> Void)?
-    let sendMessageSucessSubject : PublishSubject<MessageIdModel> = PublishSubject()
+    public var sendMessageSucessClosures: ((_ messageId: MessageIdModel) -> Void)?
+    public let sendMessageSucessSubject : PublishSubject<MessageIdModel> = PublishSubject()
     // 服务器主动发消息闭包
-    var receiveServrerMessageClosures: ((_ messageModel: MessageBodyModel) -> Void)?
-    let receiveServrerMessageSubject : PublishSubject<MessageBodyModel> = PublishSubject()
+    public var receiveServrerMessageClosures: ((_ messageModel: MessageBodyModel) -> Void)?
+    public let receiveServrerMessageSubject : PublishSubject<MessageBodyModel> = PublishSubject()
     // 账号被踢
-    var siginOutServerMessageClosures: (() -> Void)?
-    // 是否已经连接Socket服务器
-    var isConnect = false
-    // 是否已经登录成功
-    var isSigin = false
-    var isTimeOutResume = false
-    var isHeartbeatTimeSuspend = false
+    public var siginOutServerMessageClosures: (() -> Void)?
+
     private static var _sharedInstance: SocketManager?
+    // 是否已经连接Socket服务器
+    public var isConnect = false
+    // 是否已经登录成功
+    public var isSigin = false
     
     override init() {
         super.init()
     }
     
-    static func sharedInstance() -> SocketManager {
+    public static func sharedInstance() -> SocketManager {
         guard let instance = _sharedInstance else {
             _sharedInstance = SocketManager()
             return _sharedInstance!
@@ -110,7 +111,7 @@ public class SocketManager: NSObject {
                 DispatchQueue.main.async {
                     self.timeOutNum = self.timeOutNum + 1
                     // 断开后每5秒 重连一次
-                    if self.timeOutNum >= 3 {
+                    if self.timeOutNum >= 5 {
                         self.connectSocket()
                     }
                 }
@@ -165,7 +166,7 @@ extension SocketManager: GCDAsyncSocketDelegate {
             configHeartbeatTimer()
         } else if code == cmdCodeMode.jumpingSuccessMode.rawValue {
             //            let model: SocketModel = jumpingPackWithData(data: data)
-            //            print("=======================心跳正常")
+            print("=======================心跳正常")
         } else if code == cmdCodeMode.receivedMessageMode.rawValue {
             let model: MessageIdModel = sendFeedbackPackWithData(data: data)
             if let sendMessageSucessClosures = sendMessageSucessClosures {

@@ -94,6 +94,7 @@
 		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
 		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
 		1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */; };
+		1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */; };
 		1DDFC83325876D21006C63D5 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFC83225876D21006C63D5 /* AddressBookViewModel.swift */; };
 		1DDFC83A25876D2D006C63D5 /* AddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFC83925876D2D006C63D5 /* AddressBookModel.swift */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
@@ -256,6 +257,7 @@
 		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerSocket.swift; sourceTree = "<group>"; };
 		1DDFC83225876D21006C63D5 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
 		1DDFC83925876D2D006C63D5 /* AddressBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookModel.swift; sourceTree = "<group>"; };
 		1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPBannerView.framework; path = Carthage/Build/iOS/RPBannerView.framework; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */,
 				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
 				1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */,
+				1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
+				1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
 				1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */,
