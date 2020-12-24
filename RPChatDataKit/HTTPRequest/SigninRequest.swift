@@ -18,3 +18,13 @@ struct SigninRequest: Request {
         return __serverTestURL
     }
 }
+
+struct SigninResource: Request {
+    var parameter: [String : AnyObject]?
+    var path: String?
+    var method: HTTPMethod = .post
+    var host: String? {
+        return __serverTestURL
+    }
+}
+

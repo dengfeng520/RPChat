@@ -20,7 +20,7 @@ class MessageListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = NSLocalizedString("Message List", comment: "")
+        title = NSLocalizedString("Chats", comment: "")
         view.backgroundColor = .darkModeViewColor
         bindViewModel()
     }

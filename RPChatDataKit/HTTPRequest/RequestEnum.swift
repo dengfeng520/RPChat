@@ -14,7 +14,7 @@ enum ApiResult {
     case failure(RequestError)
 }
 
-enum RequestError: Error {
+public enum RequestError: Error {
     case unknownError
     case connectionError
     case authorizationError(JSON)
@@ -26,4 +26,12 @@ enum RequestError: Error {
     case serverUnavailable
     case statusCodeError(JSON)
     case isAlert(JSON)
+}
+
+public enum DataKitError: Error {
+  case dataCorrupt(description: String)
+  case localPubKeyNotExists
+  case fileNotExist
+  case any
+  case network(description: String)
 }

@@ -20,7 +20,7 @@ class AddressBookViewController: BaseChatListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = NSLocalizedString("Address Book", comment: "")
+        title = NSLocalizedString("Contacts", comment: "")
         bindViewModel()
     }
 }
@@ -29,6 +29,7 @@ extension AddressBookViewController: UITableViewDelegate {
     func bindViewModel() {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
+        
         // subject
         viewModel.addressBookSubject.bind(to: tableView.rx.items(cellIdentifier: "AddressBookTableViewCellId", cellType: AddressBookTableViewCell.self)) { (row, model, cell) in
             cell.configAddressBookData(model)

@@ -19,10 +19,10 @@ open class UITabBarControllerExtension: UITabBarController {
          
         let imageList: [String] = ["unselect_message_icon","unselect_address_book","unselect_mine_icon"]
         let selectImageList: [String] = ["message_icon","address_book","mine_icon"]
-    
-        messageListNav.tabBarItem = UITabBarItem(title: "消息", image: UIImage(named: imageList[0]), selectedImage: UIImage(named: selectImageList[0]))
-        addressBookNav.tabBarItem = UITabBarItem(title: "通讯录", image: UIImage(named: imageList[1]), selectedImage: UIImage(named: selectImageList[1]))
-        mineNav.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: imageList[2]), selectedImage: UIImage(named: selectImageList[2]))
+        
+        messageListNav.tabBarItem = UITabBarItem(title: NSLocalizedString("Chats", comment: ""), image: UIImage(named: imageList[0]), selectedImage: UIImage(named: selectImageList[0]))
+        addressBookNav.tabBarItem = UITabBarItem(title: NSLocalizedString("Contacts", comment: ""), image: UIImage(named: imageList[1]), selectedImage: UIImage(named: selectImageList[1]))
+        mineNav.tabBarItem = UITabBarItem(title: NSLocalizedString("me", comment: ""), image: UIImage(named: imageList[2]), selectedImage: UIImage(named: selectImageList[2]))
         
         messageListNav.tabBarItem.badgeValue = "10"
         
