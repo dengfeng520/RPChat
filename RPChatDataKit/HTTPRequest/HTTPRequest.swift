@@ -122,7 +122,7 @@ extension HTTPRequest {
         let path = URL(string: r.host!.appending(r.path!))!
         let headers: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded",
                                    "version" : "318",
-                                   "token" : "9e678ee6-69de-47b1-a069-6ed343626f49",
+                                   "token" : "c3026a0b-ba64-4a3d-b422-c3a776f89dbb",
                                    "appId" : "e2766ff90db544ab9b3c7eaa8b834120",
                                    "type" : "1",
                                    "channel" : "iOS"]

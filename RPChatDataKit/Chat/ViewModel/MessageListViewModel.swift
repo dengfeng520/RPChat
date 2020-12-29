@@ -8,13 +8,15 @@
 
 import UIKit
 import RxSwift
+import PromiseKit
+import SwiftyJSON
 
 public class MessageListViewModel: PublicViewModel {
     public var messageListArray: [MessageModel] = [MessageModel]()
     public let messageListSubject : PublishSubject<[MessageModel]> = PublishSubject()
     
     public let messageListTapped = PublishSubject<IndexPath>()
-    
+    private let errorMessagesSubject = PublishSubject<Error>()
 
     public override init() {
         super.init()
@@ -24,7 +26,12 @@ public class MessageListViewModel: PublicViewModel {
             
         }).disposed(by: bag)
     }
-
+    
+    // 获取列表失败处理
+    func indicateMessageListError(_ error: Error) {
+        errorMessagesSubject.onNext(error)
+    }
+    
     public func fetchMessageList() {
         self.loading.onNext(true)
         HTTPRequest().authRemoteAPIWith(ChatListWithRequest(parameter: [:])) { [weak self] (result) in

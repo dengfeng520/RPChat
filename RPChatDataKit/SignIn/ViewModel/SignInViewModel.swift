@@ -54,19 +54,15 @@ public class SignInViewModel: PublicViewModel {
         let data = fetchStuNumAndPassword()
         let pwd = ConfigAES().encryptStringWith(strToEncode: data.1)
         let path = __apiFetchSignIn + "?username=\(data.0)&password=\(pwd)&grant_type=password"
-        loading.onNext(true)
         
+        loading.onNext(true)
         HTTPRequest().requestWithMap(SigninRequest(parameter: [:], path: path)) { [weak self] (result) in
             guard let `self` = self else { return }
             self.loading.onNext(false)
             switch result {
             case .success(let returnJson) :
                 print("-----------\(returnJson)")
-                if returnJson["returnCode"].intValue == 601 || returnJson["returnCode"].intValue == 201 {
-                    self.error.onNext(returnJson["returnMsg"].stringValue)
-                } else {
-                    self.successSubject.onNext(returnJson["returnMsg"].stringValue)
-                }
+                self.successSubject.onNext(returnJson["returnMsg"].stringValue)
                 break
             case .failure(let failure) :
                 switch failure {

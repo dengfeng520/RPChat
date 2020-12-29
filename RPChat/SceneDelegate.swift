@@ -9,6 +9,7 @@
 import UIKit
 import RPChat_iOS
 import RPKeychain
+import RPChatDataKit
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -24,13 +25,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.backgroundColor = .darkModeViewColor
-        if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
-            let signInVC = SignInViewController()
-            window?.rootViewController = signInVC
+        if Flag.isFirst == true {
+            // 进入引导页 并清理keychain中存储的用户信息
+            
         } else {
-            let tabbarVC = UITabBarControllerExtension()
-            window?.rootViewController = tabbarVC
+            if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
+                let signInVC = SignInViewController()
+                window?.rootViewController = signInVC
+            } else {
+                let tabbarVC = UITabBarControllerExtension()
+                window?.rootViewController = tabbarVC
+            }
         }
+        
         window?.makeKeyAndVisible()
     }
 

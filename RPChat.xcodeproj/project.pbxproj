@@ -47,6 +47,7 @@
 		1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966224F656C0006023C7 /* SignedInResponder.swift */; };
 		1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966524F6588B006023C7 /* MessageListViewController.swift */; };
 		1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */; };
+		1D69CED4259B33DB006C0783 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CED3259B33DB006C0783 /* Flag.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
@@ -96,7 +97,6 @@
 		1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */; };
 		1DD7DE132591E384004917C3 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBBBCCA2589DFEC00AABC4F /* PromiseKit.framework */; };
 		1DD7DE142591E3D8004917C3 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBBBCCA2589DFEC00AABC4F /* PromiseKit.framework */; };
-		1DD7DE1C2591EAB2004917C3 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE1B2591EAB2004917C3 /* AuthRemoteAPI.swift */; };
 		1DD7DE3A2591F322004917C3 /* RPAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */; };
 		1DD7DE572591F542004917C3 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE562591F542004917C3 /* LoginData.swift */; };
 		1DD7DE622591F56E004917C3 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE5F2591F56E004917C3 /* AddressBookViewModel.swift */; };
@@ -219,6 +219,7 @@
 		1D67966224F656C0006023C7 /* SignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInResponder.swift; sourceTree = "<group>"; };
 		1D67966524F6588B006023C7 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessNavigationViewController.swift; sourceTree = "<group>"; };
+		1D69CED3259B33DB006C0783 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
@@ -262,7 +263,6 @@
 		1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		1DD5F26D24BD8C9A00E762B7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerSocket.swift; sourceTree = "<group>"; };
-		1DD7DE1B2591EAB2004917C3 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
 		1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPAuthRemoteAPI.swift; sourceTree = "<group>"; };
 		1DD7DE562591F542004917C3 /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1DD7DE5F2591F56E004917C3 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
@@ -474,6 +474,7 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D69CED2259B33A8006C0783 /* Extensions */,
 				1D952B25259448D700C03AF0 /* Encryption */,
 				1DD7DE1A2591EA97004917C3 /* AuthRemote */,
 				1D98A52825874956000D1115 /* Chat */,
@@ -484,7 +485,6 @@
 				1D67966124F6568B006023C7 /* SignedInResponder */,
 				1D67962824F106A5006023C7 /* PublicViewModel */,
 				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
-				1D5C600124AC851B00211398 /* StringExtension */,
 				1D5C5FFE24AC82D000211398 /* ConfigAES */,
 				1DB939A6249B75C700F07DC6 /* AccountData */,
 				1DB9399F249B748D00F07DC6 /* HTTPRequest */,
@@ -561,15 +561,6 @@
 			path = ConfigAES;
 			sourceTree = "<group>";
 		};
-		1D5C600124AC851B00211398 /* StringExtension */ = {
-			isa = PBXGroup;
-			children = (
-				1D5C600224AC852F00211398 /* StringExtension.swift */,
-				1DFA47CA258CA665009D9EAD /* CurrentTime.swift */,
-			);
-			path = StringExtension;
-			sourceTree = "<group>";
-		};
 		1D5C600A24AC8C5100211398 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +609,16 @@
 				1DFA47C3258C9A6A009D9EAD /* Controller */,
 			);
 			path = MessageList;
+			sourceTree = "<group>";
+		};
+		1D69CED2259B33A8006C0783 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C600224AC852F00211398 /* StringExtension.swift */,
+				1DFA47CA258CA665009D9EAD /* CurrentTime.swift */,
+				1D69CED3259B33DB006C0783 /* Flag.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1D78E5D924D2A86E00270F95 /* DeviceInfo */ = {
@@ -788,7 +789,6 @@
 		1DD7DE1A2591EA97004917C3 /* AuthRemote */ = {
 			isa = PBXGroup;
 			children = (
-				1DD7DE1B2591EAB2004917C3 /* AuthRemoteAPI.swift */,
 				1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */,
 			);
 			path = AuthRemote;
@@ -1023,7 +1023,7 @@
 		1D22088F24977C12002D25A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Beijing Physical Fitness Sport Science and Technology Co.,Ltd.";
 				TargetAttributes = {
@@ -1220,7 +1220,6 @@
 				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
-				1DD7DE1C2591EAB2004917C3 /* AuthRemoteAPI.swift in Sources */,
 				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,
 				1DF627992536D236004232F4 /* SocketManager.swift in Sources */,
 				1DFA47D7258CBA49009D9EAD /* FriendsModel.swift in Sources */,
@@ -1230,6 +1229,7 @@
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
 				1DD7DE632591F56E004917C3 /* AddressBookModel.swift in Sources */,
 				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
+				1D69CED4259B33DB006C0783 /* Flag.swift in Sources */,
 				1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
 				1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */,

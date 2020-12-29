@@ -27,11 +27,3 @@ public enum RequestError: Error {
     case statusCodeError(JSON)
     case isAlert(JSON)
 }
-
-public enum DataKitError: Error {
-  case dataCorrupt(description: String)
-  case localPubKeyNotExists
-  case fileNotExist
-  case any
-  case network(description: String)
-}

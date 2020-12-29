@@ -8,6 +8,7 @@
 
 import UIKit
 import RPChat_iOS
+import RPChatDataKit
 import RPKeychain
 
 @UIApplicationMain
@@ -22,13 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
              window = UIWindow()
              window?.frame = UIScreen.main.bounds
-            if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
-                let signInVC = SignInViewController()
-                window?.rootViewController = signInVC
+            // 如果用户重新下载的
+            if Flag.isFirst == true {
+                // 进入引导页 并清理keychain中存储的用户信息
+                
             } else {
-                let tabbarVC = UITabBarControllerExtension()
-                window?.rootViewController = tabbarVC
+                if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
+                    let signInVC = SignInViewController()
+                    window?.rootViewController = signInVC
+                } else {
+                    let tabbarVC = UITabBarControllerExtension()
+                    window?.rootViewController = tabbarVC
+                }
             }
+            
             window?.makeKeyAndVisible()
         }
         return true
