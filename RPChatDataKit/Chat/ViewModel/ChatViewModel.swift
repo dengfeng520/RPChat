@@ -45,14 +45,8 @@ public class ChatViewModel: PublicViewModel {
                 case .authorizationError(let errorJson):
                     self.error.onNext(errorJson["returnMsg"].stringValue)
                     break
-                case .statusCodeError(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
-                    break
                 case .unknownError:
                     self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
-                    break
-                case .isAlert(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
                     break
                 default :
                     self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))

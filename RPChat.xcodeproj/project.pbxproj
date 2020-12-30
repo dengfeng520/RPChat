@@ -48,6 +48,7 @@
 		1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966524F6588B006023C7 /* MessageListViewController.swift */; };
 		1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */; };
 		1D69CED4259B33DB006C0783 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CED3259B33DB006C0783 /* Flag.swift */; };
+		1D69CF28259C2910006C0783 /* AuthRemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF27259C2910006C0783 /* AuthRemoteProtocol.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
@@ -220,6 +221,7 @@
 		1D67966524F6588B006023C7 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		1D67966724F66ABA006023C7 /* NiblessNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessNavigationViewController.swift; sourceTree = "<group>"; };
 		1D69CED3259B33DB006C0783 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		1D69CF27259C2910006C0783 /* AuthRemoteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteProtocol.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 		1D2208B424977DEB002D25A2 /* RPChat_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D69CEDF259C0C9B006C0783 /* Guide */,
 				1D98A52125874881000D1115 /* Chat */,
 				1D67966424F65822006023C7 /* MessageList */,
 				1D98A4AB25836BA2000D1115 /* AddressBook */,
@@ -621,6 +624,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1D69CEDF259C0C9B006C0783 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				1D69CEE2259C0CB8006C0783 /* View */,
+				1D69CEE0259C0CA9006C0783 /* Controller */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		1D69CEE0259C0CA9006C0783 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D69CEE2259C0CB8006C0783 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D78E5D924D2A86E00270F95 /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +816,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */,
+				1D69CF27259C2910006C0783 /* AuthRemoteProtocol.swift */,
 			);
 			path = AuthRemote;
 			sourceTree = "<group>";
@@ -1232,6 +1259,7 @@
 				1D69CED4259B33DB006C0783 /* Flag.swift in Sources */,
 				1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
+				1D69CF28259C2910006C0783 /* AuthRemoteProtocol.swift in Sources */,
 				1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */,
 				1D5C600824AC86F400211398 /* RequestEnum.swift in Sources */,
 				1DD7DE622591F56E004917C3 /* AddressBookViewModel.swift in Sources */,

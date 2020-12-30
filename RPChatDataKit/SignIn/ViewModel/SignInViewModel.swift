@@ -33,7 +33,7 @@ public class SignInViewModel: PublicViewModel {
             [weak self] in
             guard let `self` = self else { return }
             self.clickSignIn()
-        }).disposed(by: bag)
+        }).disposed(by: disposeBag)
     }
      
     // 点击登录之后获取用户名和密码的方法
@@ -72,14 +72,8 @@ public class SignInViewModel: PublicViewModel {
                 case .authorizationError(let errorJson):
                     self.error.onNext(errorJson["returnMsg"].stringValue)
                     break
-                case .statusCodeError(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
-                    break
                 case .serverError:
                     self.error.onNext("连接服务器错误请重试")
-                    break
-                case .isAlert(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
                     break
                 default :
                     self.error.onNext("连接服务器错误请重试")

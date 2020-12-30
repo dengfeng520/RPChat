@@ -82,7 +82,7 @@ struct HTTPRequest: RequestSender {
                     case 200:
                         completion(ApiResult.success(responseJson))
                     case 201:
-                        completion(ApiResult.failure(.isAlert(responseJson)))
+                        completion(ApiResult.failure(.authorizationError(responseJson)))
                     case 400...499:
                         completion(ApiResult.failure(.authorizationError(responseJson)))
                     case 500...599:
@@ -122,7 +122,7 @@ extension HTTPRequest {
         let path = URL(string: r.host!.appending(r.path!))!
         let headers: HTTPHeaders = ["Content-Type" : "application/x-www-form-urlencoded",
                                    "version" : "318",
-                                   "token" : "c3026a0b-ba64-4a3d-b422-c3a776f89dbb",
+                                   "token" : "dd3063e8-b204-4046-96f5-5cef43b02ef2",
                                    "appId" : "e2766ff90db544ab9b3c7eaa8b834120",
                                    "type" : "1",
                                    "channel" : "iOS"]
@@ -145,7 +145,7 @@ extension HTTPRequest {
                         print("---------------\(responseJson)")
                         completion(ApiResult.success(responseJson))
                     case 201:
-                        completion(ApiResult.failure(.isAlert(responseJson)))
+                        completion(ApiResult.failure(.authorizationError(responseJson)))
                     case 400...499:
                         completion(ApiResult.failure(.authorizationError(responseJson)))
                     case 500...599:

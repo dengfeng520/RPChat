@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 public class PublicViewModel: NSObject {
-    public let bag = DisposeBag()
+    public let disposeBag = DisposeBag()
         
     public let error : PublishSubject<String> = PublishSubject()
     public let successSubject: PublishSubject<String> = PublishSubject()

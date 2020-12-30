@@ -18,12 +18,6 @@ public enum RequestError: Error {
     case unknownError
     case connectionError
     case authorizationError(JSON)
-    case invalidRequest
     case notFound
-    case invalidResponse
     case serverError
-    case authenticationFailed(JSON)
-    case serverUnavailable
-    case statusCodeError(JSON)
-    case isAlert(JSON)
 }
