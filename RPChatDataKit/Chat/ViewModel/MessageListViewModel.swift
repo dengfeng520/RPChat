@@ -17,10 +17,10 @@ public class MessageListViewModel: PublicViewModel {
     
     public let messageListTapped = PublishSubject<IndexPath>()
     private let errorMessagesSubject = PublishSubject<Error>()
-
+    
     public override init() {
         super.init()
-            
+        
         messageListTapped.asObservable().subscribe(onNext: { [weak self] (index) in
             guard let `self` = self else { return }
             
@@ -53,84 +53,33 @@ public class MessageListViewModel: PublicViewModel {
             }, onCompleted: {
                 print("取得 json 任务成功完成")
                 self.loading.onNext(false)
-                
             }).disposed(by: disposeBag)
-        
-//        HTTPRequest().authRemoteAPIWith(ChatListWithRequest(parameter: [:])) { [weak self] (result) in
-//            guard let `self` = self else { return }
-//            self.loading.onNext(false)
-//            switch result {
-//            case .success(let returnJson) :
-//                if returnJson["returnCode"].intValue == 601 {
-//                    self.error.onNext(returnJson["returnMsg"].stringValue)
-//                } else if returnJson["returnCode"].intValue == 201 {
-//                    self.error.onNext(returnJson["returnMsg"].stringValue)
-//                } else {
-//                    self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
-//                        return MessageModel(json: json)
-//                    })
-//                    if self.messageListArray.count != 0 {
-//                        self.messageListSubject.onNext(self.messageListArray)
-//                    } else {
-//                        self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
-//                    }
-//                }
-//                break
-//            case .failure(let failure) :
-//                switch failure {
-//                case .connectionError:
-//                    self.error.onNext(NSLocalizedString("Request Timed Out", comment: ""))
-//                    break
-//                case .authorizationError(let errorJson):
-//                    self.error.onNext(errorJson["returnMsg"].stringValue)
-//                    break
-//                case .statusCodeError(let errorJson):
-//                    self.error.onNext(errorJson["returnMsg"].stringValue)
-//                    break
-//                case .unknownError:
-//                    self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
-//                    break
-//                case .isAlert(let errorJson):
-//                    self.error.onNext(errorJson["returnMsg"].stringValue)
-//                    break
-//                default :
-//                    self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
-//                    break
-//                }
-//            }
-//        }
     }
 }
 
 extension MessageListViewModel {
     /// 获取用户信息 登录socket
     public func fetchChatInformation() {
-        HTTPRequest().authRemoteAPIWith(ChatInfoListWithRequest(parameter: [:])) { [weak self] (result) in
-            guard let `self` = self else { return }
-            switch result {
-            case .success(let returnJson) :
+        
+        loading.onNext(true)
+        RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))
+            .subscribe(onNext: { returnJson in
+                print("取得 json 成功: \(returnJson)")
                 print("================\(returnJson)")
                 // 连接Socket服务器
                 let socket = SocketManager.sharedInstance()
                 let infoModel = ChatInfoModel(json: returnJson["data"])
-                    socket.fetchSocketInfoWith(model: infoModel)
-                    socket.isDesk = true
-                    socket.connectSocket()
-                break
-            case .failure(let failure) :
-                switch failure {
-                case .connectionError:
-                    self.error.onNext("请求超时")
-                    break
-                case .authorizationError(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
-                    break
-                default :
-                    self.error.onNext("Unknown Error")
-                    break
-                }
-            }
-        }
+                socket.fetchSocketInfoWith(model: infoModel)
+                socket.isDesk = true
+                socket.connectSocket()
+            }, onError: { errorJson in
+                print("取得 json 失败 Error: \(errorJson.localizedDescription)")
+                self.error.onNext("Unknown Error")
+                self.loading.onNext(false)
+            }, onCompleted: {
+                print("取得 json 任务成功完成")
+                self.loading.onNext(false)
+            }).disposed(by: disposeBag)
     }
 }
 

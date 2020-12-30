@@ -12,11 +12,11 @@ import Alamofire
 /// 获取会话列表
 struct ChatListWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchChatList
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }
@@ -24,11 +24,11 @@ struct ChatListWithRequest: Request {
 /// 获取好友列表
 struct FriendsListWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchFriendsList
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }
@@ -36,11 +36,11 @@ struct FriendsListWithRequest: Request {
 /// 获取消息列表
 struct MessageListWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchMessagesList
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }
@@ -48,11 +48,11 @@ struct MessageListWithRequest: Request {
 /// 修改会话状态为已读
 struct UpdateReadStatusListWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchUpdateReadStatusList
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }
@@ -60,11 +60,11 @@ struct UpdateReadStatusListWithRequest: Request {
 /// 获取消息需要的信息
 struct ChatInfoListWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchChatInfo
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }
@@ -72,11 +72,11 @@ struct ChatInfoListWithRequest: Request {
 /// 修改会话状态为已读
 struct ChatUpdateReadStatusWithRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? {
+    var path: String {
         return __apiFetchUpdateReadStatus
     }
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __chatServerURL
     }
 }

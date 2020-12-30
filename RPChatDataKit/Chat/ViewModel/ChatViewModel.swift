@@ -17,42 +17,24 @@ public class ChatViewModel: PublicViewModel {
     /// 获取消息列表
     public func fetchChatList(_ parameter: [String : String]) {
         self.loading.onNext(true)
-        HTTPRequest().authRemoteAPIWith(MessageListWithRequest(parameter: [:])) { [weak self] (result) in
-            guard let `self` = self else { return }
-            self.loading.onNext(false)
-            switch result {
-            case .success(let returnJson) :
-                if returnJson["returnCode"].intValue == 601 {
-                    self.error.onNext(returnJson["returnMsg"].stringValue)
-                } else if returnJson["returnCode"].intValue == 201 {
-                    self.error.onNext(returnJson["returnMsg"].stringValue)
+        RPAuthRemoteAPI().requestData(MessageListWithRequest(parameter: [:]))
+            .subscribe(onNext: { returnJson in
+                print("取得 json 成功: \(returnJson)")
+                self.chatListArray = returnJson["data"].arrayValue.map({ (json) -> ChatBodyModel in
+                    return ChatBodyModel(json: json)
+                })
+                if self.chatListArray.count != 0 {
+                    self.chatListSubject.onNext(self.chatListArray)
                 } else {
-                    self.chatListArray = returnJson["data"].arrayValue.map({ (json) -> ChatBodyModel in
-                        return ChatBodyModel(json: json)
-                    })
-                    if self.chatListArray.count != 0 {
-                        self.chatListSubject.onNext(self.chatListArray)
-                    } else {
-                        self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
-                    }
+                    self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
                 }
-                break
-            case .failure(let failure) :
-                switch failure {
-                case .connectionError:
-                    self.error.onNext(NSLocalizedString("Request Timed Out", comment: ""))
-                    break
-                case .authorizationError(let errorJson):
-                    self.error.onNext(errorJson["returnMsg"].stringValue)
-                    break
-                case .unknownError:
-                    self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
-                    break
-                default :
-                    self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
-                    break
-                }
-            }
-        }
+            }, onError: { errorJson in
+                print("取得 json 失败 Error: \(errorJson.localizedDescription)")
+                self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
+                self.loading.onNext(false)
+            }, onCompleted: {
+                print("取得 json 任务成功完成")
+                self.loading.onNext(false)
+            }).disposed(by: disposeBag)
     }
 }

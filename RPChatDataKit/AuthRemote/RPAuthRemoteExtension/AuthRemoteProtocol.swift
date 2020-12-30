@@ -16,12 +16,13 @@ public protocol AuthRemoteProtocol {
     func post(with body: [String : AnyObject], _ path: String) -> Promise<JSON>
     /// 调用接口，成功返回JSON -----> RxSwift
     func post(with body: [String : AnyObject], _ path: String) -> Observable<JSON>
-    // TODO: 调用接口，成功返回JSON ----->  传统的Closures
-    func post(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void))
+    /// 协议方式，成功返回JSON -----> RxSwift
+    func requestData<T: Request>(_ r: T) -> Observable<JSON>
+    // TODO: 调用接口，成功返回JSON ----->  Closures
+    func post<T: Request>(_ r: T, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void))
 }
 
 extension AuthRemoteProtocol {
     // 可选
-    // XXX: - 
-    public func post(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void)) { }
+    public func post<T: Request>(_ r: T, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void)) { }
 }

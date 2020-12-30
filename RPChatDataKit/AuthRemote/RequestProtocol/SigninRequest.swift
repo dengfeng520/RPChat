@@ -12,18 +12,18 @@ import Alamofire
 /// 登录
 struct SigninRequest: Request {
     var parameter: [String : AnyObject]?
-    var path: String? 
+    var path: String
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __serverTestURL
     }
 }
 
 struct SigninResource: Request {
     var parameter: [String : AnyObject]?
-    var path: String?
+    var path: String
     var method: HTTPMethod = .post
-    var host: String? {
+    var host: String {
         return __serverTestURL
     }
 }
