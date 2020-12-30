@@ -56,16 +56,13 @@ public class SignInViewModel: PublicViewModel {
         let path = __apiFetchSignIn + "?username=\(data.0)&password=\(pwd)&grant_type=password"
         
         loading.onNext(true)
-        RPAuthRemoteAPI().requestData(SigninRequest(parameter: [:], path: path))
+        RPAuthRemoteAPI().post(SigninRequest(parameter: [:], path: path))
             .subscribe(onNext: { returnJson in
-                print("取得 json 成功: \(returnJson)")
                 self.successSubject.onNext(returnJson["returnMsg"].stringValue)
             }, onError: { errorJson in
-                print("取得 json 失败 Error: \(errorJson.localizedDescription)")
                 self.error.onNext(errorJson.localizedDescription)
                 self.loading.onNext(false)
             }, onCompleted: {
-                print("取得 json 任务成功完成")
                 self.loading.onNext(false)
             }).disposed(by: disposeBag)
     }

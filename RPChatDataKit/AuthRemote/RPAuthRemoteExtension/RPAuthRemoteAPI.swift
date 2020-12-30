@@ -10,6 +10,7 @@ import UIKit
 import PromiseKit
 import Alamofire
 import SwiftyJSON
+import RxSwift
 
 public struct RPAuthRemoteAPI: AuthRemoteProtocol {
     /// 调用接口，成功返回JSON -----> PromiseKit

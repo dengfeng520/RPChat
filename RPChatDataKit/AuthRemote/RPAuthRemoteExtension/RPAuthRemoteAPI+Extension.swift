@@ -12,8 +12,72 @@ import SwiftyJSON
 import RxSwift
 
 extension RPAuthRemoteAPI {
-    public func requestData<T: Request>(_ r: T) -> Observable<JSON> {
+    /// 协议方式，成功返回JSON -----> RxSwift
+    public func post<T: Request>(_ r: T) -> Observable<JSON> {
+        guard let body = r.parameter else {
+            return Observable.create { (observer) -> Disposable in
+                observer.onError(RequestError.connectionError)
+                return Disposables.create {  }
+            }
+        }
+        
+        let path = URL(string: r.host.appending(r.path))!
+        
+        var headers: HTTPHeaders!
+        // 缓存token
+        if let token = AccountData.fetchToken() {
+            headers = ["Content-Type" : "application/x-www-form-urlencoded; application/json; charset=utf-8;",
+                       "Cookie" : "host=a",
+                       "Authorization" : "Bearer \(token)"]
+        } else {
+            let authorization = "Basic " + "app:app".base64Encoded!
+            headers = ["Content-Type" : "application/x-www-form-urlencoded; application/json; charset=utf-8;",
+                       "Cookie" : "host=a",
+                       "Authorization" : "\(authorization)"]
+        }
+        
+        return Observable.create { (observer) -> Disposable in
+            AF.request(path, method: r.method, parameters: body, headers: headers).response { response in
+                if let data = response.data ,let responseCode = response.response {
+                    do {
+                        let json = try JSON(data: data)
+                        switch responseCode.statusCode {
+                        case 200:
+                            print("-------------\(json)")
+                            observer.onNext(json)
+                            observer.onCompleted()
+                            break
+                        case 201...299:
+                            observer.onError(RequestError.authorizationError(json))
+                            break
+                        case 400...499:
+                            observer.onError(RequestError.authorizationError(json))
+                            break
+                        case 500...599:
+                            observer.onError(RequestError.serverError)
+                            break
+                        case 600...699:
+                            observer.onError(RequestError.authorizationError(json))
+                            break
+                        default:
+                            observer.onError(RequestError.unknownError)
+                            break
+                        }
+                    }
+                    catch let parseJSONError {
+                        observer.onError(parseJSONError)
+                        print("error on parsing request to JSON : \(parseJSONError)")
+                    }
+                }
+            }
+            return Disposables.create {  }
+        }
+    }
+}
 
+extension RPAuthRemoteAPI {
+    /// 协议方式，成功返回JSON -----> RxSwift
+    public func requestData<T: Request>(_ r: T) -> Observable<JSON> {
         guard let body = r.parameter else {
             return Observable.create { (observer) -> Disposable in
                 observer.onError(RequestError.connectionError)
