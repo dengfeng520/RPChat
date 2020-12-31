@@ -6,7 +6,7 @@
 //  Copyright © 2020 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
-import UIKit
+import Foundation   
 import RxSwift
 import PromiseKit
 import SwiftyJSON
@@ -25,6 +25,8 @@ public class MessageListViewModel: PublicViewModel {
             guard let `self` = self else { return }
             
         }).disposed(by: disposeBag)
+        
+        
     }
     
     // 获取列表失败处理
@@ -32,8 +34,33 @@ public class MessageListViewModel: PublicViewModel {
         errorMessagesSubject.onNext(error)
     }
     
+    /// 获取消息列表 获取用户信息 登录socket Observable
     public func fetchMessageList() {
         self.loading.onNext(true)
+//        let _ = RPAuthRemoteAPI().requestData(ChatListWithRequest(parameter: [:]))
+//            .flatMap({ (returnJson) in
+//                return RPAuthRemoteAPI().requestData(ChatInfoListWithRequest.init(parameter: [:]))
+//            }).subscribe { (json) in
+//                print("subscribe---------获取消息列表-----------: \(json)")
+//            } onError: { (error) in
+//
+//            } onCompleted: {
+//
+//            } onDisposed: {
+//
+//            }
+
+        // 串行组合
+//        let _ = Observable.concat([RPAuthRemoteAPI().requestData(ChatListWithRequest(parameter: [:])),RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))]).subscribe { (json) in
+//
+//        } onError: { (error) in
+//            self.loading.onNext(false)
+//        } onCompleted: {
+//            self.loading.onNext(false)
+//        } onDisposed: {
+//
+//        }
+        // 并行组合
         Observable.zip(
             RPAuthRemoteAPI().requestData(ChatListWithRequest(parameter: [:])),
             RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))
@@ -64,52 +91,6 @@ public class MessageListViewModel: PublicViewModel {
             print("取得 json 任务成功完成")
             self.loading.onNext(false)
         }).disposed(by: disposeBag)
-           
-        
-//        RPAuthRemoteAPI().post(with: [:], path)
-//            .subscribe(onNext: { returnJson in
-//                print("取得 json 成功: \(returnJson)")
-//
-//                self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
-//                    return MessageModel(json: json)
-//                })
-//                if self.messageListArray.count != 0 {
-//                    self.messageListSubject.onNext(self.messageListArray)
-//                } else {
-//                    self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
-//                }
-//            }, onError: { error in
-//                print("取得 json 失败 Error: \(error.localizedDescription)")
-//                self.loading.onNext(false)
-//            }, onCompleted: {
-//                print("取得 json 任务成功完成")
-//                self.loading.onNext(false)
-//            }).disposed(by: disposeBag)
-    }
-}
-
-extension MessageListViewModel {
-    /// 获取用户信息 登录socket
-    public func fetchChatInformation() {
-        
-        loading.onNext(true)
-        RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))
-            .subscribe(onNext: { returnJson in
-                print("取得 json 成功: \(returnJson)")
-                // 连接Socket服务器
-                let socket = SocketManager.sharedInstance()
-                let infoModel = ChatInfoModel(json: returnJson["data"])
-                socket.fetchSocketInfoWith(model: infoModel)
-                socket.isDesk = true
-                socket.connectSocket()
-            }, onError: { errorJson in
-                print("取得 json 失败 Error: \(errorJson.localizedDescription)")
-                self.error.onNext("Unknown Error")
-                self.loading.onNext(false)
-            }, onCompleted: {
-                print("取得 json 任务成功完成")
-                self.loading.onNext(false)
-            }).disposed(by: disposeBag)
     }
 }
 

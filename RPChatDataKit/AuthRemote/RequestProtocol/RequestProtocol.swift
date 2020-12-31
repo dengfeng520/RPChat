@@ -13,7 +13,7 @@ import Alamofire
 public protocol RequestProtocol {
     
 }
-
+/// 请求服务器相关
 public protocol Request {
     var path: String {get}
     var method: HTTPMethod {get}
@@ -26,7 +26,7 @@ extension Request {
         return [:]
     }
 }
-
+/// 请求服务器失败时 错误码
 public enum RequestError: Error {
     case unknownError
     case connectionError

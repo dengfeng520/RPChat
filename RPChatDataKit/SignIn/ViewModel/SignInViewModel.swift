@@ -58,11 +58,14 @@ public class SignInViewModel: PublicViewModel {
         loading.onNext(true)
         RPAuthRemoteAPI().post(SigninRequest(parameter: [:], path: path))
             .subscribe(onNext: { returnJson in
+                // 成功
                 self.successSubject.onNext(returnJson["returnMsg"].stringValue)
             }, onError: { errorJson in
+                // 失败
                 self.error.onNext(errorJson.localizedDescription)
                 self.loading.onNext(false)
             }, onCompleted: {
+                // 调用完成时
                 self.loading.onNext(false)
             }).disposed(by: disposeBag)
     }
