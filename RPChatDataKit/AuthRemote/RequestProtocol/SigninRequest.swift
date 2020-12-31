@@ -20,12 +20,6 @@ struct SigninRequest: Request {
     }
 }
 
-extension SigninRequest: Decodable {
-    static func dataFromModel(data: Data) -> Any? {
-        return SignInModel(data: data)
-    }
-}
-
 struct SigninResource: Request {
     typealias Response = SigninResource
     var parameter: [String : AnyObject]?
@@ -36,10 +30,5 @@ struct SigninResource: Request {
     }
 }
 
-extension SigninResource: Decodable {
-    static func dataFromModel(data: Data) -> Any? {
-        return SignInModel(data: data)
-    }
-}
 
 

@@ -22,13 +22,9 @@ public protocol AuthRemoteProtocol {
     func requestData<T: Request>(_ r: T) -> Observable<JSON>
     // TODO: 调用接口，成功返回JSON ----->  Closures
     func post<T: Request>(_ r: T, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void))
-    func signIn(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: [String : AnyObject],_ failure : String?) -> Void))
-    func fetchUserInfo(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: [String : AnyObject],_ failure : String?) -> Void))
 }
 
 extension AuthRemoteProtocol {
     // 可选
     public func post<T: Request>(_ r: T, with closures: @escaping ((_ json: JSON,_ failure : String?) -> Void)) { }
-    public func signIn(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: [String : AnyObject],_ failure : String?) -> Void)) { }
-    public func fetchUserInfo(with body: [String : AnyObject], _ path: String, with closures: @escaping ((_ json: [String : AnyObject],_ failure : String?) -> Void)) { }
 }
