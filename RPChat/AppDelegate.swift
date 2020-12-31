@@ -13,7 +13,7 @@ import RPKeychain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,19 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
             
         } else {
-             window = UIWindow()
-             window?.frame = UIScreen.main.bounds
+            window = UIWindow()
+            window?.frame = UIScreen.main.bounds
             // 如果用户重新下载的
             if Flag.isFirst == true {
                 // 进入引导页 并清理keychain中存储的用户信息
                 
             } else {
-                if RPKeychain.default.string(forKey: "key.siginInfo.value") != nil {
-                    let signInVC = SignInViewController()
-                    window?.rootViewController = signInVC
-                } else {
+                if let signInInfo = RPKeychain.default.string(forKey: "key.siginInfo.value") {
+                    print("signInInfo================\(signInInfo)")
                     let tabbarVC = UITabBarControllerExtension()
                     window?.rootViewController = tabbarVC
+                } else {
+                    let signInVC = SignInViewController()
+                    window?.rootViewController = signInVC
                 }
             }
             
@@ -51,7 +52,7 @@ extension AppDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.

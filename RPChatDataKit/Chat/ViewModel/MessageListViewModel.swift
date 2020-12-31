@@ -34,26 +34,57 @@ public class MessageListViewModel: PublicViewModel {
     
     public func fetchMessageList() {
         self.loading.onNext(true)
-        let path = __chatServerURL + __apiFetchChatList
-        self.loading.onNext(false)
-        RPAuthRemoteAPI().post(with: [:], path)
-            .subscribe(onNext: { returnJson in
-                print("取得 json 成功: \(returnJson)")
-                self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
-                    return MessageModel(json: json)
-                })
-                if self.messageListArray.count != 0 {
-                    self.messageListSubject.onNext(self.messageListArray)
-                } else {
-                    self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
-                }
-            }, onError: { error in
-                print("取得 json 失败 Error: \(error.localizedDescription)")
-                
-            }, onCompleted: {
-                print("取得 json 任务成功完成")
-                self.loading.onNext(false)
-            }).disposed(by: disposeBag)
+        Observable.zip(
+            RPAuthRemoteAPI().requestData(ChatListWithRequest(parameter: [:])),
+            RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))
+        ).subscribe(onNext: { [weak self] (returnJson, chatInfo) in
+            guard let `self` = self else { return }
+            print("---------获取消息列表-----------: \(returnJson)")
+            self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
+                return MessageModel(json: json)
+            })
+            if self.messageListArray.count != 0 {
+                self.messageListSubject.onNext(self.messageListArray)
+            } else {
+                self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
+            }
+            print("---------获取登录消息-----------: \(chatInfo)")
+            // 连接Socket服务器
+            let socket = SocketManager.sharedInstance()
+            let infoModel = ChatInfoModel(json: returnJson["data"])
+            socket.fetchSocketInfoWith(model: infoModel)
+            socket.isDesk = true
+            socket.connectSocket()
+        }, onError: { [weak self]  error in
+            guard let `self` = self else { return }
+            print("取得 json 失败 Error: \(error.localizedDescription)")
+            self.loading.onNext(false)
+        }, onCompleted: { [weak self] in
+            guard let `self` = self else { return }
+            print("取得 json 任务成功完成")
+            self.loading.onNext(false)
+        }).disposed(by: disposeBag)
+           
+        
+//        RPAuthRemoteAPI().post(with: [:], path)
+//            .subscribe(onNext: { returnJson in
+//                print("取得 json 成功: \(returnJson)")
+//
+//                self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
+//                    return MessageModel(json: json)
+//                })
+//                if self.messageListArray.count != 0 {
+//                    self.messageListSubject.onNext(self.messageListArray)
+//                } else {
+//                    self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
+//                }
+//            }, onError: { error in
+//                print("取得 json 失败 Error: \(error.localizedDescription)")
+//                self.loading.onNext(false)
+//            }, onCompleted: {
+//                print("取得 json 任务成功完成")
+//                self.loading.onNext(false)
+//            }).disposed(by: disposeBag)
     }
 }
 
@@ -65,7 +96,6 @@ extension MessageListViewModel {
         RPAuthRemoteAPI().requestData(ChatInfoListWithRequest(parameter: [:]))
             .subscribe(onNext: { returnJson in
                 print("取得 json 成功: \(returnJson)")
-                print("================\(returnJson)")
                 // 连接Socket服务器
                 let socket = SocketManager.sharedInstance()
                 let infoModel = ChatInfoModel(json: returnJson["data"])

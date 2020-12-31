@@ -62,7 +62,7 @@ extension RPAuthRemoteAPI {
                         let json = try JSON(data: data)
                         switch responseCode.statusCode {
                         case 200:
-                            print("-------------\(json)")
+                            print("json-------------\(json)")
                             observer.onNext(json)
                             observer.onCompleted()
                             break
