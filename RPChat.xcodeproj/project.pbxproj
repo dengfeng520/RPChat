@@ -51,6 +51,7 @@
 		1D69CF3B259C6503006C0783 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF3A259C6503006C0783 /* RequestProtocol.swift */; };
 		1D69CF4C259C66D5006C0783 /* RPAuthRemoteAPI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF4B259C66D5006C0783 /* RPAuthRemoteAPI+Extension.swift */; };
 		1D69CF54259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF53259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift */; };
+		1D69CF81259D8010006C0783 /* ReturnInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
@@ -225,6 +226,7 @@
 		1D69CF3A259C6503006C0783 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		1D69CF4B259C66D5006C0783 /* RPAuthRemoteAPI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RPAuthRemoteAPI+Extension.swift"; sourceTree = "<group>"; };
 		1D69CF53259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RPAuthRemoteAPI+SwiftyJSON.swift"; sourceTree = "<group>"; };
+		1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnInfoModel.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 				1D69CF52259C676F006C0783 /* RPAuthRemoteExtension */,
 				1D69CF39259C64B0006C0783 /* RequestProtocol */,
 				1DB939A4249B753C00F07DC6 /* APIConfig.swift */,
+				1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */,
 			);
 			path = AuthRemote;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				1DF627CB2536D648004232F4 /* MessageBodyModel.swift in Sources */,
 				1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */,
 				1DFA47CB258CA665009D9EAD /* CurrentTime.swift in Sources */,
+				1D69CF81259D8010006C0783 /* ReturnInfoModel.swift in Sources */,
 				1DBBBD87258B416700AABC4F /* MessageModel.swift in Sources */,
 				1DFA47A2258C5855009D9EAD /* MessageListViewModel.swift in Sources */,
 			);

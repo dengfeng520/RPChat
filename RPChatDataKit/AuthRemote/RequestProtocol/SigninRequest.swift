@@ -11,6 +11,7 @@ import Alamofire
 
 /// 登录
 struct SigninRequest: Request {
+    typealias Response = SigninRequest
     var parameter: [String : AnyObject]?
     var path: String
     var method: HTTPMethod = .post
@@ -19,7 +20,14 @@ struct SigninRequest: Request {
     }
 }
 
+extension SigninRequest: Decodable {
+    static func dataFromModel(data: Data) -> Any? {
+        return SignInModel(data: data)
+    }
+}
+
 struct SigninResource: Request {
+    typealias Response = SigninResource
     var parameter: [String : AnyObject]?
     var path: String
     var method: HTTPMethod = .post
@@ -27,4 +35,11 @@ struct SigninResource: Request {
         return __serverTestURL
     }
 }
+
+extension SigninResource: Decodable {
+    static func dataFromModel(data: Data) -> Any? {
+        return SignInModel(data: data)
+    }
+}
+
 

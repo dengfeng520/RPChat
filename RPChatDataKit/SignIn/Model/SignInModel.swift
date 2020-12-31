@@ -30,16 +30,4 @@ extension SignInModel: Codable {
         guard let model = try? JSONDecoder().decode(SignInModel.self, from: data) else { return nil }
         self = model
     }
-    
-    public init?(json: JSON) {
-        username = json["username"].stringValue
-        dept_id = json["dept_id"].stringValue
-        access_token = json["access_token"].stringValue
-        token_type = json["token_type"].stringValue
-        user_id = json["user_id"].stringValue
-        scope = json["scope"].stringValue
-        refresh_token = json["refresh_token"].stringValue
-        expires_in = json["expires_in"].stringValue
-        license = json["license"].stringValue
-    }
 }
