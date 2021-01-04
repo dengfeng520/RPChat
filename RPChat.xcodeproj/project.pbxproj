@@ -35,7 +35,6 @@
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
 		1D422CC825086C7A00A8B949 /* RPToastView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D422CC525086BD300A8B949 /* RPToastView.framework */; };
-		1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
 		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
@@ -53,6 +52,10 @@
 		1D69CF54259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF53259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift */; };
 		1D69CF81259D8010006C0783 /* ReturnInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
+		1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */; };
+		1D92F42625A3081D00DE7BC0 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F42525A3081D00DE7BC0 /* DiscoverViewModel.swift */; };
+		1D92F43225A3082600DE7BC0 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F43125A3082600DE7BC0 /* DiscoverModel.swift */; };
+		1D92F43A25A30A6C00DE7BC0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
 		1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */; };
@@ -229,6 +232,9 @@
 		1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnInfoModel.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		1D92F42525A3081D00DE7BC0 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		1D92F43125A3082600DE7BC0 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
 		1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
@@ -451,6 +457,7 @@
 		1D2208B424977DEB002D25A2 /* RPChat_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D92F41325A3074D00DE7BC0 /* Discover */,
 				1D69CEDF259C0C9B006C0783 /* Guide */,
 				1D98A52125874881000D1115 /* Chat */,
 				1D67966424F65822006023C7 /* MessageList */,
@@ -470,7 +477,6 @@
 				1DD5F26C24BD8C7000E762B7 /* ControllerExtension */,
 				1DBBBD6D258B396400AABC4F /* TriangleView */,
 				1D5C601924AF10D400211398 /* LoadingView */,
-				1D5C5FF924AC65A300211398 /* UIColorExtension */,
 				1D22094224987084002D25A2 /* Reusable */,
 				1D2208C724977DFF002D25A2 /* RPChatUIKit.h */,
 				1D2208C824977DFF002D25A2 /* Info.plist */,
@@ -481,19 +487,11 @@
 		1D2208D724977E1B002D25A2 /* RPChatDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D92F43825A3098800DE7BC0 /* DataLayer */,
+				1D92F43925A30A1A00DE7BC0 /* PresentLayer */,
 				1D69CED2259B33A8006C0783 /* Extensions */,
-				1D952B25259448D700C03AF0 /* Encryption */,
 				1DD7DE1A2591EA97004917C3 /* AuthRemote */,
-				1D98A52825874956000D1115 /* Chat */,
-				1DD7DE5D2591F56E004917C3 /* AddressBook */,
-				1D22095224987260002D25A2 /* SignIn */,
-				1D98A50425870F1D000D1115 /* ConfigRSA */,
 				1DF627972536D1F9004232F4 /* SocketManager */,
-				1D67966124F6568B006023C7 /* SignedInResponder */,
-				1D67962824F106A5006023C7 /* PublicViewModel */,
-				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
-				1D5C5FFE24AC82D000211398 /* ConfigAES */,
-				1DB939A6249B75C700F07DC6 /* AccountData */,
 				1D2208D824977E1B002D25A2 /* RPChatDataKit.h */,
 				1D2208D924977E1B002D25A2 /* Info.plist */,
 			);
@@ -549,14 +547,6 @@
 				1D5C600A24AC8C5100211398 /* ViewModel */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		1D5C5FF924AC65A300211398 /* UIColorExtension */ = {
-			isa = PBXGroup;
-			children = (
-				1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */,
-			);
-			path = UIColorExtension;
 			sourceTree = "<group>";
 		};
 		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
@@ -620,6 +610,7 @@
 		1D69CED2259B33A8006C0783 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */,
 				1D5C600224AC852F00211398 /* StringExtension.swift */,
 				1DFA47CA258CA665009D9EAD /* CurrentTime.swift */,
 				1D69CED3259B33DB006C0783 /* Flag.swift */,
@@ -677,6 +668,80 @@
 				1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */,
 			);
 			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		1D92F41325A3074D00DE7BC0 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				1D92F41425A3077900DE7BC0 /* View */,
+				1D92F41525A3077E00DE7BC0 /* Controller */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		1D92F41425A3077900DE7BC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D92F41525A3077E00DE7BC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D92F42225A307D100DE7BC0 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				1D92F42425A307E100DE7BC0 /* Model */,
+				1D92F42325A307DA00DE7BC0 /* ViewModel */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		1D92F42325A307DA00DE7BC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D92F42525A3081D00DE7BC0 /* DiscoverViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D92F42425A307E100DE7BC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D92F43125A3082600DE7BC0 /* DiscoverModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D92F43825A3098800DE7BC0 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1D98A52825874956000D1115 /* Chat */,
+				1DD7DE5D2591F56E004917C3 /* AddressBook */,
+				1D92F42225A307D100DE7BC0 /* Discover */,
+				1D22095224987260002D25A2 /* SignIn */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		1D92F43925A30A1A00DE7BC0 /* PresentLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1D67962824F106A5006023C7 /* PublicViewModel */,
+				1D67966124F6568B006023C7 /* SignedInResponder */,
+				1D952B25259448D700C03AF0 /* Encryption */,
+				1D98A50425870F1D000D1115 /* ConfigRSA */,
+				1D78E5D924D2A86E00270F95 /* DeviceInfo */,
+				1D5C5FFE24AC82D000211398 /* ConfigAES */,
+				1DB939A6249B75C700F07DC6 /* AccountData */,
+			);
+			path = PresentLayer;
 			sourceTree = "<group>";
 		};
 		1D952B25259448D700C03AF0 /* Encryption */ = {
@@ -1226,6 +1291,7 @@
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
+				1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
 				1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */,
 				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
@@ -1245,7 +1311,6 @@
 				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,
 				1D22096724987370002D25A2 /* NiblessView.swift in Sources */,
 				1DBBBD6F258B397100AABC4F /* ChatRightTriangleView.swift in Sources */,
-				1D5C5FFB24AC65BE00211398 /* UIColorExtension.swift in Sources */,
 				1D67966824F66ABA006023C7 /* NiblessNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1260,6 +1325,7 @@
 				1DB939A8249B75D500F07DC6 /* AccountData.swift in Sources */,
 				1D69CF4C259C66D5006C0783 /* RPAuthRemoteAPI+Extension.swift in Sources */,
 				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
+				1D92F43225A3082600DE7BC0 /* DiscoverModel.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
 				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,
@@ -1269,8 +1335,10 @@
 				1DF627BA2536D5B0004232F4 /* SocketManagerSeal.swift in Sources */,
 				1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
+				1D92F42625A3081D00DE7BC0 /* DiscoverViewModel.swift in Sources */,
 				1DD7DE632591F56E004917C3 /* AddressBookModel.swift in Sources */,
 				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
+				1D92F43A25A30A6C00DE7BC0 /* UIColorExtension.swift in Sources */,
 				1D69CED4259B33DB006C0783 /* Flag.swift in Sources */,
 				1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */,
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,

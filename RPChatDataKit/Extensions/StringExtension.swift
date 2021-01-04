@@ -58,3 +58,12 @@ extension String {
         return "\(time)"
     }
 }
+
+extension String {
+    public static func localized(of key: String, comment: String = "") -> String {
+      return NSLocalizedString(key,
+                               tableName: "Localizable",
+                               bundle: Bundle.init(identifier: "io.RPChat")!,
+                               comment: comment)
+    }
+}

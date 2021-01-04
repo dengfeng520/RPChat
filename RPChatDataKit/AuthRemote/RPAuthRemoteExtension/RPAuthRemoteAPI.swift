@@ -28,7 +28,7 @@ public struct RPAuthRemoteAPI: AuthRemoteProtocol {
                        "Cookie" : "host=a",
                        "Authorization" : "\(authorization)"]
         }
-        
+         
         var urlRequest = URLRequest(url: path, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
         urlRequest.allHTTPHeaderFields = headers
         urlRequest.httpMethod = r.method.rawValue
