@@ -13,8 +13,11 @@
 "Sign In Successful" = "登录成功";
 "Sign In Failed" = "登录失败";
 "Message List" = "消息";
-"Mine" = "我的";
 "Address Book" = "通讯录";
 "Request Timed Out" = "请求超时";
 "Unknown Error" = "未知错误";
 "No More Data" = "无更多数据";
+"Chats" = "消息";
+"Me" = "我的";
+"Contacts" = "联系人";
+"Discover" = "朋友圈";

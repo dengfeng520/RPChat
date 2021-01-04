@@ -1,5 +1,5 @@
 //
-//  DiscoverViewController.swift
+//  GuideViewController.swift
 //  RPChat_iOS
 //
 //  Created by rp.wang on 2021/1/4.
@@ -9,12 +9,11 @@
 import UIKit
 import RxSwift
 
-class DiscoverViewController: UIViewController {
-    let disposeBag: DisposeBag = DisposeBag()
-    
+class GuideViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Discover", comment: "")
+
         // Do any additional setup after loading the view.
     }
 
