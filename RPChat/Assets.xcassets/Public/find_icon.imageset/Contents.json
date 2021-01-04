@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "find_icon@2x.png",
+      "filename" : "find_icon@3x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,7 +26,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "find_icon@2x-1.png",
+      "filename" : "find_drak_icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -42,7 +42,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "find_icon@3x-1.png",
+      "filename" : "find_drak_icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
