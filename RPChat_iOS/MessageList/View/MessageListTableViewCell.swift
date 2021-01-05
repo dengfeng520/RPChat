@@ -39,6 +39,8 @@ class MessageListTableViewCell: UITableViewCell {
         $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
         $0.layer.cornerRadius = 4
+        $0.layer.masksToBounds = true
+        $0.contentMode = .scaleAspectFill
         return $0
     }(UIImageView())
     
@@ -105,11 +107,12 @@ class MessageListTableViewCell: UITableViewCell {
 extension MessageListTableViewCell {
     /// Message list
     func configMessageListData(_ model: MessageModel) {
-        headerImg.image = UIImage(named: "logo_icon")
-        nickNameLab.text = "半神之弓"
+        headerImg.image = UIImage(named: model.photo)
+        nickNameLab.text = model.userName
         subMessageLab.text = model.lastMsg
-        timeLab.text = CurrentTime.fetchTimeInterval(model.createTime)
+        timeLab.text = model.createTime
+//        timeLab.text = CurrentTime.fetchTimeInterval(model.createTime)
         
-        badgeValueLab.text = "10"
+        badgeValueLab.text = "1"
     }
 }
