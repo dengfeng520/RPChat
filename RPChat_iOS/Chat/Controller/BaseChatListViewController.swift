@@ -25,7 +25,7 @@ class BaseChatListViewController: UIViewController {
         let bottom = $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         NSLayoutConstraint.activate([top, left, width, bottom])
         $0.separatorStyle = .none
-        $0.register(AddressBookTableViewCell.self, forCellReuseIdentifier: "AddressBookTableViewCellId")
+        $0.register(ContactsTableViewCell.self, forCellReuseIdentifier: "ContactsTableViewCellId")
         return $0
     }(UITableView())
     

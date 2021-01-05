@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIColor {
+    /// 主题颜色
+    public class var themeColor: UIColor {
+        return hexStringToColor("0xF5BE62")
+    }
     /// UIView背景颜色
     public class var darkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {

@@ -67,14 +67,14 @@ public class MessageListViewModel: PublicViewModel {
         ).subscribe(onNext: { [weak self] (returnJson, chatInfo) in
             guard let `self` = self else { return }
             print("---------获取消息列表-----------: \(returnJson)")
-            let messageArray = [["status":"1","userId":"58888","type":"1","groupId":"","lastMsg":"梦到的故事太长","userName":"半神之弓","createTime":"09:12","photo":"houyi"],["status":"1","userId":"58888","type":"1","groupId":"","lastMsg":"你对着月亮许了什么愿？","userName":"寒月公主","createTime":"09:45","photo":"change"],["status":"1","userId":"588888","type":"1","groupId":"","lastMsg":"千窟为佑，太平无忧","userName":"破魔之箭","createTime":"10:23","photo":"jialuo"],["status":"1","userId":"588888","type":"1","groupId":"","lastMsg":"在无数的碎片中找到你","userName":"千金重弩","createTime":"11:45","photo":"sunshangxiang"]]
-            
-            self.messageListArray = messageArray.map({ (json) -> MessageModel in
-                return MessageModel(json: JSON(json))
-            })
-//            self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
-//                return MessageModel(json: json)
+//            let messageArray = [["status":"1","userId":"58888","type":"1","groupId":"","lastMsg":"梦到的故事太长","userName":"半神之弓","createTime":"09:12","photo":"houyi"],["status":"1","userId":"58888","type":"1","groupId":"","lastMsg":"你对着月亮许了什么愿？","userName":"寒月公主","createTime":"09:45","photo":"change"],["status":"1","userId":"588888","type":"1","groupId":"","lastMsg":"千窟为佑，太平无忧","userName":"破魔之箭","createTime":"10:23","photo":"jialuo"],["status":"1","userId":"588888","type":"1","groupId":"","lastMsg":"在无数的碎片中找到你","userName":"千金重弩","createTime":"11:45","photo":"sunshangxiang"]]
+//
+//            self.messageListArray = messageArray.map({ (json) -> MessageModel in
+//                return MessageModel(json: JSON(json))
 //            })
+            self.messageListArray = returnJson["data"].arrayValue.map({ (json) -> MessageModel in
+                return MessageModel(json: json)
+            })
             if self.messageListArray.count != 0 {
                 self.messageListSubject.onNext(self.messageListArray)
             } else {

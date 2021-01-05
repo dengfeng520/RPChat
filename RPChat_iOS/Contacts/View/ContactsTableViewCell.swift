@@ -9,7 +9,7 @@
 import UIKit
 import RPChatDataKit
 
-class AddressBookTableViewCell: UITableViewCell {
+class ContactsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,9 +55,9 @@ class AddressBookTableViewCell: UITableViewCell {
 }
 
 
-extension AddressBookTableViewCell {
-    /// AddressBook
-    func configAddressBookData(_ withModel: AddressBookModel) {
+extension ContactsTableViewCell {
+    /// Contacts
+    func configContactsData(_ withModel: ContactsModel) {
         headerImg.image = UIImage(named: "logo_icon")
         nickNameLab.text = "寒月公主"
     }

@@ -13,14 +13,16 @@ import RPBannerView
 
 class ChatViewController: UIViewController {
 
-    var friendsModel: FriendsModel = FriendsModel()
+    
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .darkModeViewColor
+        hiddenBackTitle()
+        bindViewModel()
+        configSocketManager()
     }
     
     lazy var tableView: UITableView = {

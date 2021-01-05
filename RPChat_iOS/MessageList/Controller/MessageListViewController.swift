@@ -21,8 +21,8 @@ class MessageListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = NSLocalizedString("Chats", comment: "")
-        view.backgroundColor = .darkModeViewColor
         bindViewModel()
+        hiddenBackTitle()
     }
     
     lazy var tableView: UITableView = {
@@ -77,7 +77,7 @@ extension MessageListViewController {
     func presentChatVC(_ withModel: MessageModel) {
         let chatVC = ChatViewController()
         chatVC.hidesBottomBarWhenPushed = true
-        chatVC.friendsModel = viewModel.converFriendsModel(withModel)
+        chatVC.viewModel.friendsModel = viewModel.converFriendsModel(withModel)
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
 }

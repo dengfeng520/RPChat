@@ -8,6 +8,7 @@
 
 import UIKit
 import RPChatDataKit
+import Kingfisher
 
 class MessageListTableViewCell: UITableViewCell {
 
@@ -107,11 +108,16 @@ class MessageListTableViewCell: UITableViewCell {
 extension MessageListTableViewCell {
     /// Message list
     func configMessageListData(_ model: MessageModel) {
-        headerImg.image = UIImage(named: model.photo)
+        if model.photo.isEmpty == false {
+            let imgUrl: URL = URL(string: model.photo)!
+            headerImg.kf.setImage(with: imgUrl, placeholder:UIImage(named: "houyi"))
+        } else {
+            headerImg.image = UIImage(named: "houyi")
+        }
+        
         nickNameLab.text = model.userName
         subMessageLab.text = model.lastMsg
-        timeLab.text = model.createTime
-//        timeLab.text = CurrentTime.fetchTimeInterval(model.createTime)
+        timeLab.text = CurrentTime.fetchTimeInterval(model.createTime)
         
         badgeValueLab.text = "1"
     }

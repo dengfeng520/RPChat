@@ -35,6 +35,8 @@
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
 		1D422CC825086C7A00A8B949 /* RPToastView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D422CC525086BD300A8B949 /* RPToastView.framework */; };
+		1D43D21B25A455EA00549C91 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D21A25A455EA00549C91 /* Category.swift */; };
+		1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
 		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
@@ -62,7 +64,7 @@
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
 		1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */; };
 		1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4A125836A5F000D1115 /* MineViewController.swift */; };
-		1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */; };
+		1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4AC25836BBC000D1115 /* ContactsViewController.swift */; };
 		1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A50525870F3D000D1115 /* ConfigRSA.swift */; };
 		1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A51A25874521000D1115 /* SwiftyRSA.framework */; };
 		1D98A52C25874982000D1115 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A52B25874982000D1115 /* ChatViewModel.swift */; };
@@ -73,7 +75,7 @@
 		1D98A66F25876872000D1115 /* KeychainItemAccesssibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A66E25876872000D1115 /* KeychainItemAccesssibility.swift */; };
 		1D98A67625876887000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67525876887000D1115 /* RPKeychain.swift */; };
 		1D98A67D258768AA000D1115 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67C258768AA000D1115 /* KeychainItem.swift */; };
-		1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */; };
+		1D98A69025876B87000D1115 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */; };
 		1DAAF5DC258B58D700871FB2 /* RPKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A6412587683C000D1115 /* RPKeychain.framework */; };
 		1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9399B249B737100F07DC6 /* SignInViewController.swift */; };
 		1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB939A2249B752400F07DC6 /* SigninRequest.swift */; };
@@ -107,8 +109,8 @@
 		1DD7DE142591E3D8004917C3 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBBBCCA2589DFEC00AABC4F /* PromiseKit.framework */; };
 		1DD7DE3A2591F322004917C3 /* RPAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */; };
 		1DD7DE572591F542004917C3 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE562591F542004917C3 /* LoginData.swift */; };
-		1DD7DE622591F56E004917C3 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE5F2591F56E004917C3 /* AddressBookViewModel.swift */; };
-		1DD7DE632591F56E004917C3 /* AddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE612591F56E004917C3 /* AddressBookModel.swift */; };
+		1DD7DE622591F56E004917C3 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE5F2591F56E004917C3 /* ContactsViewModel.swift */; };
+		1DD7DE632591F56E004917C3 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7DE612591F56E004917C3 /* ContactsModel.swift */; };
 		1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECAC5249B4CED0078B54F /* Localizable.strings */; };
 		1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DEECACB249B4DCB0078B54F /* InfoPlist.strings */; };
 		1DF627992536D236004232F4 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627982536D236004232F4 /* SocketManager.swift */; };
@@ -215,6 +217,8 @@
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
 		1D422CC525086BD300A8B949 /* RPToastView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPToastView.framework; path = Carthage/Build/iOS/RPToastView.framework; sourceTree = "<group>"; };
+		1D43D21A25A455EA00549C91 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		1D5C5FFF24AC834B00211398 /* ConfigAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAES.swift; sourceTree = "<group>"; };
@@ -243,7 +247,7 @@
 		1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A4A125836A5F000D1115 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		1D98A4AC25836BBC000D1115 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1D98A50525870F3D000D1115 /* ConfigRSA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRSA.swift; sourceTree = "<group>"; };
 		1D98A51A25874521000D1115 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
 		1D98A52B25874982000D1115 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +258,7 @@
 		1D98A66E25876872000D1115 /* KeychainItemAccesssibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccesssibility.swift; sourceTree = "<group>"; };
 		1D98A67525876887000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
 		1D98A67C258768AA000D1115 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
-		1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
+		1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		1DB9399B249B737100F07DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1DB939A2249B752400F07DC6 /* SigninRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequest.swift; sourceTree = "<group>"; };
 		1DB939A4249B753C00F07DC6 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
@@ -281,8 +285,8 @@
 		1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerSocket.swift; sourceTree = "<group>"; };
 		1DD7DE392591F322004917C3 /* RPAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPAuthRemoteAPI.swift; sourceTree = "<group>"; };
 		1DD7DE562591F542004917C3 /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
-		1DD7DE5F2591F56E004917C3 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
-		1DD7DE612591F56E004917C3 /* AddressBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookModel.swift; sourceTree = "<group>"; };
+		1DD7DE5F2591F56E004917C3 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		1DD7DE612591F56E004917C3 /* ContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
 		1DDFCEE925119D3F00D12B0F /* RPBannerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPBannerView.framework; path = Carthage/Build/iOS/RPBannerView.framework; sourceTree = "<group>"; };
 		1DEECABF249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		1DEECAC0249B4C4F0078B54F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; usesTabs = 0; };
@@ -391,9 +395,9 @@
 		1D1DBFCD2588618E0016831C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1D43D26925A46E4100549C91 /* Friends */,
+				1D43D26825A46E3A00549C91 /* Chat */,
 				1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */,
-				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
-				1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */,
 				1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */,
 			);
 			path = Controller;
@@ -464,7 +468,7 @@
 				1D69CEDF259C0C9B006C0783 /* Guide */,
 				1D98A52125874881000D1115 /* Chat */,
 				1D67966424F65822006023C7 /* MessageList */,
-				1D98A4AB25836BA2000D1115 /* AddressBook */,
+				1D98A4AB25836BA2000D1115 /* Contacts */,
 				1D92F41325A3074D00DE7BC0 /* Discover */,
 				1D98A4A025836A26000D1115 /* Mine */,
 				1D220945249870D2002D25A2 /* SignIn */,
@@ -478,6 +482,7 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D3C334425A45581001642EC /* Category */,
 				1DD5F26C24BD8C7000E762B7 /* ControllerExtension */,
 				1DBBBD6D258B396400AABC4F /* TriangleView */,
 				1D5C601924AF10D400211398 /* LoadingView */,
@@ -551,6 +556,31 @@
 				1D5C600A24AC8C5100211398 /* ViewModel */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		1D3C334425A45581001642EC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1D43D21A25A455EA00549C91 /* Category.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1D43D26825A46E3A00549C91 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1DBA5AB225877B7800BC4448 /* ChatViewController.swift */,
+				1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1D43D26925A46E4100549C91 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
@@ -729,7 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				1D98A52825874956000D1115 /* Chat */,
-				1DD7DE5D2591F56E004917C3 /* AddressBook */,
+				1DD7DE5D2591F56E004917C3 /* Contacts */,
 				1D92F42225A307D100DE7BC0 /* Discover */,
 				1D22095224987260002D25A2 /* SignIn */,
 			);
@@ -774,13 +804,13 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		1D98A4AB25836BA2000D1115 /* AddressBook */ = {
+		1D98A4AB25836BA2000D1115 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				1D98A68925876B61000D1115 /* Controller */,
 				1D98A68825876B5B000D1115 /* View */,
 			);
-			path = AddressBook;
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		1D98A50425870F1D000D1115 /* ConfigRSA */ = {
@@ -845,7 +875,7 @@
 		1D98A68825876B5B000D1115 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1D98A68F25876B87000D1115 /* AddressBookTableViewCell.swift */,
+				1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -853,7 +883,7 @@
 		1D98A68925876B61000D1115 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1D98A4AC25836BBC000D1115 /* AddressBookViewController.swift */,
+				1D98A4AC25836BBC000D1115 /* ContactsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -906,19 +936,19 @@
 			path = AuthRemote;
 			sourceTree = "<group>";
 		};
-		1DD7DE5D2591F56E004917C3 /* AddressBook */ = {
+		1DD7DE5D2591F56E004917C3 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				1DD7DE5E2591F56E004917C3 /* ViewModel */,
 				1DD7DE602591F56E004917C3 /* Model */,
 			);
-			path = AddressBook;
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		1DD7DE5E2591F56E004917C3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1DD7DE5F2591F56E004917C3 /* AddressBookViewModel.swift */,
+				1DD7DE5F2591F56E004917C3 /* ContactsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -926,7 +956,7 @@
 		1DD7DE602591F56E004917C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DD7DE612591F56E004917C3 /* AddressBookModel.swift */,
+				1DD7DE612591F56E004917C3 /* ContactsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1288,8 +1318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D98A4AD25836BBC000D1115 /* AddressBookViewController.swift in Sources */,
+				1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */,
 				1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */,
+				1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
@@ -1301,7 +1332,7 @@
 				1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
 				1D92F44D25A30BB000DE7BC0 /* GuideView.swift in Sources */,
-				1D98A69025876B87000D1115 /* AddressBookTableViewCell.swift in Sources */,
+				1D98A69025876B87000D1115 /* ContactsTableViewCell.swift in Sources */,
 				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 				1DFA47BD258C9A4A009D9EAD /* MessageListTableViewCell.swift in Sources */,
@@ -1313,6 +1344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */,
+				1D43D21B25A455EA00549C91 /* Category.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
 				1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
@@ -1344,7 +1376,7 @@
 				1D98A50625870F3D000D1115 /* ConfigRSA.swift in Sources */,
 				1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */,
 				1D92F42625A3081D00DE7BC0 /* DiscoverViewModel.swift in Sources */,
-				1DD7DE632591F56E004917C3 /* AddressBookModel.swift in Sources */,
+				1DD7DE632591F56E004917C3 /* ContactsModel.swift in Sources */,
 				1DF627D12536D6D9004232F4 /* SocketManagerServer.swift in Sources */,
 				1D92F43A25A30A6C00DE7BC0 /* UIColorExtension.swift in Sources */,
 				1D69CED4259B33DB006C0783 /* Flag.swift in Sources */,
@@ -1352,7 +1384,7 @@
 				1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */,
 				1D69CF28259C2910006C0783 /* AuthRemoteProtocol.swift in Sources */,
 				1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */,
-				1DD7DE622591F56E004917C3 /* AddressBookViewModel.swift in Sources */,
+				1DD7DE622591F56E004917C3 /* ContactsViewModel.swift in Sources */,
 				1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */,
 				1D69CF3B259C6503006C0783 /* RequestProtocol.swift in Sources */,
 				1D5C600324AC852F00211398 /* StringExtension.swift in Sources */,
@@ -1602,6 +1634,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Beijing-Physical-Fitness-Sport-Science-and-Technology-Co.-Ltd..RPChat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1625,6 +1658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Beijing-Physical-Fitness-Sport-Science-and-Technology-Co.-Ltd..RPChat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -19,7 +19,7 @@ public struct ChatBodyModel {
 }
 
 extension ChatBodyModel {
-   public init(json: JSON) {
+    public init(json: JSON) {
         fromUserId = json["userId"].stringValue
         createTime = json["createTime"].stringValue
         fromUserName = json["userName"].stringValue

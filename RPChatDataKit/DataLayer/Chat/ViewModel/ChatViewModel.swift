@@ -10,17 +10,17 @@ import UIKit
 import RxSwift
 
 public class ChatViewModel: PublicViewModel {
-        
+    
     public var chatListArray: [ChatBodyModel] = [ChatBodyModel]()
     public let chatListSubject : PublishSubject<[ChatBodyModel]> = PublishSubject()
+    public var friendsModel: FriendsModel = FriendsModel()
     
     /// 获取消息列表
     public func fetchChatList(_ parameter: [String : String]) {
         self.loading.onNext(true)
-        RPAuthRemoteAPI().requestData(MessageListWithRequest(parameter: [:]))
+        RPAuthRemoteAPI().requestData(MessageListWithRequest(parameter: parameter as [String : AnyObject]))
             .subscribe(onNext: { returnJson in
-                print("取得 json 成功: \(returnJson)")
-                self.chatListArray = returnJson["data"].arrayValue.map({ (json) -> ChatBodyModel in
+                self.chatListArray = returnJson["data"]["messages"]["data"].arrayValue.map({ (json) -> ChatBodyModel in
                     return ChatBodyModel(json: json)
                 })
                 if self.chatListArray.count != 0 {
@@ -29,11 +29,9 @@ public class ChatViewModel: PublicViewModel {
                     self.noMoreData.onNext(NSLocalizedString("No More Data", comment: ""))
                 }
             }, onError: { errorJson in
-                print("取得 json 失败 Error: \(errorJson.localizedDescription)")
                 self.error.onNext(NSLocalizedString("Unknown Error", comment: ""))
                 self.loading.onNext(false)
             }, onCompleted: {
-                print("取得 json 任务成功完成")
                 self.loading.onNext(false)
             }).disposed(by: disposeBag)
     }

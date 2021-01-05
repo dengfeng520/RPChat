@@ -9,6 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-public class AddressBookModel: NSObject {
+public class ContactsModel: NSObject {
     
 }

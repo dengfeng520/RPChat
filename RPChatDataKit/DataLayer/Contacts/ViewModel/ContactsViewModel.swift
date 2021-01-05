@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 
-public class AddressBookViewModel: PublicViewModel {
-    public let addressBookArray: [AddressBookModel] = [AddressBookModel]()
-    public let addressBookSubject : PublishSubject<[AddressBookModel]> = PublishSubject()
+public class ContactsViewModel: PublicViewModel {
+    public let addressBookArray: [ContactsModel] = [ContactsModel]()
+    public let addressBookSubject : PublishSubject<[ContactsModel]> = PublishSubject()
     
     public func fetchAddressBookList() {
         

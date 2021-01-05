@@ -1,22 +1,38 @@
 //
-//  ChatViewControllerConfigUI.swift
+//  AddressBookViewController.swift
 //  RPChat_iOS
 //
-//  Created by rp.wang on 2020/12/15.
+//  Created by rp.wang on 2020/12/11.
 //  Copyright © 2020 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 import UIKit
+import RPChatDataKit
 import RxSwift
+import MJRefresh
 import RPBannerView
 
-extension ChatViewController: UITableViewDelegate {
+class ContactsViewController: BaseChatListViewController {
+
+    let viewModel: ContactsViewModel = ContactsViewModel()
+    let disposeBag: DisposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        title = NSLocalizedString("Contacts", comment: "")
+        bindViewModel()
+    }
+}
+
+extension ContactsViewController: UITableViewDelegate {
     func bindViewModel() {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
+        
         // subject
-        viewModel.chatListSubject.bind(to: tableView.rx.items(cellIdentifier: "ChatTableViewCellId", cellType: ChatTableViewCell.self)) { (row, model, cell) in
-            cell.cofigChatMessage(model)
+        viewModel.addressBookSubject.bind(to: tableView.rx.items(cellIdentifier: "ContactsTableViewCellId", cellType: ContactsTableViewCell.self)) { (row, model, cell) in
+            cell.configContactsData(model)
         }.disposed(by: disposeBag)
         // error
         viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
@@ -35,27 +51,8 @@ extension ChatViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 60
     }
 }
 
-
-extension ChatViewController {
-    func configChatDataWith() {
-        var parameter = [String : String]()
-        if friendsModel.type == "1" {
-            parameter = ["type":"\(friendsModel.type)",
-                "userId":"\(friendsModel.userId)",
-                "pageSize":"20",
-                "pageIndex":"\(1)"]
-        } else {
-            parameter = ["type":"\(friendsModel.type)",
-                "groupId":"\(friendsModel.userId)",
-                "pageSize":"20",
-                "pageIndex":"\(1)"]
-        }
-        viewModel.fetchChatList(parameter)
-    }
-}
