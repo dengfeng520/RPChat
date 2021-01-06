@@ -62,7 +62,7 @@ public class SignInViewModel: PublicViewModel {
                 self.successSubject.onNext(returnJson["returnMsg"].stringValue)
             }, onError: { errorJson in
                 // 失败
-                self.error.onNext(errorJson.localizedDescription)
+                self.errorSubject.onNext(errorJson.localizedDescription)
                 self.loading.onNext(false)
             }, onCompleted: {
                 // 调用完成时

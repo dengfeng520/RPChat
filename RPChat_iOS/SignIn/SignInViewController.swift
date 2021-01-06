@@ -47,7 +47,7 @@ open class SignInViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
         // 失败
-        viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
+        viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
         }).disposed(by: disposeBag)

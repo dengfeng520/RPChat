@@ -19,21 +19,12 @@ extension ChatViewController: UITableViewDelegate {
         // fetch chat list
         configChatArrayData()
         // subject
-        viewModel.chatListSubject.bind(to: tableView.rx.items(cellIdentifier: "ChatTableViewCellId", cellType: ChatTableViewCell.self)) { [weak self] (row, model, cell) in
+        viewModel.receiveChatSubject.subscribe(onNext: { [weak self] (chatList) in
             guard let `self` = self else { return }
-            cell.headerImg.tag = row
-            cell.headerImg.rx.tap.subscribe(onNext: {
-                self.prentsFriendInfoVC(model)
-            }).disposed(by: self.disposeBag)
-            if row % 2 == 0 {
-                cell.cofigLeftChatMessage(model)
-            } else {
-                cell.configRightChatMessage(model)
-            }
-            
-        }.disposed(by: disposeBag)
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
         // error
-        viewModel.error.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
+        viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
@@ -44,6 +35,8 @@ extension ChatViewController: UITableViewDelegate {
         }.disposed(by: disposeBag)
         // delegate
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        // dataSource
+        tableView.rx.setDataSource(self).disposed(by: disposeBag)
     }
     
     private func prentsFriendInfoVC(_ model: ChatBodyModel) {
@@ -51,6 +44,24 @@ extension ChatViewController: UITableViewDelegate {
         self.navigationController?.present(friendInfoVC, animated: true, completion: {
             
         })
+    }
+}
+
+extension ChatViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("receiveChatArray.count===========\(viewModel.receiveChatArray.count)")
+        return viewModel.receiveChatArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ChatTableViewCell = ChatCellShopFactory.createCell(model: viewModel.receiveChatArray[indexPath.row], tableView: tableView, indexPath: indexPath) as! ChatTableViewCell
+        
+        cell.headerImg.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            self.prentsFriendInfoVC(self.viewModel.receiveChatArray[indexPath.row])
+        }).disposed(by: self.disposeBag)
+        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

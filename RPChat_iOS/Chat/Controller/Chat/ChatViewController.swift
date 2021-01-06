@@ -37,7 +37,8 @@ class ChatViewController: UIViewController {
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 60
         $0.separatorStyle = .none
-        $0.register(ChatTableViewCell.self, forCellReuseIdentifier: "ChatTableViewCellId")
+        $0.register(LeftChatTableViewCell.self, forCellReuseIdentifier: "LeftChatTableViewCellId")
+        $0.register(RightChatTableViewCell.self, forCellReuseIdentifier: "RightChatTableViewCellId")
         return $0
     }(UITableView())
     

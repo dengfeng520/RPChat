@@ -11,9 +11,6 @@ import RPChatUIKit
 import RPChatDataKit
 
 class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
-    var stype: mineOrOtherMode?
-    private var leftLayout: NSLayoutConstraint!
-    private var rightLayout: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -113,62 +110,3 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
     }(UIActivityIndicatorView())
 }
 
-extension ChatTableViewCell {
-    func cofigLeftChatMessage(_ model: ChatBodyModel) {
-        configReceivedUI()
-        headerImg.setImage(UIImage.init(named: "sunshangxiang"), for: .normal)
-        nickeNameLab.text = model.fromUserName
-        messageLab.text = model.msg
-    }
-    
-    func configRightChatMessage(_ model: ChatBodyModel) {
-        configSendUI()
-        
-        headerImg.setImage(UIImage.init(named: "jialuo"), for: .normal)
-        nickeNameLab.text = model.fromUserName
-        messageLab.text = model.msg
-    }
-}
-
-extension ChatTableViewCell {
-    private func configReceivedUI() {
-        
-        headerImg.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
-        
-        nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
-        nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-        
-        if let rightLayout = rightLayout {
-            messageRootView.removeConstraint(rightLayout)
-        }
-        leftLayout = messageRootView.leftAnchor.constraint(equalTo: leftTriangleView.rightAnchor, constant: 0)
-        leftLayout.isActive = true
-        messageRootView.backgroundColor = .subViewColor
-            
-        loadingView.leftAnchor.constraint(equalTo: messageRootView.rightAnchor, constant: 4).isActive = true
-    }
-    
-    private func configSendUI() {
-        
-        leftTriangleView.removeFromSuperview()
-        headerImg.removeFromSuperview()
-        nickeNameLab.removeFromSuperview()
-        messageRootView.removeFromSuperview()
-        loadingView.removeFromSuperview()
-        
-        headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-        
-        nickeNameLab.rightAnchor.constraint(equalTo: headerImg.leftAnchor, constant: -8).isActive = true
-        nickeNameLab.leftAnchor.constraint(equalTo: contentView.rightAnchor, constant: 12).isActive = true
-        
-        if let leftLayout = leftLayout {
-            print("remove=============left")
-            messageRootView.removeConstraint(leftLayout)
-        }
-        rightLayout = messageRootView.rightAnchor.constraint(equalTo: rightTriangleView.leftAnchor, constant: 0)
-        rightLayout.isActive = true
-        messageRootView.backgroundColor = .hexStringToColor("0xF5BE62")
-        
-        loadingView.rightAnchor.constraint(equalTo: messageRootView.leftAnchor, constant: -4).isActive = true
-    }
-}

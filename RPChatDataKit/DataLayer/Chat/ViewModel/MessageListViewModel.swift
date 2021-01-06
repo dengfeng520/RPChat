@@ -87,10 +87,11 @@ public class MessageListViewModel: PublicViewModel {
             socket.fetchSocketInfoWith(model: infoModel)
             socket.isDesk = true
             socket.connectSocket()
-        }, onError: { [weak self]  error in
+        }, onError: { [weak self] error in
             guard let `self` = self else { return }
             print("取得 json 失败 Error: \(error.localizedDescription)")
             self.loading.onNext(false)
+            self.errorSubject.onNext(NSLocalizedString("Unknown Error", comment: ""))
         }, onCompleted: { [weak self] in
             guard let `self` = self else { return }
             print("取得 json 任务成功完成")

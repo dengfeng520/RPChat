@@ -34,9 +34,12 @@
 		1D2209512498715D002D25A2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F824986120002D25A2 /* SwiftyJSON.framework */; };
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
+		1D2BCD5125A5978400163727 /* ChatCellShopFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */; };
 		1D422CC825086C7A00A8B949 /* RPToastView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D422CC525086BD300A8B949 /* RPToastView.framework */; };
 		1D43D21B25A455EA00549C91 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D21A25A455EA00549C91 /* Category.swift */; };
 		1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */; };
+		1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */; };
+		1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
 		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
@@ -216,9 +219,12 @@
 		1D220943249870AA002D25A2 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellShopFactory.swift; sourceTree = "<group>"; };
 		1D422CC525086BD300A8B949 /* RPToastView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPToastView.framework; path = Carthage/Build/iOS/RPToastView.framework; sourceTree = "<group>"; };
 		1D43D21A25A455EA00549C91 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
+		1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChatTableViewCell.swift; sourceTree = "<group>"; };
+		1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		1D5C5FFF24AC834B00211398 /* ConfigAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAES.swift; sourceTree = "<group>"; };
@@ -407,6 +413,9 @@
 			isa = PBXGroup;
 			children = (
 				1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */,
+				1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */,
+				1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */,
+				1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1334,8 +1343,11 @@
 				1D92F44D25A30BB000DE7BC0 /* GuideView.swift in Sources */,
 				1D98A69025876B87000D1115 /* ContactsTableViewCell.swift in Sources */,
 				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
+				1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 				1DFA47BD258C9A4A009D9EAD /* MessageListTableViewCell.swift in Sources */,
+				1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */,
+				1D2BCD5125A5978400163727 /* ChatCellShopFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

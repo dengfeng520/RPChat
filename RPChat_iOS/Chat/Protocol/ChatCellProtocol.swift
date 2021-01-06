@@ -18,7 +18,6 @@ protocol ChatCellProtocol {
     var headerImg: UIButton { get }
     var messageRootView: UIView { get }
     var messageLab: UILabel { get }
-    var stype: mineOrOtherMode? { get }
 }
 
 extension ChatCellProtocol {

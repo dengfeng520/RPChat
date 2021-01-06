@@ -30,6 +30,7 @@ extension Request {
 public enum RequestError: Error {
     case unknownError
     case connectionError
+    case timeoutError
     case authorizationError(JSON)
     case notFound
     case serverError
