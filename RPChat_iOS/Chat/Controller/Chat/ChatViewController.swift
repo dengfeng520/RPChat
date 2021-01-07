@@ -12,10 +12,10 @@ import RxSwift
 import RPBannerView
 
 class ChatViewController: UIViewController {
-
     
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
+    var keyboardBottom:  NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class ChatViewController: UIViewController {
         hiddenBackTitle()
         bindViewModel()
         configSocketManager()
+        monitorKeyBoard()
     }
     
     lazy var tableView: UITableView = {
@@ -31,19 +32,32 @@ class ChatViewController: UIViewController {
         let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
         let left = $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
         let width = $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
-        let bottom = $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        let bottom = $0.bottomAnchor.constraint(equalTo: toolView.topAnchor, constant: 0)
         NSLayoutConstraint.activate([top, left, width, bottom])
         $0.tableFooterView = UIView()
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 60
         $0.separatorStyle = .none
+        $0.backgroundColor = .groupedColor
         $0.register(LeftChatTableViewCell.self, forCellReuseIdentifier: "LeftChatTableViewCellId")
         $0.register(RightChatTableViewCell.self, forCellReuseIdentifier: "RightChatTableViewCellId")
         return $0
     }(UITableView())
     
+    lazy var toolView: ToolView = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        keyboardBottom = $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        keyboardBottom.isActive = true
+        $0.backgroundColor = .darkModeViewColor
+        return $0
+    }(ToolView(frame: .zero))
+    
     lazy var socket: SocketManager = {
-        return SocketManager.sharedInstance()
+        return SocketManager.sharedInstance
     }()
     
     /// 构建Socket
@@ -51,6 +65,11 @@ class ChatViewController: UIViewController {
         if socket.isSigin == true && socket.isConnect == true {
             
         }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 

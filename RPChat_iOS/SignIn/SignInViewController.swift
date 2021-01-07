@@ -14,7 +14,7 @@ import RPChatUIKit
 import RPBannerView
 import RPKeychain
 
-open class SignInViewController: UIViewController {
+public class SignInViewController: UIViewController {
     
     let viewModel: SignInViewModel = SignInViewModel()
     let disposeBag: DisposeBag = DisposeBag()
@@ -57,7 +57,7 @@ open class SignInViewController: UIViewController {
         self.view = SignInRootView(viewModel: viewModel)
     }
     
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
 }

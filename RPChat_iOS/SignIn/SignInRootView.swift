@@ -17,7 +17,7 @@ class SignInRootView: UIView {
     let disposeBag: DisposeBag = DisposeBag()
     let viewModel: SignInViewModel
     
-    public init(frame: CGRect = .zero, viewModel: SignInViewModel) {
+    init(frame: CGRect = .zero, viewModel: SignInViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
         

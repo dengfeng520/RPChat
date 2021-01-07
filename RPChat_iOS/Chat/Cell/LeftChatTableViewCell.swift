@@ -37,16 +37,18 @@ class LeftChatTableViewCell: ChatTableViewCell {
         
         nickeNameLab.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
         nickeNameLab.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
+        nickeNameLab.textAlignment = .left  
         
-       messageRootView.leftAnchor.constraint(equalTo: leftTriangleView.rightAnchor, constant: 0).isActive = true
-        messageRootView.backgroundColor = .subViewColor
+        messageRootView.leftAnchor.constraint(equalTo: leftTriangleView.rightAnchor, constant: 0).isActive = true
+        messageRootView.backgroundColor = .configSubViewColorWith(.white)
             
         loadingView.leftAnchor.constraint(equalTo: messageRootView.rightAnchor, constant: 4).isActive = true
     }
     
    func configChatMessage(_ model: ChatBodyModel) {
-        headerImg.setImage(UIImage.init(named: "sunshangxiang"), for: .normal)
-        nickeNameLab.text = model.fromUserName
+        headerImg.setImage(UIImage.init(named: "change"), for: .normal)
+//        nickeNameLab.text = model.fromUserName
+    nickeNameLab.text = "寒月公主"
         messageLab.text = model.msg
     }
 

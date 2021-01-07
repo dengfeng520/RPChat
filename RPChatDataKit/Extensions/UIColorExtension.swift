@@ -28,6 +28,15 @@ extension UIColor {
             return .white
         }
     }
+    /// 列表背景颜色
+    public class var groupedColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemGroupedBackground
+        } else {
+            // Fallback on earlier versions
+            return .groupTableViewBackground
+        }
+    }
     /// 文字颜色
     public class var darkModeTextColor: UIColor {
         if #available(iOS 13.0, *) {
@@ -60,26 +69,26 @@ extension UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor.init(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
+                    return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
                 } else {
-                    return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+                    return UIColor(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
                 }
             }
         } else {
-            return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+            return UIColor(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
         }
     }
     public class func configSubTxtColor() -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor.init(red: 142/255, green: 141/255, blue: 147/255, alpha: 1)
+                    return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
                 } else {
-                    return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+                    return UIColor(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
                 }
             }
         } else {
-            return UIColor.init(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
+            return UIColor(red: 159/255, green: 151/255, blue: 140/255, alpha: 1)
         }
     }
     /// 子UIView背景颜色
@@ -114,7 +123,7 @@ extension UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                    return .systemBackground
                 } else {
                     return dfaultColor
                 }
@@ -128,7 +137,7 @@ extension UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
-                    return .systemBackground
+                    return .white
                 } else {
                     return dfaultColor
                 }

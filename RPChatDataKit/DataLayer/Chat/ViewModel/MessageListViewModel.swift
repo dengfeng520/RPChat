@@ -82,7 +82,7 @@ public class MessageListViewModel: PublicViewModel {
             }
             print("---------获取登录消息-----------: \(chatInfo)")
             // 连接Socket服务器
-            let socket = SocketManager.sharedInstance()
+            let socket = SocketManager.sharedInstance
             let infoModel = ChatInfoModel(json: returnJson["data"])
             socket.fetchSocketInfoWith(model: infoModel)
             socket.isDesk = true

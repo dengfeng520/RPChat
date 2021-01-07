@@ -50,13 +50,8 @@ public class SocketManager: NSObject {
         super.init()
     }
     
-    public static func sharedInstance() -> SocketManager {
-        guard let instance = _sharedInstance else {
-            _sharedInstance = SocketManager()
-            return _sharedInstance!
-        }
-        return instance
-    }
+    public static let sharedInstance = SocketManager()
+    
     
     // 构建Socket客户端
     lazy var socketManager: GCDAsyncSocket = {

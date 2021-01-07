@@ -36,7 +36,8 @@ class RightChatTableViewCell: ChatTableViewCell {
         headerImg.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
         
         nickeNameLab.rightAnchor.constraint(equalTo: headerImg.leftAnchor, constant: -8).isActive = true
-        nickeNameLab.leftAnchor.constraint(equalTo: contentView.rightAnchor, constant: 12).isActive = true
+        nickeNameLab.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
+        nickeNameLab.textAlignment = .right
         
         messageRootView.rightAnchor.constraint(equalTo: rightTriangleView.leftAnchor, constant: 0).isActive = true
         messageRootView.backgroundColor = .hexStringToColor("0xF5BE62")
@@ -45,8 +46,9 @@ class RightChatTableViewCell: ChatTableViewCell {
     }
     
     func configChatMessage(_ model: ChatBodyModel) {
-        headerImg.setImage(UIImage.init(named: "jialuo"), for: .normal)
-        nickeNameLab.text = model.fromUserName
+        headerImg.setImage(UIImage.init(named: "houyi"), for: .normal)
+//        nickeNameLab.text = model.fromUserName
+        nickeNameLab.text = "半神之弓"
         messageLab.text = model.msg
     }
     

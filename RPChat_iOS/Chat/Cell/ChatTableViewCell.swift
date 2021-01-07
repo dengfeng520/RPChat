@@ -26,6 +26,7 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
+        contentView.backgroundColor = .groupedColor
     }
     
     required init?(coder: NSCoder) {
@@ -49,6 +50,8 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        $0.font = UIFont(name: "Helvetica-Bold", size: 12)
+        $0.textColor = .subTextColor
         return $0
     }(UILabel())
     /// 左气泡
@@ -59,7 +62,7 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         $0.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 5).isActive = true
         $0.widthAnchor.constraint(equalToConstant: 5).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 13).isActive = true
-        $0.backgroundColor = .darkModeViewColor
+        $0.backgroundColor = .groupedColor
         return $0
     }(ChatLeftTriangleView())
     /// 右气泡
@@ -70,7 +73,7 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         $0.rightAnchor.constraint(equalTo: headerImg.leftAnchor, constant: -5).isActive = true
         $0.widthAnchor.constraint(equalToConstant: 5).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 13).isActive = true
-        $0.backgroundColor = .darkModeViewColor
+        $0.backgroundColor = .groupedColor
         return $0
     }(ChatRightTriangleView())
     /// root view

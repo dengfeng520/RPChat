@@ -14,6 +14,7 @@ import RPChatDataKit
 extension ChatViewController: UITableViewDelegate {
     func bindViewModel() {
         title = viewModel.friendsModel.userName
+        title = "如梦令"
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // fetch chat list
@@ -22,17 +23,14 @@ extension ChatViewController: UITableViewDelegate {
         viewModel.receiveChatSubject.subscribe(onNext: { [weak self] (chatList) in
             guard let `self` = self else { return }
             self.tableView.reloadData()
+            let indexPath = IndexPath(row: self.viewModel.receiveChatArray.count - 1, section: 0)
+            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
         }).disposed(by: disposeBag)
         // error
         viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
-        // selected
-        tableView.rx.itemSelected.bind { [weak self] (indexPath) in
-            guard let `self` = self else { return }
-            self.tableView.deselectRow(at: indexPath, animated: true)
-        }.disposed(by: disposeBag)
         // delegate
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         // dataSource
@@ -41,15 +39,12 @@ extension ChatViewController: UITableViewDelegate {
     
     private func prentsFriendInfoVC(_ model: ChatBodyModel) {
         let friendInfoVC = FriendInfoViewController()
-        self.navigationController?.present(friendInfoVC, animated: true, completion: {
-            
-        })
+        navigationController?.pushViewController(friendInfoVC, animated: true)
     }
 }
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("receiveChatArray.count===========\(viewModel.receiveChatArray.count)")
         return viewModel.receiveChatArray.count
     }
     
