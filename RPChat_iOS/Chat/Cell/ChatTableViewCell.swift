@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 import RPChatUIKit
 import RPChatDataKit
 
 class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
+    
+    let disposeBag: DisposeBag = DisposeBag()
+    public var headerTapClosures: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +31,14 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         contentView.backgroundColor = .groupedColor
+        
+        /// 添加点击事件
+        headerImg.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            if let headerTapClosures = self.headerTapClosures {
+                headerTapClosures()
+            }
+        }).disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {

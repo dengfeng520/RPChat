@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RPBannerView
 import RPChatDataKit
 
@@ -38,6 +39,7 @@ extension ChatViewController: UITableViewDelegate {
     }
     
     private func prentsFriendInfoVC(_ model: ChatBodyModel) {
+        closedKeyboard()
         let friendInfoVC = FriendInfoViewController()
         navigationController?.pushViewController(friendInfoVC, animated: true)
     }
@@ -51,11 +53,11 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChatTableViewCell = ChatCellShopFactory.createCell(model: viewModel.receiveChatArray[indexPath.row], tableView: tableView, indexPath: indexPath) as! ChatTableViewCell
         
-        cell.headerImg.rx.tap.subscribe(onNext: { [weak self] in
+        cell.headerTapClosures = { [weak self] in
             guard let `self` = self else { return }
             self.prentsFriendInfoVC(self.viewModel.receiveChatArray[indexPath.row])
-        }).disposed(by: self.disposeBag)
-        
+        }
+       
         return cell
     }
     

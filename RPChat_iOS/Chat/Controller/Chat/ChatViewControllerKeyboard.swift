@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RPChatUIKit
+import RPChatDataKit
 
 extension ChatViewController {
     var keyboardheight: Binder<CGFloat> {
@@ -48,6 +49,7 @@ extension ChatViewController {
         KeyBoardManager.sharedInstance.keyBoardSubject.bind(to: self.keyboardheight).disposed(by: disposeBag)
         // tableView上下滚动时监听键盘
         tableView.rx.contentOffset.bind(to: self.scrollMode).disposed(by: disposeBag)
+        
     }
     
     /// 键盘动画
@@ -62,14 +64,14 @@ extension ChatViewController {
     }
     
     /// 主动开启键盘
-    private func openKeyboard() {
+    func openKeyboard() {
         if KeyBoardManager.sharedInstance.keyboardIsVisible == false {
             self.toolView.inputChatView.becomeFirstResponder()
         }
     }
     
     /// 关闭键盘
-    private func closedKeyboard() {
+    func closedKeyboard() {
         if KeyBoardManager.sharedInstance.keyboardIsVisible == true {
             self.toolView.inputChatView.resignFirstResponder()
         }

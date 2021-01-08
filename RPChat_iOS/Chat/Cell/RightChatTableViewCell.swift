@@ -8,6 +8,7 @@
 
 import UIKit
 import RPChatDataKit
+import RPChatUIKit
 
 class RightChatTableViewCell: ChatTableViewCell {
     

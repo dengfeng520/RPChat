@@ -20,6 +20,7 @@ public enum scrollDirection {
 extension UIScrollView {
     /// 滚动方向
     public var scrollContent: Observable<scrollDirection> {
+//        let disposeBag: DisposeBag = DisposeBag()
         return Observable.create { (observer) -> Disposable in
             self.rx.contentOffset.subscribe(onNext: { content in
                 let point = self.panGestureRecognizer.translation(in: self.superview)

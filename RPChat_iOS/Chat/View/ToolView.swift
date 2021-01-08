@@ -31,7 +31,7 @@ class ToolView: UIView {
     private func configToolViewUI() {
         self.addSubview(microphoneBtn)
         microphoneBtn.translatesAutoresizingMaskIntoConstraints = false
-        microphoneBtn.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        microphoneBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13.5).isActive = true
         microphoneBtn.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
         microphoneBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         microphoneBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
@@ -40,16 +40,16 @@ class ToolView: UIView {
         
         self.addSubview(moreBtn)
         moreBtn.translatesAutoresizingMaskIntoConstraints = false
-        moreBtn.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        moreBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13.5).isActive = true
         moreBtn.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
         moreBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         moreBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        moreBtn.setImage(UIImage.init(named: "tool_add"), for: .normal)
+        moreBtn.setImage(UIImage(named: "tool_add"), for: .normal)
         moreBtn.imageView?.contentMode = .scaleAspectFill
         
         self.addSubview(emoticonsBtn)
         emoticonsBtn.translatesAutoresizingMaskIntoConstraints = false
-        emoticonsBtn.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        emoticonsBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13.5).isActive = true
         emoticonsBtn.rightAnchor.constraint(equalTo: moreBtn.leftAnchor, constant: -5).isActive = true
         emoticonsBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         emoticonsBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
@@ -65,7 +65,7 @@ class ToolView: UIView {
         inputChatView.heightAnchor.constraint(greaterThanOrEqualToConstant: 31).isActive = true
         inputChatView.backgroundColor = .subViewColor
         inputChatView.layer.cornerRadius = 4
+        inputChatView.showsVerticalScrollIndicator = false
         inputChatView.font = UIFont.systemFont(ofSize: 17)
     }
-    
 }
