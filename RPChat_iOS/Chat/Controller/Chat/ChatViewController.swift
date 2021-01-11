@@ -9,6 +9,7 @@
 import UIKit
 import RPChatDataKit
 import RxSwift
+import RPChatUIKit
 import RPBannerView
 
 class ChatViewController: UIViewController {
@@ -26,7 +27,7 @@ class ChatViewController: UIViewController {
         monitorKeyBoard()
     }
     
-    lazy var tableView: UITableView = {
+    lazy var tableView: ChatListView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
         let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
@@ -42,7 +43,7 @@ class ChatViewController: UIViewController {
         $0.register(LeftChatTableViewCell.self, forCellReuseIdentifier: "LeftChatTableViewCellId")
         $0.register(RightChatTableViewCell.self, forCellReuseIdentifier: "RightChatTableViewCellId")
         return $0
-    }(UITableView())
+    }(ChatListView())
     
     lazy var toolView: ToolView = {
         view.addSubview($0)
@@ -65,11 +66,6 @@ class ChatViewController: UIViewController {
         if socket.isSigin == true && socket.isConnect == true {
             
         }
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
     }
 }
 

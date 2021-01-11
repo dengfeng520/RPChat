@@ -8,20 +8,23 @@
 
 import UIKit
 import RxSwift
-import RPChatUIKit
 
-class ToolView: UIView {
+public class ToolView: UIView {
     
     let disposeBag: DisposeBag = DisposeBag()
     
-    let microphoneBtn: UIButton =  UIButton()
-    let inputChatView: UITextView = UITextView()
-    let emoticonsBtn: UIButton = UIButton()
-    let moreBtn: UIButton = UIButton()
+    public let microphoneBtn: UIButton =  UIButton()
+    public let inputChatView: UITextView = UITextView()
+    public let emoticonsBtn: UIButton = UIButton()
+    public let moreBtn: UIButton = UIButton()
     
-    override init(frame: CGRect = .zero) {
+    public let tapToolBtnSubject: PublishSubject<KeyboardVisible> = PublishSubject()
+    
+    public override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         configToolViewUI()
+        
+        bindTap()
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +38,10 @@ class ToolView: UIView {
         microphoneBtn.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
         microphoneBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         microphoneBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        microphoneBtn.setImage(UIImage.init(named: "recording"), for: .normal)
         microphoneBtn.imageView?.contentMode = .scaleAspectFill
+        microphoneBtn.setImage(UIImage(named: "recording"), for: .normal)
+        microphoneBtn.setImage(UIImage(named: "select_recording"), for: .highlighted)
+        microphoneBtn.setImage(UIImage(named: "select_recording"), for: .selected)
         
         self.addSubview(moreBtn)
         moreBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -44,8 +49,10 @@ class ToolView: UIView {
         moreBtn.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
         moreBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         moreBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        moreBtn.setImage(UIImage(named: "tool_add"), for: .normal)
         moreBtn.imageView?.contentMode = .scaleAspectFill
+        moreBtn.setImage(UIImage(named: "tool_add"), for: .normal)
+        moreBtn.setImage(UIImage(named: "select_tool_add"), for: .highlighted)
+        moreBtn.setImage(UIImage(named: "select_tool_add"), for: .selected)
         
         self.addSubview(emoticonsBtn)
         emoticonsBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +60,10 @@ class ToolView: UIView {
         emoticonsBtn.rightAnchor.constraint(equalTo: moreBtn.leftAnchor, constant: -5).isActive = true
         emoticonsBtn.widthAnchor.constraint(equalToConstant: 28).isActive = true
         emoticonsBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        emoticonsBtn.setImage(UIImage.init(named: "emoticons"), for: .normal)
         emoticonsBtn.imageView?.contentMode = .scaleAspectFill
+        emoticonsBtn.setImage(UIImage(named: "emoticons"), for: .normal)
+        emoticonsBtn.setImage(UIImage(named: "select_emoticons"), for: .highlighted)
+        emoticonsBtn.setImage(UIImage(named: "select_emoticons"), for: .selected)
         
         self.addSubview(inputChatView)
         inputChatView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,5 +76,25 @@ class ToolView: UIView {
         inputChatView.layer.cornerRadius = 4
         inputChatView.showsVerticalScrollIndicator = false
         inputChatView.font = UIFont.systemFont(ofSize: 17)
+    }
+}
+
+extension ToolView {
+    private func bindTap() {
+        /// 麦克风
+        microphoneBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            self.tapToolBtnSubject.onNext(.microphone)
+        }).disposed(by: disposeBag)
+        /// 更多
+        moreBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            self.tapToolBtnSubject.onNext(.other)
+        }).disposed(by: disposeBag)
+        /// emoji
+        emoticonsBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let `self` = self else { return }
+            self.tapToolBtnSubject.onNext(.emoji)
+        }).disposed(by: disposeBag)
     }
 }

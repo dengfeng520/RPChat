@@ -7,30 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-public enum scrollDirection {
-    // 向上滚动
-    case up
-    // 向下滚动
-    case down
-}
 
-extension UIScrollView {
-    /// 滚动方向
-    public var scrollContent: Observable<scrollDirection> {
-//        let disposeBag: DisposeBag = DisposeBag()
-        return Observable.create { (observer) -> Disposable in
-            self.rx.contentOffset.subscribe(onNext: { content in
-                let point = self.panGestureRecognizer.translation(in: self.superview)
-                if point.y < -15 {
-                    observer.onNext(.up)
-                } else {
-                    observer.onNext(.down)
-                }
-            }).disposed(by: DisposeBag())
-            return Disposables.create {  }
-        }
-    }
-}
+

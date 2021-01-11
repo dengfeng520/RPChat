@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RPChatUIKit
 import RPChatDataKit
 
 class ChatView: UIView {
@@ -19,7 +18,6 @@ class ChatView: UIView {
     init(frame: CGRect = .zero, viewModel: ChatViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
-       
         
     }
     

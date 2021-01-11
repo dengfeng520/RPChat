@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1039AE25A83ACB00E0D615 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AB25A83ACB00E0D615 /* EmojiView.swift */; };
+		1D1039AF25A83ACB00E0D615 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AC25A83ACB00E0D615 /* ToolView.swift */; };
+		1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AD25A83ACB00E0D615 /* ChatView.swift */; };
 		1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
 		1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */; };
 		1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */; };
@@ -16,7 +19,6 @@
 		1D20DD6025A72168006EA503 /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
 		1D20DD6125A72168006EA503 /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
 		1D20DD6825A7219F006EA503 /* emoji.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
-		1D20DD8125A726F0006EA503 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20DD8025A726F0006EA503 /* EmojiView.swift */; };
 		1D20DD8D25A7E8E4006EA503 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD8C25A7E8E4006EA503 /* emoji.plist */; };
 		1D20DD8E25A7E8E4006EA503 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD8C25A7E8E4006EA503 /* emoji.plist */; };
 		1D22089B24977C12002D25A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089A24977C12002D25A2 /* AppDelegate.swift */; };
@@ -43,13 +45,13 @@
 		1D22095424987272002D25A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22095324987272002D25A2 /* SignInViewModel.swift */; };
 		1D22096724987370002D25A2 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22096624987370002D25A2 /* NiblessView.swift */; };
 		1D2BCD5125A5978400163727 /* ChatCellShopFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */; };
-		1D2BCD5925A5A88800163727 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BCD5825A5A88800163727 /* ToolView.swift */; };
-		1D2BCD6025A5AF4300163727 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BCD5F25A5AF4300163727 /* ChatView.swift */; };
 		1D422CC825086C7A00A8B949 /* RPToastView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D422CC525086BD300A8B949 /* RPToastView.framework */; };
 		1D43D21B25A455EA00549C91 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D21A25A455EA00549C91 /* Category.swift */; };
 		1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */; };
 		1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */; };
 		1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */; };
+		1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */; };
+		1D5566B625A84309001F5C40 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
 		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
@@ -74,6 +76,7 @@
 		1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F44025A30B5900DE7BC0 /* GuideViewController.swift */; };
 		1D92F44D25A30BB000DE7BC0 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F44C25A30BB000DE7BC0 /* GuideView.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
+		1D964BA625AC27750029E425 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D964BA525AC27750029E425 /* ChatListView.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
 		1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */; };
 		1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4A125836A5F000D1115 /* MineViewController.swift */; };
@@ -203,13 +206,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D1039AB25A83ACB00E0D615 /* EmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
+		1D1039AC25A83ACB00E0D615 /* ToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		1D1039AD25A83ACB00E0D615 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatListViewController.swift; sourceTree = "<group>"; };
 		1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D1DBFDC258862360016831C /* ChatCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellProtocol.swift; sourceTree = "<group>"; };
 		1D20DD0225A710FA006EA503 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiManager.swift; sourceTree = "<group>"; };
 		1D20DD1325A71127006EA503 /* EmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiModel.swift; sourceTree = "<group>"; };
 		1D20DD5F25A72168006EA503 /* emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emoji.bundle; sourceTree = "<group>"; };
-		1D20DD8025A726F0006EA503 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		1D20DD8C25A7E8E4006EA503 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		1D22089724977C12002D25A2 /* RPChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D22089A24977C12002D25A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,13 +243,13 @@
 		1D22095324987272002D25A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1D22096624987370002D25A2 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
 		1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellShopFactory.swift; sourceTree = "<group>"; };
-		1D2BCD5825A5A88800163727 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
-		1D2BCD5F25A5AF4300163727 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		1D422CC525086BD300A8B949 /* RPToastView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RPToastView.framework; path = Carthage/Build/iOS/RPToastView.framework; sourceTree = "<group>"; };
 		1D43D21A25A455EA00549C91 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatTableViewCell.swift; sourceTree = "<group>"; };
+		1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Server.swift"; sourceTree = "<group>"; };
+		1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		1D5C5FFF24AC834B00211398 /* ConfigAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAES.swift; sourceTree = "<group>"; };
@@ -270,6 +275,7 @@
 		1D92F44025A30B5900DE7BC0 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		1D92F44C25A30BB000DE7BC0 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		1D964BA525AC27750029E425 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A4A125836A5F000D1115 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +428,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1039AA25A83AB000E0D615 /* ToolBarView */ = {
+			isa = PBXGroup;
+			children = (
+				1D5566B425A842F1001F5C40 /* EmojiCell */,
+				1D1039AD25A83ACB00E0D615 /* ChatView.swift */,
+				1D1039AB25A83ACB00E0D615 /* EmojiView.swift */,
+				1D1039AC25A83ACB00E0D615 /* ToolView.swift */,
+			);
+			path = ToolBarView;
+			sourceTree = "<group>";
+		};
 		1D1DBFCD2588618E0016831C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,9 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */,
-				1D2BCD5825A5A88800163727 /* ToolView.swift */,
-				1D2BCD5F25A5AF4300163727 /* ChatView.swift */,
-				1D20DD8025A726F0006EA503 /* EmojiView.swift */,
+				1D964BA525AC27750029E425 /* ChatListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,7 +539,8 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1DAB099925A6B37C007B1118 /* MonitorKeyBoard */,
+				1D1039AA25A83AB000E0D615 /* ToolBarView */,
+				1DAB099925A6B37C007B1118 /* KeyBoardManager */,
 				1DAB098525A6A45B007B1118 /* UIScrollViewExtension */,
 				1D3C334425A45581001642EC /* Category */,
 				1DD5F26C24BD8C7000E762B7 /* ControllerExtension */,
@@ -627,6 +643,7 @@
 				1DBBBC542588C74100AABC4F /* ChatViewControllerConfigUI.swift */,
 				1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */,
 				1DAB099225A6A788007B1118 /* ChatViewControllerKeyboard.swift */,
+				1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -637,6 +654,14 @@
 				1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */,
 			);
 			path = Friends;
+			sourceTree = "<group>";
+		};
+		1D5566B425A842F1001F5C40 /* EmojiCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */,
+			);
+			path = EmojiCell;
 			sourceTree = "<group>";
 		};
 		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
@@ -955,12 +980,12 @@
 			path = UIScrollViewExtension;
 			sourceTree = "<group>";
 		};
-		1DAB099925A6B37C007B1118 /* MonitorKeyBoard */ = {
+		1DAB099925A6B37C007B1118 /* KeyBoardManager */ = {
 			isa = PBXGroup;
 			children = (
 				1DAB099A25A6B395007B1118 /* KeyBoardManager.swift */,
 			);
-			path = MonitorKeyBoard;
+			path = KeyBoardManager;
 			sourceTree = "<group>";
 		};
 		1DB939A6249B75C700F07DC6 /* AccountData */ = {
@@ -1397,11 +1422,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */,
 				1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */,
 				1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */,
-				1D2BCD6025A5AF4300163727 /* ChatView.swift in Sources */,
 				1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */,
-				1D20DD8125A726F0006EA503 /* EmojiView.swift in Sources */,
+				1D964BA625AC27750029E425 /* ChatListView.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
@@ -1409,7 +1434,6 @@
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */,
-				1D2BCD5925A5A88800163727 /* ToolView.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 				1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
@@ -1429,11 +1453,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1039AF25A83ACB00E0D615 /* ToolView.swift in Sources */,
 				1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */,
 				1D43D21B25A455EA00549C91 /* Category.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
+				1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */,
 				1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
+				1D5566B625A84309001F5C40 /* EmojiCollectionViewCell.swift in Sources */,
+				1D1039AE25A83ACB00E0D615 /* EmojiView.swift in Sources */,
 				1DAB099B25A6B395007B1118 /* KeyBoardManager.swift in Sources */,
 				1DAB098725A6A46E007B1118 /* ScrollViewManager.swift in Sources */,
 				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,

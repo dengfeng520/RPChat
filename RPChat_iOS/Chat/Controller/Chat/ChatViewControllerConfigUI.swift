@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RPBannerView
 import RPChatDataKit
+import RPChatUIKit
 
 extension ChatViewController: UITableViewDelegate {
     func bindViewModel() {
@@ -21,14 +22,13 @@ extension ChatViewController: UITableViewDelegate {
         // fetch chat list
         configChatArrayData()
         // subject
-        viewModel.receiveChatSubject.subscribe(onNext: { [weak self] (chatList) in
+        viewModel.receiveChatSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (chatList) in
             guard let `self` = self else { return }
             self.tableView.reloadData()
-            let indexPath = IndexPath(row: self.viewModel.receiveChatArray.count - 1, section: 0)
-            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
+            self.scrollWithBottom()
         }).disposed(by: disposeBag)
         // error
-        viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
+        viewModel.errorSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
@@ -38,7 +38,14 @@ extension ChatViewController: UITableViewDelegate {
         tableView.rx.setDataSource(self).disposed(by: disposeBag)
     }
     
+    /// 滚到最底部
+    func scrollWithBottom() {
+        let indexPath = IndexPath(row: viewModel.receiveChatArray.count - 1, section: 0)
+        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
+    }
+    
     private func prentsFriendInfoVC(_ model: ChatBodyModel) {
+        /// 页面跳转时 关闭键盘
         closedKeyboard()
         let friendInfoVC = FriendInfoViewController()
         navigationController?.pushViewController(friendInfoVC, animated: true)
@@ -67,21 +74,3 @@ extension ChatViewController: UITableViewDataSource {
 }
 
 
-extension ChatViewController {
-    func configChatArrayData() {
-        var parameter = [String : String]()
-        if viewModel.friendsModel.type == "1" {
-            parameter = ["type":"\(viewModel.friendsModel.type)",
-                         "userId":"\(viewModel.friendsModel.userId)",
-                         "pageSize":"20",
-                         "pageIndex":"\(1)"]
-        } else {
-            parameter = ["type":"\(viewModel.friendsModel.type)",
-                         "groupId":"\(viewModel.friendsModel.userId)",
-                         "pageSize":"20",
-                         "pageIndex":"\(1)"]
-        }
-        print("parameter-------------\(parameter)")
-        viewModel.fetchChatList(parameter)
-    }
-}

@@ -27,6 +27,13 @@ public var isiPhoneX: Bool {
     }
     return false
 }
+/// 导航栏高度
+public var navHeight: CGFloat {
+    if isiPhoneX == true {
+        return 88
+    }
+    return 64
+}
 /// 当前Window
 public var currentWindows: UIWindow? {
     var window: UIWindow? = nil

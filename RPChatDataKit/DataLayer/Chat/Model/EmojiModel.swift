@@ -9,8 +9,8 @@
 import UIKit
 
 public struct EmojiModel: Codable {
-    var face_name: String
-    var face_id: String
+    public var face_name: String
+    public var face_id: String
     
     private enum CodingKeys: String,CodingKey {
         case face_name

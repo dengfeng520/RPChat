@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RPChatDataKit
 
 extension UIViewController {
     /// 当前windows上显示的最上层UIViewController
