@@ -32,6 +32,8 @@ class EmojiCollectionViewCell: UICollectionViewCell {
     
     
     func converEmoji(_ model: EmojiModel) {
-        emojiImg.image = UIImage.init(named: "\(model.face_name)@2x")
+        let img = EmojiManager.fetchEmojiImage("\(model.face_name)@2x")
+        emojiImg.image = img
+//        emojiImg.image = UIImage(named: "\(model.face_name)@2x")
     }
 }

@@ -25,8 +25,6 @@ public class MessageListViewModel: PublicViewModel {
             guard let `self` = self else { return }
             
         }).disposed(by: disposeBag)
-        
-        
     }
     
     // 获取列表失败处理

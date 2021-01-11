@@ -10,15 +10,15 @@
 		1D1039AE25A83ACB00E0D615 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AB25A83ACB00E0D615 /* EmojiView.swift */; };
 		1D1039AF25A83ACB00E0D615 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AC25A83ACB00E0D615 /* ToolView.swift */; };
 		1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AD25A83ACB00E0D615 /* ChatView.swift */; };
+		1D12F31325AC495F00C1AC4A /* EmojiBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */; };
+		1D12F32725AC5EED00C1AC4A /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D12F32625AC5EED00C1AC4A /* emoji.bundle */; };
+		1D12F32825AC5EED00C1AC4A /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D12F32625AC5EED00C1AC4A /* emoji.bundle */; };
 		1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
 		1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */; };
 		1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */; };
 		1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFDC258862360016831C /* ChatCellProtocol.swift */; };
 		1D20DD0325A710FA006EA503 /* EmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20DD0225A710FA006EA503 /* EmojiManager.swift */; };
 		1D20DD1425A71127006EA503 /* EmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20DD1325A71127006EA503 /* EmojiModel.swift */; };
-		1D20DD6025A72168006EA503 /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
-		1D20DD6125A72168006EA503 /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
-		1D20DD6825A7219F006EA503 /* emoji.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D20DD5F25A72168006EA503 /* emoji.bundle */; };
 		1D20DD8D25A7E8E4006EA503 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD8C25A7E8E4006EA503 /* emoji.plist */; };
 		1D20DD8E25A7E8E4006EA503 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D20DD8C25A7E8E4006EA503 /* emoji.plist */; };
 		1D22089B24977C12002D25A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22089A24977C12002D25A2 /* AppDelegate.swift */; };
@@ -209,12 +209,13 @@
 		1D1039AB25A83ACB00E0D615 /* EmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		1D1039AC25A83ACB00E0D615 /* ToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
 		1D1039AD25A83ACB00E0D615 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiBottomView.swift; sourceTree = "<group>"; };
+		1D12F32625AC5EED00C1AC4A /* emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emoji.bundle; sourceTree = "<group>"; };
 		1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatListViewController.swift; sourceTree = "<group>"; };
 		1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D1DBFDC258862360016831C /* ChatCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellProtocol.swift; sourceTree = "<group>"; };
 		1D20DD0225A710FA006EA503 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiManager.swift; sourceTree = "<group>"; };
 		1D20DD1325A71127006EA503 /* EmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiModel.swift; sourceTree = "<group>"; };
-		1D20DD5F25A72168006EA503 /* emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emoji.bundle; sourceTree = "<group>"; };
 		1D20DD8C25A7E8E4006EA503 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		1D22089724977C12002D25A2 /* RPChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D22089A24977C12002D25A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -401,7 +402,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D20DD6825A7219F006EA503 /* emoji.bundle in Frameworks */,
 				1DD7DE132591E384004917C3 /* PromiseKit.framework in Frameworks */,
 				1D98A51B25874521000D1115 /* SwiftyRSA.framework in Frameworks */,
 				1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */,
@@ -431,9 +431,8 @@
 		1D1039AA25A83AB000E0D615 /* ToolBarView */ = {
 			isa = PBXGroup;
 			children = (
-				1D5566B425A842F1001F5C40 /* EmojiCell */,
+				1D5566B425A842F1001F5C40 /* EmojiView */,
 				1D1039AD25A83ACB00E0D615 /* ChatView.swift */,
-				1D1039AB25A83ACB00E0D615 /* EmojiView.swift */,
 				1D1039AC25A83ACB00E0D615 /* ToolView.swift */,
 			);
 			path = ToolBarView;
@@ -469,8 +468,8 @@
 		1D20DD0125A710E9006EA503 /* EmojiManager */ = {
 			isa = PBXGroup;
 			children = (
+				1D12F32625AC5EED00C1AC4A /* emoji.bundle */,
 				1D20DD8C25A7E8E4006EA503 /* emoji.plist */,
-				1D20DD5F25A72168006EA503 /* emoji.bundle */,
 				1D20DD0225A710FA006EA503 /* EmojiManager.swift */,
 			);
 			path = EmojiManager;
@@ -656,12 +655,14 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		1D5566B425A842F1001F5C40 /* EmojiCell */ = {
+		1D5566B425A842F1001F5C40 /* EmojiView */ = {
 			isa = PBXGroup;
 			children = (
+				1D1039AB25A83ACB00E0D615 /* EmojiView.swift */,
 				1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */,
+				1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */,
 			);
-			path = EmojiCell;
+			path = EmojiView;
 			sourceTree = "<group>";
 		};
 		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
@@ -1324,13 +1325,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D12F32725AC5EED00C1AC4A /* emoji.bundle in Resources */,
 				1D20DD8D25A7E8E4006EA503 /* emoji.plist in Resources */,
 				1D2208A724977C14002D25A2 /* LaunchScreen.storyboard in Resources */,
 				1DEECAC3249B4CED0078B54F /* Localizable.strings in Resources */,
 				1D2208A424977C14002D25A2 /* Assets.xcassets in Resources */,
 				1D2208A224977C12002D25A2 /* Main.storyboard in Resources */,
 				1DEECAC9249B4DCB0078B54F /* InfoPlist.strings in Resources */,
-				1D20DD6025A72168006EA503 /* emoji.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,7 +1353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D20DD6125A72168006EA503 /* emoji.bundle in Resources */,
+				1D12F32825AC5EED00C1AC4A /* emoji.bundle in Resources */,
 				1D20DD8E25A7E8E4006EA503 /* emoji.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1457,6 +1458,7 @@
 				1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */,
 				1D43D21B25A455EA00549C91 /* Category.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
+				1D12F31325AC495F00C1AC4A /* EmojiBottomView.swift in Sources */,
 				1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */,
 				1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,

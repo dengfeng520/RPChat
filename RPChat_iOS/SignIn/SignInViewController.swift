@@ -31,7 +31,7 @@ public class SignInViewController: UIViewController {
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // 成功
-        viewModel.successSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
+        viewModel.successSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Successful", comment: ""), isView: self.view)
             RPKeychain.default.set("\(self.viewModel.inputStuNum)", forKey: "key.siginInfo.value")
@@ -47,7 +47,7 @@ public class SignInViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
         // 失败
-        viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
+        viewModel.errorSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (alertMessage) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: NSLocalizedString("Sign In Failed", comment: ""), isView: self.view)
         }).disposed(by: disposeBag)

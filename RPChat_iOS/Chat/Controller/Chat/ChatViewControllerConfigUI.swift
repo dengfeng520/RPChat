@@ -38,6 +38,15 @@ extension ChatViewController: UITableViewDelegate {
         tableView.rx.setDataSource(self).disposed(by: disposeBag)
     }
     
+    func configChatUI() {
+        hiddenBackTitle()
+        bindViewModel()
+        configSocketManager()
+        monitorKeyBoard()
+        
+        emojiView.isHidden = false
+    }
+    
     /// 滚到最底部
     func scrollWithBottom() {
         let indexPath = IndexPath(row: viewModel.receiveChatArray.count - 1, section: 0)

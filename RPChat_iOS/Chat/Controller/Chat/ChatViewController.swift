@@ -16,15 +16,12 @@ class ChatViewController: UIViewController {
     
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
-    var keyboardBottom:  NSLayoutConstraint!
+    var keyboardBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        hiddenBackTitle()
-        bindViewModel()
-        configSocketManager()
-        monitorKeyBoard()
+        configChatUI()
     }
     
     lazy var tableView: ChatListView = {
@@ -57,12 +54,22 @@ class ChatViewController: UIViewController {
         return $0
     }(ToolView(frame: .zero))
     
+    lazy var emojiView: EmojiView = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: toolView.bottomAnchor, constant: 0).isActive = true
+        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        return $0
+    }(EmojiView(frame: .zero))
+    
     lazy var socket: SocketManager = {
         return SocketManager.sharedInstance
     }()
     
     /// 构建Socket
-    private func configSocketManager() {
+    func configSocketManager() {
         if socket.isSigin == true && socket.isConnect == true {
             
         }

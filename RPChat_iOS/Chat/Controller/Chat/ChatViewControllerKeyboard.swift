@@ -57,12 +57,13 @@ extension ChatViewController {
 extension ChatViewController {
     /// 监听键盘
     func monitorKeyBoard() {
-        // 键盘将要显示时
-        KeyBoardManager.sharedInstance.keyBoardSubject.bind(to: keyboardheight).disposed(by: disposeBag)
         // tableView上下滚动时键盘处理
         tableView.rx.contentOffset.bind(to: scrollMode).disposed(by: disposeBag)
         // 工具栏
         toolView.tapToolBtnSubject.bind(to: touchTool).disposed(by: disposeBag)
+        // 键盘将要显示时
+        KeyBoardManager.sharedInstance.keyBoardSubject.bind(to: keyboardheight).disposed(by: disposeBag)
+        
     }
     
     /// 键盘动画

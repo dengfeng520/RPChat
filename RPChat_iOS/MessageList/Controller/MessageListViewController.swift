@@ -52,7 +52,7 @@ extension MessageListViewController: UITableViewDelegate {
             cell.configMessageListData(model)
         }.disposed(by: disposeBag)
         // error
-        viewModel.errorSubject.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
+        viewModel.errorSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .warningMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)

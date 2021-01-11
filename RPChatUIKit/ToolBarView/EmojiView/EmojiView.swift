@@ -13,6 +13,8 @@ import RPChatDataKit
 import QuartzCore
 
 public class EmojiView: UIView {
+   
+    
     let disposeBag: DisposeBag = DisposeBag()
     public var emojiArray: [EmojiModel] = [EmojiModel]()
     public let selectEmojiSub: PublishSubject<String> = PublishSubject()
@@ -62,23 +64,53 @@ public class EmojiView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -55).isActive = true
         $0.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 22).isActive = true
         $0.layer.shadowOpacity = 0.5
         $0.layer.shadowColor = UIColor.darkModeTextColor.cgColor
         $0.layer.shadowRadius = 2.5
         $0.layer.shadowOffset = CGSize(width: 1, height: 1)
         $0.backgroundColor = .subViewColor
+        $0.layer.cornerRadius = 3
         return $0
     }(UIButton())
 }
 
 
-extension EmojiView {
+extension EmojiView: UICollectionViewDelegate, UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return emojiArray.count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: EmojiCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiCollectionViewCellId", for: indexPath) as! EmojiCollectionViewCell
+        cell.converEmoji(emojiArray[indexPath.row])
+        return cell
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+
+    
     func bindData() {
         let item = Observable.just(emojiArray)
         item.bind(to: emojiCollectionView.rx.items(cellIdentifier: "EmojiCollectionViewCellId", cellType: EmojiCollectionViewCell.self)) { (row, model, cell) in
             cell.converEmoji(model)
         }.disposed(by: disposeBag)
+        
+        //获取选中项的索引
+//        emojiCollectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+//
+//        }).disposed(by: disposeBag)
+//
+//        //获取选中项的内容
+//        emojiCollectionView.rx.modelSelected(String.self).subscribe(onNext: {[weak self] item in
+//
+//        }).disposed(by: disposeBag)
+        
+        emojiCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        emojiCollectionView.rx.setDataSource(self).disposed(by: disposeBag)
+        
     }
 }

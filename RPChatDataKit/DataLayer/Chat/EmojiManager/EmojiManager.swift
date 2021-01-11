@@ -38,7 +38,7 @@ public class EmojiManager: NSObject {
         guard let file = self.fetchBundle.path(forResource: name, ofType: "png") else {
             return nil
         }
-        return (UIImage(contentsOfFile: file)?.withRenderingMode(.alwaysTemplate)) ?? UIImage()
+        return UIImage(contentsOfFile: file)
     }
     
     private class var fetchBundle: Bundle {
