@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D1039AE25A83ACB00E0D615 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AB25A83ACB00E0D615 /* EmojiView.swift */; };
-		1D1039AF25A83ACB00E0D615 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AC25A83ACB00E0D615 /* ToolView.swift */; };
-		1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1039AD25A83ACB00E0D615 /* ChatView.swift */; };
-		1D12F31325AC495F00C1AC4A /* EmojiBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */; };
 		1D12F32725AC5EED00C1AC4A /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D12F32625AC5EED00C1AC4A /* emoji.bundle */; };
 		1D12F32825AC5EED00C1AC4A /* emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D12F32625AC5EED00C1AC4A /* emoji.bundle */; };
+		1D12F33425AD399C00C1AC4A /* ChatViewController+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F33325AD399C00C1AC4A /* ChatViewController+Datasource.swift */; };
+		1D12F34925AD43C200C1AC4A /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34225AD43C200C1AC4A /* ToolView.swift */; };
+		1D12F34A25AD43C200C1AC4A /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34325AD43C200C1AC4A /* MicrophoneView.swift */; };
+		1D12F34B25AD43C200C1AC4A /* EmojiBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34525AD43C200C1AC4A /* EmojiBottomView.swift */; };
+		1D12F34C25AD43C200C1AC4A /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34625AD43C200C1AC4A /* EmojiCollectionViewCell.swift */; };
+		1D12F34D25AD43C200C1AC4A /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34725AD43C200C1AC4A /* EmojiView.swift */; };
+		1D12F34E25AD43C200C1AC4A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12F34825AD43C200C1AC4A /* ChatView.swift */; };
 		1D1D41B02535A9F00042A285 /* RPChatDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208D624977E1B002D25A2 /* RPChatDataKit.framework */; };
 		1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */; };
 		1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */; };
@@ -51,7 +54,6 @@
 		1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */; };
 		1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */; };
 		1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */; };
-		1D5566B625A84309001F5C40 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
 		1D5C600324AC852F00211398 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600224AC852F00211398 /* StringExtension.swift */; };
@@ -76,7 +78,6 @@
 		1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F44025A30B5900DE7BC0 /* GuideViewController.swift */; };
 		1D92F44D25A30BB000DE7BC0 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F44C25A30BB000DE7BC0 /* GuideView.swift */; };
 		1D952B27259448E800C03AF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D952B26259448E800C03AF0 /* Encryption.swift */; };
-		1D964BA625AC27750029E425 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D964BA525AC27750029E425 /* ChatListView.swift */; };
 		1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */; };
 		1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */; };
 		1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A4A125836A5F000D1115 /* MineViewController.swift */; };
@@ -206,11 +207,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D1039AB25A83ACB00E0D615 /* EmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
-		1D1039AC25A83ACB00E0D615 /* ToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
-		1D1039AD25A83ACB00E0D615 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiBottomView.swift; sourceTree = "<group>"; };
 		1D12F32625AC5EED00C1AC4A /* emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emoji.bundle; sourceTree = "<group>"; };
+		1D12F33325AD399C00C1AC4A /* ChatViewController+Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Datasource.swift"; sourceTree = "<group>"; };
+		1D12F34225AD43C200C1AC4A /* ToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		1D12F34325AD43C200C1AC4A /* MicrophoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneView.swift; sourceTree = "<group>"; };
+		1D12F34525AD43C200C1AC4A /* EmojiBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiBottomView.swift; sourceTree = "<group>"; };
+		1D12F34625AD43C200C1AC4A /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D12F34725AD43C200C1AC4A /* EmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
+		1D12F34825AD43C200C1AC4A /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		1D1DBFC125885CE30016831C /* BaseChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatListViewController.swift; sourceTree = "<group>"; };
 		1D1DBFCF258861C20016831C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D1DBFDC258862360016831C /* ChatCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellProtocol.swift; sourceTree = "<group>"; };
@@ -250,7 +254,6 @@
 		1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Server.swift"; sourceTree = "<group>"; };
-		1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		1D5C5FFF24AC834B00211398 /* ConfigAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAES.swift; sourceTree = "<group>"; };
@@ -276,7 +279,6 @@
 		1D92F44025A30B5900DE7BC0 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		1D92F44C25A30BB000DE7BC0 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		1D952B26259448E800C03AF0 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
-		1D964BA525AC27750029E425 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		1D98A47F258354CF000D1115 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A49A25835EB5000D1115 /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		1D98A4A125836A5F000D1115 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -428,14 +430,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D1039AA25A83AB000E0D615 /* ToolBarView */ = {
+		1D12F34125AD43C200C1AC4A /* ToolBarView */ = {
 			isa = PBXGroup;
 			children = (
-				1D5566B425A842F1001F5C40 /* EmojiView */,
-				1D1039AD25A83ACB00E0D615 /* ChatView.swift */,
-				1D1039AC25A83ACB00E0D615 /* ToolView.swift */,
+				1D12F34225AD43C200C1AC4A /* ToolView.swift */,
+				1D12F34325AD43C200C1AC4A /* MicrophoneView.swift */,
 			);
 			path = ToolBarView;
+			sourceTree = "<group>";
+		};
+		1D12F34425AD43C200C1AC4A /* EmojiView */ = {
+			isa = PBXGroup;
+			children = (
+				1D12F34525AD43C200C1AC4A /* EmojiBottomView.swift */,
+				1D12F34625AD43C200C1AC4A /* EmojiCollectionViewCell.swift */,
+				1D12F34725AD43C200C1AC4A /* EmojiView.swift */,
+			);
+			path = EmojiView;
 			sourceTree = "<group>";
 		};
 		1D1DBFCD2588618E0016831C /* Controller */ = {
@@ -451,8 +462,10 @@
 		1D1DBFCE258861950016831C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D12F34825AD43C200C1AC4A /* ChatView.swift */,
+				1D12F34425AD43C200C1AC4A /* EmojiView */,
+				1D12F34125AD43C200C1AC4A /* ToolBarView */,
 				1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */,
-				1D964BA525AC27750029E425 /* ChatListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,7 +551,6 @@
 		1D2208C624977DFF002D25A2 /* RPChatUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1D1039AA25A83AB000E0D615 /* ToolBarView */,
 				1DAB099925A6B37C007B1118 /* KeyBoardManager */,
 				1DAB098525A6A45B007B1118 /* UIScrollViewExtension */,
 				1D3C334425A45581001642EC /* Category */,
@@ -643,6 +655,7 @@
 				1DD7DDF925919DA3004917C3 /* ChatViewControllerSocket.swift */,
 				1DAB099225A6A788007B1118 /* ChatViewControllerKeyboard.swift */,
 				1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */,
+				1D12F33325AD399C00C1AC4A /* ChatViewController+Datasource.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -653,16 +666,6 @@
 				1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */,
 			);
 			path = Friends;
-			sourceTree = "<group>";
-		};
-		1D5566B425A842F1001F5C40 /* EmojiView */ = {
-			isa = PBXGroup;
-			children = (
-				1D1039AB25A83ACB00E0D615 /* EmojiView.swift */,
-				1D5566B525A84309001F5C40 /* EmojiCollectionViewCell.swift */,
-				1D12F31225AC495F00C1AC4A /* EmojiBottomView.swift */,
-			);
-			path = EmojiView;
 			sourceTree = "<group>";
 		};
 		1D5C5FFE24AC82D000211398 /* ConfigAES */ = {
@@ -1423,30 +1426,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D12F34925AD43C200C1AC4A /* ToolView.swift in Sources */,
 				1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */,
 				1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */,
 				1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */,
 				1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */,
-				1D964BA625AC27750029E425 /* ChatListView.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
+				1D12F34A25AD43C200C1AC4A /* MicrophoneView.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
 				1DD7DDFA25919DA3004917C3 /* ChatViewControllerSocket.swift in Sources */,
+				1D12F33425AD399C00C1AC4A /* ChatViewController+Datasource.swift in Sources */,
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 				1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */,
+				1D12F34C25AD43C200C1AC4A /* EmojiCollectionViewCell.swift in Sources */,
 				1DBBBC552588C74100AABC4F /* ChatViewControllerConfigUI.swift in Sources */,
 				1D92F44D25A30BB000DE7BC0 /* GuideView.swift in Sources */,
+				1D12F34E25AD43C200C1AC4A /* ChatView.swift in Sources */,
 				1D98A69025876B87000D1115 /* ContactsTableViewCell.swift in Sources */,
 				1DBA5AB325877B7800BC4448 /* ChatViewController.swift in Sources */,
 				1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 				1DFA47BD258C9A4A009D9EAD /* MessageListTableViewCell.swift in Sources */,
+				1D12F34B25AD43C200C1AC4A /* EmojiBottomView.swift in Sources */,
 				1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */,
 				1DAB099325A6A788007B1118 /* ChatViewControllerKeyboard.swift in Sources */,
 				1D2BCD5125A5978400163727 /* ChatCellShopFactory.swift in Sources */,
+				1D12F34D25AD43C200C1AC4A /* EmojiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1454,16 +1463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1039AF25A83ACB00E0D615 /* ToolView.swift in Sources */,
 				1D98A480258354CF000D1115 /* UINavigationControllerExtension.swift in Sources */,
 				1D43D21B25A455EA00549C91 /* Category.swift in Sources */,
 				1D220944249870AA002D25A2 /* NiblessViewController.swift in Sources */,
-				1D12F31325AC495F00C1AC4A /* EmojiBottomView.swift in Sources */,
-				1D1039B025A83ACB00E0D615 /* ChatView.swift in Sources */,
 				1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */,
 				1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */,
-				1D5566B625A84309001F5C40 /* EmojiCollectionViewCell.swift in Sources */,
-				1D1039AE25A83ACB00E0D615 /* EmojiView.swift in Sources */,
 				1DAB099B25A6B395007B1118 /* KeyBoardManager.swift in Sources */,
 				1DAB098725A6A46E007B1118 /* ScrollViewManager.swift in Sources */,
 				1DD5F26E24BD8C9A00E762B7 /* UIViewControllerExtension.swift in Sources */,

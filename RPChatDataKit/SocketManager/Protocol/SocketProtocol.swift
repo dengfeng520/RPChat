@@ -54,7 +54,7 @@ public enum cmdCodeMode: UInt8 {
     case jumpingSuccessMode = 0x32
     // 发送消息 服务器返回
     case receivedMessageMode = 0x33
-    // 服务器主动推消息 （单聊消息和群聊消息）
+    // 服务器主动推消息（单聊消息和群聊消息）
     case serverPushMessageMode = 0x34
     // 账号被踢
     case siginOutMode = 0x35

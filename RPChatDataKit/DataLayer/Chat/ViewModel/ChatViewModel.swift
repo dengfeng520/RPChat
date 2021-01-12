@@ -11,12 +11,17 @@ import RxSwift
 import SwiftyJSON
 
 public class ChatViewModel: PublicViewModel {
-    
     public var receiveChatArray: [ChatBodyModel] = [ChatBodyModel]()
     public let receiveChatSubject : PublishSubject<[ChatBodyModel]> = PublishSubject()
     
     public var friendsModel: FriendsModel = FriendsModel()
+}
+
+extension ChatViewModel {
     
+}
+
+extension ChatViewModel {
     /// 获取消息列表
     public func fetchChatList(_ parameter: [String : String]) {
         self.loading.onNext(true)

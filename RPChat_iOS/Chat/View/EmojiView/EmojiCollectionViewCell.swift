@@ -25,8 +25,8 @@ class EmojiCollectionViewCell: UICollectionViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 32).isActive = true
         return $0
     }(UIImageView())
     
@@ -34,6 +34,5 @@ class EmojiCollectionViewCell: UICollectionViewCell {
     func converEmoji(_ model: EmojiModel) {
         let img = EmojiManager.fetchEmojiImage("\(model.face_name)@2x")
         emojiImg.image = img
-//        emojiImg.image = UIImage(named: "\(model.face_name)@2x")
     }
 }

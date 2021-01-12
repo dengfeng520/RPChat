@@ -11,20 +11,19 @@ import RxSwift
 import RxCocoa
 import RPChatDataKit
 import QuartzCore
+import RPChatUIKit
 
-public class EmojiView: UIView {
-   
-    
+class EmojiView: UIView {
     let disposeBag: DisposeBag = DisposeBag()
-    public var emojiArray: [EmojiModel] = [EmojiModel]()
-    public let selectEmojiSub: PublishSubject<String> = PublishSubject()
+    var emojiArray: [EmojiModel] = [EmojiModel]()
+    let selectEmojiSub: PublishSubject<String> = PublishSubject()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
         configEmojiUI()
         
-        bindData()
+        setupBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -77,40 +76,21 @@ public class EmojiView: UIView {
 }
 
 
-extension EmojiView: UICollectionViewDelegate, UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return emojiArray.count
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: EmojiCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiCollectionViewCellId", for: indexPath) as! EmojiCollectionViewCell
-        cell.converEmoji(emojiArray[indexPath.row])
-        return cell
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-
-    
-    func bindData() {
+extension EmojiView {
+    func setupBinding() {
         let item = Observable.just(emojiArray)
         item.bind(to: emojiCollectionView.rx.items(cellIdentifier: "EmojiCollectionViewCellId", cellType: EmojiCollectionViewCell.self)) { (row, model, cell) in
             cell.converEmoji(model)
         }.disposed(by: disposeBag)
         
         //获取选中项的索引
-//        emojiCollectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-//
-//        }).disposed(by: disposeBag)
-//
-//        //获取选中项的内容
-//        emojiCollectionView.rx.modelSelected(String.self).subscribe(onNext: {[weak self] item in
-//
-//        }).disposed(by: disposeBag)
-        
-        emojiCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        emojiCollectionView.rx.setDataSource(self).disposed(by: disposeBag)
-        
+        emojiCollectionView.rx.itemSelected.subscribe(onNext: { indexPath in
+
+        }).disposed(by: disposeBag)
+
+        //获取选中项的内容
+        emojiCollectionView.rx.modelSelected(String.self).subscribe(onNext: { item in
+
+        }).disposed(by: disposeBag)
     }
 }

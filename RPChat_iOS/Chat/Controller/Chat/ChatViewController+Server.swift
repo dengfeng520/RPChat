@@ -9,6 +9,7 @@
 import UIKit
 
 extension ChatViewController {
+    /// 拉取之前的消息列表
     func configChatArrayData() {
         var parameter = [String : String]()
         if viewModel.friendsModel.type == "1" {

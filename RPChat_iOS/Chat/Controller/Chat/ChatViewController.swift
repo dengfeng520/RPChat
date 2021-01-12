@@ -13,7 +13,6 @@ import RPChatUIKit
 import RPBannerView
 
 class ChatViewController: UIViewController {
-    
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     var keyboardBottom: NSLayoutConstraint!
@@ -24,7 +23,7 @@ class ChatViewController: UIViewController {
         configChatUI()
     }
     
-    lazy var tableView: ChatListView = {
+    lazy var tableView: UITableView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
         let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
@@ -40,7 +39,7 @@ class ChatViewController: UIViewController {
         $0.register(LeftChatTableViewCell.self, forCellReuseIdentifier: "LeftChatTableViewCellId")
         $0.register(RightChatTableViewCell.self, forCellReuseIdentifier: "RightChatTableViewCellId")
         return $0
-    }(ChatListView())
+    }(UITableView())
     
     lazy var toolView: ToolView = {
         view.addSubview($0)

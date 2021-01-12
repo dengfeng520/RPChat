@@ -56,6 +56,7 @@ extension ChatViewController {
 
 extension ChatViewController {
     /// 监听键盘
+    // FIXME: - 多次滑动UITableView会冲突，需要点2次输入框才会弹出键盘
     func monitorKeyBoard() {
         // tableView上下滚动时键盘处理
         tableView.rx.contentOffset.bind(to: scrollMode).disposed(by: disposeBag)
@@ -63,7 +64,6 @@ extension ChatViewController {
         toolView.tapToolBtnSubject.bind(to: touchTool).disposed(by: disposeBag)
         // 键盘将要显示时
         KeyBoardManager.sharedInstance.keyBoardSubject.bind(to: keyboardheight).disposed(by: disposeBag)
-        
     }
     
     /// 键盘动画

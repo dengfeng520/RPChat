@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RPChatUIKit
 
 class EmojiBottomView: UIView {
 

@@ -24,13 +24,11 @@ public class KeyBoardManager {
     /// 键盘是否显示
     public var keyboardIsVisible: KeyboardVisible = .hidden
     /// 缓存键盘的高度
-    public var keyboardCacheHeight: CGFloat = 0
+    public var keyboardCacheHeight: CGFloat = 271
     /// 键盘弹出动画时间
     public var animationDuration: NSNumber = 0.25
-    /// 键盘开始时
+    /// 键盘监听
     public let keyBoardSubject : PublishSubject<CGFloat> = PublishSubject()
-    /// 键盘开启后
-    public let keyBoardDidShowSubject : PublishSubject<Bool> = PublishSubject()
     
     private init() {
         monitorKeyBoard()
@@ -64,7 +62,7 @@ public class KeyBoardManager {
         // 键盘已经出现
         _ = NotificationCenter.default.rx.notification(UIResponder.keyboardDidShowNotification)
             .subscribe(onNext: { noti in
-                self.keyBoardDidShowSubject.onNext(true)
+                
         }).disposed(by: disposeBag)
         // 键盘即将隐藏
         _ = NotificationCenter.default.rx

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RPChatUIKit
 
 public class ToolView: UIView {
     
@@ -76,6 +77,7 @@ public class ToolView: UIView {
         inputChatView.layer.cornerRadius = 4
         inputChatView.showsVerticalScrollIndicator = false
         inputChatView.font = UIFont.systemFont(ofSize: 17)
+        inputChatView.returnKeyType = .send
     }
 }
 
