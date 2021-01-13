@@ -15,53 +15,45 @@ import RPBannerView
 class ChatViewController: UIViewController {
     let viewModel: ChatViewModel = ChatViewModel()
     let disposeBag: DisposeBag = DisposeBag()
-    var keyboardBottom: NSLayoutConstraint!
+    var toolBoxHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configChatUI()
     }
-    
-    lazy var tableView: UITableView = {
+    /// 消息列表
+    lazy var chatListView: UIView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
-        let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
-        let left = $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
-        let width = $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
-        let bottom = $0.bottomAnchor.constraint(equalTo: toolView.topAnchor, constant: 0)
-        NSLayoutConstraint.activate([top, left, width, bottom])
-        $0.tableFooterView = UIView()
-        $0.rowHeight = UITableView.automaticDimension
-        $0.estimatedRowHeight = 60
-        $0.separatorStyle = .none
-        $0.backgroundColor = .groupedColor
-        $0.register(LeftChatTableViewCell.self, forCellReuseIdentifier: "LeftChatTableViewCellId")
-        $0.register(RightChatTableViewCell.self, forCellReuseIdentifier: "RightChatTableViewCellId")
-        return $0
-    }(UITableView())
-    
-    lazy var toolView: ToolView = {
-        view.addSubview($0)
-        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        keyboardBottom = $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
-        keyboardBottom.isActive = true
-        $0.backgroundColor = .darkModeViewColor
+        $0.bottomAnchor.constraint(equalTo: toolBoxView.topAnchor, constant: 0).isActive = true
         return $0
-    }(ToolView(frame: .zero))
+    }(UIView())
+
+    lazy var chatListVC: ChatListViewController = {
+        $0.viewModel = self.viewModel
+        self.add(asChildViewController: $0, to: chatListView)
+        return $0
+    }(ChatListViewController())
+    /// 工具栏
+    lazy var toolBoxVC: ToolBoxViewController = {
+        self.add(asChildViewController: $0, to: toolBoxView)
+        return $0
+    }(ToolBoxViewController())
     
-    lazy var emojiView: EmojiView = {
+    lazy var toolBoxView: UIView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.topAnchor.constraint(equalTo: toolView.bottomAnchor, constant: 0).isActive = true
-        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        toolBoxHeight = $0.heightAnchor.constraint(equalToConstant: 55)
+        toolBoxHeight.isActive = true
         return $0
-    }(EmojiView(frame: .zero))
+    }(UIView())
     
     lazy var socket: SocketManager = {
         return SocketManager.sharedInstance

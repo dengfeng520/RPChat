@@ -13,7 +13,7 @@ import RPBannerView
 import RPChatDataKit
 import RPChatUIKit
 
-extension ChatViewController: UITableViewDelegate {
+extension ChatViewController {
     func bindViewModel() {
         title = viewModel.friendsModel.userName
         title = "如梦令"
@@ -21,30 +21,23 @@ extension ChatViewController: UITableViewDelegate {
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // fetch chat list
         configChatArrayData()
-        // subject
-        viewModel.receiveChatSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (chatList) in
-            guard let `self` = self else { return }
-            self.tableView.reloadData()
-            self.scrollWithBottom()
-        }).disposed(by: disposeBag)
+        // chatList subject
+        viewModel.chatListSubject.bind(to: chatListVC.chatListSub).disposed(by: disposeBag)
+        // emoji subject
+        
         // error
         viewModel.errorSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
-        // delegate
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        // dataSource
-        tableView.rx.setDataSource(self).disposed(by: disposeBag)
+        
     }
     
     func configChatUI() {
         hiddenBackTitle()
         bindViewModel()
         configSocketManager()
-        monitorKeyBoard()
-        
-        emojiView.isHidden = false
+//        monitorKeyBoard()
     }
 }
 

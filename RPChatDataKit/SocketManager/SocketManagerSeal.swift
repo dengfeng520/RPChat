@@ -56,7 +56,7 @@ extension SocketManager {
            return data as Data
        }
     
-    // 发消息封包
+    /// 发消息封包
     func sendMessageWithCmd(cmd: UInt8, bodyData: Data) -> Data {
         var header = 0xFE
         var cmdCode: UInt8 = cmd

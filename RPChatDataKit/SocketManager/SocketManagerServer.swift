@@ -48,7 +48,7 @@ extension SocketManager: SocketProtocol {
     }
     
     /// 发送消息
-    func sendMessageWithPack(messageBody: [String : String]) -> Void {
+    public func sendMessageWithPack(messageBody: [String : String]) -> Void {
         let body = beforeSendingDataConversion(sendingBody: messageBody)
         let bodyData = sendMessageWithCmd(cmd: cmdCodeMode.sendMessageMode.rawValue, bodyData: body)
         socketManager.write(bodyData, withTimeout: -1, tag: 0)

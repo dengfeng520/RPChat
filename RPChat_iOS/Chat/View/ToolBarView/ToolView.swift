@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RPChatUIKit
 
 public class ToolView: UIView {

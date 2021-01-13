@@ -15,6 +15,7 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
     
     let disposeBag: DisposeBag = DisposeBag()
     public var headerTapClosures: (() -> Void)?
+    public let headerTapSub: PublishSubject = PublishSubject<Int>()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +39,8 @@ class ChatTableViewCell: UITableViewCell, ChatCellProtocol {
             if let headerTapClosures = self.headerTapClosures {
                 headerTapClosures()
             }
+            self.headerTapSub.onNext(self.headerImg.tag)
+            
         }).disposed(by: disposeBag)
     }
     

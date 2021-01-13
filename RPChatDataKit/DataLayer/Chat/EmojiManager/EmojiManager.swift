@@ -45,3 +45,22 @@ public class EmojiManager: NSObject {
         return Bundle(path: Bundle(for: EmojiManager.self).path(forResource: "emoji", ofType: "bundle")!)!
     }
 }
+
+
+extension EmojiManager {
+    /// 自定义表情包
+    public class var fetchEmoticonsList: [[String]]? {
+        var emojiList = [[String]]()
+        var ghost = [String]()
+        var cat = [String]()
+        for index in 0..<10 {
+            let ghostName = "ghost\(index)"
+            ghost.append(ghostName)
+            let catName = "cat\(index)"
+            cat.append(catName)
+        }
+        emojiList.append(ghost)
+        emojiList.append(cat)
+        return emojiList
+    }
+}

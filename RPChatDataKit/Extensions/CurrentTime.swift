@@ -13,7 +13,7 @@ public class CurrentTime: NSObject {
     public class func fetchTimeInterval(_ time: String) -> String {
         if time.count >= 10 {
             let serverTime = time.subString(from: 0, to: 10)
-            let nowtime = CurrentTime().fetchSystemCurrentTime().subString(from: 0, to: 10)
+            let nowtime = self.fetchSystemCurrentTime.subString(from: 0, to: 10)
             if serverTime == nowtime {
                 if time.count >= 19 {
                     return time.subString(from: 12, to: 16)
@@ -26,7 +26,7 @@ public class CurrentTime: NSObject {
     }
     
    /// 获取当前时间
-   private func fetchSystemCurrentTime() -> String {
+    public class var fetchSystemCurrentTime: String {
         let dformatter = DateFormatter()
         dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let time = dformatter.string(from: Date())
