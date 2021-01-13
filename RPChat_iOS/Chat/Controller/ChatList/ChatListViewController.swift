@@ -17,12 +17,18 @@ class ChatListViewController: UIViewController {
     let disposeBag: DisposeBag = DisposeBag()
     var viewModel: ChatViewModel = ChatViewModel()
     var chatListSub = PublishSubject<[ChatBodyModel]>()
+    /// 滚动列表时键盘处理
+    let openKeyboardSubject = PublishSubject<Bool>()
+    /// 点击用户头像
+    let headerTapSubject = PublishSubject<ChatBodyModel>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.// delegate
         
         setupBindViewModel()
+        
+        keyboardAbout()
     }
     
     lazy var tableView: UITableView = {

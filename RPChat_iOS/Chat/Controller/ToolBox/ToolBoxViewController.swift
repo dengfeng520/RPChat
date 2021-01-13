@@ -16,11 +16,31 @@ class ToolBoxViewController: UIViewController {
 
     let disposeBag: DisposeBag = DisposeBag()
     var viewModel: ChatViewModel = ChatViewModel()
+    var emoJiNameListSub = PublishSubject<[EmojiModel]>()
+    var emoticonsListSub = PublishSubject<[[String]]>()
+    
+    /// 点击发送消息
+    let tapSendMessageSubject = PublishSubject<String>()
+    /// 弹出键盘 或 emoji
+    let showKeyboardOrEmojiSubject = PublishSubject<CGFloat>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setupBinding()
+    }
+    
+    func setupBinding() {
+        // 点击切换
+        toolView.tapToolBtnSubject.subscribe(onNext: { visible in
+            
+        }).disposed(by: disposeBag)
+        // 选择emoji
+        emojiView.selectEmojiSub.subscribe(onNext: { emojiname in
+            
+        }).disposed(by: disposeBag)
+        
+        monitorKeyBoard()
     }
     
     lazy var toolView: ToolView = {
@@ -29,7 +49,7 @@ class ToolBoxViewController: UIViewController {
         $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         $0.backgroundColor = .darkModeViewColor
         return $0
     }(ToolView(frame: .zero))
@@ -40,7 +60,7 @@ class ToolBoxViewController: UIViewController {
         $0.topAnchor.constraint(equalTo: toolView.bottomAnchor, constant: 0).isActive = true
         $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         return $0
     }(EmojiView(frame: .zero))
     

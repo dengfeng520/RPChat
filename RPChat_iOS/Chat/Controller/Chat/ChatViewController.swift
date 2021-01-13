@@ -40,6 +40,7 @@ class ChatViewController: UIViewController {
     }(ChatListViewController())
     /// 工具栏
     lazy var toolBoxVC: ToolBoxViewController = {
+        $0.viewModel = self.viewModel
         self.add(asChildViewController: $0, to: toolBoxView)
         return $0
     }(ToolBoxViewController())

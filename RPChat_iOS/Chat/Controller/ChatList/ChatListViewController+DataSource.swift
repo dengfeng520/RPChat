@@ -16,7 +16,6 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
             self.tableView.reloadData()
             self.scrollWithBottom()
         }).disposed(by: disposeBag)
-        
         // delegate
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         // dataSource
