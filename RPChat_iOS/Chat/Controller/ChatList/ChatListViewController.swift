@@ -19,6 +19,8 @@ class ChatListViewController: UIViewController {
     var chatListSub = PublishSubject<[ChatBodyModel]>()
     /// 滚动列表时键盘处理
     let openKeyboardSubject = PublishSubject<Bool>()
+    /// 点击UITableView时隐藏键盘
+    let tapListViewSubject = PublishSubject<CGFloat>()
     /// 点击用户头像
     let headerTapSubject = PublishSubject<ChatBodyModel>()
     

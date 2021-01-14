@@ -29,7 +29,7 @@ extension ChatViewController {
                 self.chatListVC.scrollWithBottom()
             }
         } completion: { finished in
-
+            
         }
     }
     // 上下滑动时键盘处理
@@ -37,10 +37,21 @@ extension ChatViewController {
         return Binder(self) { [weak self] (chatVC, show) in
             guard let `self` = self else { return }
             if show == true {
+                KeyBoardManager.sharedInstance.fixKeyboardVisible(.show)
                 self.toolBoxVC.openKeyboard()
             } else {
                 self.toolBoxVC.closedKeyboard()
             }
+        }
+    }
+    // 点击列表时键盘处理
+    var tapListViewHandle: Binder<CGFloat> {
+        return Binder(self) { [weak self] (chatVC, height) in
+            guard let `self` = self else { return }
+            KeyBoardManager.sharedInstance.fixKeyboardVisible(.hidden)
+            self.toolBoxVC.closedKeyboard()
+            self.toolBoxVC.resetStatus()
+            self.keyBoardAnimate(height)
         }
     }
 }
@@ -49,7 +60,9 @@ extension ChatViewController {
     // FIXME: - 多次滑动UITableView会冲突，需要点2次输入框才会弹出键盘
     func keyboardHandle() {
         // 上下滑动时键盘处理
-        chatListVC.openKeyboardSubject.bind(to: keyboardScroll).disposed(by: disposeBag)
+//        chatListVC.openKeyboardSubject.bind(to: keyboardScroll).disposed(by: disposeBag)
+        // 点击列表时隐藏键盘
+        chatListVC.tapListViewSubject.bind(to: tapListViewHandle).disposed(by: disposeBag)
         // 显示 或 隐藏键盘时
         toolBoxVC.showKeyboardOrEmojiSubject.bind(to: keyBoardChangeHeight).disposed(by: disposeBag)
     }

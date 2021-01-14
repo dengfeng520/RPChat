@@ -32,6 +32,9 @@ extension ChatViewController {
             guard let `self` = self else { return }
             RPBannerView.show(with: .perfectionMode, body: error, isView: self.view)
         }).disposed(by: disposeBag)
+        
+        // 点击用户头像
+        chatListVC.headerTapSubject.bind(to: prentsFriendInfoModel).disposed(by: disposeBag)
     }
     
     func configChatUI() {
@@ -41,10 +44,13 @@ extension ChatViewController {
         keyboardHandle()
     }
     
-    func prentsFriendInfoVC(_ model: ChatBodyModel) {
-        /// 页面跳转时 关闭键盘
-        let friendInfoVC = FriendInfoViewController()
-        navigationController?.pushViewController(friendInfoVC, animated: true)
+    private var prentsFriendInfoModel: Binder<ChatBodyModel> {
+        return Binder(self) { [weak self] (chatVC, model) in
+            guard let `self` = self else { return }
+            /// 页面跳转时 关闭键盘
+            let friendInfoVC = FriendInfoViewController()
+            self.navigationController?.pushViewController(friendInfoVC, animated: true)
+        }
     }
 }
 

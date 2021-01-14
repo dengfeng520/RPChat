@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MicrophoneView: UIView {
+class MicrophoneView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -39,5 +39,6 @@ public class MicrophoneView: UIView {
         microphoneBtn.heightAnchor.constraint(equalToConstant: 135).isActive = true
         microphoneBtn.layer.cornerRadius = 67.5
         microphoneBtn.backgroundColor = .subViewColor
+        microphoneBtn.setImage(UIImage (named: "un_microphone"), for: .normal)
     }
 }

@@ -9,5 +9,12 @@
 import UIKit
 
 extension ToolBoxViewController {
+    func resetStatus() {
+        self.toolView.resetSelectStatus()
+        
+        microphoneView.isHidden = true
+        emojiView.isHidden = true
+        menuView.isHidden = true
+    }
     
 }

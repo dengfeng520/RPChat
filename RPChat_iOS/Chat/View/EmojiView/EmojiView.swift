@@ -16,7 +16,11 @@ import RPChatUIKit
 class EmojiView: UIView {
     let disposeBag: DisposeBag = DisposeBag()
     var emojiArray: [EmojiModel] = [EmojiModel]()
+    let layout = UICollectionViewFlowLayout()
+    /// 用户点击选择 emoji 时
     let selectEmojiSub: PublishSubject<String> = PublishSubject()
+    /// 切换自定义表情包时
+    let tapBottomEmojiSubject: PublishSubject<Int>? = PublishSubject()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,19 +37,31 @@ class EmojiView: UIView {
     func configEmojiUI() {
         if let emoji = EmojiManager.emojiNameArray {
             emojiArray = emoji
-            emojiCollectionView.reloadData()
+            setupBinding()
         }
-        deleteBtn.setImage(UIImage(named: "emoji_delete"), for: .normal)
-        deleteBtn.setImage(UIImage(named: "emoji_delete_select"), for: .selected)
+        // 删除按钮
         deleteBtn.rx.tap.subscribe(onNext: {
             
         }).disposed(by: disposeBag)
+        // 表情包切换
+        bottomView.tapBottomEmojiChangeSub?.bind(to: tapBottomEmoji).disposed(by: disposeBag)
+    }
+    
+    
+    /// 点击切换自定义表情包
+    var tapBottomEmoji: Binder<Int> {
+        return Binder(self) { [weak self] (chatVC, index) in
+            guard let `self` = self else { return }
+            if let tapBottomEmojiSubject = self.tapBottomEmojiSubject {
+                tapBottomEmojiSubject.onNext(index)
+            }
+        }
     }
     
     /// lazy
     lazy var emojiCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: __screenWidth / 8, height: __screenWidth / 8)
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: (__screenWidth - 20) / 8, height: 35)
         let emojiCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.addSubview(emojiCollectionView)
         emojiCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,9 +70,20 @@ class EmojiView: UIView {
         emojiCollectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
         emojiCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -45).isActive = true
         emojiCollectionView.register(EmojiCollectionViewCell.self, forCellWithReuseIdentifier: "EmojiCollectionViewCellId")
-        emojiCollectionView.backgroundColor = .darkModeViewColor    
+        emojiCollectionView.backgroundColor = .darkModeViewColor
+        emojiCollectionView.showsVerticalScrollIndicator = false
         return emojiCollectionView
     }()
+    
+    lazy var bottomView: EmojiBottomView = {
+        addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
+        $0.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        $0.topAnchor.constraint(equalTo: emojiCollectionView.bottomAnchor, constant: 0).isActive = true
+        return $0
+    }(EmojiBottomView(frame: .zero))
     
     lazy var deleteBtn: UIButton = {
         self.addSubview($0)
@@ -71,8 +98,15 @@ class EmojiView: UIView {
         $0.layer.shadowOffset = CGSize(width: 1, height: 1)
         $0.backgroundColor = .subViewColor
         $0.layer.cornerRadius = 3
+        $0.setImage(UIImage(named: "emoji_delete"), for: .normal)
+        $0.setImage(UIImage(named: "emoji_delete_select"), for: .selected)
         return $0
     }(UIButton())
+    
+    lazy var pageControl: UIPageControl = {
+        
+        return $0
+    }(UIPageControl(frame: .zero))
 }
 
 

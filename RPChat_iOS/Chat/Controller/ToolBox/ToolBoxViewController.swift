@@ -31,10 +31,6 @@ class ToolBoxViewController: UIViewController {
     }
     
     func setupBinding() {
-        // 点击切换
-        toolView.tapToolBtnSubject.subscribe(onNext: { visible in
-            
-        }).disposed(by: disposeBag)
         // 选择emoji
         emojiView.selectEmojiSub.subscribe(onNext: { emojiname in
             
@@ -61,7 +57,29 @@ class ToolBoxViewController: UIViewController {
         $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        $0.isHidden = true
         return $0
     }(EmojiView(frame: .zero))
     
+    lazy var menuView: MenuView = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        $0.topAnchor.constraint(equalTo: toolView.bottomAnchor, constant: 0).isActive = true
+        $0.isHidden = true
+        return $0
+    }(MenuView(frame: .zero))
+    
+    lazy var microphoneView: MicrophoneView = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        $0.topAnchor.constraint(equalTo: toolView.bottomAnchor, constant: 0).isActive = true
+        $0.isHidden = true
+        return $0
+    }(MicrophoneView(frame: .zero))
 }

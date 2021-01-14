@@ -87,17 +87,32 @@ extension ToolView {
         /// 麦克风
         microphoneBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let `self` = self else { return }
+            self.microphoneBtn.isSelected = true
+            self.moreBtn.isSelected = false
+            self.emoticonsBtn.isSelected = false
             self.tapToolBtnSubject.onNext(.microphone)
         }).disposed(by: disposeBag)
         /// 更多
         moreBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let `self` = self else { return }
-            self.tapToolBtnSubject.onNext(.other)
+            self.microphoneBtn.isSelected = false
+            self.moreBtn.isSelected = true
+            self.emoticonsBtn.isSelected = false
+            self.tapToolBtnSubject.onNext(.menu)
         }).disposed(by: disposeBag)
         /// emoji
         emoticonsBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let `self` = self else { return }
+            self.microphoneBtn.isSelected = false
+            self.moreBtn.isSelected = false
+            self.emoticonsBtn.isSelected = true
             self.tapToolBtnSubject.onNext(.emoji)
         }).disposed(by: disposeBag)
+    }
+    
+    func resetSelectStatus() {
+        self.microphoneBtn.isSelected = false
+        self.moreBtn.isSelected = false
+        self.emoticonsBtn.isSelected = false
     }
 }

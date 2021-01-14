@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RPChatUIKit
 
 extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
     func setupBindViewModel() {
@@ -20,6 +21,7 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         // dataSource
         tableView.rx.setDataSource(self).disposed(by: disposeBag)
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +33,7 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
         
         cell.headerTapClosures = { [weak self] in
             guard let `self` = self else { return }
-//            self.prentsFriendInfoVC.disposed(by: disposeBag)(self.viewModel.receiveChatArray[indexPath.row])
+            self.headerTapSubject.onNext(self.viewModel.chatListArray[indexPath.row])
         }
        
         return cell

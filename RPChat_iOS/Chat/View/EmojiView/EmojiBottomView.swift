@@ -15,16 +15,17 @@ class EmojiBottomView: UIView {
     
     lazy var customizeEmojiArray = [[String]]()
     let disposeBag: DisposeBag = DisposeBag()
+    
     let tapBottomEmojiChangeSub: PublishSubject? = PublishSubject<Int>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        if let list = EmojiManager.fetchCustomizeEmojiList {
-//            customizeEmojiArray = list
-//            bottomCollectionView.reloadData()
-//        }
-        setupBinding()
+        if let list = EmojiManager.fetchEmoticonsList {
+            customizeEmojiArray = list
+            setupBinding()
+            bottomCollectionView.reloadData()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -36,8 +37,8 @@ class EmojiBottomView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
         $0.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 32).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 28).isActive = true
         $0.setImage(UIImage.init(named: "add_emoji"), for: .normal)
         return $0
     }(UIButton())
@@ -51,6 +52,7 @@ class EmojiBottomView: UIView {
         $0.heightAnchor.constraint(equalToConstant: 25).isActive = true
         $0.layer.cornerRadius = 3
         $0.layer.backgroundColor = UIColor.themeColor.cgColor
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         $0.setTitle(NSLocalizedString("Send", comment: ""), for: .normal)
         $0.setTitleColor(.white, for: .normal)
        return $0
@@ -59,36 +61,51 @@ class EmojiBottomView: UIView {
     lazy var bottomCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 44, height: __screenWidth / 8)
+        layout.itemSize = CGSize(width: 45, height: 38)
         let bottomCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.addSubview(bottomCollectionView)
         bottomCollectionView.translatesAutoresizingMaskIntoConstraints = false
         bottomCollectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        bottomCollectionView.leftAnchor.constraint(equalTo: addEmojiBtn.rightAnchor, constant: -5).isActive = true
-        bottomCollectionView.rightAnchor.constraint(equalTo: sendEmojiBtn.leftAnchor, constant: -5).isActive = true
-        bottomCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -45).isActive = true
+        bottomCollectionView.leftAnchor.constraint(equalTo: addEmojiBtn.rightAnchor, constant: 8).isActive = true
+        bottomCollectionView.rightAnchor.constraint(equalTo: sendEmojiBtn.leftAnchor, constant: -45).isActive = true
+        bottomCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         bottomCollectionView.register(EmojiCollectionViewCell.self, forCellWithReuseIdentifier: "bottomCollectionViewCellId")
         bottomCollectionView.backgroundColor = .darkModeViewColor
-        
+        bottomCollectionView.showsHorizontalScrollIndicator = false
         return bottomCollectionView
     }()
 }
 
-extension EmojiBottomView {
+extension EmojiBottomView: UICollectionViewDelegate {
     func setupBinding() {
-        let list: [String] = customizeEmojiArray.compactMap { (subList) -> String in
+        var list: [String] = customizeEmojiArray.compactMap { (subList) -> String in
             return subList.first ?? String()
         }
-        let item = Observable.just(list)
+        list.insert("emoji_icon", at: 0)
+        let item = Observable<[String]>.just(list)
         item.bind(to: bottomCollectionView.rx.items(cellIdentifier: "bottomCollectionViewCellId", cellType: EmojiCollectionViewCell.self)) { (row, emojiName, cell) in
             cell.converCustomizeEmoji(emojiName)
         }.disposed(by: disposeBag)
+        // 默认选中第一个item
+        let indexPath = IndexPath(row: 0, section: 0)
+        bottomCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
         // 获取选中项的索引
         bottomCollectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let `self` = self else { return }
             if let tapBottomEmojiChangeSub = self.tapBottomEmojiChangeSub {
                 tapBottomEmojiChangeSub.onNext(indexPath.row)
             }
+            let cell: EmojiCollectionViewCell = self.bottomCollectionView.cellForItem(at: indexPath) as! EmojiCollectionViewCell
+            cell.contentView.backgroundColor = .subViewColor
         }).disposed(by: disposeBag)
+        // 取消选中
+        bottomCollectionView.rx.itemDeselected.subscribe(onNext: { [weak self] indexPath in
+            guard let `self` = self else { return }
+            let cell: EmojiCollectionViewCell = self.bottomCollectionView.cellForItem(at: indexPath) as! EmojiCollectionViewCell
+            cell.contentView.backgroundColor = .darkModeViewColor
+        }).disposed(by: disposeBag)
+        // delegate
+        bottomCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+
     }
 }

@@ -14,7 +14,9 @@ public enum KeyboardVisible {
     case hidden
     case microphone
     case emoji
-    case other
+    case menu
+    /// 点击TableView
+    case touch
 }
 
 public class KeyBoardManager {

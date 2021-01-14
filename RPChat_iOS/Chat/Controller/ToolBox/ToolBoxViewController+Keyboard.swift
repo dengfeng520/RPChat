@@ -21,7 +21,7 @@ extension ToolBoxViewController {
                 self.showKeyboardOrEmojiSubject.onNext(height + 55)
             } else {
                 if KeyBoardManager.sharedInstance.keyboardIsVisible == .hidden {
-                   self.showKeyboardOrEmojiSubject.onNext(55)
+                    self.showKeyboardOrEmojiSubject.onNext(55)
                 }
             }
         }
@@ -34,11 +34,11 @@ extension ToolBoxViewController {
             KeyBoardManager.sharedInstance.fixKeyboardVisible(visible)
             self.toolView.inputChatView.resignFirstResponder()
             if visible == .emoji {
-//                self.openEmojiView()
+                self.openEmojiView()
+            } else if visible == .menu {
+                self.openMenuView()
             } else if visible == .microphone {
-                
-            } else if visible == .other {
-                
+                self.openMicrophoneView()
             }
         }
     }
@@ -68,7 +68,10 @@ extension ToolBoxViewController {
 extension ToolBoxViewController {
     /// 主动开启键盘
     func openKeyboard() {
-        toolView.inputChatView.becomeFirstResponder()
+        if KeyBoardManager.sharedInstance.keyboardIsVisible == .show {
+            toolView.inputChatView.becomeFirstResponder()
+            resetStatus()
+        }
     }
     
     /// 关闭键盘
@@ -77,16 +80,27 @@ extension ToolBoxViewController {
             toolView.inputChatView.resignFirstResponder()
         } else {
             KeyBoardManager.sharedInstance.fixKeyboardVisible(.hidden)
-            
         }
     }
     /// 显示emojiView
     func openEmojiView() {
-//        emojiView.isHidden = false
-        let height = KeyBoardManager.sharedInstance.keyboardCacheHeight
+        emojiView.isHidden = false
+        menuView.isHidden = true
+        microphoneView.isHidden = true
+        showKeyboardOrEmojiSubject.onNext(265)
     }
     /// 显示microphone View
     func openMicrophoneView() {
-        
+        emojiView.isHidden = true
+        menuView.isHidden = true
+        microphoneView.isHidden = false
+        showKeyboardOrEmojiSubject.onNext(210)
+    }
+    /// show menu view
+    func openMenuView() {
+        emojiView.isHidden = true
+        menuView.isHidden = false
+        microphoneView.isHidden = true
+        showKeyboardOrEmojiSubject.onNext(265)
     }
 }

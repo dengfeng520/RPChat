@@ -11,6 +11,9 @@ import RPChatDataKit
 
 class EmojiCollectionViewCell: UICollectionViewCell {
     
+    private var emojiImgWidth: NSLayoutConstraint!
+    private var emojiImgHeight: NSLayoutConstraint!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .darkModeViewColor
@@ -25,28 +28,22 @@ class EmojiCollectionViewCell: UICollectionViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 32).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        emojiImgWidth = $0.widthAnchor.constraint(equalToConstant: 32)
+        emojiImgWidth.isActive = true
+        emojiImgHeight = $0.heightAnchor.constraint(equalToConstant: 32)
+        emojiImgHeight.isActive = true
         return $0
     }(UIImageView())
     
-    lazy var interestingEmojiImg: UIImageView = {
-        contentView.addSubview($0)
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
-        $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        return $0
-    }(UIImageView())
     
-    /// IM 自带的表情
+    /// emoji
     func converEmoji(_ model: EmojiModel) {
         let img = EmojiManager.fetchEmojiImage("\(model.face_name)@2x")
         emojiImg.image = img
     }
     /// 自定义表情包
     func converCustomizeEmoji(_ name: String) {
-        interestingEmojiImg.image = UIImage(named: name)
+        contentView.layer.cornerRadius = 3
+        emojiImg.image = UIImage(named: name)
     }
 }

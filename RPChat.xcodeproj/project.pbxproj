@@ -75,6 +75,7 @@
 		1D69CF54259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF53259C67AB006C0783 /* RPAuthRemoteAPI+SwiftyJSON.swift */; };
 		1D69CF81259D8010006C0783 /* ReturnInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */; };
 		1D78E5DB24D2A87D00270F95 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */; };
+		1D8F716B25AFD72F00D3BBE7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8F716A25AFD72F00D3BBE7 /* MenuView.swift */; };
 		1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */; };
 		1D92F42625A3081D00DE7BC0 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F42525A3081D00DE7BC0 /* DiscoverViewModel.swift */; };
 		1D92F43225A3082600DE7BC0 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F43125A3082600DE7BC0 /* DiscoverModel.swift */; };
@@ -281,6 +282,7 @@
 		1D69CF80259D800F006C0783 /* ReturnInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnInfoModel.swift; sourceTree = "<group>"; };
 		1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		1D7B5ADC254032E300054894 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D8F716A25AFD72F00D3BBE7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		1D92F42525A3081D00DE7BC0 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		1D92F43125A3082600DE7BC0 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
@@ -442,7 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				1D12F34225AD43C200C1AC4A /* ToolView.swift */,
-				1D12F34325AD43C200C1AC4A /* MicrophoneView.swift */,
 			);
 			path = ToolBarView;
 			sourceTree = "<group>";
@@ -492,6 +493,8 @@
 		1D1DBFCE258861950016831C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D8F717625AFE4E200D3BBE7 /* MicrophoneView */,
+				1D8F716925AFD70800D3BBE7 /* MenuView */,
 				1D12F34425AD43C200C1AC4A /* EmojiView */,
 				1D12F34125AD43C200C1AC4A /* ToolBarView */,
 				1D2BCD5025A5978400163727 /* ChatCellShopFactory.swift */,
@@ -817,6 +820,22 @@
 				1D78E5DA24D2A87D00270F95 /* DeviceInfo.swift */,
 			);
 			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		1D8F716925AFD70800D3BBE7 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				1D8F716A25AFD72F00D3BBE7 /* MenuView.swift */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		1D8F717625AFE4E200D3BBE7 /* MicrophoneView */ = {
+			isa = PBXGroup;
+			children = (
+				1D12F34325AD43C200C1AC4A /* MicrophoneView.swift */,
+			);
+			path = MicrophoneView;
 			sourceTree = "<group>";
 		};
 		1D92F41325A3074D00DE7BC0 /* Discover */ = {
@@ -1454,6 +1473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8F716B25AFD72F00D3BBE7 /* MenuView.swift in Sources */,
 				1D12F34925AD43C200C1AC4A /* ToolView.swift in Sources */,
 				1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */,
 				1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */,
