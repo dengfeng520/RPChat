@@ -30,8 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
         } else {
             if let signInInfo = RPKeychain.default.string(forKey: "key.siginInfo.value") {
-                print("signInInfo================\(signInInfo)")
-                
+                print("=================\(signInInfo)")
                 let tabbarVC = UITabBarControllerExtension()
                 window?.rootViewController = tabbarVC
             } else {

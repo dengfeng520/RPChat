@@ -50,8 +50,8 @@ extension EmojiManager {
         var emojiList = [[EmojiModel]]()
         var ghost = [EmojiModel]()
         var cat = [EmojiModel]()
+        var rabbit = [EmojiModel]()
         for index in 0..<10 {
-            
             let ghostModel = converFhostModel(index)
             ghost.append(ghostModel)
             
@@ -62,9 +62,13 @@ extension EmojiManager {
         emojiList.append(cat)
         
         if let emojiNameArray = emojiNameArray {
-            print("face_name=================\(emojiNameArray)")
             emojiList.insert(emojiNameArray, at: 0)
         }
+        
+        let rabbitModel = coverRabbitModel(0)
+        rabbit.append(rabbitModel)
+        emojiList.append(rabbit)
+        
         return emojiList
     }
     
@@ -83,4 +87,12 @@ extension EmojiManager {
         model?.isCache = true
         return model!
     }
+    private class func coverRabbitModel(_ index: Int) -> EmojiModel {
+        var model = EmojiModel(json: JSON([:]))
+        model?.face_name = "rabbit\(index)"
+        model?.face_id = "rabbit_\(index)"
+        model?.isCache = true
+        return model!
+    }
+    
 }
