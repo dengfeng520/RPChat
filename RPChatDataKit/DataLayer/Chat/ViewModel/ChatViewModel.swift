@@ -14,10 +14,8 @@ public class ChatViewModel: PublicViewModel {
     /// 消息列表
     public var chatListArray: [ChatBodyModel] = [ChatBodyModel]()
     public let chatListSubject : PublishSubject<[ChatBodyModel]> = PublishSubject()
-    /// emoji List
-    public let emojiSubject : PublishSubject<[EmojiModel]> = PublishSubject()
-    /// 自定义表情包
-    public let emoticonsSubject : PublishSubject<[[String]]> = PublishSubject()
+    /// 表情包
+    public let emoticonsSubject : PublishSubject<[[EmojiModel]]> = PublishSubject()
     
     public var friendsModel: FriendsModel = FriendsModel()
     
@@ -31,10 +29,6 @@ public class ChatViewModel: PublicViewModel {
 extension ChatViewModel {
     /// 获取emoji 数据
     func fetchEmojiData() {
-        if let emojiNameList = EmojiManager.emojiNameArray {
-            emojiSubject.onNext(emojiNameList)
-        }
-        
         if let emoticonsList = EmojiManager.fetchEmoticonsList {
             emoticonsSubject.onNext(emoticonsList)
         }

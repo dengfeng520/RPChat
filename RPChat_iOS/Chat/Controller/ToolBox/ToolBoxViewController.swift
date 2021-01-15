@@ -16,8 +16,8 @@ class ToolBoxViewController: UIViewController {
 
     let disposeBag: DisposeBag = DisposeBag()
     var viewModel: ChatViewModel = ChatViewModel()
-    var emoJiNameListSub = PublishSubject<[EmojiModel]>()
-    var emoticonsListSub = PublishSubject<[[String]]>()
+//    var emoJiNameListSub = PublishSubject<[[EmojiModel]]>()
+    var emoJiArray = [[EmojiModel]]()
     
     /// 点击发送消息
     let tapSendMessageSubject = PublishSubject<String>()
@@ -28,15 +28,6 @@ class ToolBoxViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupBinding()
-    }
-    
-    func setupBinding() {
-        // 选择emoji
-        emojiView.selectEmojiSub.subscribe(onNext: { emojiname in
-            
-        }).disposed(by: disposeBag)
-        
-        monitorKeyBoard()
     }
     
     lazy var toolView: ToolView = {

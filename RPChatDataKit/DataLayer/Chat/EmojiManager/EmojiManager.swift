@@ -7,17 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 public class EmojiManager: NSObject {
     /// Emoji name list
     public class var emojiNameArray: [EmojiModel]? {
         if  let emojiList = fetchPlistArray {
             let retArray: [EmojiModel] = emojiList.compactMap { (body) -> EmojiModel? in
-                if let data = try? JSONSerialization.data(withJSONObject: body, options: []) {
-                    return EmojiModel(data: data)
-                } else {
-                    return nil
-                }
+                return EmojiModel(json: JSON(body))
             }
             return retArray
         }
@@ -48,19 +45,42 @@ public class EmojiManager: NSObject {
 
 
 extension EmojiManager {
-    /// 自定义表情包
-    public class var fetchEmoticonsList: [[String]]? {
-        var emojiList = [[String]]()
-        var ghost = [String]()
-        var cat = [String]()
+    /// 表情包
+    public class var fetchEmoticonsList: [[EmojiModel]]? {
+        var emojiList = [[EmojiModel]]()
+        var ghost = [EmojiModel]()
+        var cat = [EmojiModel]()
         for index in 0..<10 {
-            let ghostName = "ghost\(index)"
-            ghost.append(ghostName)
-            let catName = "cat\(index)"
-            cat.append(catName)
+            
+            let ghostModel = converFhostModel(index)
+            ghost.append(ghostModel)
+            
+            let catModel = coverCatModel(index)
+            cat.append(catModel)
         }
         emojiList.append(ghost)
         emojiList.append(cat)
+        
+        if let emojiNameArray = emojiNameArray {
+            print("face_name=================\(emojiNameArray)")
+            emojiList.insert(emojiNameArray, at: 0)
+        }
         return emojiList
+    }
+    
+    private class func converFhostModel(_ index: Int) -> EmojiModel {
+        var model = EmojiModel(json: JSON([:]))
+        model?.face_name = "ghost\(index)"
+        model?.face_id = "ghost_\(index)"
+        model?.isCache = true
+        return model!
+    }
+    
+    private class func coverCatModel(_ index: Int) -> EmojiModel {
+        var model = EmojiModel(json: JSON([:]))
+        model?.face_name = "cat\(index)"
+        model?.face_id = "cat_\(index)"
+        model?.isCache = true
+        return model!
     }
 }

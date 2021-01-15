@@ -28,7 +28,7 @@ public class KeyBoardManager {
     /// 缓存键盘的高度
     public var keyboardCacheHeight: CGFloat = 271
     /// 键盘弹出动画时间
-    public var animationDuration: NSNumber = 0.25
+    public var animationDuration: NSNumber = 0.35
     /// 键盘监听
     public let keyBoardSubject : PublishSubject<CGFloat> = PublishSubject()
     

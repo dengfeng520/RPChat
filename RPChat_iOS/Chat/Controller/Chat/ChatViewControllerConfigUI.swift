@@ -24,9 +24,9 @@ extension ChatViewController {
         // chatList subject
         viewModel.chatListSubject.bind(to: chatListVC.chatListSub).disposed(by: disposeBag)
         // emoji subject
-        viewModel.emojiSubject.bind(to: toolBoxVC.emoJiNameListSub).disposed(by: disposeBag)
-        // 表情包
-        viewModel.emoticonsSubject.bind(to: toolBoxVC.emoticonsListSub).disposed(by: disposeBag)
+//        viewModel.emoticonsSubject.bind(to: toolBoxVC.emoJiNameListSub).disposed(by: disposeBag)
+//        // 表情包
+//        viewModel.emoticonsSubject.bind(to: toolBoxVC.emoticonsListSub).disposed(by: disposeBag)
         // error
         viewModel.errorSubject.observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] (error) in
             guard let `self` = self else { return }

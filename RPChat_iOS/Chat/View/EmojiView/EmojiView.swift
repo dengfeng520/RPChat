@@ -35,16 +35,31 @@ class EmojiView: UIView {
     }
     
     func configEmojiUI() {
-        if let emoji = EmojiManager.emojiNameArray {
-            emojiArray = emoji
-            setupBinding()
-        }
+//        if let emoji = EmojiManager.emojiNameArray {
+//            emojiArray = emoji
+//        }
+        setupBinding()
+
         // 删除按钮
         deleteBtn.rx.tap.subscribe(onNext: {
             
         }).disposed(by: disposeBag)
         // 表情包切换
         bottomView.tapBottomEmojiChangeSub?.bind(to: tapBottomEmoji).disposed(by: disposeBag)
+    }
+    
+    func changeEmoji(_ array: [EmojiModel]?) {
+        if let array = array {
+            emojiArray = array
+            let model = array.first
+            if model?.isCache == true {
+                layout.itemSize = CGSize(width: (__screenWidth - 20) / 8, height: (__screenWidth - 20) / 8)
+            } else {
+                layout.itemSize = CGSize(width: (__screenWidth - 20) / 8, height: 35)
+            }
+            bindCollectionView()
+            emojiCollectionView.reloadData()
+        }
     }
     
     
@@ -111,11 +126,16 @@ class EmojiView: UIView {
 
 
 extension EmojiView {
-    func setupBinding() {
+    func bindCollectionView() {
         let item = Observable.just(emojiArray)
         item.bind(to: emojiCollectionView.rx.items(cellIdentifier: "EmojiCollectionViewCellId", cellType: EmojiCollectionViewCell.self)) { (row, model, cell) in
             cell.converEmoji(model)
         }.disposed(by: disposeBag)
+    }
+    
+    func setupBinding() {
+        
+        bindCollectionView()
         
         //获取选中项的索引
         emojiCollectionView.rx.itemSelected.subscribe(onNext: { indexPath in

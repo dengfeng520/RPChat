@@ -13,7 +13,7 @@ import RxSwift
 
 class EmojiBottomView: UIView {
     
-    lazy var customizeEmojiArray = [[String]]()
+    lazy var customizeEmojiArray = [[EmojiModel]]()
     let disposeBag: DisposeBag = DisposeBag()
     
     let tapBottomEmojiChangeSub: PublishSubject? = PublishSubject<Int>()
@@ -78,13 +78,16 @@ class EmojiBottomView: UIView {
 
 extension EmojiBottomView: UICollectionViewDelegate {
     func setupBinding() {
-        var list: [String] = customizeEmojiArray.compactMap { (subList) -> String in
-            return subList.first ?? String()
+        let list: [String] = customizeEmojiArray.compactMap { (subList) -> String in
+            return subList.first?.face_name ?? String()
         }
-        list.insert("emoji_icon", at: 0)
         let item = Observable<[String]>.just(list)
         item.bind(to: bottomCollectionView.rx.items(cellIdentifier: "bottomCollectionViewCellId", cellType: EmojiCollectionViewCell.self)) { (row, emojiName, cell) in
-            cell.converCustomizeEmoji(emojiName)
+            if row == 0 {
+                cell.converSystemEmoji(emojiName)
+            } else {
+                cell.converCustomizeEmoji(emojiName)
+            }
         }.disposed(by: disposeBag)
         // 默认选中第一个item
         let indexPath = IndexPath(row: 0, section: 0)
