@@ -125,6 +125,7 @@
 		1DBBBD6F258B397100AABC4F /* ChatRightTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD6E258B397100AABC4F /* ChatRightTriangleView.swift */; };
 		1DBBBD7B258B398D00AABC4F /* ChatLeftTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD7A258B398D00AABC4F /* ChatLeftTriangleView.swift */; };
 		1DBBBD87258B416700AABC4F /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBBD86258B416700AABC4F /* MessageModel.swift */; };
+		1DD57FC425B140A4003F0F82 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD57FC325B140A4003F0F82 /* MenuCollectionViewCell.swift */; };
 		1DD5F25E24BD5D1C00E762B7 /* RPChatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */; };
 		1DD5F26524BD5D6400E762B7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2208F624986120002D25A2 /* RxSwift.framework */; };
 		1DD5F26B24BD5DB100E762B7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5F26A24BD5DB100E762B7 /* SignInViewModelTests.swift */; };
@@ -325,6 +326,7 @@
 		1DBBBD6E258B397100AABC4F /* ChatRightTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRightTriangleView.swift; sourceTree = "<group>"; };
 		1DBBBD7A258B398D00AABC4F /* ChatLeftTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLeftTriangleView.swift; sourceTree = "<group>"; };
 		1DBBBD86258B416700AABC4F /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		1DD57FC325B140A4003F0F82 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DD5F25B24BD5D1C00E762B7 /* RPChatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPChatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD5F25D24BD5D1C00E762B7 /* RPChatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatUnitTests.swift; sourceTree = "<group>"; };
 		1DD5F25F24BD5D1C00E762B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -826,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8F716A25AFD72F00D3BBE7 /* MenuView.swift */,
+				1DD57FC325B140A4003F0F82 /* MenuCollectionViewCell.swift */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -1484,6 +1487,7 @@
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
+				1DD57FC425B140A4003F0F82 /* MenuCollectionViewCell.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1D12F34A25AD43C200C1AC4A /* MicrophoneView.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,

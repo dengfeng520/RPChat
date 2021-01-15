@@ -101,6 +101,6 @@ extension ToolBoxViewController {
         emojiView.isHidden = true
         menuView.isHidden = false
         microphoneView.isHidden = true
-        showKeyboardOrEmojiSubject.onNext(265)
+        showKeyboardOrEmojiSubject.onNext(240)
     }
 }

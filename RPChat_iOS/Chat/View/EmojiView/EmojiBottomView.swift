@@ -20,7 +20,7 @@ class EmojiBottomView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+                
         if let list = EmojiManager.fetchEmoticonsList {
             customizeEmojiArray = list
             setupBinding()
@@ -65,7 +65,7 @@ class EmojiBottomView: UIView {
         let bottomCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.addSubview(bottomCollectionView)
         bottomCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        bottomCollectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        bottomCollectionView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 0).isActive = true
         bottomCollectionView.leftAnchor.constraint(equalTo: addEmojiBtn.rightAnchor, constant: 8).isActive = true
         bottomCollectionView.rightAnchor.constraint(equalTo: sendEmojiBtn.leftAnchor, constant: -45).isActive = true
         bottomCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
@@ -74,6 +74,21 @@ class EmojiBottomView: UIView {
         bottomCollectionView.showsHorizontalScrollIndicator = false
         return bottomCollectionView
     }()
+    
+    lazy var lineView: UIView = {
+        addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
+        $0.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        $0.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        $0.layer.shadowOpacity = 0.5
+        $0.layer.shadowColor = UIColor.subViewColor.cgColor
+        $0.layer.shadowRadius = 1
+        $0.layer.shadowOffset = CGSize(width: 1, height: 0.5)
+        $0.backgroundColor = .subViewColor
+        return $0
+    }(UIView())
 }
 
 extension EmojiBottomView: UICollectionViewDelegate {

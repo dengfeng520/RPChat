@@ -16,7 +16,8 @@ class EmojiCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .darkModeViewColor
+        backgroundColor = .darkModeViewColor
+        contentView.layer.cornerRadius = 3
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +54,7 @@ class EmojiCollectionViewCell: UICollectionViewCell {
     
     /// 自定义表情包
     func converCustomizeEmoji(_ name: String) {
-        contentView.layer.cornerRadius = 3
+        
         emojiImg.image = UIImage(named: name)
     }
 }
