@@ -9,6 +9,21 @@
 import Foundation
 import SwiftyJSON
 
-public class ContactsModel: NSObject {
-    
+public struct ContactsModel: Codable {
+    public var type,Id,name,picture,introduction: String
+
+    private enum CodingKeys: String,CodingKey {
+        case type
+        case Id
+        case name
+        case picture
+        case introduction
+    }
+}
+
+extension ContactsModel {
+    public init?(data: Data) {
+        guard let model = try? JSONDecoder().decode(ContactsModel.self, from: data) else { return nil }
+        self = model
+    }
 }

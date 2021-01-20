@@ -12,7 +12,7 @@ import SwiftyJSON
 public class EmojiManager: NSObject {
     /// Emoji name list
     public class var emojiNameArray: [EmojiModel]? {
-        if  let emojiList = fetchPlistArray {
+        if let emojiList = fetchPlistArray {
             let retArray: [EmojiModel] = emojiList.compactMap { (body) -> EmojiModel? in
                 return EmojiModel(json: JSON(body))
             }
@@ -94,5 +94,4 @@ extension EmojiManager {
         model?.isCache = true
         return model!
     }
-    
 }

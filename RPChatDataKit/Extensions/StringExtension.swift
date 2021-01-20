@@ -60,10 +60,44 @@ extension String {
 }
 
 extension String {
+    /// 国际化
     public static func localized(of key: String, comment: String = "") -> String {
-      return NSLocalizedString(key,
-                               tableName: "Localizable",
-                               bundle: Bundle.init(identifier: "io.RPChat")!,
-                               comment: comment)
+        return NSLocalizedString(key,
+                                 tableName: "Localizable",
+                                 bundle: Bundle.init(identifier: "io.RPChat")!,
+                                 comment: comment)
+    }
+}
+
+extension String {
+    /// 是否是汉字
+    public var isIncludeChinese: Bool {
+        for ch in self.unicodeScalars {
+            // 中文字符范围：0x4e00 ~ 0x9fff
+            if (0x4e00 < ch.value  && ch.value < 0x9fff) {
+                return true
+            }
+        }
+        return false
+    }
+    /// 转换为拼音 获取大写的首字母
+    public var transformToPinyin: String? {
+        let stringRef = NSMutableString(string: self) as CFMutableString
+        // 转换为带音标的拼音
+        CFStringTransform(stringRef, nil, kCFStringTransformToLatin, false)
+        // 去掉音标
+        CFStringTransform(stringRef, nil, kCFStringTransformStripCombiningMarks, false)
+        let pinyin = stringRef as String
+        
+        let upperStr = pinyin.first?.uppercased() ?? "#"
+        
+        return upperStr
+    }
+    /// 获取大写的首字母
+    public var fetchPinyinHead: String {
+        // 获取第一个字母
+        let upperStr = self.transformToPinyin?.first
+        
+        return upperStr?.uppercased() ?? "#"
     }
 }

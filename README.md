@@ -3,7 +3,12 @@
 <h6 align='right'>小时光</h6>
 <h6  align='right'>北京体适能体育科技有限公司</h6> 
 
-![展示图片](https://github.com/dengfeng520/RPChat/blob/master/Image/chats.PNG?raw=true)
+![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/chat00.PNG?raw=true)
+![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/chats01.PNG?raw=true)
+![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/chats02.PNG?raw=true)
+![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/chat03.PNG?raw=true)
+![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/chat04.PNG?raw=true)
+
 
 [1、从新建工程开始](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/%E5%9F%BA%E4%BA%8EMVVM%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9App(%E4%B8%80)%E4%BB%8E....md)
 

@@ -36,7 +36,7 @@ extension ChatViewModel {
 }
 
 extension ChatViewModel {
-    /// 获取消息列表
+    /// 获取消息列表 模拟网络请求
     public func fetchChatList(_ parameter: [String : String]) {
         self.loading.onNext(true)
         RPAuthRemoteAPI().requestData(MessageListWithRequest(parameter: parameter as [String : AnyObject]))

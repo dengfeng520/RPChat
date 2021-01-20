@@ -36,9 +36,11 @@ class ContactsTableViewCell: UITableViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12).isActive = true
         $0.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
         $0.layer.cornerRadius = 4
+        $0.layer.masksToBounds = true
+        $0.contentMode = .scaleAspectFill
         return $0
     }(UIImageView())
     
@@ -46,10 +48,22 @@ class ContactsTableViewCell: UITableViewCell {
         self.contentView.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
-        $0.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
-        $0.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        $0.topAnchor.constraint(equalTo: headerImg.topAnchor, constant: 5).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
         $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-        $0.font = UIFont(name: "Helvetica-Bold", size: 20)
+        $0.font = UIFont(name: "Helvetica-Bold", size: 16.5)
+        return $0
+    }(UILabel())
+    
+    lazy var subMessageLab: UILabel = {
+        self.contentView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.leftAnchor.constraint(equalTo: headerImg.rightAnchor, constant: 8).isActive = true
+        $0.bottomAnchor.constraint(equalTo: headerImg.bottomAnchor, constant: -3).isActive = true
+        $0.heightAnchor.constraint(equalToConstant: 17).isActive = true
+        $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
+        $0.textColor = .subTextColor
+        $0.font = UIFont.systemFont(ofSize: 15)
         return $0
     }(UILabel())
 }
@@ -57,9 +71,9 @@ class ContactsTableViewCell: UITableViewCell {
 
 extension ContactsTableViewCell {
     /// Contacts
-    func configContactsData(_ withModel: ContactsModel) {
-        headerImg.image = UIImage(named: "logo_icon")
-        nickNameLab.text = "寒月公主"
+    func configContactsData(_ model: ContactsModel) {
+        headerImg.image = UIImage(named: model.picture)
+        nickNameLab.text = model.name
+        subMessageLab.text = model.introduction
     }
-    
 }

@@ -52,7 +52,7 @@ class MessageListTableViewCell: UITableViewCell {
         $0.topAnchor.constraint(equalTo: headerImg.topAnchor, constant: 5).isActive = true
         $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
         $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12).isActive = true
-        $0.font = UIFont(name: "Helvetica-Bold", size: 18)
+        $0.font = UIFont(name: "Helvetica-Bold", size: 16.5)
         return $0
     }(UILabel())
     
@@ -64,6 +64,7 @@ class MessageListTableViewCell: UITableViewCell {
         $0.heightAnchor.constraint(equalToConstant: 17).isActive = true
         $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -95).isActive = true
         $0.textColor = .subTextColor
+        $0.font = UIFont.systemFont(ofSize: 15)
         return $0
     }(UILabel())
     
@@ -100,7 +101,7 @@ class MessageListTableViewCell: UITableViewCell {
         $0.bottomAnchor.constraint(equalTo: badgeValueView.bottomAnchor, constant: 0).isActive = true
         $0.textColor = .white
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.font = UIFont.systemFont(ofSize: 12.5)
         return $0
     }(UILabel())
 }
@@ -108,13 +109,13 @@ class MessageListTableViewCell: UITableViewCell {
 extension MessageListTableViewCell {
     /// Message list
     func configMessageListData(_ model: MessageModel) {
-        if model.photo.isEmpty == false {
-            let imgUrl: URL = URL(string: model.photo)!
-            headerImg.kf.setImage(with: imgUrl, placeholder:UIImage(named: "houyi"))
-        } else {
-            headerImg.image = UIImage(named: "houyi")
-        }
-        
+//        if model.photo.isEmpty == false {
+//            let imgUrl: URL = URL(string: model.photo)!
+//            headerImg.kf.setImage(with: imgUrl, placeholder:UIImage(named: "houyi"))
+//        } else {
+//            headerImg.image = UIImage(named: model.photo)
+//        }
+        headerImg.image = UIImage(named: model.photo)
         nickNameLab.text = model.userName
         subMessageLab.text = model.lastMsg
         timeLab.text = CurrentTime.fetchTimeInterval(model.createTime)
