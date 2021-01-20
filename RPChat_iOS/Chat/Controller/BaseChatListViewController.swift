@@ -26,8 +26,7 @@ class BaseChatListViewController: UIViewController {
         NSLayoutConstraint.activate([top, left, width, bottom])
         $0.separatorStyle = .none
         $0.register(ContactsTableViewCell.self, forCellReuseIdentifier: "ContactsTableViewCellId")
+        $0.sectionIndexColor = .subTextColor
         return $0
     }(UITableView())
-    
-
 }

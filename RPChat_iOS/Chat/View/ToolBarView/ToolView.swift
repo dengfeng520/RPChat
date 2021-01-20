@@ -25,7 +25,6 @@ public class ToolView: UIView {
     public override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         configToolViewUI()
-        
         bindTap()
     }
     

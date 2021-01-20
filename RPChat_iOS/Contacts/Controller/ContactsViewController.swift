@@ -71,10 +71,18 @@ extension ContactsViewController: UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if viewModel.contactsArray.count != 0 {
-           let list: [ContactsModel] = viewModel.contactsArray[section]
-           return list.first?.name.transformToPinyin
+            let list: [ContactsModel] = viewModel.contactsArray[section]
+            return list.first?.name.transformToPinyin
         } else {
             return "#"
         }
+    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return viewModel.contactsArray.compactMap {
+           return $0.first?.name.transformToPinyin
+        }
+    }
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index 
     }
 }

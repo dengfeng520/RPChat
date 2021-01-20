@@ -58,7 +58,11 @@ public class KeyBoardManager {
                     if let duration = aValue[UIResponder.keyboardAnimationDurationUserInfoKey] {
                         self.animationDuration = duration as! NSNumber
                     }
-                    self.keyBoardSubject.onNext(keyboardRect.size.height)
+                    var height = keyboardRect.size.height
+                    if isiPhoneX == true {
+                        height = height - 34
+                    }
+                    self.keyBoardSubject.onNext(height)
                 }
             }).disposed(by: disposeBag)
         // 键盘已经出现

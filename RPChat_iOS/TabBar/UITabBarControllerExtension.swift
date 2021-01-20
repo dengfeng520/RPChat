@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-open class UITabBarControllerExtension: UITabBarController {
+public class UITabBarControllerExtension: UITabBarController {
     
     let disposeBag: DisposeBag = DisposeBag()
     let messageListNav = UINavigationController(rootViewController: MessageListViewController())
