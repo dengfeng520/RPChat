@@ -10,9 +10,8 @@ import Foundation
 import RxSwift
 
 public class ContactsViewModel: PublicViewModel {
-    public var contactsArray: [ContactsModel] = [ContactsModel]()
-    public var groupArray: [String] = [String]()
-    public let contactsSubject : PublishSubject<[ContactsModel]> = PublishSubject()
+    public var contactsArray: [[ContactsModel]] = [[ContactsModel]]()
+    public let contactsSubject : PublishSubject<[[ContactsModel]]> = PublishSubject()
     
     public func fetchContactsList() {
         /// 模拟网络请求
@@ -20,10 +19,9 @@ public class ContactsViewModel: PublicViewModel {
         RPAuthRemoteAPI().requestData(FriendsListWithRequest(parameter: ["groupId":""] as [String : AnyObject]))
             .subscribe(onNext: { [weak self] returnJson in
                 guard let `self` = self else { return }
-                if let list: [ContactsModel] = ContactManager.contactArray {
+                if let list: [[ContactsModel]] = ContactManager.contactArray {
                     self.contactsArray = list
-                    self.groupArray = ContactManager.groupArrasy
-                    print("self.groupArray-------------------\(self.groupArray)")
+                    print("self.groupArray-------------------\(self.contactsArray)")
                     self.contactsSubject.onNext(list)
                 } else {
                     self.errorSubject.onNext(NSLocalizedString("Unknown Error", comment: ""))

@@ -11,7 +11,6 @@ import UIKit
 public class ContactManager: NSObject {
     /// 首字母去重后的分组
     public static var groupArrasy: [String] = [String]()
-    
     /// contacts list
     public class var seetArray: [ContactsModel]? {
         if let contactList = fetchPlistDataArray {
@@ -36,7 +35,7 @@ public class ContactManager: NSObject {
 
 extension ContactManager {
     /// 联系人排序
-    public class var contactArray: [ContactsModel]? {
+    public class var contactArray: [[ContactsModel]]? {
         guard let seetArray = seetArray else {
             return nil
         }
@@ -47,12 +46,19 @@ extension ContactManager {
         
         // 去重处理
         groupArrasy = groupList.filterDuplicates({ $0 })
-        print("groupArrasy------------3434353543-------\(groupArrasy.count)")
         // 排序
         groupArrasy = groupArrasy.sorted(by: { (frist, next) -> Bool in
             return frist < next
         })
-        print("groupArrasy--------------23244-----\(groupArrasy.count)")
-        return seetArray
+        
+        var contactList = [[ContactsModel]]()
+        groupArrasy.forEach { (group) in
+            let list = seetArray.filter {
+                $0.name.transformToPinyin == group
+            }
+            contactList.append(list)
+        }
+        
+        return contactList
     }
 }

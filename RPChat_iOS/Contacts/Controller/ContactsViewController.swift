@@ -55,27 +55,26 @@ extension ContactsViewController {
 
 extension ContactsViewController: UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.groupArray.count
+        return viewModel.contactsArray.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 65
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contactsArray.filter { (emp) -> Bool in
-            emp.name.transformToPinyin == viewModel.groupArray[section]
-        }.count
+        return viewModel.contactsArray[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContactsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCellId", for: indexPath) as! ContactsTableViewCell
-        let list = viewModel.contactsArray.filter { (emp) -> Bool in
-            emp.name.transformToPinyin == viewModel.groupArray[indexPath.section]
-        }
+        let list = viewModel.contactsArray[indexPath.section]
         cell.configContactsData(list[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if viewModel.groupArray.count != 0 {
-            return 0
+        if viewModel.contactsArray.count != 0 {
+           let list: [ContactsModel] = viewModel.contactsArray[section]
+           return list.first?.name.transformToPinyin
+        } else {
+            return "#"
         }
     }
 }

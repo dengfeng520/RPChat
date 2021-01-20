@@ -21,6 +21,7 @@ public class Encryption: NSObject {
         let timeStamp = Int(timeInterval) * 1000
         return "\(timeStamp)"
     }
+    /// key value 遍历
     public class func charSortWithMaps(_ maps: Dictionary<String, AnyObject>) -> String {
         let keys = maps.keys
         let results: [String] = keys.sorted()
@@ -41,7 +42,7 @@ public class Encryption: NSObject {
         }
         return sortStr
     }
-    
+    /// 加密处理
     public class func dictWithParamerters(maps: Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject> {
         let timer = fetchSystemCurrentTime()
         var muMaps = maps
