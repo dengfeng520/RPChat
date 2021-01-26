@@ -20,6 +20,7 @@ class ContactsViewController: BaseChatListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        hiddenBackTitle()
         title = NSLocalizedString("Contacts", comment: "")
         bindViewModel()
     }
@@ -84,5 +85,11 @@ extension ContactsViewController: UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index 
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let model = viewModel.contactsArray[indexPath.section][indexPath.row]
+        let friendsInfoVC = FriendInfoViewController()
+        friendsInfoVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(friendsInfoVC, animated: true)
     }
 }
