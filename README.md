@@ -3,24 +3,31 @@
 <h6 align='right'>小时光</h6>
 <h6  align='right'>北京体适能体育科技有限公司</h6> 
 
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat01.png?raw=true)
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat02.png?raw=true)
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat03.png?raw=true)
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat04.png?raw=true)
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat05.png?raw=true)
-![展示图片](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/Images/RPChat06.png?raw=true)
+一个简单的聊天demo，目前正在更新中，已经实现的思路和界面展示请点击[RPChat Wiki](https://github.com/dengfeng520/RPChat/wiki/%E5%9F%BA%E4%BA%8EMVVM%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9App)
 
+<h3>如何让代码跑起来</h3>
 
-[1、从新建工程开始](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/%E5%9F%BA%E4%BA%8EMVVM%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9App(%E4%B8%80)%E4%BB%8E....md)
+1、打开 terminal
 
-[2、登录UI实现](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2UI%E5%AE%9E%E7%8E%B0.md)
+```
+cd Desktop/
+git clone https://github.com/dengfeng520/RPChat.git
+```
+2、下载完成后
 
-[3、网络请求的封装](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85.md)
+```
+cd RPChat 
+carthage update --platform iOS --no-use-binaries
+```
+如果在update时报错，请查找[Github Carthage](https://github.com/Carthage/Carthage)
 
-[4、构建自己的开源库](https://github.com/dengfeng520/xiaoshiguangBlog/blob/master/RPChat/%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E5%BA%93.md)
+3、添加第三方framework
 
-5、登录ViewModel和Controller的实现
+* 更新完成后，打开工程，选择TARGETS -->Build Phases--> Link Binary With Libries 点击加号，选择 Add File --> Carthage --> Build --> iOS 添加所需的FrameWork
+* 在Input Files中引入要用到的第三方库路径，格式为：
 
-6、登录 - 单元测试
-
+```
+$(SRCROOT)/Carthage/Build/iOS/***.framework
+```
+4、command + R  运行
 
