@@ -41,3 +41,19 @@ $(SRCROOT)/Carthage/Build/iOS/***.framework
 * **RPChatDataKit.framework**是整个项目的数据存储以及访问接口，也可以理解为是App的View Model以及Model
 * **RPKeychain.framework**对Keychain的封装
 * **RPChatUnitTests**单元测试相关代码
+
+<h3>3、用到的第三方开源库</h3>
+
+* Alamofire
+* RxSwift
+* Kingfisher
+* MJRefresh
+* CocoaAsyncSocket
+* CryptoSwift
+* SwiftyRSA
+
+<h3>4、自己封装的开源库</h3>
+
+* **[RPToastView](https://github.com/dengfeng520/RPToastView)**一个简单的LoadingView
+* **[RPBannerView-Swift](https://github.com/dengfeng520/RPBannerView-Swift)**一个轻量级的Banner提示框
+* **[RPAutoLayout](https://github.com/dengfeng520/RPAutoLayout)**对系统的**NSLayoutAnchor**做简单的封装

@@ -24,6 +24,13 @@ class ContactsViewController: BaseChatListViewController {
         title = NSLocalizedString("Contacts", comment: "")
         bindViewModel()
     }
+    
+    lazy var searchBar: UISearchBar = {
+        view.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        return $0
+    }(UISearchBar())
 }
 
 
