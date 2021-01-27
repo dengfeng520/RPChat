@@ -65,6 +65,8 @@
 		1D5C600924AC87CB00211398 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5C600424AC85E900211398 /* CryptoSwift.framework */; };
 		1D5C600D24AC8C6700211398 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C600C24AC8C6700211398 /* SignInModel.swift */; };
 		1D5C601B24AF10EB00211398 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C601A24AF10EB00211398 /* LoadingView.swift */; };
+		1D62108E25C15AAF007843E1 /* ContactsViewControllerConfigUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D62108D25C15AAF007843E1 /* ContactsViewControllerConfigUI.swift */; };
+		1D62109525C15B22007843E1 /* ContactsViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D62109425C15B22007843E1 /* ContactsViewControllerDataSource.swift */; };
 		1D67962A24F106C4006023C7 /* PublicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67962924F106C4006023C7 /* PublicViewModel.swift */; };
 		1D67966324F656C0006023C7 /* SignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966224F656C0006023C7 /* SignedInResponder.swift */; };
 		1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67966524F6588B006023C7 /* MessageListViewController.swift */; };
@@ -276,6 +278,8 @@
 		1D5C600424AC85E900211398 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		1D5C600C24AC8C6700211398 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		1D5C601A24AF10EB00211398 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1D62108D25C15AAF007843E1 /* ContactsViewControllerConfigUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewControllerConfigUI.swift; sourceTree = "<group>"; };
+		1D62109425C15B22007843E1 /* ContactsViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewControllerDataSource.swift; sourceTree = "<group>"; };
 		1D67962924F106C4006023C7 /* PublicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewModel.swift; sourceTree = "<group>"; };
 		1D67966224F656C0006023C7 /* SignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInResponder.swift; sourceTree = "<group>"; };
 		1D67966524F6588B006023C7 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
@@ -1030,6 +1034,8 @@
 			isa = PBXGroup;
 			children = (
 				1D98A4AC25836BBC000D1115 /* ContactsViewController.swift */,
+				1D62108D25C15AAF007843E1 /* ContactsViewControllerConfigUI.swift */,
+				1D62109425C15B22007843E1 /* ContactsViewControllerDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1508,6 +1514,7 @@
 				1D1DBFDD258862370016831C /* ChatCellProtocol.swift in Sources */,
 				1D98A49B25835EB5000D1115 /* UITabBarControllerExtension.swift in Sources */,
 				1DD57FC425B140A4003F0F82 /* MenuCollectionViewCell.swift in Sources */,
+				1D62108E25C15AAF007843E1 /* ContactsViewControllerConfigUI.swift in Sources */,
 				1D67966624F6588B006023C7 /* MessageListViewController.swift in Sources */,
 				1D12F34A25AD43C200C1AC4A /* MicrophoneView.swift in Sources */,
 				1D1DBFD0258861C20016831C /* ChatTableViewCell.swift in Sources */,
@@ -1527,6 +1534,7 @@
 				1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */,
 				1D98A4A225836A5F000D1115 /* MineViewController.swift in Sources */,
 				1DFA47BD258C9A4A009D9EAD /* MessageListTableViewCell.swift in Sources */,
+				1D62109525C15B22007843E1 /* ContactsViewControllerDataSource.swift in Sources */,
 				1D12F34B25AD43C200C1AC4A /* EmojiBottomView.swift in Sources */,
 				1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */,
 				1DAB099325A6A788007B1118 /* ChatViewControllerKeyboard.swift in Sources */,
