@@ -54,6 +54,6 @@ $(SRCROOT)/Carthage/Build/iOS/***.framework
 
 <h3>4、自己封装的开源库</h3>
 
-* **[RPToastView](https://github.com/dengfeng520/RPToastView)**一个简单的LoadingView
-* **[RPBannerView-Swift](https://github.com/dengfeng520/RPBannerView-Swift)**一个轻量级的Banner提示框
+* **[RPToastView](https://github.com/dengfeng520/RPToastView)一个简单的LoadingView**
+* **[RPBannerView-Swift](https://github.com/dengfeng520/RPBannerView-Swift)一个轻量级的Banner提示框**
 * **[RPAutoLayout](https://github.com/dengfeng520/RPAutoLayout)**对系统的**NSLayoutAnchor**做简单的封装
