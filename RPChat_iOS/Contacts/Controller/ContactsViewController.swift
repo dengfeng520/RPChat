@@ -28,7 +28,12 @@ class ContactsViewController: BaseChatListViewController {
     lazy var searchBar: UISearchBar = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        let top = $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
+        let left = $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
+        let right = $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0)
+        let heigt = $0.heightAnchor.constraint(equalToConstant: 55)
+        NSLayoutConstraint.activate([top, left, right, heigt])
+        $0.delegate = self
         return $0
     }(UISearchBar())
 }

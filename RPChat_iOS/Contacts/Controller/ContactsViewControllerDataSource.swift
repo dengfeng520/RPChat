@@ -13,6 +13,7 @@ import RPChatDataKit
 
 extension ContactsViewController {
     func bindViewModel() {
+        self.tableView.tableHeaderView = searchBar
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // 获取数据
@@ -39,7 +40,7 @@ extension ContactsViewController {
     }
 }
 
-extension ContactsViewController: UITableViewDelegate,UITableViewDataSource {
+extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.contactsArray.count
     }
@@ -76,5 +77,14 @@ extension ContactsViewController: UITableViewDelegate,UITableViewDataSource {
         let friendsInfoVC = FriendInfoViewController()
         friendsInfoVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(friendsInfoVC, animated: true)
+    }
+}
+
+
+extension ContactsViewController: UISearchBarDelegate {
+    func bindSearch() {
+//        searchBar.searchTextField.text.rx.changed.subscribe(onNext: { txt in
+//            print("---------------\(String(describing: txt))")
+//        }).disposed(by: disposeBag)
     }
 }
