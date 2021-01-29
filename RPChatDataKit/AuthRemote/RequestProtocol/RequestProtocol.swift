@@ -10,15 +10,13 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-public protocol RequestProtocol {
-    
-}
 /// 请求服务器相关
 public protocol Request {
     var path: String {get}
     var method: HTTPMethod {get}
     var parameter: [String: AnyObject]? {get}
     var host: String {get}
+    associatedtype Response: Codable
 }
 
 extension Request {
@@ -26,7 +24,7 @@ extension Request {
         return [:]
     }
 }
-/// 请求服务器失败时 错误码
+/// 错误码
 public enum RequestError: Error {
     case unknownError
     case connectionError

@@ -101,6 +101,7 @@
 		1D98A67625876887000D1115 /* RPKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67525876887000D1115 /* RPKeychain.swift */; };
 		1D98A67D258768AA000D1115 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A67C258768AA000D1115 /* KeychainItem.swift */; };
 		1D98A69025876B87000D1115 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */; };
+		1DA4838525C26136004D3E5E /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA4838425C26136004D3E5E /* ResourceModel.swift */; };
 		1DAAF5DC258B58D700871FB2 /* RPKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98A6412587683C000D1115 /* RPKeychain.framework */; };
 		1DAB098725A6A46E007B1118 /* ScrollViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB098625A6A46E007B1118 /* ScrollViewManager.swift */; };
 		1DAB099325A6A788007B1118 /* ChatViewControllerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB099225A6A788007B1118 /* ChatViewControllerKeyboard.swift */; };
@@ -314,6 +315,7 @@
 		1D98A67525876887000D1115 /* RPKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPKeychain.swift; sourceTree = "<group>"; };
 		1D98A67C258768AA000D1115 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		1DA4838425C26136004D3E5E /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		1DAB098625A6A46E007B1118 /* ScrollViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewManager.swift; sourceTree = "<group>"; };
 		1DAB099225A6A788007B1118 /* ChatViewControllerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerKeyboard.swift; sourceTree = "<group>"; };
 		1DAB099A25A6B395007B1118 /* KeyBoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardManager.swift; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 		1D92F43825A3098800DE7BC0 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1DA4838425C26136004D3E5E /* ResourceModel.swift */,
 				1D98A52825874956000D1115 /* Chat */,
 				1DD7DE5D2591F56E004917C3 /* Contacts */,
 				1D92F42225A307D100DE7BC0 /* Discover */,
@@ -1572,6 +1575,7 @@
 				1D69CF4C259C66D5006C0783 /* RPAuthRemoteAPI+Extension.swift in Sources */,
 				1DF627C12536D5E1004232F4 /* SocketProtocol.swift in Sources */,
 				1D92F43225A3082600DE7BC0 /* DiscoverModel.swift in Sources */,
+				1DA4838525C26136004D3E5E /* ResourceModel.swift in Sources */,
 				1DB939A3249B752400F07DC6 /* SigninRequest.swift in Sources */,
 				1DF627D72536D83C004232F4 /* ChatInfoModel.swift in Sources */,
 				1DF627DD2536D96D004232F4 /* SocketManagerDelegate.swift in Sources */,

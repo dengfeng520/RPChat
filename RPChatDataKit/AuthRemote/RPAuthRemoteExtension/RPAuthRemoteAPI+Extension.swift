@@ -43,7 +43,9 @@ extension RPAuthRemoteAPI {
 extension RPAuthRemoteAPI {
     /// 协议方式，成功返回JSON -----> RxSwift
     public func post<T: Request>(_ r: T) -> Observable<JSON> {
-        let path = URL(string: r.host.appending(r.path))!
+        guard let path = URL(string: r.host.appending(r.path)) else {
+            return .error(RequestError.unknownError)
+        }
         
         var headers: [String : String]?
         // 缓存token

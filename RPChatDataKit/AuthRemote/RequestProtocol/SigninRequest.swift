@@ -11,23 +11,23 @@ import Alamofire
 
 /// 登录
 struct SigninRequest: Request {
-    typealias Response = SigninRequest
     var parameter: [String : AnyObject]?
     var path: String
     var method: HTTPMethod = .post
     var host: String {
         return __serverTestURL
     }
+    typealias Response = ResourceModel
 }
 
 struct SigninResource: Request {
-    typealias Response = SigninResource
     var parameter: [String : AnyObject]?
     var path: String
     var method: HTTPMethod = .post
     var host: String {
         return __serverTestURL
     }
+    typealias Response = ResourceModel
 }
 
 

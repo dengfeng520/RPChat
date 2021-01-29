@@ -19,6 +19,7 @@ struct ChatListWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
 /// 获取好友列表
@@ -31,6 +32,7 @@ struct FriendsListWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
 /// 获取消息列表
@@ -43,6 +45,7 @@ struct MessageListWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
 /// 修改会话状态为已读
@@ -55,6 +58,7 @@ struct UpdateReadStatusListWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
 /// 获取消息需要的信息
@@ -67,6 +71,7 @@ struct ChatInfoListWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
 /// 修改会话状态为已读
@@ -79,5 +84,6 @@ struct ChatUpdateReadStatusWithRequest: Request {
     var host: String {
         return __chatServerURL
     }
+    typealias Response = ResourceModel
 }
 
