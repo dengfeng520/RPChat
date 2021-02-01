@@ -66,14 +66,40 @@ class ContactsTableViewCell: UITableViewCell {
         $0.font = UIFont.systemFont(ofSize: 15)
         return $0
     }(UILabel())
+    
+    lazy var searchBar: UISearchBar = {
+        self.contentView.addSubview($0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        let top = $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
+        let left = $0.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0)
+        let right = $0.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0)
+        let heigt = $0.heightAnchor.constraint(equalToConstant: 55)
+        NSLayoutConstraint.activate([top, left, right, heigt])
+        $0.delegate = self
+        $0.placeholder = NSLocalizedString("Search", comment: "")
+        return $0
+    }(UISearchBar())
 }
 
-
-extension ContactsTableViewCell {
+extension ContactsTableViewCell: UISearchBarDelegate {
     /// Contacts
     func configContactsData(_ model: ContactsModel) {
         headerImg.image = UIImage(named: model.picture)
         nickNameLab.text = model.name
         subMessageLab.text = model.introduction
+        
+        searchBar.isHidden = true
+        headerImg.isHidden = false
+        nickNameLab.isHidden = false
+        subMessageLab.isHidden = false
+    }
+    
+    /// Search
+    func configSearchUI() {
+        searchBar.isHidden = false
+        
+        headerImg.isHidden = true
+        nickNameLab.isHidden = true
+        subMessageLab.isHidden = true
     }
 }

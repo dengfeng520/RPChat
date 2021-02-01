@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RPKeychain
 
 public class AccountData {
     public static func fetchUserId() -> String? {
@@ -25,5 +26,13 @@ public class AccountData {
     }
     public static func fetchOpenId() -> String? {
         return nil
+    }
+    
+    public static var isSignIn : Bool {
+        if let signInInfo = RPKeychain.default.string(forKey: "key.siginInfo.value") {
+            print("------\(signInInfo)")
+            return true
+        }
+        return false
     }
 }

@@ -13,7 +13,6 @@ import RPChatDataKit
 
 extension ContactsViewController {
     func bindViewModel() {
-        self.tableView.tableHeaderView = searchBar
         // loading
         viewModel.loading.bind(to: self.rx.isAnimating).disposed(by: disposeBag)
         // 获取数据
@@ -42,24 +41,36 @@ extension ContactsViewController {
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.contactsArray.count
+        return viewModel.contactsArray.count + 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contactsArray[section].count
+        if section == 0 {
+            return 1
+        }
+        return viewModel.contactsArray[section - 1].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContactsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCellId", for: indexPath) as! ContactsTableViewCell
-        let list = viewModel.contactsArray[indexPath.section]
-        cell.configContactsData(list[indexPath.row])
+        
+        if indexPath.section == 0 {
+            cell.configSearchUI()
+        } else {
+            let list = viewModel.contactsArray[indexPath.section - 1]
+            cell.configContactsData(list[indexPath.row])
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if viewModel.contactsArray.count != 0 {
-            let list: [ContactsModel] = viewModel.contactsArray[section]
-            return list.first?.name.transformToPinyin
+            if section != 0 {
+                let list: [ContactsModel] = viewModel.contactsArray[section - 1]
+                return list.first?.name.transformToPinyin
+            }
+            return nil
         } else {
             return "#"
         }

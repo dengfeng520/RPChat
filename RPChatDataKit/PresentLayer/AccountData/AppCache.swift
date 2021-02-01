@@ -13,7 +13,7 @@ public class AppCache: NSObject {
     var appCache = NSCache<AnyObject, AnyObject>()
     private static var _appCache: AppCache?
 
-    // 单例
+    /// 单例
     public static func sharedInstance() -> AppCache {
         guard let instance = _appCache else {
             _appCache = AppCache()

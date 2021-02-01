@@ -58,6 +58,7 @@
 		1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */; };
 		1D43D27725A56BAA00549C91 /* LeftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */; };
 		1D43D27E25A56BBB00549C91 /* RightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */; };
+		1D55372525C7E68500752CB3 /* ContactsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D55372425C7E68500752CB3 /* ContactsHeaderTableViewCell.swift */; };
 		1D5566AE25A83E42001F5C40 /* ChatViewController+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */; };
 		1D5C5FFD24AC823000211398 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFC24AC823000211398 /* AppCache.swift */; };
 		1D5C600024AC834B00211398 /* ConfigAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C5FFF24AC834B00211398 /* ConfigAES.swift */; };
@@ -271,6 +272,7 @@
 		1D43D26125A46D0600549C91 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		1D43D27625A56BAA00549C91 /* LeftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChatTableViewCell.swift; sourceTree = "<group>"; };
 		1D43D27D25A56BBB00549C91 /* RightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatTableViewCell.swift; sourceTree = "<group>"; };
+		1D55372425C7E68500752CB3 /* ContactsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1D5566AD25A83E42001F5C40 /* ChatViewController+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Server.swift"; sourceTree = "<group>"; };
 		1D5C5FFA24AC65BE00211398 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D5C5FFC24AC823000211398 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 			isa = PBXGroup;
 			children = (
 				1D98A68F25876B87000D1115 /* ContactsTableViewCell.swift */,
+				1D55372425C7E68500752CB3 /* ContactsHeaderTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1511,6 +1514,7 @@
 				1D98A4AD25836BBC000D1115 /* ContactsViewController.swift in Sources */,
 				1D92F44125A30B5900DE7BC0 /* GuideViewController.swift in Sources */,
 				1D12F3D125AED77700C1AC4A /* ChatListViewController+Keyboard.swift in Sources */,
+				1D55372525C7E68500752CB3 /* ContactsHeaderTableViewCell.swift in Sources */,
 				1D43D26225A46D0600549C91 /* FriendInfoViewController.swift in Sources */,
 				1DFB147C24A0AF0F00D01BC3 /* SignInRootView.swift in Sources */,
 				1D1DBFC225885CE30016831C /* BaseChatListViewController.swift in Sources */,
