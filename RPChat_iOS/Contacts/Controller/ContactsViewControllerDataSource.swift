@@ -36,6 +36,8 @@ extension ContactsViewController {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         // dataSource
         tableView.rx.setDataSource(self).disposed(by: disposeBag)
+        // 键盘处理
+        keyboardAbout()
     }
 }
 

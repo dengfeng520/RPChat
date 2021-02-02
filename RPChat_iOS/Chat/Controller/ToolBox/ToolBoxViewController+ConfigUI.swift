@@ -31,6 +31,8 @@ extension ToolBoxViewController {
             self.emoJiArray = emoticonsList
             self.emojiView.changeEmoji(self.emoJiArray.first)
         }
+        // 点击键盘上的send
+        
     }
 }
 

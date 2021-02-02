@@ -67,6 +67,8 @@ extension String {
                                  bundle: Bundle.init(identifier: "io.RPChat")!,
                                  comment: comment)
     }
+    static let signInErrorTitle = localized(of: "Sign In Failed")
+    static let signInErrorDesc = localized(of: "SIGN_IN_ERROR_DESC")
 }
 
 extension String {

@@ -47,8 +47,8 @@ extension ChatViewModel {
 //                })
                 
                 let chatList = ["故事说，喜鹊在云上架桥；命定之人，会在从桥的那头，奔向你","故事说，喜鹊在云上架桥；命定之人，会在从桥的那头，奔向你","像做梦一样","梦到的故事太长","佳期如梦","遗失的记忆，会以梦的方式重现","就是你吗？","就是此刻","看呐，重逢的指引","看吧！重逢的预示。","啦啦啦啦啦，啦啦啦...啦啦啦...","我在听","在这儿","找到你了","云上一瞬","人间万古","你尽力了","天意如此","你对着月亮许了什么愿？","天上人间，岁岁年年","是你对神灵，许下因果吗？","若前生未果，便重征来世","梦醒之后。","有什么，被忘记了吗？","经历，贯穿命运的强光","这就是，全部的过往。","他们有着，不同于强者的力量","天地之间，无处不是野草般的生命","除了神女，我还有个自己的名字"]
-                self.chatListArray = chatList.map { chat -> ChatBodyModel  in
-                    var model = ChatBodyModel(json: JSON([:]))
+                self.chatListArray = chatList.compactMap { chat -> ChatBodyModel?  in
+                    guard var model = ChatBodyModel(Data()) else { return nil }
                     model.msg = chat
                     return model
                 }

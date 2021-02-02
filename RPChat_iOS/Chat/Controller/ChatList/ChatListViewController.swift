@@ -54,8 +54,10 @@ class ChatListViewController: UIViewController {
     
     /// 滚到最底部
     func scrollWithBottom() {
-        let indexPath = IndexPath(row: viewModel.chatListArray.count - 1, section: 0)
-        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
+        if viewModel.chatListArray.count != 0 {
+            let indexPath = IndexPath(row: viewModel.chatListArray.count - 1, section: 0)
+            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
+        } 
     }
 }
 

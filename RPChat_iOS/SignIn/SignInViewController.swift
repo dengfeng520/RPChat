@@ -24,7 +24,10 @@ public class SignInViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         title = NSLocalizedString("Sign In", comment: "")
+        
         bindViewModel()
+        
+        dismissKeyboard()
     }
     
     private func bindViewModel() {
@@ -56,8 +59,18 @@ public class SignInViewController: UIViewController {
     public override func loadView() {
         self.view = SignInRootView(viewModel: viewModel)
     }
-    
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+}
+
+extension SignInViewController {
+    // 键盘处理
+    private func dismissKeyboard() {
+        let tap = UITapGestureRecognizer()
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        tap.rx.event.subscribe(onNext: {  [weak self] recognizer in
+            guard let `self` = self else { return }
+            self.view.endEditing(true)
+        }).disposed(by: disposeBag)
     }
 }

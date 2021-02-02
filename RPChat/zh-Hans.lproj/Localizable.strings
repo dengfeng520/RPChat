@@ -23,3 +23,5 @@
 "Discover" = "朋友圈";
 "Send" = "发送";
 "Search" = "搜索";
+"Sign In Error Desc" = "登录信息错误，请重试。";
+"Failed reading stuNum and password" = "获取用户名和密码失败，请重试。";

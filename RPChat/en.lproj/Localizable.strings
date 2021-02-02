@@ -22,3 +22,5 @@
 "No More Data";
 "Send";
 "Search";
+"Sign In Error Desc" = "Oops! We couldn't verify your credentials.\nPlease try again.";
+"Failed reading stuNum and password" = "Failed reading stuNum and password from behavior subjects.";

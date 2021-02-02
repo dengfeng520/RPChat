@@ -13,6 +13,8 @@ public class ContactsViewModel: PublicViewModel {
     public var contactsArray: [[ContactsModel]] = [[ContactsModel]]()
     public let contactsSubject : PublishSubject<[[ContactsModel]]> = PublishSubject()
     
+    public var searchArray: [[ContactsModel]] = [[ContactsModel]]()
+    
     public func fetchContactsList() {
         /// 模拟网络请求
         self.loading.onNext(true)

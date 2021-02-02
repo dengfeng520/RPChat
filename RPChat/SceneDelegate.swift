@@ -27,12 +27,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .darkModeViewColor
         if Flag.isFirst == true {
             // 进入引导页 并清理keychain中存储的用户信息
-            
+            let signInVC = SignInViewController()
+            window?.rootViewController = signInVC
         } else {
             if let signInInfo = RPKeychain.default.string(forKey: "key.siginInfo.value") {
                 print("=================\(signInInfo)")
-                let tabbarVC = UITabBarControllerExtension()
-                window?.rootViewController = tabbarVC
+//                let tabbarVC = UITabBarControllerExtension()
+//                window?.rootViewController = tabbarVC
+                let signInVC = SignInViewController()
+                window?.rootViewController = signInVC
             } else {
                 let signInVC = SignInViewController()
                 window?.rootViewController = signInVC

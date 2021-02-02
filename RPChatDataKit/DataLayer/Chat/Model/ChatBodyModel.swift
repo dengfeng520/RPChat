@@ -10,50 +10,53 @@ import UIKit
 import SwiftyJSON
 
 public struct ChatBodyModel {
-    public var createTime,messageId,msg,photo,schoolId,toUserId,toUserName,type,myUserId,groupId: String
-    public var fromUserId,fromUserName: String
-    public var isSendSuccess: Bool
-    public var timeOut: Int
-    public var isCache: Bool
-    public var isUserTouch: Bool
+    /// 消息id
+    public var messageId: String
+    /// 消息内容
+    public var msg: String
+    /// 图片消息
+    public var photo: String
+    /// 接收人id
+    public var toUserId: String
+    /// 接收人昵称
+    public var toUserName: String
+    /// 群id
+    public var groupId: String
+    /// 消息类型 （文字，emoji，图片，视频，位置，语音）
+//    @Default<MessageType>
+    public var type: MessageType
+    /// 发送人id
+    public var fromUserId: String
+    /// 发送人昵称
+    public var fromUserName: String
+    /// 发送时间
+    public var createTime: String
+    /// 缓存model宽，后期优化
+    public var modelWidth: Int
+    /// 缓存model高，后期优化
+    public var modelHeight: Int
+        
+    private enum CodingKeys: String,CodingKey {
+        case messageId
+        case msg
+        case photo
+        case toUserId
+        case toUserName
+        case groupId
+        case type
+        case fromUserId
+        case fromUserName
+        case createTime
+        case modelWidth
+        case modelHeight
+    }
 }
 
-extension ChatBodyModel {
-    public init(json: JSON) {
-        fromUserId = json["userId"].stringValue
-        createTime = json["createTime"].stringValue
-        fromUserName = json["userName"].stringValue
-        messageId = json["messageId"].stringValue
-        msg = json["msg"].stringValue
-        photo = json["photo"].stringValue
-        schoolId = json["schoolId"].stringValue
-        toUserId = json["toUserId"].stringValue
-        toUserName = json["toUserName"].stringValue
-        type = json["type"].stringValue
-        myUserId = json["myUserId"].stringValue
-        groupId = json["groupId"].stringValue
-        isSendSuccess = true
-        timeOut = 0
-        isCache = false
-        isUserTouch = false
-    }
-    
-    public init(jsonData: JSON) {
-        fromUserId = jsonData["fromUserId"].stringValue
-        createTime = jsonData["createTime"].stringValue
-        fromUserName = jsonData["fromUserName"].stringValue
-        messageId = jsonData["messageId"].stringValue
-        msg = jsonData["msg"].stringValue
-        photo = jsonData["photo"].stringValue
-        schoolId = jsonData["schoolId"].stringValue
-        toUserId = jsonData["toUserId"].stringValue
-        toUserName = jsonData["toUserName"].stringValue
-        type = jsonData["type"].stringValue
-        myUserId = jsonData["myUserId"].stringValue
-        groupId = jsonData["groupId"].stringValue
-        isSendSuccess = false
-        timeOut = 0
-        isCache = true
-        isUserTouch = true
+extension ChatBodyModel: Decodable {
+    public init?(_ data: Data) {
+        guard let model = try? JSONDecoder().decode(ChatBodyModel.self, from: data) else { return nil }
+        self = model
     }
 }
+
+

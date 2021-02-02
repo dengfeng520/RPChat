@@ -15,6 +15,7 @@ public let __chatServerURL = "https://tsncs.boxkj.com/"
 #if DEBUG
 /// 测试服务器
 public let __serverTestURL = "http://a.sxstczx.com/"
+public let __apiServerAddress = "http://v3.wufazhuce.com:8000/api"
 #else
 /// release服务器
 public let __serverTestURL = "http://a.sxstczx.com/"
@@ -34,3 +35,5 @@ public let __apiFetchUpdateReadStatusList = "/app/chat/updateReadStatus"
 public let __apiFetchChatInfo = "/app/chat/getChatInfo"
 ///7 修改会话状态为已读
 public let __apiFetchUpdateReadStatus = "/app/chat/updateReadStatus"
+/// 首页图文列表
+let __apiHomePageMore: String = "/hp/more/0"

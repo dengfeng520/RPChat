@@ -9,8 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-/// 消息类型
-public enum MessageType {
+public enum MessageType: String,Decodable {
     // 未知消息
     case unknown
     // 系统
