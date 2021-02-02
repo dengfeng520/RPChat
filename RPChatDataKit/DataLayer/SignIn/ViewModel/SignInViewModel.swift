@@ -58,7 +58,7 @@ public class SignInViewModel: PublicViewModel {
     private func clickSignIn() {
         indicateSigningIn()
         let data = fetchStuNumAndPassword()
-        let pwd = ConfigAES().encryptStringWith(strToEncode: data.1)
+        let pwd = data.1.encryptString
         let path = __apiFetchSignIn + "?username=\(data.0)&password=\(pwd)&grant_type=password"
         
         loading.onNext(true)

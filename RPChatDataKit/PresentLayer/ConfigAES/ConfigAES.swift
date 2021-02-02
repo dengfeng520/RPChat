@@ -9,13 +9,15 @@
 import UIKit
 import CryptoSwift
 
-public class ConfigAES: NSObject {
+extension String {
     /// 密钥
-    let publicKey = "thanks,pig4cloud"
+    private var publicKey: String {
+        return "thanks,pig4cloud"
+    }
     
-    public func encryptStringWith(strToEncode: String) -> String {
-        
-        let data = strToEncode.data(using: String.Encoding.utf8)
+    /// AES 加密处理
+    public var encryptString: String {
+        let data = self.data(using: String.Encoding.utf8)
         // byte 数组
         var encrypted: [UInt8] = []
         let (key, iv) = fetchAESKeyAndIv(publicKey.base64Encoded!)
@@ -29,7 +31,7 @@ public class ConfigAES: NSObject {
         return encoded.base64EncodedString()
     }
     
-    func fetchAESKeyAndIv(_ base64edMixedKey: String) -> (Array<UInt8>, Array<UInt8>) {
+    private func fetchAESKeyAndIv(_ base64edMixedKey: String) -> (Array<UInt8>, Array<UInt8>) {
         let key = Array<UInt8>(Data(base64Encoded: base64edMixedKey)!)
         let iv = Array<UInt8>(Data(base64Encoded: base64edMixedKey)!)
         
