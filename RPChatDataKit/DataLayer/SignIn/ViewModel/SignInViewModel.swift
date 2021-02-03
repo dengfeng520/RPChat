@@ -9,12 +9,15 @@
 import RxSwift
 
 public class SignInViewModel: PublicViewModel {
-    /// 控制UI状态的属性
-    public let inputStuNum = BehaviorSubject<String>(value: "")
-    public let inputStuNumEnabled = BehaviorSubject<Bool>(value: true)
     
+    /// 用户输入绑定
+    public let inputStuNum = BehaviorSubject<String>(value: "")
     public let inputPassWord = BehaviorSubject<String>(value: "")
+
+    /// 控制UI状态的属性
+    public let inputStuNumEnabled = BehaviorSubject<Bool>(value: true)
     public let inputPassWordEnabled = BehaviorSubject<Bool>(value: true)
+
     /// 绑定点击登录按钮事件
     public let signInButtonTapped = PublishSubject<Void>()
     /// 控制signIn Button 是否可点击

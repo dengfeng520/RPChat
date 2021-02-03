@@ -46,9 +46,11 @@ extension Reactive where Base: UIViewController {
     public var isAnimating: Binder<Bool> {
         return Binder(self.base, binding: { (vc, active) in
             if active == true {
-                RPToastView.loading(Display(mode: .rotateAndTextMode, isView: vc.view, title: "Loading..."))
+//                RPToastView.loading(Display(mode: .rotateAndTextMode, isView: vc.view, title: "Loading..."))
+                RPToastView.showLoading(vc.view)
             } else {
-                RPToastView.hidden(animation: true)
+//                RPToastView.hidden(animation: true)
+                RPToastView.dissmissLoading()   
             }
         })
     }

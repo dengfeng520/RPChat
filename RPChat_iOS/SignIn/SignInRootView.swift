@@ -23,7 +23,7 @@ class SignInRootView: UIView {
         
         configUI()
         
-        bindData()
+        bindViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +51,7 @@ class SignInRootView: UIView {
         }).disposed(by: disposeBag)
     }
     
-    func bindData() {
+    func bindViewModel() {
         accountNumberLab.rx.text.asDriver().map { $0 ?? "" }.drive(viewModel.inputStuNum).disposed(by: disposeBag)
 
         inputPasswordTxt.rx.text.asDriver().map { $0 ?? "" }.drive(viewModel.inputPassWord).disposed(by: disposeBag)
