@@ -154,6 +154,7 @@
 		1DF6018625CB8F8D00716154 /* DownloadImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6018425CB8F8D00716154 /* DownloadImageTableViewCell.swift */; };
 		1DF6019725CBA69D00716154 /* RPChatFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6019625CBA69D00716154 /* RPChatFPSLabel.swift */; };
 		1DF601A525CBD5EC00716154 /* SerialQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF601A425CBD5EC00716154 /* SerialQueueViewController.swift */; };
+		1DF601F225CD281B00716154 /* QueueBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF601F125CD281B00716154 /* QueueBaseViewController.swift */; };
 		1DF627992536D236004232F4 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627982536D236004232F4 /* SocketManager.swift */; };
 		1DF627AE2536D42F004232F4 /* SocketSigInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627AD2536D42F004232F4 /* SocketSigInModel.swift */; };
 		1DF627B42536D589004232F4 /* SocketManagerPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF627B32536D589004232F4 /* SocketManagerPack.swift */; };
@@ -375,6 +376,7 @@
 		1DF6018425CB8F8D00716154 /* DownloadImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageTableViewCell.swift; sourceTree = "<group>"; };
 		1DF6019625CBA69D00716154 /* RPChatFPSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPChatFPSLabel.swift; sourceTree = "<group>"; };
 		1DF601A425CBD5EC00716154 /* SerialQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialQueueViewController.swift; sourceTree = "<group>"; };
+		1DF601F125CD281B00716154 /* QueueBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueBaseViewController.swift; sourceTree = "<group>"; };
 		1DF627982536D236004232F4 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		1DF627AD2536D42F004232F4 /* SocketSigInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketSigInModel.swift; sourceTree = "<group>"; };
 		1DF627B32536D589004232F4 /* SocketManagerPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerPack.swift; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 				1D92F41625A3079400DE7BC0 /* DiscoverViewController.swift */,
 				1D243E7E25CA7CEB00C00590 /* DownloadImageViewController.swift */,
 				1DF601A425CBD5EC00716154 /* SerialQueueViewController.swift */,
+				1DF601F125CD281B00716154 /* QueueBaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1568,6 +1571,7 @@
 				1DB9399D249B737100F07DC6 /* SignInViewController.swift in Sources */,
 				1D92F41725A3079400DE7BC0 /* DiscoverViewController.swift in Sources */,
 				1D12F34C25AD43C200C1AC4A /* EmojiCollectionViewCell.swift in Sources */,
+				1DF601F225CD281B00716154 /* QueueBaseViewController.swift in Sources */,
 				1D12F38F25AD95BE00C1AC4A /* ToolBoxViewController.swift in Sources */,
 				1DF6018625CB8F8D00716154 /* DownloadImageTableViewCell.swift in Sources */,
 				1D12F39C25AE88F500C1AC4A /* ChatListViewController.swift in Sources */,

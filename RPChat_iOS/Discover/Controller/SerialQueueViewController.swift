@@ -10,19 +10,23 @@ import UIKit
 import RPChatDataKit
 import RPChatUIKit
 
-class SerialQueueViewController: UIViewController {
+class SerialQueueViewController: QueueBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenBackTitle()
         title = NSLocalizedString("Serial Queue", comment: "")
         // Do any additional setup after loading the view.
-        
         slider.thumbTintColor = .hexStringToColor("#1aaba8")
+        
+        fpsLab.isHidden = false
     }
    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         configImage()
+        if fpsLab.isHidden == true {
+            fpsLab.isHidden = false
+        }
     }
     
     func configImage() {
