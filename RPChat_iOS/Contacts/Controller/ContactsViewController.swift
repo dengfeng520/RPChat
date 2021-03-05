@@ -23,6 +23,7 @@ class ContactsViewController: BaseChatListViewController {
         hiddenBackTitle()
         title = NSLocalizedString("Contacts", comment: "")
         bindViewModel()
+            
     }
 }
 

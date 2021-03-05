@@ -9,7 +9,7 @@
 import UIKit
 
 extension Array {
-    // 去重
+    // 去重处理
     func filterDuplicates<E: Equatable>(_ filter: (Element) -> E) -> [Element] {
         var result = [Element]()
         for value in self {

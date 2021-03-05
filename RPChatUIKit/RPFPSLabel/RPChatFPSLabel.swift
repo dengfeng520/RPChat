@@ -17,16 +17,15 @@ public class RPChatFPSLabel: UILabel {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        ///样式
+        /// 样式
         layer.cornerRadius = 5
         layer.masksToBounds = true
         backgroundColor = UIColor.init(white: 0, alpha: 0.7)
         font = UIFont(name: "Menlo", size: 14)
         self.textAlignment = .center
-        ///防止循环引用
-//        link = CADisplayLink.init(target: WeakProxy.init(self), selector: #selector(tick(_:)))
+        /// 防止循环引用
         link = CADisplayLink.init(target: self, selector: #selector(tick(_:)))
-        ///main runloop 添加到
+        /// main runloop 添加到
         link?.add(to: RunLoop.main, forMode: .common)
     }
     deinit {
@@ -37,7 +36,7 @@ public class RPChatFPSLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
   
-  ///滴答滴答
+    /// 滴答滴答
     @objc fileprivate func tick(_ link: CADisplayLink) {
         if lastTime == 0 {
             lastTime = link.timestamp
@@ -56,5 +55,4 @@ public class RPChatFPSLabel: UILabel {
         self.textColor = color
         self.text = String.init(format: "%.0lf FPS", round(fps))
     }
-
 }

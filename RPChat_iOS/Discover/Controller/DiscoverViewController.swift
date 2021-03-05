@@ -19,14 +19,4 @@ class DiscoverViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let downVC = DownloadImageViewController()
-//        downVC.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(downVC, animated: true)
-        
-        let serialVC = SerialQueueViewController()
-        serialVC.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(serialVC, animated: true)
-    }
 }

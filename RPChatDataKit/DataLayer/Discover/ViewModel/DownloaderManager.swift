@@ -9,6 +9,16 @@
 import UIKit
 
 public class DownloaderManager: NSObject {
+    // 单例
+    public static let downloaderManager = DownloaderManager()
+    // 即然是单例，就禁止其他地方初始化
+    private override init() {
+        super.init()
+    }
+    // 图片缓存,用图片的URL作为Key
+    private let cacheImage = NSCache<NSURL, UIImage>()
+    // 
+    
     public class func downloadImageWithURL(_ url: String) -> UIImage? {
         guard let data = try? Data(contentsOf: URL(string: url)!) else { return nil }
         return UIImage(data: data)
