@@ -21,7 +21,6 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         // dataSource
         tableView.rx.setDataSource(self).disposed(by: disposeBag)
-       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +30,7 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChatTableViewCell = ChatCellShopFactory.createCell(model: viewModel.chatListArray[indexPath.row], tableView: tableView, indexPath: indexPath) as! ChatTableViewCell
         
+        // 点击事件
         cell.headerTapClosures = { [weak self] in
             guard let `self` = self else { return }
             self.headerTapSubject.onNext(self.viewModel.chatListArray[indexPath.row])

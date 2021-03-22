@@ -29,7 +29,7 @@ class ToolBoxViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupBinding()
     }
-    
+    // tool 输入框
     lazy var toolView: ToolView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ class ToolBoxViewController: UIViewController {
         $0.backgroundColor = .darkModeViewColor
         return $0
     }(ToolView(frame: .zero))
-    
+    // emoji
     lazy var emojiView: EmojiView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class ToolBoxViewController: UIViewController {
         $0.isHidden = true
         return $0
     }(EmojiView(frame: .zero))
-    
+    // 菜单
     lazy var menuView: MenuView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +62,7 @@ class ToolBoxViewController: UIViewController {
         $0.isHidden = true
         return $0
     }(MenuView(frame: .zero))
-    
+    // 麦克风
     lazy var microphoneView: MicrophoneView = {
         view.addSubview($0)
         $0.translatesAutoresizingMaskIntoConstraints = false
