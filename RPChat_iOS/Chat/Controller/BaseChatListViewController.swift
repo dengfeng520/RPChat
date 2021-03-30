@@ -12,7 +12,6 @@ class BaseChatListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -29,4 +28,8 @@ class BaseChatListViewController: UIViewController {
         $0.sectionIndexColor = .subTextColor
         return $0
     }(UITableView())
+}
+
+extension BaseChatListViewController {
+    
 }

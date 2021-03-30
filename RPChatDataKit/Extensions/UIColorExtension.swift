@@ -225,7 +225,7 @@ extension UIColor {
 
 extension UIColor {
     /// 当前是否是暗模式
-    public class var drakMode: Bool {
+    public class var darkMode: Bool {
         if #available(iOS 13.0, *) {
             let currentMode = UITraitCollection.current.userInterfaceStyle
             if currentMode == .dark {
@@ -234,7 +234,7 @@ extension UIColor {
         }
         return false
     }
-    public class func isDrakMode() -> Bool {
+    public class func isDarkMode() -> Bool {
         if #available(iOS 13.0, *) {
             let currentMode = UITraitCollection.current.userInterfaceStyle
             if currentMode == .dark {
